@@ -1,0 +1,56 @@
+[
+  {
+    "file": "AQ_T3034_2022_huagong_anquan.pdf",
+    "needs_ocr": false,
+    "pages": 59,
+    "chars": 57352,
+    "tables": 41,
+    "out": "AQ_T3034_2022_huagong_anquan.md",
+    "kind": "text_based"
+  },
+  {
+    "file": "gaoqing_yuxian_kongjian.pdf",
+    "needs_ocr": false,
+    "pages": 7,
+    "chars": 2470,
+    "tables": 2,
+    "out": "gaoqing_yuxian_kongjian.md",
+    "kind": "text_based"
+  },
+  {
+    "file": "kaiping_zuoyepiao.pdf",
+    "needs_ocr": false,
+    "pages": 2,
+    "chars": 1160,
+    "tables": 2,
+    "out": "kaiping_zuoyepiao.md",
+    "kind": "text_based"
+  },
+  {
+    "file": "mem_2019_78_zhimengdaoze.pdf",
+    "needs_ocr": false,
+    "pages": 55,
+    "chars": 54565,
+    "tables": 35,
+    "out": "mem_2019_78_zhimengdaoze.md",
+    "kind": "text_based"
+  },
+  {
+    "file": "mem_xianshi_shouce.pdf",
+    "needs_ocr": false,
+    "pages": 51,
+    "chars": 34838,
+    "tables": 41,
+    "out": "mem_xianshi_shouce.md",
+    "kind": "text_based"
+  },
+  {
+    "file": "yuncheng_paichabiao.pdf",
+    "needs_ocr": true,
+    "pages": 2,
+    "chars": 0,
+    "tables": 0,
+    "out": null,
+    "kind": "scanned_no_text"
+  }
+]
