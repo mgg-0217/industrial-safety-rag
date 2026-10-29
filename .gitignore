@@ -5,3 +5,8 @@ __pycache__/
 .venv/
 venv/
 .env
+
+# 选型失败样本：404 页面、SPA 空壳、防盗链错误页，无参考价值，
+# 且含第三方厂商网站 HTML 片段。失败原因记录在 docs/语料来源与选型说明.md
+data/raw/_rejected/
+data/md/_stale/
