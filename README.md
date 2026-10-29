@@ -2,7 +2,7 @@
 
 面向制造业的**工业设备维修 + 安全规程问答** RAG 项目。当前阶段：**真实语料与评测基座已就位**。
 
-- PRD 生成提示词：`../prompts/工业设备维修与安全规程问答-RAG-PRD提示词.md`
+- PRD 生成提示词：`prompts/工业设备维修与安全规程问答-RAG-PRD提示词.md`（自包含，直接整份喂给 LLM 即可产出 `docs/PRD.md`）
 - 语料来源与选型说明：`docs/语料来源与选型说明.md`
 - 语料清单：`docs/语料清单.md`
 
@@ -28,7 +28,7 @@
 ```
 工业维修安全规程RAG/
 ├─ data/
-│  ├─ raw/              # 原始下载件（HTML/PDF），含 _rejected/ 归档
+│  ├─ raw/              # 原始下载件（HTML/PDF），含 _rejected/ 归档（已 gitignore）
 │  ├─ md/               # 统一抽取的 Markdown（含 front-matter 元数据）
 │  ├─ manifest.json     # 语料元数据主表（PRD 元数据 schema 的真实实例）
 │  ├─ probe_report.json # PDF 探针结果（文本型/扫描件/表格数）
@@ -38,6 +38,8 @@
 ├─ docs/
 │  ├─ 语料清单.md
 │  └─ 语料来源与选型说明.md
+├─ prompts/
+│  └─ 工业设备维修与安全规程问答-RAG-PRD提示词.md
 └─ tools/
    ├─ html_to_md.py          # 政府网页正文抽取（含嵌套div配对 + 兜底）
    ├─ pdf_to_md.py           # PDF → Markdown（页码锚点 + 表格结构）
@@ -45,6 +47,9 @@
    ├─ build_manifest.py      # 生成 manifest.json + 语料清单.md
    └─ build_eval_candidates.py # 条款切分 → 评测题候选 + QA CSV
 ```
+
+> 仓库已 git 化（无远端）。`data/raw/` 原文入库而不只入库产物 —— 政府页面会改版失效，
+> 重下无法保证与 manifest 记录一致；评测要可复现，语料就必须可复现。
 
 ## 重跑数据流水线
 
@@ -74,7 +79,7 @@ python tools/build_eval_candidates.py                # 评测候选 + QA CSV
 
 ## 下一步（按优先级）
 
-1. **用提示词生成 PRD**（`prompts/` 里那份），把这份真实语料的元数据 schema 直接搬进 PRD 第二节
+1. **生成 PRD**：把 `prompts/工业设备维修与安全规程问答-RAG-PRD提示词.md` 整份喂给 LLM，产出 `docs/PRD.md`
 2. **精修评测集**：842 条候选 → 人工/LLM 精修成正式题集，补齐拒答题与澄清题
 3. **chunk pipeline**：把 `data/md/` 按 6 种切分策略切成带元数据的 chunk，验证策略对比
 4. **检索基线**：向量（阿里云嵌入）+ BM25 + RRF + 重排，在这份评测集上跑第一版基线
