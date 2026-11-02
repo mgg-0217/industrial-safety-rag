@@ -1,7 +1,8 @@
 # 工业设备维修与安全规程问答 RAG
 
-面向制造业的**工业设备维修 + 安全规程问答** RAG 项目。当前阶段：**真实语料与评测基座已就位**。
+面向制造业的**工业设备维修 + 安全规程问答** RAG 项目。当前阶段：**PRD 已定稿，真实语料与评测基座已就位**。
 
+- **PRD**：`docs/PRD.md`（10 节，含切分策略、检索架构、版本治理、评测方案的字段级规格）
 - PRD 生成提示词：`prompts/工业设备维修与安全规程问答-RAG-PRD提示词.md`（自包含，直接整份喂给 LLM 即可产出 `docs/PRD.md`）
 - 语料来源与选型说明：`docs/语料来源与选型说明.md`
 - 语料清单：`docs/语料清单.md`
@@ -36,16 +37,23 @@
 │     ├─ candidates.jsonl # 评测题候选（带证据锚点）
 │     └─ qa_pairs.csv     # QA 型 CSV（第6种切分策略的输入格式）
 ├─ docs/
+│  ├─ PRD.md                 # 产品需求文档（10 节，字段级规格）
 │  ├─ 语料清单.md
 │  └─ 语料来源与选型说明.md
+├─ notes/
+│  └─ 踩坑.md                # 踩坑日志（现象 → 根因 → 解法 → 耗时）
 ├─ prompts/
-│  └─ 工业设备维修与安全规程问答-RAG-PRD提示词.md
+│  ├─ 工业设备维修与安全规程问答-RAG-PRD提示词.md
+│  └─ PRD生成-调用说明.md
+├─ src/
+│  └─ normalize.py          # 归一化模块（三轨分离：text / norm_text / tag_key）
 └─ tools/
    ├─ html_to_md.py          # 政府网页正文抽取（含嵌套div配对 + 兜底）
    ├─ pdf_to_md.py           # PDF → Markdown（页码锚点 + 表格结构）
    ├─ pdf_probe.py           # PDF 类型判定（文本层/扫描件/表格）
    ├─ build_manifest.py      # 生成 manifest.json + 语料清单.md
-   └─ build_eval_candidates.py # 条款切分 → 评测题候选 + QA CSV
+   ├─ build_eval_candidates.py # 条款切分 → 评测题候选 + QA CSV
+   └─ test_normalize.py      # 归一化模块自检（4 条 pytest）
 ```
 
 > 仓库已 git 化（无远端）。`data/raw/` 原文入库而不只入库产物 —— 政府页面会改版失效，
@@ -79,7 +87,10 @@ python tools/build_eval_candidates.py                # 评测候选 + QA CSV
 
 ## 下一步（按优先级）
 
-1. **生成 PRD**：把 `prompts/工业设备维修与安全规程问答-RAG-PRD提示词.md` 整份喂给 LLM，产出 `docs/PRD.md`
-2. **精修评测集**：842 条候选 → 人工/LLM 精修成正式题集，补齐拒答题与澄清题
-3. **chunk pipeline**：把 `data/md/` 按 6 种切分策略切成带元数据的 chunk，验证策略对比
-4. **检索基线**：向量（阿里云嵌入）+ BM25 + RRF + 重排，在这份评测集上跑第一版基线
+1. **版本关系建模**（PRD M1）：给 manifest 补 `effective_from` / `effective_to` / `superseded_by`，
+   推导规则与单元测试（链长 ≥ 3 的构造样例）
+2. **评测集精修**（PRD M2）：842 条候选 → 正式题集，补齐版本陷阱题 / 拒答题 / 跨文档推理题
+3. **chunk pipeline**（PRD M3–M4）：按 6 种切分策略切成带元数据的 chunk，跑策略对比实验
+4. **检索基线**（PRD M5–M8）：BM25（自研）+ 向量路 + RRF + 先过滤再排序，跑 B1/B2/B3 三组基线
+
+> 完整规格见 `docs/PRD.md` 第 9 节里程碑表（M0 已完成，M1 起步）。

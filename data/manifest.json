@@ -28,7 +28,15 @@
       "中华人民共和国安全生产法"
     ],
     "note": "第十九条明示原〔2023〕26号废止，可作版本治理正样本",
-    "extract_quality": "ok"
+    "extract_quality": "ok",
+    "effective_from": "2025-01-09",
+    "effective_from_source": "doc_date",
+    "supersedes": [
+      "yulin_2023_old"
+    ],
+    "effective_to": null,
+    "effective_to_source": "open",
+    "superseded_by": null
   },
   {
     "doc_id": "yulin_2023_old",
@@ -58,7 +66,13 @@
       "GB 30871-2022"
     ],
     "note": "被2025版明示废止；作为'过期版本召回'负样本与冲突检测样本",
-    "extract_quality": "ok"
+    "extract_quality": "ok",
+    "effective_from": "2023-10-06",
+    "effective_from_source": "declared",
+    "supersedes": [],
+    "effective_to": "2025-01-09",
+    "effective_to_source": "explicit",
+    "superseded_by": "yulin_donghuo_xianshi"
   },
   {
     "doc_id": "case_quanzhou_1220",
@@ -99,7 +113,13 @@
       "生产安全事故报告和调查处理条例"
     ],
     "note": "含完整位号/设计参数/故障时序，是设备维修轨核心语料",
-    "extract_quality": "ok"
+    "extract_quality": "ok",
+    "effective_from": "2024-04-26",
+    "effective_from_source": "doc_date",
+    "supersedes": [],
+    "effective_to": null,
+    "effective_to_source": "open",
+    "superseded_by": null
   },
   {
     "doc_id": "case_quanzhou_rectify_2026",
@@ -131,7 +151,13 @@
       "GB 30871-2022"
     ],
     "note": "设备全生命周期(采购-部署-使用-维护-报废)管理要求",
-    "extract_quality": "ok"
+    "extract_quality": "ok",
+    "effective_from": "2026-05-07",
+    "effective_from_source": "doc_date",
+    "supersedes": [],
+    "effective_to": null,
+    "effective_to_source": "open",
+    "superseded_by": null
   },
   {
     "doc_id": "case_gaoming_leak",
@@ -156,7 +182,13 @@
     "maintenance_type": [],
     "ref_standard": [],
     "note": "正文主体在PDF附件中，HTML为说明页",
-    "extract_quality": "ok"
+    "extract_quality": "ok",
+    "effective_from": "2024-10-15",
+    "effective_from_source": "doc_date",
+    "supersedes": [],
+    "effective_to": null,
+    "effective_to_source": "open",
+    "superseded_by": null
   },
   {
     "doc_id": "case_sinopec_maoming_68",
@@ -188,7 +220,13 @@
     ],
     "ref_standard": [],
     "note": "违规改造+带压拆卸导致阀杆冲出，设备失效机理典型",
-    "extract_quality": "ok"
+    "extract_quality": "ok",
+    "effective_from": "2023-03-18",
+    "effective_from_source": "doc_date",
+    "supersedes": [],
+    "effective_to": null,
+    "effective_to_source": "open",
+    "superseded_by": null
   },
   {
     "doc_id": "plan_tieling_qinghe_tzb",
@@ -224,7 +262,13 @@
       "特种设备安全法"
     ],
     "note": "含起重机械紧急处置方案、有机热载体锅炉紧急处理（7种紧急停炉情形+停炉步骤）",
-    "extract_quality": "ok"
+    "extract_quality": "ok",
+    "effective_from": "2022-12-15",
+    "effective_from_source": "doc_date",
+    "supersedes": [],
+    "effective_to": null,
+    "effective_to_source": "open",
+    "superseded_by": null
   },
   {
     "doc_id": "plan_jiaocheng_tzb",
@@ -257,7 +301,13 @@
     ],
     "ref_standard": [],
     "note": "危险源因素明确到设备类型",
-    "extract_quality": "ok"
+    "extract_quality": "ok",
+    "effective_from": "2023-12-13",
+    "effective_from_source": "doc_date",
+    "supersedes": [],
+    "effective_to": null,
+    "effective_to_source": "open",
+    "superseded_by": null
   },
   {
     "doc_id": "plan_tianjin_dierying",
@@ -288,7 +338,13 @@
     ],
     "ref_standard": [],
     "note": "分设备列应急措施，含119/120/110报告流程",
-    "extract_quality": "ok"
+    "extract_quality": "ok",
+    "effective_from": "2025-01-03",
+    "effective_from_source": "doc_date",
+    "supersedes": [],
+    "effective_to": null,
+    "effective_to_source": "open",
+    "superseded_by": null
   },
   {
     "doc_id": "plan_yiyuan_tzb",
@@ -320,7 +376,13 @@
     ],
     "ref_standard": [],
     "note": "规定各设备应急预案应包含的5项内容",
-    "extract_quality": "ok"
+    "extract_quality": "ok",
+    "effective_from": "2023-12-13",
+    "effective_from_source": "doc_date",
+    "supersedes": [],
+    "effective_to": null,
+    "effective_to_source": "open",
+    "superseded_by": null
   },
   {
     "doc_id": "plan_haiyang_tzb",
@@ -360,7 +422,13 @@
     ],
     "ref_standard": [],
     "note": "正文在页面正文容器中仅取到概要；同类内容以 plan_tieling_qinghe_tzb 为主样本",
-    "extract_quality": "partial"
+    "extract_quality": "partial",
+    "effective_from": "2015-07-09",
+    "effective_from_source": "doc_date",
+    "supersedes": [],
+    "effective_to": null,
+    "effective_to_source": "open",
+    "superseded_by": null
   },
   {
     "doc_id": "guide_wuhan_jiayouzhan",
@@ -398,7 +466,13 @@
       "GB 50156"
     ],
     "note": "含静电接地顺序、油罐跑冒油处置步骤等强操作规程内容",
-    "extract_quality": "ok"
+    "extract_quality": "ok",
+    "effective_from": "2020-05-14",
+    "effective_from_source": "doc_date",
+    "supersedes": [],
+    "effective_to": null,
+    "effective_to_source": "open",
+    "superseded_by": null
   },
   {
     "doc_id": "guide_jiaxian_guanli_zhidu",
@@ -426,7 +500,13 @@
     ],
     "ref_standard": [],
     "note": "制度类，含作业审批与监护职责",
-    "extract_quality": "ok"
+    "extract_quality": "ok",
+    "effective_from": null,
+    "effective_from_source": "unknown",
+    "supersedes": [],
+    "effective_to": null,
+    "effective_to_source": "open",
+    "superseded_by": null
   },
   {
     "doc_id": "guide_shijiu_shoujiu",
@@ -454,7 +534,13 @@
     ],
     "ref_standard": [],
     "note": "九项救援要求：个体防护、安全隔离、持续通风、非进入式/进入式救援、轮换救援等",
-    "extract_quality": "ok"
+    "extract_quality": "ok",
+    "effective_from": "2021-09-01",
+    "effective_from_source": "doc_date",
+    "supersedes": [],
+    "effective_to": null,
+    "effective_to_source": "open",
+    "superseded_by": null
   },
   {
     "doc_id": "guide_nanchang_fengxian",
@@ -482,7 +568,13 @@
     ],
     "ref_standard": [],
     "note": "含'先通风再检测后进入'、机械通风每小时不少于3次、作业前30分钟二次采样",
-    "extract_quality": "partial"
+    "extract_quality": "partial",
+    "effective_from": "2021-06-01",
+    "effective_from_source": "doc_date",
+    "supersedes": [],
+    "effective_to": null,
+    "effective_to_source": "open",
+    "superseded_by": null
   },
   {
     "doc_id": "guide_kaiping_xianshi",
@@ -509,7 +601,13 @@
     ],
     "ref_standard": [],
     "note": "配套《受限空间安全作业票填写模板》PDF",
-    "extract_quality": "partial"
+    "extract_quality": "partial",
+    "effective_from": "2023-11-14",
+    "effective_from_source": "doc_date",
+    "supersedes": [],
+    "effective_to": null,
+    "effective_to_source": "open",
+    "superseded_by": null
   },
   {
     "doc_id": "guide_anhui_xianshi",
@@ -537,7 +635,13 @@
     ],
     "ref_standard": [],
     "note": "正文为图片版，网页仅取到摘要；需改用PDF/OCR路线补全",
-    "extract_quality": "partial"
+    "extract_quality": "partial",
+    "effective_from": "2025-11-30",
+    "effective_from_source": "doc_date",
+    "supersedes": [],
+    "effective_to": null,
+    "effective_to_source": "open",
+    "superseded_by": null
   },
   {
     "doc_id": "guide_huaian_xianshi",
@@ -565,7 +669,13 @@
     ],
     "ref_standard": [],
     "note": "原URL已失效返回专题首页；同源官方PDF已由 mem_xianshi_shouce 覆盖",
-    "extract_quality": "failed"
+    "extract_quality": "failed",
+    "effective_from": "2021-06-01",
+    "effective_from_source": "doc_date",
+    "supersedes": [],
+    "effective_to": null,
+    "effective_to_source": "open",
+    "superseded_by": null
   },
   {
     "doc_id": "mem_xianshi_shouce",
@@ -597,7 +707,13 @@
       "GBZ 2.1—2019"
     ],
     "note": "★含附录1常见有毒气体浓度判定限值(20种气体mg/m³与ppm双列)、氧含量判定区间19.5%~23.5%、可燃气体低于爆炸下限10%、表2-1氧含量对人体影响——数值保真评测的核心素材",
-    "extract_quality": "ok"
+    "extract_quality": "ok",
+    "effective_from": "2020-11-02",
+    "effective_from_source": "doc_date",
+    "supersedes": [],
+    "effective_to": null,
+    "effective_to_source": "open",
+    "superseded_by": null
   },
   {
     "doc_id": "guide_shijiazhuang_xianshi",
@@ -625,7 +741,13 @@
     ],
     "ref_standard": [],
     "note": "先检测后作业、检测顺序(氧→可燃→有毒)、每2小时监测、中断超60分钟重测",
-    "extract_quality": "ok"
+    "extract_quality": "ok",
+    "effective_from": "2025-10-26",
+    "effective_from_source": "doc_date",
+    "supersedes": [],
+    "effective_to": null,
+    "effective_to_source": "open",
+    "superseded_by": null
   },
   {
     "doc_id": "guide_kepuchina_fanghu",
@@ -654,7 +776,13 @@
     ],
     "ref_standard": [],
     "note": "先通风再检测后进入；机械通风每小时不少于3次",
-    "extract_quality": "ok"
+    "extract_quality": "ok",
+    "effective_from": "2023-05-01",
+    "effective_from_source": "doc_date",
+    "supersedes": [],
+    "effective_to": null,
+    "effective_to_source": "open",
+    "superseded_by": null
   },
   {
     "doc_id": "guide_liubei_shouce",
@@ -685,7 +813,13 @@
       "GBZ 2.1—2019"
     ],
     "note": "官方PDF版见 mem_xianshi_shouce；此HTML为转载，可用于多来源一致性校验",
-    "extract_quality": "ok"
+    "extract_quality": "ok",
+    "effective_from": "2020-11-02",
+    "effective_from_source": "doc_date",
+    "supersedes": [],
+    "effective_to": null,
+    "effective_to_source": "open",
+    "superseded_by": null
   },
   {
     "doc_id": "mem_2019_78_zhimengdaoze",
@@ -723,7 +857,13 @@
       "RAM"
     ],
     "note": "55页含35张表；含巡检频次(两重点一重大≤1h)、14大排查方面，是'表格密集型'主力样本",
-    "extract_quality": "ok"
+    "extract_quality": "ok",
+    "effective_from": "2019-08-16",
+    "effective_from_source": "doc_date",
+    "supersedes": [],
+    "effective_to": null,
+    "effective_to_source": "open",
+    "superseded_by": null
   },
   {
     "doc_id": "AQ_T3034_2022_huagong_anquan",
@@ -757,7 +897,13 @@
       "GB/T 1.1—2020"
     ],
     "note": "59页含41张表；4.10设备完好性管理明确要求建立操作规程和检维修规程——设备维修轨的规范依据",
-    "extract_quality": "ok"
+    "extract_quality": "ok",
+    "effective_from": "2023-04-01",
+    "effective_from_source": "declared",
+    "supersedes": [],
+    "effective_to": null,
+    "effective_to_source": "open",
+    "superseded_by": null
   },
   {
     "doc_id": "gaoqing_yuxian_kongjian",
@@ -786,7 +932,13 @@
     ],
     "ref_standard": [],
     "note": "'九到位'检查要点，文本型PDF",
-    "extract_quality": "ok"
+    "extract_quality": "ok",
+    "effective_from": "2023-03-13",
+    "effective_from_source": "doc_date",
+    "supersedes": [],
+    "effective_to": null,
+    "effective_to_source": "open",
+    "superseded_by": null
   },
   {
     "doc_id": "kaiping_zuoyepiao",
@@ -813,7 +965,13 @@
     ],
     "ref_standard": [],
     "note": "表单型PDF，2页2表；可作QA/结构化表单解析样本",
-    "extract_quality": "ok"
+    "extract_quality": "ok",
+    "effective_from": "2023-11-14",
+    "effective_from_source": "doc_date",
+    "supersedes": [],
+    "effective_to": null,
+    "effective_to_source": "open",
+    "superseded_by": null
   },
   {
     "doc_id": "yuncheng_paichabiao",
@@ -843,6 +1001,12 @@
       "应急〔2019〕78号"
     ],
     "note": "★纯扫描件(无文本层)，用作图片型PDF→OCR链路的真实测试样本",
-    "extract_quality": "ocr_required"
+    "extract_quality": "ocr_required",
+    "effective_from": "2021-09-09",
+    "effective_from_source": "doc_date",
+    "supersedes": [],
+    "effective_to": null,
+    "effective_to_source": "open",
+    "superseded_by": null
   }
 ]

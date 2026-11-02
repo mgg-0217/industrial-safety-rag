@@ -1,9 +1,12 @@
 """语料清单生成器：把 data/raw + data/md 的真实文档汇总成 manifest.json + 可读清单。
 
-元数据字段刻意对齐 PRD 里要求的 schema（见 prompts/工业设备维修与安全规程问答-RAG-PRD提示词.md 第二节）：
+元数据字段刻意对齐 PRD 里要求的 schema（见 docs/PRD.md 第 2 节）：
   文档级  doc_id / title / doc_type / discipline / version / effective_date / status / classification / source_url
   条款级  hazard_tags / equipment_tags / maintenance_type / ref_standard
 标注值全部来自文档本身（标题、发文号、落款），不臆造。
+
+注：枚举取值以本文件实际产出为准（extract_quality 的扫描件取值为 `ocr_required`），
+docs/PRD.md 附录 B 记录了与早期 PRD 生成提示词之间的 4 处实测差异。
 """
 import json
 import pathlib
@@ -331,6 +334,21 @@ def main():
         entries.append(entry)
 
     out_dir = ROOT / "data"
+
+    # 🔴 版本关系字段由 src/versioning.py 补齐——**必须在这里接上**，
+    #    否则重跑本脚本会把 effective_from / effective_to / superseded_by 等
+    #    6 个字段冲掉（它们不是人工标注的，是算出来的）。
+    #    顺序：先按人工标注生成，再由版本模块补算。
+    try:
+        from src.versioning import apply_version_fields
+        entries, conflicts = apply_version_fields(entries, out_dir / "md")
+        for c in conflicts:
+            print(f"  [版本冲突] {c['doc_id']}: 人工标注 {c['recorded']} "
+                  f"→ 正文明示 {c['declared']}（{c['resolution']}）")
+    except ImportError:
+        print("  ⚠️ 未能导入 src.versioning，版本字段未补齐"
+              "（重跑 src 工具或直接跑 tools/build_version_fields.py）")
+
     (out_dir / "manifest.json").write_text(
         json.dumps(entries, ensure_ascii=False, indent=2), encoding="utf-8")
 
