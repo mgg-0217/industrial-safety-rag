@@ -1,0 +1,353 @@
+{
+ "note": "拒答题用的假位号池。每个位号都已在**原文与归一化文本**上做过精确匹配验证（口径与 normalize.find_tag_occurrences 一致：压缩分隔符后比对），确保语料里不存在。用于 PRD 7.1 的拒答题构造。",
+ "corpus": {
+  "n_docs": 26,
+  "total_chars": 348302,
+  "match_rule": "squash(去掉 - 与 _) 后精确子串匹配"
+ },
+ "real_equipment_tags": [
+  "19-V-4215",
+  "1910-PV-42151",
+  "MP-41009-200-S1B-H1",
+  "T-4200",
+  "T-4300",
+  "加油机",
+  "卸油管",
+  "厂内机动车辆",
+  "压力容器",
+  "压力管道",
+  "有机热载体锅炉",
+  "油气回收装置",
+  "油罐车",
+  "游乐设施",
+  "电梯",
+  "起重机",
+  "起重机械",
+  "轨道球阀",
+  "锅炉"
+ ],
+ "real_tag_occurrences": {
+  "油罐车": {
+   "raw": 6,
+   "norm": 6
+  },
+  "卸油管": {
+   "raw": 2,
+   "norm": 2
+  },
+  "T-4300": {
+   "raw": 6,
+   "norm": 6
+  },
+  "厂内机动车辆": {
+   "raw": 1,
+   "norm": 1
+  },
+  "压力管道": {
+   "raw": 28,
+   "norm": 28
+  },
+  "有机热载体锅炉": {
+   "raw": 3,
+   "norm": 3
+  },
+  "轨道球阀": {
+   "raw": 5,
+   "norm": 5
+  },
+  "锅炉": {
+   "raw": 106,
+   "norm": 106
+  },
+  "19-V-4215": {
+   "raw": 34,
+   "norm": 34
+  },
+  "加油机": {
+   "raw": 2,
+   "norm": 2
+  },
+  "起重机械": {
+   "raw": 16,
+   "norm": 16
+  },
+  "油气回收装置": {
+   "raw": 0,
+   "norm": 0
+  },
+  "游乐设施": {
+   "raw": 29,
+   "norm": 29
+  },
+  "T-4200": {
+   "raw": 12,
+   "norm": 12
+  },
+  "起重机": {
+   "raw": 20,
+   "norm": 20
+  },
+  "1910-PV-42151": {
+   "raw": 14,
+   "norm": 14
+  },
+  "电梯": {
+   "raw": 47,
+   "norm": 47
+  },
+  "MP-41009-200-S1B-H1": {
+   "raw": 1,
+   "norm": 1
+  },
+  "压力容器": {
+   "raw": 52,
+   "norm": 52
+  }
+ },
+ "real_variant_count": 24,
+ "safe_fake_ids": [
+  {
+   "equipment_id": "T-9001",
+   "match_key": "T9001",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9002",
+   "match_key": "T9002",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9003",
+   "match_key": "T9003",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9004",
+   "match_key": "T9004",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9005",
+   "match_key": "T9005",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9006",
+   "match_key": "T9006",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9007",
+   "match_key": "T9007",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9008",
+   "match_key": "T9008",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9009",
+   "match_key": "T9009",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9010",
+   "match_key": "T9010",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9011",
+   "match_key": "T9011",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9012",
+   "match_key": "T9012",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9013",
+   "match_key": "T9013",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9014",
+   "match_key": "T9014",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9015",
+   "match_key": "T9015",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9016",
+   "match_key": "T9016",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9017",
+   "match_key": "T9017",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9018",
+   "match_key": "T9018",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9019",
+   "match_key": "T9019",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9020",
+   "match_key": "T9020",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9021",
+   "match_key": "T9021",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9022",
+   "match_key": "T9022",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9023",
+   "match_key": "T9023",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9024",
+   "match_key": "T9024",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9025",
+   "match_key": "T9025",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9026",
+   "match_key": "T9026",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9027",
+   "match_key": "T9027",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9028",
+   "match_key": "T9028",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9029",
+   "match_key": "T9029",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9030",
+   "match_key": "T9030",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9031",
+   "match_key": "T9031",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9032",
+   "match_key": "T9032",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9033",
+   "match_key": "T9033",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9034",
+   "match_key": "T9034",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9035",
+   "match_key": "T9035",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9036",
+   "match_key": "T9036",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9037",
+   "match_key": "T9037",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9038",
+   "match_key": "T9038",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9039",
+   "match_key": "T9039",
+   "raw_hit": false,
+   "norm_hit": false
+  },
+  {
+   "equipment_id": "T-9040",
+   "match_key": "T9040",
+   "raw_hit": false,
+   "norm_hit": false
+  }
+ ],
+ "n_safe": 40,
+ "n_rejected": 0,
+ "rejected_sample": []
+}
