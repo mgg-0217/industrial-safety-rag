@@ -28,10 +28,14 @@ import json
 import pathlib
 import re
 import shutil
+import sys
 from difflib import SequenceMatcher
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 TEST_SET = ROOT / "data" / "eval" / "test_set.jsonl"
+
+sys.path.insert(0, str(ROOT / "src"))
+import eval_align as A  # noqa: E402  按题型分源的对齐逻辑（与质检脚本共用）
 
 # LLM 给数值题写的标签前缀
 LABEL_PREFIX = re.compile(
@@ -121,19 +125,17 @@ def main():
         print(f"备份 -> {bak.name}")
 
     stats = {"numeric_replaced": 0, "fact_aligned": 0,
-             "fact_orphaned": 0, "orphan_kps": 0, "emptied": 0}
+             "fact_orphaned": 0, "orphan_kps": 0, "emptied": 0,
+             "refusal_marked": 0, "evidence_attached": 0, "kp_deduped": 0}
     for r in rows:
-        ans = r.get("gold_answer") or ""
         kps = r.get("key_points") or []
         qtype = r.get("question_type")
+        source, mode = A.alignment_source(r)
 
-        if qtype == "数值题":
-            anchors = r.get("must_include_numbers") or []
-            if isinstance(anchors, str):
-                anchors = [a for a in anchors.split(";") if a.strip()]
+        if mode == "must_include_numbers":
             norm = []
-            for a in anchors:
-                a = normalize_anchor(a)
+            for a in A.anchor_list(r):
+                a = A.normalize_anchor(a)
                 if a and a not in norm:
                     norm.append(a)
             if norm:
@@ -143,13 +145,23 @@ def main():
                 r["key_point_source"] = "must_include_numbers"
             continue
 
-        # 事实题 / 跨文档 / 版本陷阱：把 kp 对齐回原文片段
+        if mode == A.REFUSAL_CRITERIA:
+            # 拒答题的 key_point 是判分标准（「是否声明查不到」），
+            # 不是对原文的断言 —— 它压根不指向任何原文，不能做字面可达判定。
+            r["key_point_source"] = A.REFUSAL_CRITERIA
+            stats["refusal_marked"] += 1
+            continue
+
+        # 事实题（gold_answer）/ 版本陷阱题、跨文档推理题（文档正文）：
+        # 把 kp 对齐回原文片段
         aligned, orphans = [], []
+        evidence = []
         for kp in kps:
-            span, raw_span = align_key_point(kp, ans)
+            span, raw_span = A.align_key_point(kp, source)
             if span:
                 aligned.append(span)
-                if flat(span) != flat(kp):
+                evidence.append(span)
+                if A.flat(span) != A.flat(kp):
                     stats["fact_aligned"] += 1
             else:
                 orphans.append({"key_point": kp, "best_common": raw_span})
@@ -158,8 +170,25 @@ def main():
             stats["orphan_kps"] += len(orphans)
             r["orphan_key_points"] = orphans
         if aligned:
+            # 🔴 去重：对齐后可能出现"一个是另一个的残片"，
+            #    那样 key_point_coverage 的分母被灌水（命中一个等于命中两个）。
+            before = len(aligned)
+            aligned = A.dedup_key_points(aligned)
+            stats["kp_deduped"] += before - len(aligned)
             r["key_points"] = aligned[:4]
             r["key_point_source"] = "aligned_to_source"
+            # 合成题的 gold_answer 之前是空的或 LLM 概括，
+            # 对齐到原文后把**原文依据**补回去 —— 人工核对要看得见依据。
+            if mode == "doc_md":
+                ev = "\n".join(dict.fromkeys(evidence))
+                if qtype == "版本陷阱题":
+                    r["gold_answer"] = ev
+                    r["gold_answer_source"] = "aligned_from_doc"
+                else:  # 跨文档推理题：保留 LLM 概括，再附原文依据
+                    base = (r.get("gold_answer") or "").strip()
+                    r["gold_answer"] = (base + "\n\n原文依据：\n" + ev).strip()
+                    r["gold_answer_source"] = "llm_summary+aligned_evidence"
+                stats["evidence_attached"] += 1
         else:
             stats["emptied"] += 1
             r["key_points"] = []
@@ -170,8 +199,11 @@ def main():
             f.write(json.dumps(r, ensure_ascii=False) + "\n")
 
     print(f"\n数值题改用保真锚点：{stats['numeric_replaced']} 条")
-    print(f"事实题 kp 对齐到原文：{stats['fact_aligned']} 个")
-    print(f"剔���的对齐失败 kp：{stats['orphan_kps']} 个"
+    print(f"kp 对齐到原文：{stats['fact_aligned']} 个")
+    print(f"去掉的重复 kp：{stats['kp_deduped']} 个")
+    print(f"拒答题标为判分标准（不做字面可达判定）：{stats['refusal_marked']} 条")
+    print(f"补回原文依据（版本陷阱题 / 跨文档推理题）：{stats['evidence_attached']} 条")
+    print(f"剔除的对齐失败 kp：{stats['orphan_kps']} 个"
           f"（涉及 {stats['fact_orphaned']} 条题）")
     print(f"key_points 被清空的题：{stats['emptied']} 条（已标 needs_manual_review）")
     print(f"-> {path}")

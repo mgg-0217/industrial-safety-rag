@@ -10,3 +10,13 @@ venv/
 # 且含第三方厂商网站 HTML 片段。失败原因记录在 docs/语料来源与选型说明.md
 data/raw/_rejected/
 data/md/_stale/
+
+# M2 中间产物：key_point 规范化前的备份、冒烟测试残留
+*.bak
+data/eval/_smoke*
+data/eval/*.errors.jsonl
+
+# M2 中间产物：调试残留、规范化前的快照、改写失败明细
+data/eval/_debug_*.txt
+data/eval/*.bak127
+data/eval/rewrite_errors.jsonl
