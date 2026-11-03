@@ -121,13 +121,27 @@ def load_csv(path):
         return list(csv.DictReader(f)), f
 
 
+def _row_key(r):
+    """行的自然键：文档 + 条款 + 题干。
+
+    🔴 不能用 qid 当 key —— qid 有 7 组重复（`qid = doc_id__clause_no` 拼接撞号）。
+    """
+    return (r.get("doc_id", ""), r.get("clause_no", ""), r.get("question", ""))
+
+
 def read_qa_rows():
     """读 qa_pairs.csv；**已改写的部分从产物取回**。
 
     🔴 踩过的坑：最初这里只读原始 csv，于是 `rewrite` 阶段每次都从零开始，
     `backfill` 阶段写进去的 198 条被整个覆盖掉（实测：跑完 rewrite 后
     842 条的 question_rewritten 全空）。**产物必须是累积的，不能每次从零覆盖。**
-    对齐方式用**行序**而不是 qid —— qid 有 7 组重复，按 qid 建索引会撞。
+
+    🔴 **对齐方式不能只靠行序**（2026-11-02 修）：
+    行序对齐只在候选池**没变**时成立。重跑抽取层后候选池从 842 变 1124，
+    文档顺序都变了 —— 按行序恢复会把 A 行的改写题干安到 B 行头上，
+    **而且完全静默**（读出来都是"有值"，只是值错了）。
+    现在的做法：**行序对齐要过校验**（qid 与题干都对得上才认），
+    对不上的退回 **自然键对齐**（doc_id + clause_no + question）。
     """
     with QA_PAIRS.open(encoding="utf-8-sig", newline="") as f:
         reader = csv.DictReader(f)
@@ -136,10 +150,38 @@ def read_qa_rows():
     if OUT_CSV.exists():
         with OUT_CSV.open(encoding="utf-8-sig", newline="") as f:
             prev = list(csv.DictReader(f))
+        used_prev = set()
+        n_pos = 0
+        # ① 行序对齐 —— 但**必须校验**：行序只在候选池没变时才对得上
         for i, r in enumerate(rows):
-            if i < len(prev) and prev[i].get("question_rewritten"):
-                r["question_rewritten"] = prev[i]["question_rewritten"]
-                r["rewrite_source"] = prev[i].get("rewrite_source") or "llm"
+            if i >= len(prev):
+                break
+            p = prev[i]
+            if (p.get("qid") == r.get("qid")
+                    and p.get("question") == r.get("question")
+                    and p.get("question_rewritten")):
+                r["question_rewritten"] = p["question_rewritten"]
+                r["rewrite_source"] = p.get("rewrite_source") or "llm"
+                used_prev.add(i)
+                n_pos += 1
+        # ② 自然键对齐 —— 覆盖行序对不上的那些
+        by_key = {}
+        for j, p in enumerate(prev):
+            if j in used_prev:
+                continue
+            k = _row_key(p)
+            if k not in by_key:
+                by_key[k] = p
+        n_key = 0
+        for i, r in enumerate(rows):
+            if i in used_prev:
+                continue
+            p = by_key.get(_row_key(r))
+            if p and p.get("question_rewritten"):
+                r["question_rewritten"] = p["question_rewritten"]
+                r["rewrite_source"] = p.get("rewrite_source") or "llm"
+                n_key += 1
+        print(f"  [改写题干恢复] 行序对齐 {n_pos} 条 + 自然键对齐 {n_key} 条")
     return rows, fields
 
 
@@ -156,7 +198,14 @@ def write_out(rows, fields):
 
 
 def stage_backfill():
-    """把 test_set.jsonl 里已改写好的题干按行序回填。"""
+    """把 test_set.jsonl 里已改写好的题干回填到 qa_pairs_rewritten.csv。
+
+    🔴 对齐方式用 **qid ↔ src_qid**，不是行序：
+    行序在候选池重建后全变了（实测 842 → 1124 行，文档顺序都变），
+    按行序回填会把题干安到别的行上。
+    qid 有 7 组重复，`setdefault` 保留第一条 —— 重复的 7 条本来就是歧义，
+    不在这里猜（它们的题来自评测集的改写，不影响索引侧）。
+    """
     rows, fields = read_qa_rows()
     test_rows = [json.loads(l) for l in TEST_SET.open(encoding="utf-8") if l.strip()]
 
@@ -169,11 +218,8 @@ def stage_backfill():
             by_src.setdefault(src, q)
 
     n = 0
-    for i, r in enumerate(rows):
-        if i >= len(test_rows):
-            break
-        src = test_rows[i].get("src_qid")
-        q = by_src.get(src)
+    for r in rows:
+        q = by_src.get(r.get("qid"))
         if q:
             r["question_rewritten"] = q
             r["rewrite_source"] = "backfill"

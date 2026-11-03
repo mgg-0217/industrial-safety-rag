@@ -3,7 +3,7 @@
     "file": "AQ_T3034_2022_huagong_anquan.pdf",
     "needs_ocr": false,
     "pages": 59,
-    "chars": 57352,
+    "chars": 51249,
     "tables": 41,
     "out": "AQ_T3034_2022_huagong_anquan.md",
     "kind": "text_based"
@@ -30,7 +30,7 @@
     "file": "mem_2019_78_zhimengdaoze.pdf",
     "needs_ocr": false,
     "pages": 55,
-    "chars": 54565,
+    "chars": 56862,
     "tables": 35,
     "out": "mem_2019_78_zhimengdaoze.md",
     "kind": "text_based"
@@ -39,7 +39,7 @@
     "file": "mem_xianshi_shouce.pdf",
     "needs_ocr": false,
     "pages": 51,
-    "chars": 34838,
+    "chars": 34803,
     "tables": 41,
     "out": "mem_xianshi_shouce.md",
     "kind": "text_based"

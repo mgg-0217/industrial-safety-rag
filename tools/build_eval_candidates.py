@@ -18,6 +18,10 @@
 import csv
 import json
 import pathlib
+import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent / "src"))
+import normalize as N  # noqa: E402
 import re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -36,6 +40,10 @@ CLAUSE_RE = re.compile(
     r")\s*",
 )
 PAGE_RE = re.compile(r"<!--\s*page:(\d+)\s*-->")
+
+#: 目录行特征：**连续 4 个以上的点**（前导点 + 页码）。
+#: 目录条目不是条款 —— 见 `main()` 里的过滤说明。
+TOC_LINE_RE = re.compile(r"[.…]{4,}")
 
 # 数值 + 单位（用于数值保真锚定）
 NUM_RE = re.compile(
@@ -165,6 +173,17 @@ def main():
         raw = md_path.read_text(encoding="utf-8", errors="replace")
         body = re.sub(r"^---.*?---", "", raw, flags=re.S)
         body = strip_tables(body)
+        # 🔴 **切条款之前先归一化**（2026-11-02 加）。
+        # 起因：PDF 字体把 `4.1.2` 映射成**全角** `４．１．２`
+        # （渲染出来是正常的半角，是 ToUnicode CMap 的映射问题），
+        # 而 `CLAUSE_RE` 的 `[\\.、]` 只认**半角**点 →
+        # `AQ_T3034` 切出 **0 条**条款，整份文档进不了评测池。
+        # 归一化还顺带把位号破折号统一成半角（`19—V—4215` → `19-V-4215`），
+        # 与 manifest 里人工标注的位号形态一致 —— 否则题干里的位号
+        # 与 manifest 对不上，检索时"位号精确匹配"会失效（K-12）。
+        # 实测影响面：26 份里只有 6 条现有条款的文本会变，
+        # 且**全都是变好**（破折号/全角% → 半角），其余不变。
+        body = N.normalize(body)
         meta = manifest.get(doc_id, {})
         title = meta.get("title", doc_id)
         doc_short = title if len(title) <= 14 else title[:14]
@@ -178,6 +197,16 @@ def main():
             rngs = RANGE_RE.findall(cbody)
             topic = topic_of(clause, cbody)
             if not topic or len(topic) < 2:
+                continue
+            # 🔴 **目录条目不是条款**（2026-11-02 加）。
+            # 带前导点的目录行（"4.10 设备完好性管理 …… 11"）也是"条款号 + 正文"，
+            # 条款切分会把**第一次出现**的条款号（目录里的那个）当成条款开头，
+            # 于是这一条的正文就是那行目录 —— 题目问"第4.10条是什么内容"，
+            # 答案却是"设备完好性管理 …… 11"，**纯噪声**。
+            # 实测 1124 条候选里有 31 条是这种（AQ_T3034 11 条 / mem_xianshi 20 条）。
+            # 真正的条款在文档后部还有一份（同样的条款号、真正的正文），
+            # 过滤掉目录行之后保留的就是它。
+            if TOC_LINE_RE.search(cbody):
                 continue
             # 履历/名单类条款不适合出题：大量年份+姓名，无工程语义
             if re.search(r"(中共党员|现任|曾任|学历|职称|联系电话)", cbody) and len(numbers) <= 2:

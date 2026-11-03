@@ -1,0 +1,92 @@
+[
+ {
+  "file": "AQ_T3034_2022_huagong_anquan.pdf",
+  "page": 4,
+  "ocr_chars": 771,
+  "old_chars": 682,
+  "new_chars": 682,
+  "sim_old": 0.8162,
+  "sim_new": 0.9112,
+  "delta": 0.095
+ },
+ {
+  "file": "AQ_T3034_2022_huagong_anquan.pdf",
+  "page": 6,
+  "ocr_chars": 1340,
+  "old_chars": 1365,
+  "new_chars": 1365,
+  "sim_old": 0.8104,
+  "sim_new": 0.8895,
+  "delta": 0.0791
+ },
+ {
+  "file": "AQ_T3034_2022_huagong_anquan.pdf",
+  "page": 10,
+  "ocr_chars": 1268,
+  "old_chars": 1385,
+  "new_chars": 1385,
+  "sim_old": 0.7305,
+  "sim_new": 0.8534,
+  "delta": 0.1229
+ },
+ {
+  "file": "AQ_T3034_2022_huagong_anquan.pdf",
+  "page": 20,
+  "ocr_chars": 1061,
+  "old_chars": 1209,
+  "new_chars": 1209,
+  "sim_old": 0.7507,
+  "sim_new": 0.8573,
+  "delta": 0.1066
+ },
+ {
+  "file": "AQ_T3034_2022_huagong_anquan.pdf",
+  "page": 33,
+  "ocr_chars": 293,
+  "old_chars": 221,
+  "new_chars": 221,
+  "sim_old": 0.6148,
+  "sim_new": 0.7432,
+  "delta": 0.1284
+ },
+ {
+  "file": "mem_xianshi_shouce.pdf",
+  "page": 20,
+  "ocr_chars": 405,
+  "old_chars": 325,
+  "new_chars": 325,
+  "sim_old": 0.8822,
+  "sim_new": 0.8822,
+  "delta": 0.0
+ },
+ {
+  "file": "mem_xianshi_shouce.pdf",
+  "page": 38,
+  "ocr_chars": 255,
+  "old_chars": 252,
+  "new_chars": 252,
+  "sim_old": 0.9389,
+  "sim_new": 0.9546,
+  "delta": 0.0158
+ },
+ {
+  "file": "mem_2019_78_zhimengdaoze.pdf",
+  "page": 5,
+  "ocr_chars": 451,
+  "old_chars": 432,
+  "new_chars": 432,
+  "sim_old": 0.9762,
+  "sim_new": 0.9762,
+  "delta": 0.0
+ },
+ {
+  "file": "mem_2019_78_zhimengdaoze.pdf",
+  "page": 30,
+  "ocr_chars": 1641,
+  "old_chars": 1608,
+  "new_chars": 1608,
+  "sim_old": 0.9498,
+  "sim_new": 0.9498,
+  "delta": 0.0
+ }
+]

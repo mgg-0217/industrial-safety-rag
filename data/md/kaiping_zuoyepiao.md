@@ -3,7 +3,7 @@ source_file: kaiping_zuoyepiao.pdf
 source_path: file:///D:/ccworkplace/%E5%B7%A5%E4%B8%9A%E7%BB%B4%E4%BF%AE%E5%AE%89%E5%85%A8%E8%A7%84%E7%A8%8BRAG/data/raw/kaiping_zuoyepiao.pdf
 pdf_pages: 2
 pdf_tables: 2
-extract_method: pdfplumber_text_layer
+extract_method: pdfplumber_text_layer+baseline_rebuild
 language: zh-CN
 ---
 
@@ -20,7 +20,8 @@ language: zh-CN
 关联的其他特殊作业及
 临时用电LD2022040102、盲板抽堵作业MB2022040102
 安全作业票编号
-风险辨识结果 中毒窒息、触电、火灾爆炸 ……
+中毒窒息、触电、火灾爆炸 ……
+风险辨识结果
 有毒有害 可燃气体
 气体名称 名称 取样分析
 分析项目 氧气含量 分析部位 分析人

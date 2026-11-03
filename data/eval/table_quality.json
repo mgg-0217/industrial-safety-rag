@@ -1,0 +1,1718 @@
+{
+ "docs": {
+  "AQ_T3034_2022_huagong_anquan": {
+   "n_table_blocks": 41,
+   "n_header_like": 36,
+   "n_pseudo": 2,
+   "n_key_value": 3,
+   "pseudo_ratio": 0.0488,
+   "blocks": [
+    {
+     "page_no": 24,
+     "n_data_rows": 3,
+     "header": [
+      "序号",
+      "具体内容",
+      "实 施 要 求"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 具体内容 | 实 施 要 求"
+    },
+    {
+     "page_no": 25,
+     "n_data_rows": 6,
+     "header": [
+      "序号",
+      "具体内容",
+      "实 施 要 求"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 具体内容 | 实 施 要 求"
+    },
+    {
+     "page_no": 25,
+     "n_data_rows": 3,
+     "header": [
+      "序号",
+      "行动内容",
+      "作用和目的",
+      "行动要求"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 行动内容 | 作用和目的 | 行动要求"
+    },
+    {
+     "page_no": 26,
+     "n_data_rows": 9,
+     "header": [
+      "序号",
+      "行动内容",
+      "作用和目的",
+      "行动要求"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 行动内容 | 作用和目的 | 行动要求"
+    },
+    {
+     "page_no": 27,
+     "n_data_rows": 29,
+     "header": [
+      "类别",
+      "文件 信息 /",
+      "",
+      "文件负责人 持有人 /"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "类别 | 文件 信息 / |  | 文件负责人 持有人 /"
+    },
+    {
+     "page_no": 28,
+     "n_data_rows": 11,
+     "header": [
+      "类别",
+      "文件 信息 /",
+      "存放地点",
+      "更新时间",
+      "文件负责人 持有人 /"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "类别 | 文件 信息 / | 存放地点 | 更新时间 | 文件负责人 持有人 /"
+    },
+    {
+     "page_no": 28,
+     "n_data_rows": 19,
+     "header": [
+      "类别",
+      "文件 信息 /",
+      "存放地点",
+      "更新时间",
+      "文件负责人 持有人 /"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "类别 | 文件 信息 / | 存放地点 | 更新时间 | 文件负责人 持有人 /"
+    },
+    {
+     "page_no": 29,
+     "n_data_rows": 13,
+     "header": [
+      "类别",
+      "文件 信息 /",
+      "存放地点",
+      "更新时间",
+      "文件负责人 持有人 /"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "类别 | 文件 信息 / | 存放地点 | 更新时间 | 文件负责人 持有人 /"
+    },
+    {
+     "page_no": 29,
+     "n_data_rows": 2,
+     "header": [
+      "类别",
+      "文件 信息 /",
+      "存放地点",
+      "更新时间",
+      "文件负责人 持有人 /"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "类别 | 文件 信息 / | 存放地点 | 更新时间 | 文件负责人 持有人 /"
+    },
+    {
+     "page_no": 30,
+     "n_data_rows": 24,
+     "header": [
+      "专业部门 要求",
+      "培训内容",
+      "车间主任",
+      "工段长",
+      "班长",
+      "内操",
+      "外操"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "专业部门 要求 | 培训内容 | 车间主任 | 工段长 | 班长 | 内操 | 外操"
+    },
+    {
+     "page_no": 31,
+     "n_data_rows": 16,
+     "header": [
+      "各生命周期阶段",
+      "",
+      "实施时间",
+      "分析方法",
+      "目的",
+      "关联要素"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "各生命周期阶段 |  | 实施时间 | 分析方法 | 目的 | 关联要素"
+    },
+    {
+     "page_no": 33,
+     "n_data_rows": 4,
+     "header": [
+      "企业名称",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "企业名称 |  |  |  |  |  | "
+    },
+    {
+     "page_no": 33,
+     "n_data_rows": 4,
+     "header": [
+      "企业名称",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "企业名称 |  |  |  |  |  | "
+    },
+    {
+     "page_no": 34,
+     "n_data_rows": 13,
+     "header": [
+      "项 目",
+      "完成",
+      "姓名",
+      "日期",
+      "备注"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "项 目 | 完成 | 姓名 | 日期 | 备注"
+    },
+    {
+     "page_no": 35,
+     "n_data_rows": 25,
+     "header": [
+      "项 目",
+      "完成",
+      "姓名",
+      "日期",
+      "备注"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "项 目 | 完成 | 姓名 | 日期 | 备注"
+    },
+    {
+     "page_no": 36,
+     "n_data_rows": 30,
+     "header": [
+      "项 目",
+      "完成",
+      "姓名",
+      "日期",
+      "备注"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "项 目 | 完成 | 姓名 | 日期 | 备注"
+    },
+    {
+     "page_no": 37,
+     "n_data_rows": 30,
+     "header": [
+      "项 目",
+      "完成",
+      "姓名",
+      "日期",
+      "备注"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "项 目 | 完成 | 姓名 | 日期 | 备注"
+    },
+    {
+     "page_no": 38,
+     "n_data_rows": 16,
+     "header": [
+      "项 目",
+      "完成",
+      "姓名",
+      "日期",
+      "备注"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "项 目 | 完成 | 姓名 | 日期 | 备注"
+    },
+    {
+     "page_no": 38,
+     "n_data_rows": 0,
+     "header": [
+      "标题 装置 单元 操作规程 : ( ) 目的 １ 适用范围 ２ 生产原理及流程简述 ３ 生产原理 ３．１ 流程简述 ３．２ 原料 辅助原料和化学品规格 废弃物处理 ４ 、 、 原料和辅助原料规格 ４．１ 化学品规格 ４．２ 废弃物的处理 ４．３ 首次开车 ５ 开车准备 ５．１ 开车步骤 ５．２",
+      "正常操作 ６ 关键控制 ６．１ 常见故障处理 ６．２ 采样操作 ６．３ 通用设备操作 ６．４ 正常停车 ７ 停车准备 ７．１ 停车步骤 ７．２ 特殊操作 ８ 催化剂装卸 ８．１ 催化剂再生 ８．２ 通用设备切换 ８．３"
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": "标题 装置 单元 操作规程 : ( ) 目的 １ 适用范围 ２ 生产原理及流程简述 ３ 生产原理 ３．１ 流程简述 ３．２ 原料 辅助原料和化学品规格 废弃物处理 ４ 、 、 原料和辅助原料规格 ４．１ 化学品规格 ４．２ 废弃物的处理 ４"
+    },
+    {
+     "page_no": 39,
+     "n_data_rows": 0,
+     "header": [
+      "大修完成后开车或者紧急停车后重新开车 ８．４ 槽罐车装卸 ８．５ 异常工况及紧急处理 ９ 停电 ９．１ 故障 ９．２ UPS 故障 ９．３ DCS 停循环水 ９．４ 停蒸汽 ９．５ 停仪表风 工厂风 ９．６ / 停氮气 ９．７ 停脱盐水 ９．８ 停冷冻水 ９．９",
+      "公用工程全部停 ９．１０ 工艺事故 ９．１１ 设备事故 ９．１２ 其他紧急停车事故 ９．１３ 附件 １０ 安全联锁一览表 １０．１ 工艺联锁一览表 １０．２ 工艺控制指标及范围一览表 １０．３ 设备一览表 １０．４ 采样点一览表 １０．５ 工艺流程图 １０．６"
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": "大修完成后开车或者紧急停车后重新开车 ８．４ 槽罐车装卸 ８．５ 异常工况及紧急处理 ９ 停电 ９．１ 故障 ９．２ UPS 故障 ９．３ DCS 停循环水 ９．４ 停蒸汽 ９．５ 停仪表风 工厂风 ９．６ / 停氮气 ９．７ 停脱盐水 ９"
+    },
+    {
+     "page_no": 42,
+     "n_data_rows": 11,
+     "header": [
+      "序号",
+      "预 审 项 目"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 预 审 项 目"
+    },
+    {
+     "page_no": 42,
+     "n_data_rows": 11,
+     "header": [
+      "甲 方",
+      "",
+      "确认时间",
+      "",
+      "",
+      "甲方签字",
+      "",
+      "",
+      ""
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "甲 方 |  | 确认时间 |  |  | 甲方签字 |  |  | "
+    },
+    {
+     "page_no": 42,
+     "n_data_rows": 2,
+     "header": [
+      "序号",
+      "评分内容",
+      "分值",
+      "得分",
+      "备注"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 评分内容 | 分值 | 得分 | 备注"
+    },
+    {
+     "page_no": 43,
+     "n_data_rows": 11,
+     "header": [
+      "序号",
+      "评分内容",
+      "分值",
+      "得分",
+      "备注"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 评分内容 | 分值 | 得分 | 备注"
+    },
+    {
+     "page_no": 43,
+     "n_data_rows": 10,
+     "header": [
+      "变更类型",
+      "示例"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "变更类型 | 示例"
+    },
+    {
+     "page_no": 44,
+     "n_data_rows": 32,
+     "header": [
+      "变更类型",
+      "示例"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "变更类型 | 示例"
+    },
+    {
+     "page_no": 45,
+     "n_data_rows": 7,
+     "header": [
+      "变更类型",
+      "示例"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "变更类型 | 示例"
+    },
+    {
+     "page_no": 46,
+     "n_data_rows": 11,
+     "header": [
+      "变更名称",
+      "",
+      "变更申请表编号",
+      "",
+      ""
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": true,
+     "first_row": "变更名称 |  | 变更申请表编号 |  | "
+    },
+    {
+     "page_no": 47,
+     "n_data_rows": 30,
+     "header": [
+      "项 目",
+      "",
+      "",
+      "是 否影响 /",
+      "可能造成的危害",
+      "控制措施"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "项 目 |  |  | 是 否影响 / | 可能造成的危害 | 控制措施"
+    },
+    {
+     "page_no": 48,
+     "n_data_rows": 12,
+     "header": [
+      "项 目",
+      "",
+      "",
+      "",
+      "是 否影响 /",
+      "可能造成的危害",
+      "",
+      "控制措施"
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": true,
+     "first_row": "项 目 |  |  |  | 是 否影响 / | 可能造成的危害 |  | 控制措施"
+    },
+    {
+     "page_no": 48,
+     "n_data_rows": 17,
+     "header": [
+      "文件名称",
+      "完成确认",
+      "文件名称",
+      "",
+      "完成确认"
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": true,
+     "first_row": "文件名称 | 完成确认 | 文件名称 |  | 完成确认"
+    },
+    {
+     "page_no": 49,
+     "n_data_rows": 6,
+     "header": [
+      "变更管理台账",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "变更管理台账 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | "
+    },
+    {
+     "page_no": 49,
+     "n_data_rows": 2,
+     "header": [
+      "工艺设备类型",
+      "同类替换",
+      "变更"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "工艺设备类型 | 同类替换 | 变更"
+    },
+    {
+     "page_no": 50,
+     "n_data_rows": 4,
+     "header": [
+      "工艺设备类型",
+      "同类替换",
+      "变更"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "工艺设备类型 | 同类替换 | 变更"
+    },
+    {
+     "page_no": 51,
+     "n_data_rows": 7,
+     "header": [
+      "序号",
+      "事件类别",
+      "定义",
+      "分级参考"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 事件类别 | 定义 | 分级参考"
+    },
+    {
+     "page_no": 53,
+     "n_data_rows": 8,
+     "header": [
+      "序号",
+      "阶段",
+      "内 容"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 阶段 | 内 容"
+    },
+    {
+     "page_no": 54,
+     "n_data_rows": 8,
+     "header": [
+      "序号",
+      "阶段",
+      "内 容"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 阶段 | 内 容"
+    },
+    {
+     "page_no": 54,
+     "n_data_rows": 11,
+     "header": [
+      "要素名称",
+      "具 体 内 容"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "要素名称 | 具 体 内 容"
+    },
+    {
+     "page_no": 55,
+     "n_data_rows": 3,
+     "header": [
+      "要素名称",
+      "具 体 内 容"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "要素名称 | 具 体 内 容"
+    },
+    {
+     "page_no": 56,
+     "n_data_rows": 11,
+     "header": [
+      "",
+      "是否建立作业许可制度 ?"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": " | 是否建立作业许可制度 ?"
+    },
+    {
+     "page_no": 57,
+     "n_data_rows": 6,
+     "header": [
+      "审核追踪表",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "审核追踪表 |  |  |  |  |  |  |  |  |  |  | "
+    }
+   ]
+  },
+  "gaoqing_yuxian_kongjian": {
+   "n_table_blocks": 2,
+   "n_header_like": 2,
+   "n_pseudo": 0,
+   "n_key_value": 0,
+   "pseudo_ratio": 0.0,
+   "blocks": [
+    {
+     "page_no": 6,
+     "n_data_rows": 6,
+     "header": [
+      "序号",
+      "被检查单位（企业）",
+      "问题描述",
+      "整改措施",
+      "是否已完 成整改",
+      "责任单位"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 被检查单位（企业） | 问题描述 | 整改措施 | 是否已完 成整改 | 责任单位"
+    },
+    {
+     "page_no": 7,
+     "n_data_rows": 7,
+     "header": [
+      "单位名称",
+      "派出检查 组（个）",
+      "检查企业 数量 （家）",
+      "发现问题 数量 （项）",
+      "重大隐患 数量 （项）",
+      "已完成整 改问题 （项）",
+      "尚未完成 整改问题 （项）",
+      "暂时停业 停产 （家）",
+      "备注"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "单位名称 | 派出检查 组（个） | 检查企业 数量 （家） | 发现问题 数量 （项） | 重大隐患 数量 （项） | 已完成整 改问题 （项） | 尚未完成 整改问题 （项） | 暂时停业 停产 （家） | 备注"
+    }
+   ]
+  },
+  "guide_liubei_shouce": {
+   "n_table_blocks": 1,
+   "n_header_like": 0,
+   "n_pseudo": 1,
+   "n_key_value": 0,
+   "pseudo_ratio": 1.0,
+   "blocks": [
+    {
+     "page_no": null,
+     "n_data_rows": 0,
+     "header": [
+      "作者："
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": "作者："
+    }
+   ]
+  },
+  "kaiping_zuoyepiao": {
+   "n_table_blocks": 2,
+   "n_header_like": 0,
+   "n_pseudo": 1,
+   "n_key_value": 1,
+   "pseudo_ratio": 0.5,
+   "blocks": [
+    {
+     "page_no": 1,
+     "n_data_rows": 16,
+     "header": [
+      "作业申请单位",
+      "",
+      "",
+      "甲醇车间",
+      "",
+      "",
+      "作业申请时间",
+      "",
+      "",
+      "",
+      "2022年 4 月 1 日 8 时20 分",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": true,
+     "first_row": "作业申请单位 |  |  | 甲醇车间 |  |  | 作业申请时间 |  |  |  | 2022年 4 月 1 日 8 时20 分 |  |  |  |  | "
+    },
+    {
+     "page_no": 2,
+     "n_data_rows": 13,
+     "header": [
+      "5",
+      "受限空间内部已具备进人作业条件，易燃易爆物料容器内作业，作业人员未采用非防 爆工具，手持电动工具符合作业安全要求",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": "5 | 受限空间内部已具备进人作业条件，易燃易爆物料容器内作业，作业人员未采用非防 爆工具，手持电动工具符合作业安全要求 |  |  |  |  | "
+    }
+   ]
+  },
+  "mem_2019_78_zhimengdaoze": {
+   "n_table_blocks": 35,
+   "n_header_like": 35,
+   "n_pseudo": 0,
+   "n_key_value": 0,
+   "pseudo_ratio": 0.0,
+   "blocks": [
+    {
+     "page_no": 21,
+     "n_data_rows": 50,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 22,
+     "n_data_rows": 76,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 23,
+     "n_data_rows": 65,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 24,
+     "n_data_rows": 36,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 25,
+     "n_data_rows": 64,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 26,
+     "n_data_rows": 36,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 27,
+     "n_data_rows": 60,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 28,
+     "n_data_rows": 36,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 29,
+     "n_data_rows": 62,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 30,
+     "n_data_rows": 62,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 31,
+     "n_data_rows": 45,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 32,
+     "n_data_rows": 41,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 33,
+     "n_data_rows": 59,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 34,
+     "n_data_rows": 59,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 35,
+     "n_data_rows": 74,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 36,
+     "n_data_rows": 58,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 37,
+     "n_data_rows": 59,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 38,
+     "n_data_rows": 66,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 39,
+     "n_data_rows": 42,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 40,
+     "n_data_rows": 55,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 41,
+     "n_data_rows": 60,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 42,
+     "n_data_rows": 35,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 43,
+     "n_data_rows": 61,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 44,
+     "n_data_rows": 57,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 45,
+     "n_data_rows": 37,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 46,
+     "n_data_rows": 30,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 47,
+     "n_data_rows": 33,
+     "header": [
+      "",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": " | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 48,
+     "n_data_rows": 66,
+     "header": [
+      "",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": " | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 49,
+     "n_data_rows": 25,
+     "header": [
+      "",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": " | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 50,
+     "n_data_rows": 20,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 51,
+     "n_data_rows": 18,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 52,
+     "n_data_rows": 18,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 53,
+     "n_data_rows": 23,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 54,
+     "n_data_rows": 17,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    },
+    {
+     "page_no": 55,
+     "n_data_rows": 20,
+     "header": [
+      "序号",
+      "排查内容",
+      "排查依据"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "序号 | 排查内容 | 排查依据"
+    }
+   ]
+  },
+  "mem_xianshi_shouce": {
+   "n_table_blocks": 41,
+   "n_header_like": 13,
+   "n_pseudo": 28,
+   "n_key_value": 0,
+   "pseudo_ratio": 0.6829,
+   "blocks": [
+    {
+     "page_no": 13,
+     "n_data_rows": 5,
+     "header": [
+      "",
+      "（1）有毒气体浓度应低于《工作场所有害因素职业接触限值 第 1 部分：化学"
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": " | （1）有毒气体浓度应低于《工作场所有害因素职业接触限值 第 1 部分：化学"
+    },
+    {
+     "page_no": 14,
+     "n_data_rows": 11,
+     "header": [
+      "有限空间 种类",
+      "有限空间",
+      "作业可能存在的主要安全风险"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "有限空间 种类 | 有限空间 | 作业可能存在的主要安全风险"
+    },
+    {
+     "page_no": 17,
+     "n_data_rows": 6,
+     "header": [
+      "连续送风式 长管呼吸器",
+      "高压送风式 长管呼吸器",
+      "正压式 空气呼吸器"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "连续送风式 长管呼吸器 | 高压送风式 长管呼吸器 | 正压式 空气呼吸器"
+    },
+    {
+     "page_no": 22,
+     "n_data_rows": 0,
+     "header": [
+      "所在区域",
+      "有限空间 名称或编号",
+      "主要危险有 害因素",
+      "事故及后果",
+      "防护要求"
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": "所在区域 | 有限空间 名称或编号 | 主要危险有 害因素 | 事故及后果 | 防护要求"
+    },
+    {
+     "page_no": 24,
+     "n_data_rows": 2,
+     "header": [
+      "根据有限空间作业方案，确定作业现场负责人、监护人员、作业人员，并明确其安"
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": "根据有限空间作业方案，确定作业现场负责人、监护人员、作业人员，并明确其安"
+    },
+    {
+     "page_no": 25,
+     "n_data_rows": 3,
+     "header": [
+      "应严格执行有限空间作业审批制度。审批内容应包括但不限于是否制定作业方"
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": "应严格执行有限空间作业审批制度。审批内容应包括但不限于是否制定作业方"
+    },
+    {
+     "page_no": 25,
+     "n_data_rows": 2,
+     "header": [
+      "作业现场负责人应对实施作业的全体人员进行安全交底，告知作业内容、作业过程"
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": "作业现场负责人应对实施作业的全体人员进行安全交底，告知作业内容、作业过程"
+    },
+    {
+     "page_no": 25,
+     "n_data_rows": 2,
+     "header": [
+      "作业前应对安全防护设备、个体防护用品、应急救援装备、作业设备和用具的"
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": "作业前应对安全防护设备、个体防护用品、应急救援装备、作业设备和用具的"
+    },
+    {
+     "page_no": 26,
+     "n_data_rows": 1,
+     "header": [
+      "应在作业现场设置围挡（图 4-2），封闭作业区域，并在进出口周边显著位置设"
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": "应在作业现场设置围挡（图 4-2），封闭作业区域，并在进出口周边显著位置设"
+    },
+    {
+     "page_no": 26,
+     "n_data_rows": 1,
+     "header": [
+      "占道作业的，应在作业区域周边设置交通安全设施（图 4-3a）。夜间作业的，"
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": "占道作业的，应在作业区域周边设置交通安全设施（图 4-3a）。夜间作业的，"
+    },
+    {
+     "page_no": 26,
+     "n_data_rows": 2,
+     "header": [
+      "作业人员站在有限空间外上风侧，打开进出口进行自然通风，如图 4-4 所示。"
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": "作业人员站在有限空间外上风侧，打开进出口进行自然通风，如图 4-4 所示。"
+    },
+    {
+     "page_no": 27,
+     "n_data_rows": 2,
+     "header": [
+      "存在可能危及有限空间作业安全的设备设施、物料及能源时，应采取封闭、封堵、"
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": "存在可能危及有限空间作业安全的设备设施、物料及能源时，应采取封闭、封堵、"
+    },
+    {
+     "page_no": 27,
+     "n_data_rows": 5,
+     "header": [
+      "作业前应在有限空间外上风侧，使用泵吸式气体检测报警仪对有限空间内气体"
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": "作业前应在有限空间外上风侧，使用泵吸式气体检测报警仪对有限空间内气体"
+    },
+    {
+     "page_no": 27,
+     "n_data_rows": 5,
+     "header": [
+      "作业前应根据有限空间内可能存在的气体种类进行有针对性检测，但应至少检测"
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": "作业前应根据有限空间内可能存在的气体种类进行有针对性检测，但应至少检测"
+    },
+    {
+     "page_no": 27,
+     "n_data_rows": 1,
+     "header": [
+      "经检测，有限空间内气体浓度不合格的，必须对有限空间进行强制通风。强制"
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": "经检测，有限空间内气体浓度不合格的，必须对有限空间进行强制通风。强制"
+    },
+    {
+     "page_no": 28,
+     "n_data_rows": 2,
+     "header": [
+      "对有限空间进行强制通风一段时间后，应再次进行气体检测。检测结果合格后"
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": "对有限空间进行强制通风一段时间后，应再次进行气体检测。检测结果合格后"
+    },
+    {
+     "page_no": 28,
+     "n_data_rows": 2,
+     "header": [
+      "气体检测结果合格后，作业人员在进入有限空间前还应根据作业环境选择并佩"
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": "气体检测结果合格后，作业人员在进入有限空间前还应根据作业环境选择并佩"
+    },
+    {
+     "page_no": 29,
+     "n_data_rows": 1,
+     "header": [
+      "在确认作业环境、作业程序、安全防护设备和个体防护用品等符合要求后，作业现"
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": "在确认作业环境、作业程序、安全防护设备和个体防护用品等符合要求后，作业现"
+    },
+    {
+     "page_no": 29,
+     "n_data_rows": 7,
+     "header": [
+      "（1）作业人员使用踏步、安全梯进入有限空间的，作业前应检查其牢固性和安"
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": "（1）作业人员使用踏步、安全梯进入有限空间的，作业前应检查其牢固性和安"
+    },
+    {
+     "page_no": 29,
+     "n_data_rows": 3,
+     "header": [
+      "作业过程中，应采取适当的方式对有限空间作业面进行实时监测。监测方式有"
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": "作业过程中，应采取适当的方式对有限空间作业面进行实时监测。监测方式有"
+    },
+    {
+     "page_no": 29,
+     "n_data_rows": 1,
+     "header": [
+      "除实时监测外，作业过程中还应持续进行通风。当有限空间内进行涂装作业、"
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": "除实时监测外，作业过程中还应持续进行通风。当有限空间内进行涂装作业、"
+    },
+    {
+     "page_no": 30,
+     "n_data_rows": 3,
+     "header": [
+      "（1）跟踪作业人员的作业过程，与其保持信息沟通，发现有限空间气体环境发"
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": "（1）跟踪作业人员的作业过程，与其保持信息沟通，发现有限空间气体环境发"
+    },
+    {
+     "page_no": 30,
+     "n_data_rows": 5,
+     "header": [
+      "作业期间发生下列情况之一时，作业人员应立即中断作业，撤离有限空间："
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": "作业期间发生下列情况之一时，作业人员应立即中断作业，撤离有限空间："
+    },
+    {
+     "page_no": 30,
+     "n_data_rows": 3,
+     "header": [
+      "有限空间作业完成后，作业人员应将全部设备和工具带离有限空间，清点人员"
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": "有限空间作业完成后，作业人员应将全部设备和工具带离有限空间，清点人员"
+    },
+    {
+     "page_no": 30,
+     "n_data_rows": 6,
+     "header": [
+      "确认内容",
+      "确认结果"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "确认内容 | 确认结果"
+    },
+    {
+     "page_no": 31,
+     "n_data_rows": 12,
+     "header": [
+      "确认内容",
+      "确认结果"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "确认内容 | 确认结果"
+    },
+    {
+     "page_no": 31,
+     "n_data_rows": 4,
+     "header": [
+      "项目",
+      "隐患内容"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "项目 | 隐患内容"
+    },
+    {
+     "page_no": 32,
+     "n_data_rows": 6,
+     "header": [
+      "项目",
+      "隐患内容"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "项目 | 隐患内容"
+    },
+    {
+     "page_no": 33,
+     "n_data_rows": 2,
+     "header": [
+      "通过对近年来有限空间作业事故进行分析发现：盲目施救问题非常突出，近 80%"
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": "通过对近年来有限空间作业事故进行分析发现：盲目施救问题非常突出，近 80%"
+    },
+    {
+     "page_no": 33,
+     "n_data_rows": 19,
+     "header": [
+      "当作业过程中出现异常情况时，作业人员在还具有自主意识的情况下，应采取"
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": "当作业过程中出现异常情况时，作业人员在还具有自主意识的情况下，应采取"
+    },
+    {
+     "page_no": 35,
+     "n_data_rows": 7,
+     "header": [
+      "一旦发生有限空间作业事故，作业现场负责人应及时向本单位报告事故情况，"
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": "一旦发生有限空间作业事故，作业现场负责人应及时向本单位报告事故情况，"
+    },
+    {
+     "page_no": 36,
+     "n_data_rows": 19,
+     "header": [
+      "mg/m3"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "mg/m3"
+    },
+    {
+     "page_no": 37,
+     "n_data_rows": 1,
+     "header": [
+      "以下示例来源于北京市地方标准《有限空间作业安全技术规范》（DB11/T"
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": "以下示例来源于北京市地方标准《有限空间作业安全技术规范》（DB11/T"
+    },
+    {
+     "page_no": 38,
+     "n_data_rows": 0,
+     "header": [
+      "",
+      "有限空间名称"
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": " | 有限空间名称"
+    },
+    {
+     "page_no": 38,
+     "n_data_rows": 0,
+     "header": [
+      "",
+      "作业时间"
+     ],
+     "header_like": false,
+     "is_pseudo": true,
+     "is_key_value": false,
+     "first_row": " | 作业时间"
+    },
+    {
+     "page_no": 38,
+     "n_data_rows": 1,
+     "header": [
+      "",
+      "监护人员"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": " | 监护人员"
+    },
+    {
+     "page_no": 39,
+     "n_data_rows": 2,
+     "header": [
+      "检测 位置",
+      "检测 时间",
+      "检测内容及数值",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "检测 位置 | 检测 时间 | 检测内容及数值 |  |  |  | "
+    },
+    {
+     "page_no": 40,
+     "n_data_rows": 16,
+     "header": [
+      "类别",
+      "名称",
+      "文号/标准号"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "类别 | 名称 | 文号/标准号"
+    },
+    {
+     "page_no": 51,
+     "n_data_rows": 3,
+     "header": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10"
+    },
+    {
+     "page_no": 51,
+     "n_data_rows": 3,
+     "header": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10"
+    },
+    {
+     "page_no": 51,
+     "n_data_rows": 1,
+     "header": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+     ],
+     "header_like": true,
+     "is_pseudo": false,
+     "is_key_value": false,
+     "first_row": "1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10"
+    }
+   ]
+  }
+ },
+ "totals": {
+  "n_table_blocks": 122,
+  "n_header_like": 86,
+  "n_pseudo": 32,
+  "n_key_value": 4,
+  "pseudo_ratio": 0.2623
+ }
+}

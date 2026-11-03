@@ -3,6 +3,17 @@
 与 pdf_probe.py 配套：
   - 文本型 PDF  -> 直接抽取，表格转 markdown 表格
   - 扫描件(无文本层) -> 不抽取，标记 needs_ocr=true，保留原文件给 OCR 链路用
+
+🔴 **文本行的切法用基线重建，不用 `page.extract_text()`**（2026-11-02 改）。
+原因见 `src/pdf_lines.py` 的模块 docstring：一句话版 ——
+`extract_text()` 用**字体度量**算字符 bbox，PDF 里混用多套字体时
+bbox 整体错位（实测 8.5pt），于是同一视觉行被拆成 3–4 条"行"，
+条款号 `4.1.2` 被撕成 `4`、`1.2`、`．．` 三段甩到不同行。
+PDF 本身渲染是正常的（已用 300dpi 渲染核对），**这是抽取层的错**。
+
+改用 `src/pdf_lines.py`：按**文本矩阵基线**归并成行、行内按 x 排序。
+验证方式是与"渲染页 OCR 结果"比字符相似度（`tools/validate_rebuild_vs_ocr.py`），
+实测 0.8300 → 0.8908，且**没有任何一页回退**。
 """
 import json
 import pathlib
@@ -10,6 +21,9 @@ import sys
 import warnings
 
 import pdfplumber
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent / "src"))
+import pdf_lines as PL  # noqa: E402
 
 warnings.filterwarnings("ignore")
 
@@ -44,10 +58,12 @@ def convert(path: pathlib.Path, out_dir: pathlib.Path) -> dict:
     with pdfplumber.open(path) as pdf:
         report["pages"] = len(pdf.pages)
         for i, pg in enumerate(pdf.pages, 1):
+            # 🔴 基线重建，不用 pg.extract_text()
             try:
-                txt = pg.extract_text() or ""
+                lines = PL.extract_page_lines(pg)
             except Exception:
-                txt = ""
+                lines = []
+            txt = "\n".join(lines)
             try:
                 tables = pg.extract_tables() or []
             except Exception:
@@ -76,7 +92,7 @@ def convert(path: pathlib.Path, out_dir: pathlib.Path) -> dict:
         "source_path: " + str(path.resolve().as_uri()),
         f"pdf_pages: {report['pages']}",
         f"pdf_tables: {report['tables']}",
-        "extract_method: pdfplumber_text_layer",
+        "extract_method: pdfplumber_text_layer+baseline_rebuild",
         "language: zh-CN",
         "---",
         "",

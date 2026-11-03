@@ -1,0 +1,275 @@
+{
+ "docs": [
+  {
+   "doc_id": "AQ_T3034_2022_huagong_anquan",
+   "n_pages_scanned": 59,
+   "n_multicol_pages": 15,
+   "n_interleaved_pages": 0,
+   "interleaved_page_ratio": 0.0,
+   "pages": [
+    {
+     "n_words": 103,
+     "n_columns": 2,
+     "left_x": 68.6,
+     "right_x": 344.5,
+     "left_words": 81,
+     "right_words": 16,
+     "alternation": 0.135,
+     "interleaved": false,
+     "page_no": 4
+    },
+    {
+     "n_words": 246,
+     "n_columns": 2,
+     "left_x": 68.6,
+     "right_x": 165.6,
+     "left_words": 120,
+     "right_words": 126,
+     "alternation": 0.416,
+     "interleaved": false,
+     "page_no": 20
+    },
+    {
+     "n_words": 238,
+     "n_columns": 3,
+     "left_x": 61.0,
+     "right_x": 157.9,
+     "left_words": 123,
+     "right_words": 52,
+     "alternation": 0.448,
+     "interleaved": false,
+     "page_no": 21
+    },
+    {
+     "n_words": 170,
+     "n_columns": 2,
+     "left_x": 69.8,
+     "right_x": 419.4,
+     "left_words": 145,
+     "right_words": 25,
+     "alternation": 0.201,
+     "interleaved": false,
+     "page_no": 26
+    },
+    {
+     "n_words": 122,
+     "n_columns": 2,
+     "left_x": 62.1,
+     "right_x": 433.6,
+     "left_words": 107,
+     "right_words": 12,
+     "alternation": 0.102,
+     "interleaved": false,
+     "page_no": 29
+    },
+    {
+     "n_words": 234,
+     "n_columns": 2,
+     "left_x": 69.8,
+     "right_x": 218.3,
+     "left_words": 65,
+     "right_words": 169,
+     "alternation": 0.343,
+     "interleaved": false,
+     "page_no": 30
+    },
+    {
+     "n_words": 129,
+     "n_columns": 2,
+     "left_x": 69.8,
+     "right_x": 447.5,
+     "left_words": 118,
+     "right_words": 11,
+     "alternation": 0.156,
+     "interleaved": false,
+     "page_no": 32
+    },
+    {
+     "n_words": 59,
+     "n_columns": 2,
+     "left_x": 62.1,
+     "right_x": 176.4,
+     "left_words": 23,
+     "right_words": 16,
+     "alternation": 0.368,
+     "interleaved": false,
+     "page_no": 33
+    },
+    {
+     "n_words": 87,
+     "n_columns": 2,
+     "left_x": 62.1,
+     "right_x": 241.8,
+     "left_words": 45,
+     "right_words": 36,
+     "alternation": 0.675,
+     "interleaved": false,
+     "page_no": 39
+    },
+    {
+     "n_words": 100,
+     "n_columns": 2,
+     "left_x": 62.1,
+     "right_x": 179.3,
+     "left_words": 48,
+     "right_words": 49,
+     "alternation": 0.542,
+     "interleaved": false,
+     "page_no": 41
+    },
+    {
+     "n_words": 80,
+     "n_columns": 2,
+     "left_x": 62.1,
+     "right_x": 160.9,
+     "left_words": 16,
+     "right_words": 56,
+     "alternation": 0.197,
+     "interleaved": false,
+     "page_no": 47
+    },
+    {
+     "n_words": 127,
+     "n_columns": 3,
+     "left_x": 69.8,
+     "right_x": 228.9,
+     "left_words": 41,
+     "right_words": 62,
+     "alternation": 0.578,
+     "interleaved": false,
+     "page_no": 48
+    },
+    {
+     "n_words": 298,
+     "n_columns": 2,
+     "left_x": 62.1,
+     "right_x": 375.3,
+     "left_words": 196,
+     "right_words": 102,
+     "alternation": 0.269,
+     "interleaved": false,
+     "page_no": 49
+    },
+    {
+     "n_words": 121,
+     "n_columns": 2,
+     "left_x": 62.1,
+     "right_x": 177.1,
+     "left_words": 33,
+     "right_words": 85,
+     "alternation": 0.325,
+     "interleaved": false,
+     "page_no": 51
+    },
+    {
+     "n_words": 48,
+     "n_columns": 3,
+     "left_x": 62.1,
+     "right_x": 202.8,
+     "left_words": 16,
+     "right_words": 10,
+     "alternation": 0.24,
+     "interleaved": false,
+     "page_no": 53
+    }
+   ]
+  },
+  {
+   "doc_id": "mem_2019_78_zhimengdaoze",
+   "n_pages_scanned": 55,
+   "n_multicol_pages": 1,
+   "n_interleaved_pages": 0,
+   "interleaved_page_ratio": 0.0,
+   "pages": [
+    {
+     "n_words": 98,
+     "n_columns": 2,
+     "left_x": 181.2,
+     "right_x": 341.6,
+     "left_words": 10,
+     "right_words": 33,
+     "alternation": 0.31,
+     "interleaved": false,
+     "page_no": 45
+    }
+   ]
+  },
+  {
+   "doc_id": "mem_xianshi_shouce",
+   "n_pages_scanned": 51,
+   "n_multicol_pages": 6,
+   "n_interleaved_pages": 0,
+   "interleaved_page_ratio": 0.0,
+   "pages": [
+    {
+     "n_words": 27,
+     "n_columns": 2,
+     "left_x": 70.9,
+     "right_x": 236.9,
+     "left_words": 17,
+     "right_words": 8,
+     "alternation": 0.292,
+     "interleaved": false,
+     "page_no": 6
+    },
+    {
+     "n_words": 47,
+     "n_columns": 2,
+     "left_x": 146.0,
+     "right_x": 329.8,
+     "left_words": 16,
+     "right_words": 15,
+     "alternation": 0.833,
+     "interleaved": false,
+     "page_no": 14
+    },
+    {
+     "n_words": 48,
+     "n_columns": 2,
+     "left_x": 59.0,
+     "right_x": 200.2,
+     "left_words": 16,
+     "right_words": 12,
+     "alternation": 0.556,
+     "interleaved": false,
+     "page_no": 17
+    },
+    {
+     "n_words": 91,
+     "n_columns": 2,
+     "left_x": 70.9,
+     "right_x": 214.9,
+     "left_words": 34,
+     "right_words": 37,
+     "alternation": 0.657,
+     "interleaved": false,
+     "page_no": 36
+    },
+    {
+     "n_words": 91,
+     "n_columns": 2,
+     "left_x": 130.7,
+     "right_x": 323.8,
+     "left_words": 26,
+     "right_words": 18,
+     "alternation": 0.837,
+     "interleaved": false,
+     "page_no": 40
+    },
+    {
+     "n_words": 138,
+     "n_columns": 2,
+     "left_x": 70.9,
+     "right_x": 291.0,
+     "left_words": 48,
+     "right_words": 25,
+     "alternation": 0.347,
+     "interleaved": false,
+     "page_no": 51
+    }
+   ]
+  }
+ ],
+ "total_multicol_pages": 22,
+ "total_interleaved_pages": 0
+}

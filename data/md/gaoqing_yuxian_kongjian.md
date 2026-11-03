@@ -3,7 +3,7 @@ source_file: gaoqing_yuxian_kongjian.pdf
 source_path: file:///D:/ccworkplace/%E5%B7%A5%E4%B8%9A%E7%BB%B4%E4%BF%AE%E5%AE%89%E5%85%A8%E8%A7%84%E7%A8%8BRAG/data/raw/gaoqing_yuxian_kongjian.pdf
 pdf_pages: 7
 pdf_tables: 2
-extract_method: pdfplumber_text_layer
+extract_method: pdfplumber_text_layer+baseline_rebuild
 language: zh-CN
 ---
 

@@ -11,10 +11,20 @@ docs/PRD.md 附录 B 记录了与早期 PRD 生成提示词之间的 4 处实测
 import json
 import pathlib
 import re
+import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 RAW = ROOT / "data" / "raw"
 MD = ROOT / "data" / "md"
+
+#: 把**项目根**放进 sys.path —— `src/versioning.py` 要按包导入
+#: （`from src.versioning import ...`）。
+#: 🔴 只把 `src` 放进 path 是不够的：那样 `src.versioning` 导不进来，
+#: 而 `build_manifest.py` 是从 `tools/` 目录启动的（sys.path[0] = tools/），
+#: 根目录不在里面 —— 于是版本字段补算这一步被**静默跳过**，
+#: manifest 被写成一份**没有 effective_from / effective_to / superseded_by** 的版本。
+#: README 里"重跑数据流水线"第一条就是本脚本，静默丢字段比报错危险得多。
+sys.path.insert(0, str(ROOT))
 
 # ---------------- 人工标注（依据文档标题/发文号/落款逐份核对） ----------------
 ANNOTATIONS = {
@@ -345,9 +355,14 @@ def main():
         for c in conflicts:
             print(f"  [版本冲突] {c['doc_id']}: 人工标注 {c['recorded']} "
                   f"→ 正文明示 {c['declared']}（{c['resolution']}）")
-    except ImportError:
-        print("  ⚠️ 未能导入 src.versioning，版本字段未补齐"
-              "（重跑 src 工具或直接跑 tools/build_version_fields.py）")
+    except ImportError as e:
+        # 🔴 **直接失败，不写 manifest**。版本字段是算出来的、不是人工标的，
+        # 跳过这一步就等于把 M1 的成果静默冲掉 —— 而 README 让人直接跑本脚本。
+        raise SystemExit(
+            "未能导入 src.versioning，manifest 未写入（避免冲掉 M1 的版本字段）。\n"
+            f"  原因：{e}\n"
+            "  修法：确认 src/versioning.py 存在且可导入；"
+            "或改跑 python tools/build_version_fields.py 单独补字段。") from e
 
     (out_dir / "manifest.json").write_text(
         json.dumps(entries, ensure_ascii=False, indent=2), encoding="utf-8")
