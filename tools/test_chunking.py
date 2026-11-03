@@ -338,7 +338,9 @@ def test_fullwidth_clause_matches_clause_regex():
     long1 = "企业主要负责人应领导企业贯彻落实以人为本安全第一的安全理念，建立包括以安全愿景目标在内的核心价值观"
     long2 = "企业主要负责人应领导企业制定安全生产方针和目标，并组织全员参与安全教育培训与考核工作"
     body = N.normalize(f"４．１．２　{long1}\n４．１．３　{long2}\n")
-    clauses = [c for c, _ in split_clauses(body)]
+    # split_clauses 返回 (clause, body, start, end) —— 2026-11-03 起多了两个
+    # 原文坐标（候选题要靠它落到 chunk 上），别再按 2 元组解包
+    clauses = [c for c, _b, _s, _e in split_clauses(body)]
     assert len(clauses) == 2, f"应切出 2 条，实得 {len(clauses)}: {clauses}"
     assert clauses[0].startswith("4.1.2")
 

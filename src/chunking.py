@@ -1118,16 +1118,21 @@ STRATEGIES = {
 
 # ---------------------------------------------------------------- chunk 组装
 
-# PRD 2.9：chunk 必须携带的文档级字段（13 个）
+# PRD 2.9：chunk 必须携带的文档级字段（14 个）
+# 🔴 2026-11-03 补 `effective_to_source`（M5 实测发现的真 bug，见 notes/踩坑.md K-32）：
+# `versioning.is_effective()` 靠这个字段区分
+# 「至今未失效（open）」与「真的不知道（unknown）」——
+# 少了它，`effective_to=None` 会被判成 UNKNOWN，
+# 于是 **as_of 口径下 26 份"至今有效"的文档全被排除**，as_of 的题一道都答不了。
 DOC_SNAPSHOT_FIELDS = [
     "doc_id", "title", "doc_type", "doc_no", "version", "effective_from",
-    "effective_to", "superseded_by", "status", "publisher", "source_url",
-    "source_format", "extract_quality",
+    "effective_to", "effective_to_source", "superseded_by", "status",
+    "publisher", "source_url", "source_format", "extract_quality",
 ]
 
 
 def build_doc_snapshot(doc_meta):
-    """从 manifest 的文档级记录取 13 个字段。"""
+    """从 manifest 的文档级记录取 14 个字段。"""
     snap = {}
     for f in DOC_SNAPSHOT_FIELDS:
         snap[f] = doc_meta.get(f)
