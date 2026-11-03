@@ -99,6 +99,57 @@ def normalize(text: str) -> str:
     return normalize_equipment_tags(normalize_digits(text))
 
 
+def normalize_with_map(text: str) -> tuple[str, list[int]]:
+    """归一化 + **原文偏移映射**。
+
+    返回 ``(norm_text, offsets)``：
+    ``offsets[i]`` = 归一化文本第 i 个字符在**原文**里的下标。
+
+    🔴 **为什么需要它**：候选题是在**归一化文本**上切条款的，
+    而 chunk 的 ``char_start/char_end`` 是**原始 md** 的偏移 ——
+    两者坐标系不同（归一化会改长度：全角→半角虽然等长，
+    但位号破折号会把 `19——V` 压成 `19-V`，长度变了）。
+    没有映射就没法把"题目出自哪段原文"落到 chunk 上，
+    也就没法定义 gold chunk。
+
+    **不变式**：``normalize_with_map(t)[0] == normalize(t)``
+    （有单元测试锁住 —— 映射版与原版必须逐字一致，
+    否则同一个 chunk 在两套代码里的归一化文本会不同，检索会自相矛盾）。
+    """
+    trans = _TRANSLATION
+    chars = []
+    offs = []
+    for i, ch in enumerate(text):
+        t = trans.get(ch, ch)
+        for c in t:
+            chars.append(c)
+            offs.append(i)
+    s = "".join(chars)
+    for pat in (_TAG_DASH, _MULTI_DASH):
+        s, offs = _sub_with_map(s, offs, pat, "-")
+    return s, offs
+
+
+def _sub_with_map(s: str, offs: list[int], pattern, repl: str):
+    """在带偏移映射的字符串上做正则替换，替换字符记原匹配的**首字符**位置。"""
+    out_c = []
+    out_o = []
+    last = 0
+    for m in pattern.finditer(s):
+        if m.start() < last:
+            continue
+        for i in range(last, m.start()):
+            out_c.append(s[i])
+            out_o.append(offs[i])
+        out_c.append(repl)
+        out_o.append(offs[m.start()])
+        last = m.end()
+    for i in range(last, len(s)):
+        out_c.append(s[i])
+        out_o.append(offs[i])
+    return "".join(out_c), out_o
+
+
 def normalize_ws(text: str) -> str:
     """归一化后的空白：连续空白压成一个空格，去掉行首尾空白。"""
     return re.sub(r"[ \t　]+", " ", text).strip()

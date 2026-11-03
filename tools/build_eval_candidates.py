@@ -101,8 +101,45 @@ def strip_tables(text: str) -> str:
     return "\n".join(kept)
 
 
+def body_with_map(raw: str):
+    """返回 (工作文本, 归一化坐标 -> **原始 md 坐标** 的映射表)。
+
+    工作文本 = 去 front-matter -> 去表格行 -> 归一化。
+    映射表把每一步的偏移变化都串起来。
+
+    🔴 **为什么必须有这个映射**：候选题是在**归一化文本**上切条款的，
+    而 chunk 的 ``char_start/char_end`` 是**原始 md** 的偏移。
+    两者坐标系不同（去表格行会移位，归一化会改长度），
+    没有映射就无法把"题目出自原文的哪一段"落到具体 chunk 上 ——
+    而 **gold chunk 的定义恰恰依赖这个**（PRD 7.3 的 Recall@k 才有意义）。
+    """
+    m = re.match(r"^---.*?\n---\n", raw, flags=re.S)
+    if m:
+        fm_len = m.end()
+        body = raw[fm_len:]
+    else:
+        fm_len = 0
+        body = raw
+    base = list(range(fm_len, len(raw)))
+    kept, kept_base = [], []
+    pos = 0
+    for ln in body.split("\n"):
+        seg = len(ln) + 1
+        if not TABLE_LINE_RE.match(ln):
+            kept.append(ln)
+            kept_base.extend(base[pos:pos + seg])
+        pos += seg
+    stripped = "\n".join(kept)
+    norm, noff = N.normalize_with_map(stripped)
+    raw_map = [kept_base[i] if i < len(kept_base) else None for i in noff]
+    return norm, raw_map
+
+
 def split_clauses(text: str):
-    """把正文切成 (clause_no, body, page_no) 列表。"""
+    """把正文切成 (clause_no, body, start, end) 列表。
+
+    start/end 是条款在**传入文本**里的字符区间（用于定位 gold chunk）。
+    """
     marks = []
     for m in CLAUSE_RE.finditer(text):
         marks.append((m.start(), m.group("clause").strip()))
@@ -114,7 +151,7 @@ def split_clauses(text: str):
         body = text[pos:end].strip()
         if len(body) < 40:
             continue
-        out.append((clause, body))
+        out.append((clause, body, pos, end))
     return out
 
 
@@ -171,8 +208,6 @@ def main():
     for md_path in sorted(MD.glob("*.md")):
         doc_id = md_path.stem
         raw = md_path.read_text(encoding="utf-8", errors="replace")
-        body = re.sub(r"^---.*?---", "", raw, flags=re.S)
-        body = strip_tables(body)
         # 🔴 **切条款之前先归一化**（2026-11-02 加）。
         # 起因：PDF 字体把 `4.1.2` 映射成**全角** `４．１．２`
         # （渲染出来是正常的半角，是 ToUnicode CMap 的映射问题），
@@ -183,13 +218,16 @@ def main():
         # 与 manifest 对不上，检索时"位号精确匹配"会失效（K-12）。
         # 实测影响面：26 份里只有 6 条现有条款的文本会变，
         # 且**全都是变好**（破折号/全角% → 半角），其余不变。
-        body = N.normalize(body)
+        #
+        # 2026-11-03：改用 body_with_map() —— 同时拿到**原始 md 坐标**的映射，
+        # 让每条候选题都能定位到原文的字符区间（M5 的 gold chunk 靠它定义）。
+        body, raw_map = body_with_map(raw)
         meta = manifest.get(doc_id, {})
         title = meta.get("title", doc_id)
         doc_short = title if len(title) <= 14 else title[:14]
         hazards = meta.get("hazard_tags") or []
         equips = meta.get("equipment_tags") or []
-        for clause, cbody in split_clauses(body):
+        for clause, cbody, c_start, c_end in split_clauses(body):
             # 跳过明显是页眉页脚的碎块
             if len(cbody) > 3000:
                 cbody = cbody[:3000]
@@ -237,6 +275,12 @@ def main():
                 "doc_no": meta.get("doc_no", ""),
                 "version": meta.get("version", ""),
                 "status": meta.get("status", ""),
+                # 🔴 条款在**原始 md** 里的字符区间 ——
+                # M5 的 gold chunk = 覆盖这个区间的 chunk（PRD 7.3 的 Recall@k）。
+                "clause_char_start": (raw_map[c_start]
+                                      if c_start < len(raw_map) else None),
+                "clause_char_end": (raw_map[c_end - 1] + 1
+                                    if 0 < c_end <= len(raw_map) else None),
             }
             cands.append(rec)
             rows.append({
@@ -248,6 +292,10 @@ def main():
                 "must_include_numbers": ";".join(numbers[:12]),
                 "hazard_tags": ";".join(hazards), "equipment_tags": ";".join(equips),
                 "source_url": meta.get("source_url", ""),
+                "clause_char_start": (raw_map[c_start]
+                                      if c_start < len(raw_map) else ""),
+                "clause_char_end": (raw_map[c_end - 1] + 1
+                                    if 0 < c_end <= len(raw_map) else ""),
             })
 
     with (OUT / "candidates.jsonl").open("w", encoding="utf-8") as f:
