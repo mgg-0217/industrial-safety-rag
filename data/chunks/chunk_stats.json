@@ -1,7 +1,7 @@
 {
  "fixed": {
-  "n_chunks": 757,
-  "avg_chunk_chars": 501.8,
+  "n_chunks": 752,
+  "avg_chunk_chars": 501.6,
   "p95_chunk_chars": 512,
   "max_chunk_chars": 512,
   "min_chunk_chars": 21,
@@ -138,13 +138,13 @@
     "avg_chunk_chars": 456.3
    },
    "guide_shijiu_shoujiu": {
-    "n_chunks": 13,
+    "n_chunks": 8,
     "table_chunks": 0,
     "pseudo_table_chunks": 0,
     "cross_page_chunks": 0,
-    "chars": 6524,
+    "chars": 3847,
     "pseudo_ratio": 0.0,
-    "avg_chunk_chars": 501.8
+    "avg_chunk_chars": 480.9
    },
    "guide_wuhan_jiayouzhan": {
     "n_chunks": 8,
@@ -248,8 +248,8 @@
   }
  },
  "structural": {
-  "n_chunks": 1930,
-  "avg_chunk_chars": 171.7,
+  "n_chunks": 1946,
+  "avg_chunk_chars": 169.0,
   "p95_chunk_chars": 590,
   "max_chunk_chars": 11270,
   "min_chunk_chars": 4,
@@ -386,13 +386,13 @@
     "avg_chunk_chars": 1241.0
    },
    "guide_shijiu_shoujiu": {
-    "n_chunks": 1,
+    "n_chunks": 17,
     "table_chunks": 0,
     "pseudo_table_chunks": 0,
     "cross_page_chunks": 0,
-    "chars": 5756,
+    "chars": 3383,
     "pseudo_ratio": 0.0,
-    "avg_chunk_chars": 5756.0
+    "avg_chunk_chars": 199.0
    },
    "guide_wuhan_jiayouzhan": {
     "n_chunks": 1,
@@ -496,8 +496,8 @@
   }
  },
  "clause": {
-  "n_chunks": 3068,
-  "avg_chunk_chars": 107.6,
+  "n_chunks": 3075,
+  "avg_chunk_chars": 106.6,
   "p95_chunk_chars": 355,
   "max_chunk_chars": 11270,
   "min_chunk_chars": 1,
@@ -634,13 +634,13 @@
     "avg_chunk_chars": 31.7
    },
    "guide_shijiu_shoujiu": {
-    "n_chunks": 43,
+    "n_chunks": 50,
     "table_chunks": 0,
     "pseudo_table_chunks": 0,
     "cross_page_chunks": 0,
-    "chars": 5714,
+    "chars": 3350,
     "pseudo_ratio": 0.0,
-    "avg_chunk_chars": 132.9
+    "avg_chunk_chars": 67.0
    },
    "guide_wuhan_jiayouzhan": {
     "n_chunks": 303,
@@ -803,9 +803,9 @@
   }
  },
  "semantic": {
-  "n_chunks": 791,
-  "avg_chunk_chars": 483.7,
-  "p95_chunk_chars": 1228,
+  "n_chunks": 782,
+  "avg_chunk_chars": 484.0,
+  "p95_chunk_chars": 1269,
   "max_chunk_chars": 2450,
   "min_chunk_chars": 21,
   "table_chunks": 0,
@@ -941,13 +941,13 @@
     "avg_chunk_chars": 326.0
    },
    "guide_shijiu_shoujiu": {
-    "n_chunks": 18,
+    "n_chunks": 9,
     "table_chunks": 0,
     "pseudo_table_chunks": 0,
     "cross_page_chunks": 0,
-    "chars": 7736,
+    "chars": 3632,
     "pseudo_ratio": 0.0,
-    "avg_chunk_chars": 429.8
+    "avg_chunk_chars": 403.6
    },
    "guide_wuhan_jiayouzhan": {
     "n_chunks": 8,
@@ -1051,25 +1051,25 @@
   }
  },
  "qa": {
-  "n_chunks": 797,
-  "avg_chunk_chars": 166.9,
-  "p95_chunk_chars": 451,
+  "n_chunks": 803,
+  "avg_chunk_chars": 169.9,
+  "p95_chunk_chars": 479,
   "max_chunk_chars": 665,
-  "min_chunk_chars": 71,
+  "min_chunk_chars": 73,
   "table_chunks": 0,
   "pseudo_table_chunks": 0,
   "cross_page_chunks": 0,
   "empty_chunks": 0,
-  "docs_covered": 9,
+  "docs_covered": 10,
   "per_doc": {
    "AQ_T3034_2022_huagong_anquan": {
-    "n_chunks": 279,
+    "n_chunks": 268,
     "table_chunks": 0,
     "pseudo_table_chunks": 0,
     "cross_page_chunks": 0,
-    "chars": 42177,
+    "chars": 40788,
     "pseudo_ratio": 0.0,
-    "avg_chunk_chars": 151.2
+    "avg_chunk_chars": 152.2
    },
    "case_quanzhou_1220": {
     "n_chunks": 4,
@@ -1089,6 +1089,15 @@
     "pseudo_ratio": 0.0,
     "avg_chunk_chars": 107.0
    },
+   "guide_shijiu_shoujiu": {
+    "n_chunks": 20,
+    "table_chunks": 0,
+    "pseudo_table_chunks": 0,
+    "cross_page_chunks": 0,
+    "chars": 3653,
+    "pseudo_ratio": 0.0,
+    "avg_chunk_chars": 182.7
+   },
    "mem_2019_78_zhimengdaoze": {
     "n_chunks": 118,
     "table_chunks": 0,
@@ -1099,13 +1108,13 @@
     "avg_chunk_chars": 225.8
    },
    "mem_xianshi_shouce": {
-    "n_chunks": 118,
+    "n_chunks": 115,
     "table_chunks": 0,
     "pseudo_table_chunks": 0,
     "cross_page_chunks": 0,
-    "chars": 21799,
+    "chars": 22979,
     "pseudo_ratio": 0.0,
-    "avg_chunk_chars": 184.7
+    "avg_chunk_chars": 199.8
    },
    "plan_jiaocheng_tzb": {
     "n_chunks": 16,

@@ -5,6 +5,7 @@
 """
 import re
 import sys
+import gzip
 import pathlib
 import html as htmllib
 
@@ -32,6 +33,26 @@ def detect_encoding(raw: bytes) -> str:
         except UnicodeDecodeError:
             continue
     return raw.decode("utf-8", errors="replace")
+
+
+def maybe_gunzip(raw: bytes) -> bytes:
+    """🔴 原始文件可能是**没解压的 gzip**，必须先解开再当 HTML 解析。
+
+    起因（K-31）：`guide_shijiu_shoujiu.html` 的字节头是 `1f 8b` = gzip。
+    服务器发了 `Content-Encoding: gzip`，抓取时没解压就存成了 `.html`，
+    于是 `detect_encoding` 拿到的是一堆二进制乱码 ——
+    而"能解码成功"（gb18030 对任意字节都成立）让它看起来像一次成功的抽取。
+
+    **教训**：编码探测"成功"不等于内容是文本；
+    要先看**魔数**（magic number）再谈解码。
+    """
+    if raw[:2] == b"\x1f\x8b":
+        try:
+            return gzip.decompress(raw)
+        except OSError as e:
+            print(f"  ⚠ gzip 解压失败：{e}")
+            return raw
+    return raw
 
 
 NAV_NOISE = re.compile(
@@ -158,7 +179,7 @@ def main():
     out_dir = pathlib.Path(sys.argv[2] if len(sys.argv) > 2 else "md")
     out_dir.mkdir(parents=True, exist_ok=True)
     for p in sorted(src_dir.glob("*.html")):
-        text = detect_encoding(p.read_bytes())
+        text = detect_encoding(maybe_gunzip(p.read_bytes()))
         md = to_markdown(pick_body(text))
         mode = "container"
         # 兜底：容器提取太短 -> 全文清洗 + 正文区间定位

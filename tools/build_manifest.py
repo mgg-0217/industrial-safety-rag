@@ -301,6 +301,31 @@ ANNOTATIONS = {
 EXT_MD = {"md": "markdown", "html": "html_webpage", "pdf": "pdf_document"}
 
 
+def _non_text_ratio(body):
+    """正文是不是"非文本"（二进制/乱码）。是则返回判据说明，否则 None。
+
+    🔴 判据（K-31）：二进制乱码有两个稳定的指纹 ——
+    ① **控制字符**多（\\x00、\\x01… 这类不可打印字符）；
+    ② **中文字符占比**趋近于 0（中文语料正文不可能一个汉字都没有）。
+
+    实测：全库 26 份 md 里，只有 `guide_shijiu_shoujiu` 同时命中这两条
+    （可打印占比 0.878、中文占比 0.001）；正常文档的可打印占比都 > 0.99、
+    中文占比最低的也有 0.36（作业票这类表格）。
+    """
+    if not body or not body.strip():
+        return None
+    n = len(body)
+    ctrl = sum(1 for ch in body if ord(ch) < 32 and ch not in "\n\r\t")
+    cjk = sum(1 for ch in body if "一" <= ch <= "鿿")
+    printable_ratio = 1 - ctrl / n
+    cjk_ratio = cjk / n
+    if printable_ratio < 0.95:
+        return f"可打印字符占比 {printable_ratio:.3f} < 0.95"
+    if cjk_ratio < 0.02:
+        return f"中文字符占比 {cjk_ratio:.3f} < 0.02"
+    return None
+
+
 def main():
     entries = []
     for stem, ann in ANNOTATIONS.items():
@@ -341,6 +366,17 @@ def main():
                 entry["extract_quality"] = "ocr_required"
             elif entry["chars"] < 800 and entry["source_format"] != "pdf_document":
                 entry["extract_quality"] = "partial"
+            else:
+                # 🔴 **"非文本"必须判 failed**（K-31）：
+                # `guide_shijiu_shoujiu` 的原始文件是没解压的 gzip，
+                # html_to_md 把二进制原样写进 md（6034 字乱码、中文占比 0.1%），
+                # 而旧判据只看"字符数够不够" → 6034 ≥ 800 → 标成 **ok**，
+                # 于是这份乱码**绕过了 PRD 2.8 的降权/排除**，直接进检索库。
+                bad = _non_text_ratio(body)
+                if bad is not None:
+                    entry["extract_quality"] = "failed"
+                    entry["note"] = (entry.get("note", "") +
+                                      f"；正文非文本（二进制/乱码），判定为抽取失败").strip("；")
         entries.append(entry)
 
     out_dir = ROOT / "data"
