@@ -20,3 +20,11 @@ data/eval/*.errors.jsonl
 data/eval/_debug_*.txt
 data/eval/*.bak127
 data/eval/rewrite_errors.jsonl
+
+# 一致性验证的临时目录（抽原始文件重跑抽取，比对 md 是否逐字一致）
+_tmp/
+
+# gzip 解压的一次性中间件：data/raw 里存的是**下载到的原始 gzip 字节**，
+# html_to_md.py 已内置 maybe_gunzip()，重跑抽取结果逐字一致（已验），
+# 所以这份解压副本不必入库。
+data/raw/_recompress/
