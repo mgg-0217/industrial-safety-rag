@@ -1,0 +1,811 @@
+{
+ "generated_at": "2026-11-03T19:14:06",
+ "embed_backend": "L2_tfidf_svd",
+ "embed_note": "TF-IDF(char 2-3gram) + SVD(256 维)，无下载",
+ "n_questions": 306,
+ "strategies": [
+  "fixed",
+  "structural",
+  "clause",
+  "table",
+  "semantic",
+  "qa"
+ ],
+ "baselines": [
+  "B2_bm25_nofilter",
+  "B3_hybrid_filter",
+  "B2prime_filter_a0.2",
+  "B2prime_filter_a0.5",
+  "B2prime_filter_a0.8",
+  "B2prime_filter_a1.0",
+  "V_vector_filter"
+ ],
+ "ranking_eligible": {
+  "fixed": true,
+  "structural": true,
+  "clause": true,
+  "table": true,
+  "semantic": true,
+  "qa": false
+ },
+ "ranking_rule": "PRD 3.3：主判据 Recall@5，子判据 numeric_recall_at_5；stale_version_false_recall_rate 只记录不参与排序；策略 6（QA-pair）结果单独标注、不进排序",
+ "gold_definitions": {
+  "事实题/数值题": "条款级：条款原始 md 偏移与 chunk 区间重叠最大者",
+  "版本陷阱题": "文档级：expect_doc_id 的任一块",
+  "跨文档推理题": "版本链级：整条版本链的块都要覆盖（由 manifest 版本链推导）",
+  "拒答题": "无 gold，不参与召回指标"
+ },
+ "strategy": "table",
+ "results": {
+  "B2_bm25_nofilter": {
+   "strategy": "table",
+   "baseline": "B2_bm25_nofilter",
+   "n_questions": 306,
+   "n_effective": 12,
+   "n_gold_filtered": 0,
+   "n_gold_absent": 66,
+   "recall_at_5": [
+    0.5,
+    0.2538,
+    0.7462
+   ],
+   "recall_at_10": [
+    0.5,
+    0.2538,
+    0.7462
+   ],
+   "mrr_at_10": 0.2667,
+   "numeric_recall_at_5": [
+    0.6,
+    0.3127,
+    0.8318
+   ],
+   "stale_version_false_recall_rate": [
+    0.0,
+    0.0,
+    0.2425
+   ],
+   "embed_backend": "L2_tfidf_svd",
+   "alpha": 0.5,
+   "version_filter": false,
+   "use_vector": false,
+   "query_seconds": 0.01,
+   "n_chunks": 374,
+   "avg_chunk_chars": 294.3,
+   "p95_chunk_chars": 606,
+   "table_chunks": 374,
+   "pseudo_table_chunks": 4,
+   "cross_page_chunks": 0,
+   "empty_chunks": 0,
+   "qa_leakage_guard": null,
+   "in_ranking": true,
+   "note": "",
+   "per_type": {
+    "事实题": {
+     "n": 2,
+     "miss": 2,
+     "gold_filtered": 0,
+     "gold_absent": 0,
+     "recall_at_5": [
+      0.0,
+      0.0,
+      0.6576
+     ],
+     "recall_at_10": [
+      0.0,
+      0.0,
+      0.6576
+     ]
+    },
+    "数值题": {
+     "n": 10,
+     "miss": 4,
+     "gold_filtered": 0,
+     "gold_absent": 0,
+     "recall_at_5": [
+      0.6,
+      0.3127,
+      0.8318
+     ],
+     "recall_at_10": [
+      0.6,
+      0.3127,
+      0.8318
+     ]
+    },
+    "版本陷阱题": {
+     "n": 0,
+     "miss": 0,
+     "gold_filtered": 0,
+     "gold_absent": 41,
+     "recall_at_5": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "recall_at_10": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "跨文档推理题": {
+     "n": 0,
+     "miss": 0,
+     "gold_filtered": 0,
+     "gold_absent": 25,
+     "recall_at_5": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "recall_at_10": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    }
+   }
+  },
+  "B3_hybrid_filter": {
+   "strategy": "table",
+   "baseline": "B3_hybrid_filter",
+   "n_questions": 306,
+   "n_effective": 12,
+   "n_gold_filtered": 0,
+   "n_gold_absent": 66,
+   "recall_at_5": [
+    0.25,
+    0.0889,
+    0.5323
+   ],
+   "recall_at_10": [
+    0.4167,
+    0.1933,
+    0.6805
+   ],
+   "mrr_at_10": 0.2307,
+   "numeric_recall_at_5": [
+    0.3,
+    0.1078,
+    0.6032
+   ],
+   "stale_version_false_recall_rate": [
+    0.0,
+    0.0,
+    0.2425
+   ],
+   "embed_backend": "L2_tfidf_svd",
+   "alpha": 0.5,
+   "version_filter": true,
+   "use_vector": true,
+   "query_seconds": 0.34,
+   "n_chunks": 374,
+   "avg_chunk_chars": 294.3,
+   "p95_chunk_chars": 606,
+   "table_chunks": 374,
+   "pseudo_table_chunks": 4,
+   "cross_page_chunks": 0,
+   "empty_chunks": 0,
+   "qa_leakage_guard": null,
+   "in_ranking": true,
+   "note": "",
+   "per_type": {
+    "事实题": {
+     "n": 2,
+     "miss": 2,
+     "gold_filtered": 0,
+     "gold_absent": 0,
+     "recall_at_5": [
+      0.0,
+      0.0,
+      0.6576
+     ],
+     "recall_at_10": [
+      0.0,
+      0.0,
+      0.6576
+     ]
+    },
+    "数值题": {
+     "n": 10,
+     "miss": 5,
+     "gold_filtered": 0,
+     "gold_absent": 0,
+     "recall_at_5": [
+      0.3,
+      0.1078,
+      0.6032
+     ],
+     "recall_at_10": [
+      0.5,
+      0.2366,
+      0.7634
+     ]
+    },
+    "版本陷阱题": {
+     "n": 0,
+     "miss": 0,
+     "gold_filtered": 0,
+     "gold_absent": 41,
+     "recall_at_5": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "recall_at_10": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "跨文档推理题": {
+     "n": 0,
+     "miss": 0,
+     "gold_filtered": 0,
+     "gold_absent": 25,
+     "recall_at_5": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "recall_at_10": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    }
+   }
+  },
+  "B2prime_filter_a0.2": {
+   "strategy": "table",
+   "baseline": "B2prime_filter_a0.2",
+   "n_questions": 306,
+   "n_effective": 12,
+   "n_gold_filtered": 0,
+   "n_gold_absent": 66,
+   "recall_at_5": [
+    0.5,
+    0.2538,
+    0.7462
+   ],
+   "recall_at_10": [
+    0.5,
+    0.2538,
+    0.7462
+   ],
+   "mrr_at_10": 0.2667,
+   "numeric_recall_at_5": [
+    0.6,
+    0.3127,
+    0.8318
+   ],
+   "stale_version_false_recall_rate": [
+    0.0,
+    0.0,
+    0.2425
+   ],
+   "embed_backend": "L2_tfidf_svd",
+   "alpha": 0.2,
+   "version_filter": true,
+   "use_vector": false,
+   "query_seconds": 0.03,
+   "n_chunks": 374,
+   "avg_chunk_chars": 294.3,
+   "p95_chunk_chars": 606,
+   "table_chunks": 374,
+   "pseudo_table_chunks": 4,
+   "cross_page_chunks": 0,
+   "empty_chunks": 0,
+   "qa_leakage_guard": null,
+   "in_ranking": true,
+   "note": "",
+   "per_type": {
+    "事实题": {
+     "n": 2,
+     "miss": 2,
+     "gold_filtered": 0,
+     "gold_absent": 0,
+     "recall_at_5": [
+      0.0,
+      0.0,
+      0.6576
+     ],
+     "recall_at_10": [
+      0.0,
+      0.0,
+      0.6576
+     ]
+    },
+    "数值题": {
+     "n": 10,
+     "miss": 4,
+     "gold_filtered": 0,
+     "gold_absent": 0,
+     "recall_at_5": [
+      0.6,
+      0.3127,
+      0.8318
+     ],
+     "recall_at_10": [
+      0.6,
+      0.3127,
+      0.8318
+     ]
+    },
+    "版本陷阱题": {
+     "n": 0,
+     "miss": 0,
+     "gold_filtered": 0,
+     "gold_absent": 41,
+     "recall_at_5": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "recall_at_10": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "跨文档推理题": {
+     "n": 0,
+     "miss": 0,
+     "gold_filtered": 0,
+     "gold_absent": 25,
+     "recall_at_5": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "recall_at_10": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    }
+   }
+  },
+  "B2prime_filter_a0.5": {
+   "strategy": "table",
+   "baseline": "B2prime_filter_a0.5",
+   "n_questions": 306,
+   "n_effective": 12,
+   "n_gold_filtered": 0,
+   "n_gold_absent": 66,
+   "recall_at_5": [
+    0.5,
+    0.2538,
+    0.7462
+   ],
+   "recall_at_10": [
+    0.5,
+    0.2538,
+    0.7462
+   ],
+   "mrr_at_10": 0.2667,
+   "numeric_recall_at_5": [
+    0.6,
+    0.3127,
+    0.8318
+   ],
+   "stale_version_false_recall_rate": [
+    0.0,
+    0.0,
+    0.2425
+   ],
+   "embed_backend": "L2_tfidf_svd",
+   "alpha": 0.5,
+   "version_filter": true,
+   "use_vector": false,
+   "query_seconds": 0.03,
+   "n_chunks": 374,
+   "avg_chunk_chars": 294.3,
+   "p95_chunk_chars": 606,
+   "table_chunks": 374,
+   "pseudo_table_chunks": 4,
+   "cross_page_chunks": 0,
+   "empty_chunks": 0,
+   "qa_leakage_guard": null,
+   "in_ranking": true,
+   "note": "",
+   "per_type": {
+    "事实题": {
+     "n": 2,
+     "miss": 2,
+     "gold_filtered": 0,
+     "gold_absent": 0,
+     "recall_at_5": [
+      0.0,
+      0.0,
+      0.6576
+     ],
+     "recall_at_10": [
+      0.0,
+      0.0,
+      0.6576
+     ]
+    },
+    "数值题": {
+     "n": 10,
+     "miss": 4,
+     "gold_filtered": 0,
+     "gold_absent": 0,
+     "recall_at_5": [
+      0.6,
+      0.3127,
+      0.8318
+     ],
+     "recall_at_10": [
+      0.6,
+      0.3127,
+      0.8318
+     ]
+    },
+    "版本陷阱题": {
+     "n": 0,
+     "miss": 0,
+     "gold_filtered": 0,
+     "gold_absent": 41,
+     "recall_at_5": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "recall_at_10": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "跨文档推理题": {
+     "n": 0,
+     "miss": 0,
+     "gold_filtered": 0,
+     "gold_absent": 25,
+     "recall_at_5": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "recall_at_10": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    }
+   }
+  },
+  "B2prime_filter_a0.8": {
+   "strategy": "table",
+   "baseline": "B2prime_filter_a0.8",
+   "n_questions": 306,
+   "n_effective": 12,
+   "n_gold_filtered": 0,
+   "n_gold_absent": 66,
+   "recall_at_5": [
+    0.5,
+    0.2538,
+    0.7462
+   ],
+   "recall_at_10": [
+    0.5,
+    0.2538,
+    0.7462
+   ],
+   "mrr_at_10": 0.2667,
+   "numeric_recall_at_5": [
+    0.6,
+    0.3127,
+    0.8318
+   ],
+   "stale_version_false_recall_rate": [
+    0.0,
+    0.0,
+    0.2425
+   ],
+   "embed_backend": "L2_tfidf_svd",
+   "alpha": 0.8,
+   "version_filter": true,
+   "use_vector": false,
+   "query_seconds": 0.03,
+   "n_chunks": 374,
+   "avg_chunk_chars": 294.3,
+   "p95_chunk_chars": 606,
+   "table_chunks": 374,
+   "pseudo_table_chunks": 4,
+   "cross_page_chunks": 0,
+   "empty_chunks": 0,
+   "qa_leakage_guard": null,
+   "in_ranking": true,
+   "note": "",
+   "per_type": {
+    "事实题": {
+     "n": 2,
+     "miss": 2,
+     "gold_filtered": 0,
+     "gold_absent": 0,
+     "recall_at_5": [
+      0.0,
+      0.0,
+      0.6576
+     ],
+     "recall_at_10": [
+      0.0,
+      0.0,
+      0.6576
+     ]
+    },
+    "数值题": {
+     "n": 10,
+     "miss": 4,
+     "gold_filtered": 0,
+     "gold_absent": 0,
+     "recall_at_5": [
+      0.6,
+      0.3127,
+      0.8318
+     ],
+     "recall_at_10": [
+      0.6,
+      0.3127,
+      0.8318
+     ]
+    },
+    "版本陷阱题": {
+     "n": 0,
+     "miss": 0,
+     "gold_filtered": 0,
+     "gold_absent": 41,
+     "recall_at_5": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "recall_at_10": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "跨文档推理题": {
+     "n": 0,
+     "miss": 0,
+     "gold_filtered": 0,
+     "gold_absent": 25,
+     "recall_at_5": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "recall_at_10": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    }
+   }
+  },
+  "B2prime_filter_a1.0": {
+   "strategy": "table",
+   "baseline": "B2prime_filter_a1.0",
+   "n_questions": 306,
+   "n_effective": 12,
+   "n_gold_filtered": 0,
+   "n_gold_absent": 66,
+   "recall_at_5": [
+    0.5,
+    0.2538,
+    0.7462
+   ],
+   "recall_at_10": [
+    0.5,
+    0.2538,
+    0.7462
+   ],
+   "mrr_at_10": 0.2667,
+   "numeric_recall_at_5": [
+    0.6,
+    0.3127,
+    0.8318
+   ],
+   "stale_version_false_recall_rate": [
+    0.0,
+    0.0,
+    0.2425
+   ],
+   "embed_backend": "L2_tfidf_svd",
+   "alpha": 1.0,
+   "version_filter": true,
+   "use_vector": false,
+   "query_seconds": 0.03,
+   "n_chunks": 374,
+   "avg_chunk_chars": 294.3,
+   "p95_chunk_chars": 606,
+   "table_chunks": 374,
+   "pseudo_table_chunks": 4,
+   "cross_page_chunks": 0,
+   "empty_chunks": 0,
+   "qa_leakage_guard": null,
+   "in_ranking": true,
+   "note": "",
+   "per_type": {
+    "事实题": {
+     "n": 2,
+     "miss": 2,
+     "gold_filtered": 0,
+     "gold_absent": 0,
+     "recall_at_5": [
+      0.0,
+      0.0,
+      0.6576
+     ],
+     "recall_at_10": [
+      0.0,
+      0.0,
+      0.6576
+     ]
+    },
+    "数值题": {
+     "n": 10,
+     "miss": 4,
+     "gold_filtered": 0,
+     "gold_absent": 0,
+     "recall_at_5": [
+      0.6,
+      0.3127,
+      0.8318
+     ],
+     "recall_at_10": [
+      0.6,
+      0.3127,
+      0.8318
+     ]
+    },
+    "版本陷阱题": {
+     "n": 0,
+     "miss": 0,
+     "gold_filtered": 0,
+     "gold_absent": 41,
+     "recall_at_5": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "recall_at_10": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "跨文档推理题": {
+     "n": 0,
+     "miss": 0,
+     "gold_filtered": 0,
+     "gold_absent": 25,
+     "recall_at_5": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "recall_at_10": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    }
+   }
+  },
+  "V_vector_filter": {
+   "strategy": "table",
+   "baseline": "V_vector_filter",
+   "n_questions": 306,
+   "n_effective": 12,
+   "n_gold_filtered": 0,
+   "n_gold_absent": 66,
+   "recall_at_5": [
+    0.25,
+    0.0889,
+    0.5323
+   ],
+   "recall_at_10": [
+    0.4167,
+    0.1933,
+    0.6805
+   ],
+   "mrr_at_10": 0.1786,
+   "numeric_recall_at_5": [
+    0.3,
+    0.1078,
+    0.6032
+   ],
+   "stale_version_false_recall_rate": [
+    0.0,
+    0.0,
+    0.2425
+   ],
+   "embed_backend": "L2_tfidf_svd",
+   "alpha": 0.5,
+   "version_filter": true,
+   "use_vector": true,
+   "query_seconds": 0.33,
+   "n_chunks": 374,
+   "avg_chunk_chars": 294.3,
+   "p95_chunk_chars": 606,
+   "table_chunks": 374,
+   "pseudo_table_chunks": 4,
+   "cross_page_chunks": 0,
+   "empty_chunks": 0,
+   "qa_leakage_guard": null,
+   "in_ranking": true,
+   "note": "",
+   "per_type": {
+    "事实题": {
+     "n": 2,
+     "miss": 1,
+     "gold_filtered": 0,
+     "gold_absent": 0,
+     "recall_at_5": [
+      0.0,
+      0.0,
+      0.6576
+     ],
+     "recall_at_10": [
+      0.5,
+      0.0945,
+      0.9055
+     ]
+    },
+    "数值题": {
+     "n": 10,
+     "miss": 6,
+     "gold_filtered": 0,
+     "gold_absent": 0,
+     "recall_at_5": [
+      0.3,
+      0.1078,
+      0.6032
+     ],
+     "recall_at_10": [
+      0.4,
+      0.1682,
+      0.6873
+     ]
+    },
+    "版本陷阱题": {
+     "n": 0,
+     "miss": 0,
+     "gold_filtered": 0,
+     "gold_absent": 41,
+     "recall_at_5": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "recall_at_10": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "跨文档推理题": {
+     "n": 0,
+     "miss": 0,
+     "gold_filtered": 0,
+     "gold_absent": 25,
+     "recall_at_5": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "recall_at_10": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    }
+   }
+  }
+ }
+}
