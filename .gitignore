@@ -24,7 +24,37 @@ data/eval/rewrite_errors.jsonl
 # 一致性验证的临时目录（抽原始文件重跑抽取，比对 md 是否逐字一致）
 _tmp/
 
+# 后台批量任务的运行日志（结果本身落在 eval_runs/）
+_genlog.txt
+*.log
+
 # gzip 解压的一次性中间件：data/raw 里存的是**下载到的原始 gzip 字节**，
 # html_to_md.py 已内置 maybe_gunzip()，重跑抽取结果逐字一致（已验），
 # 所以这份解压副本不必入库。
 data/raw/_recompress/
+
+# ---------------------------------------------------------------------------
+# eval_runs 里的**冒烟/探测批次**：n ≤ 12 的试跑、失败的额度探测、连通性探测
+# ---------------------------------------------------------------------------
+# 这些批次信息量为零（要么 0 条成功，要么是正式批次的前 N 题），
+# 留在目录里只会让人误以为是"另一个口径的权威批次"。
+# → 不入库，但**文件本身保留在本地**（不删，可复现）。
+eval_runs/*smoke*.json
+eval_runs/*smoke*.answers.jsonl
+eval_runs/*quotetest*.json
+eval_runs/*quotetest*.answers.jsonl
+eval_runs/*_llm_probe.json
+eval_runs/20261103_1930_*
+eval_runs/20261103_1932_*
+eval_runs/20261104_094[23]_*
+eval_runs/20261104_0945_*
+eval_runs/20261104_0953_*
+
+# `*_rescored_t0.7.*` 是"用新口径离线重算"的中间产物：
+# 权威对比表已经由 tools/compare_generation.py 统一重算并落盘
+# （eval_runs/*_generation_compare.json），逐题重算产物不必重复入库。
+eval_runs/*_rescored_t0.7.answers.jsonl
+
+# 🔴 **中断的批次**不许入库：1000_generation_full_doc_b1 只跑到 83/306 条就停了，
+# 它的汇总 json 根本没写出来 —— 入库会让人以为"全文基线只有 83 题"。
+eval_runs/20261104_1000_generation_full_doc_b1.*
