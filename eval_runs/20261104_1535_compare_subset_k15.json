@@ -1,0 +1,368 @@
+{
+ "generated_at": "2026-11-04T15:34:36",
+ "soft_threshold": 0.7,
+ "n_common": 150,
+ "common_qids": [
+  "t_0562e6915298",
+  "t_05f72ae1a44f",
+  "t_07947ebc3693",
+  "t_0806e3d9b51d",
+  "t_0a3da27eea43",
+  "t_0bf823a045ab",
+  "t_0d5ab7ac3a58",
+  "t_0eb0a2474c9f",
+  "t_0eb635b801fb",
+  "t_0f35a174f26c",
+  "t_10e4644caad3",
+  "t_12c2cb4ff16d",
+  "t_12ebd2394865",
+  "t_1456749be828",
+  "t_14bab8def672",
+  "t_160935b84cb2",
+  "t_179bb36bdb2d",
+  "t_18d22c383e9a",
+  "t_1a24f3bfdf5a",
+  "t_1cdd6ae0c967",
+  "t_1d466bcc0ee7",
+  "t_1e4e1e8ec554",
+  "t_1e61e1b4beb6",
+  "t_1f7c8f3ac9fa",
+  "t_23887b8f3321",
+  "t_239886bcbccd",
+  "t_261e74c75ba7",
+  "t_289c987f0821",
+  "t_28c468a30b9c",
+  "t_2ae0727779fb",
+  "t_2bc832d630a1",
+  "t_2cf9a1a1969f",
+  "t_2e3f36e974e7",
+  "t_30a2197e828d",
+  "t_320701a18d3f",
+  "t_33f5ce726429",
+  "t_34a1b266c55a",
+  "t_35b9921f715b",
+  "t_373162983815",
+  "t_38928237a04d",
+  "t_39c9d67e9466",
+  "t_3a1b631fb7f8",
+  "t_3a816499e5f8",
+  "t_3c18d0758af8",
+  "t_3ca0d1ecaff3",
+  "t_3cca4617fdee",
+  "t_3ffb1bcf0771",
+  "t_42da9a3092e4",
+  "t_434dfa7c06c8",
+  "t_45d5c21011ff",
+  "t_4aa1d89fbc8a",
+  "t_4f94748baf1c",
+  "t_507f58e82e07",
+  "t_535d02879469",
+  "t_537a26d7594e",
+  "t_54bc2ae47651",
+  "t_54eece711112",
+  "t_5503e9c19124",
+  "t_553b9cb54808",
+  "t_55cbc2c6d3a4",
+  "t_56217232c8ee",
+  "t_5e6448126ada",
+  "t_6031e77bccdb",
+  "t_6142af3ef518",
+  "t_63ef4230ca40",
+  "t_64062f88de51",
+  "t_643a879e8e27",
+  "t_6657d5f47529",
+  "t_66fd990884e1",
+  "t_68d42c143147",
+  "t_693082c8d097",
+  "t_6b90505fe051",
+  "t_6c452f15a91b",
+  "t_6f79b318a6c0",
+  "t_728fdba47eb9",
+  "t_739eed6328c0",
+  "t_747e4c6e4895",
+  "t_76f243ab76c9",
+  "t_7716cebe0b00",
+  "t_7abba2b57bcf",
+  "t_7c7c630527e2",
+  "t_8022668e309a",
+  "t_813d76149d93",
+  "t_81a016e5d876",
+  "t_81a2c3613ba4",
+  "t_82fdb48b9cd8",
+  "t_870d6121f7ac",
+  "t_875899393bc2",
+  "t_87dac2691148",
+  "t_88e16fd92bd2",
+  "t_8a21ecb85687",
+  "t_8ae914dcd02b",
+  "t_8bf9dae6422f",
+  "t_9080fbe9f45d",
+  "t_932ba6df735c",
+  "t_9519f8f385fa",
+  "t_969a94454431",
+  "t_9c9e58ce877c",
+  "t_9ceb329d6b72",
+  "t_9d02f35ea061",
+  "t_9d308853aeb6",
+  "t_9f3a5b2662f0",
+  "t_a02f0be66b98",
+  "t_a146d65180b0",
+  "t_a2fc6d8c56f8",
+  "t_a53b37aba323",
+  "t_a6698da12563",
+  "t_a6ebb6c1a8f5",
+  "t_a94d0892b862",
+  "t_aa2464a35196",
+  "t_ab1a99cccb45",
+  "t_add634d92059",
+  "t_ae7a60983d36",
+  "t_ae7a719ba15b",
+  "t_ae9ea4e391ac",
+  "t_afa9f17eb7b9",
+  "t_b8324d95eed9",
+  "t_bd25fff8136a",
+  "t_c1a5c2a4fa94",
+  "t_c213a7260b00",
+  "t_c36951008f48",
+  "t_c3eb14943504",
+  "t_c49f59550317",
+  "t_c5047eefe19a",
+  "t_cdb69d1d871b",
+  "t_d22176be3581",
+  "t_d4f3473baf01",
+  "t_dada0a3065f9",
+  "t_db139a9df6c5",
+  "t_dcabdf4f73a4",
+  "t_dd36cbe24a3d",
+  "t_df6336030ba8",
+  "t_e1c4d5afe55d",
+  "t_e452d4e039db",
+  "t_e466d54ca21b",
+  "t_e7f2dc0175bb",
+  "t_e857c172ee98",
+  "t_ebfd536168de",
+  "t_ec37abf72885",
+  "t_f088ec8bbee5",
+  "t_f091a751b870",
+  "t_f3aaf50fd967",
+  "t_f759df0e67c3",
+  "t_f77604e6c723",
+  "t_f9cef6f8186a",
+  "t_fa3942399dfc",
+  "t_fb5df72a9344",
+  "t_fb6a6dc7bdde",
+  "t_fc5c3dddf20b",
+  "t_fd7ebdb968af"
+ ],
+ "n_only_a": 156,
+ "n_only_b": 0,
+ "batches": [
+  {
+   "label": "structural+top5",
+   "source": "eval_runs/20261104_1039_generation_retrieval_cite.answers.jsonl",
+   "summary": {
+    "config": "retrieval",
+    "embed_backend": "L4_pure_bm25",
+    "n_answered": 150,
+    "n_errors": 0,
+    "seconds": 0.0,
+    "stale_in_context_questions": 0,
+    "per_type": {
+     "事实题": {
+      "n": 111,
+      "key_point_coverage": [
+       0.3728,
+       0.3035,
+       0.4478
+      ],
+      "key_point_coverage_mean": 0.3728,
+      "key_point_coverage_strict": [
+       0.1479,
+       0.1022,
+       0.2093
+      ],
+      "key_point_coverage_mean_strict": 0.1479,
+      "key_point_coverage_by_threshold": {
+       "0.6": 0.4793,
+       "0.7": 0.3728,
+       "0.8": 0.2722
+      },
+      "key_point_questions_full_hit": [
+       0.2432,
+       0.1729,
+       0.3308
+      ],
+      "version_hit_rate": [
+       0.973,
+       0.9235,
+       0.9908
+      ]
+     },
+     "数值题": {
+      "n": 39,
+      "key_point_coverage": [
+       0.5696,
+       0.4597,
+       0.6731
+      ],
+      "key_point_coverage_mean": 0.5696,
+      "key_point_coverage_strict": [
+       0.4937,
+       0.3863,
+       0.6016
+      ],
+      "key_point_coverage_mean_strict": 0.4937,
+      "key_point_coverage_by_threshold": {
+       "0.6": 0.6076,
+       "0.7": 0.5696,
+       "0.8": 0.519
+      },
+      "key_point_questions_full_hit": [
+       0.5897,
+       0.4342,
+       0.7292
+      ],
+      "numeric_exact_match_rate": [
+       0.5063,
+       0.3984,
+       0.6137
+      ],
+      "version_hit_rate": [
+       1.0,
+       0.9103,
+       1.0
+      ]
+     }
+    },
+    "citation": {
+     "n_refs": 410,
+     "n_valid": 410,
+     "n_invalid": 0,
+     "citation_valid_rate": [
+      1.0,
+      0.9907,
+      1.0
+     ],
+     "questions_with_invalid_citation": 0,
+     "cited_chunks": 294,
+     "cited_with_clause": 285,
+     "cited_with_page": 94,
+     "clause_located_rate": [
+      0.9694,
+      0.9429,
+      0.9838
+     ],
+     "page_located_rate": [
+      0.3197,
+      0.269,
+      0.3751
+     ]
+    }
+   }
+  },
+  {
+   "label": "structural+top15",
+   "source": "eval_runs/20261104_1524_generation_retrieval_k15.answers.jsonl",
+   "summary": {
+    "config": "retrieval",
+    "embed_backend": "L4_pure_bm25",
+    "n_answered": 150,
+    "n_errors": 0,
+    "seconds": 0.0,
+    "stale_in_context_questions": 0,
+    "per_type": {
+     "事实题": {
+      "n": 111,
+      "key_point_coverage": [
+       0.3669,
+       0.2979,
+       0.4417
+      ],
+      "key_point_coverage_mean": 0.3669,
+      "key_point_coverage_strict": [
+       0.1361,
+       0.0924,
+       0.1959
+      ],
+      "key_point_coverage_mean_strict": 0.1361,
+      "key_point_coverage_by_threshold": {
+       "0.6": 0.4615,
+       "0.7": 0.3669,
+       "0.8": 0.2899
+      },
+      "key_point_questions_full_hit": [
+       0.1982,
+       0.1347,
+       0.2819
+      ],
+      "version_hit_rate": [
+       0.991,
+       0.9507,
+       0.9984
+      ]
+     },
+     "数值题": {
+      "n": 39,
+      "key_point_coverage": [
+       0.5949,
+       0.4847,
+       0.6963
+      ],
+      "key_point_coverage_mean": 0.5949,
+      "key_point_coverage_strict": [
+       0.4937,
+       0.3863,
+       0.6016
+      ],
+      "key_point_coverage_mean_strict": 0.4937,
+      "key_point_coverage_by_threshold": {
+       "0.6": 0.6329,
+       "0.7": 0.5949,
+       "0.8": 0.5316
+      },
+      "key_point_questions_full_hit": [
+       0.6154,
+       0.459,
+       0.7511
+      ],
+      "numeric_exact_match_rate": [
+       0.5316,
+       0.4227,
+       0.6376
+      ],
+      "version_hit_rate": [
+       1.0,
+       0.9103,
+       1.0
+      ]
+     }
+    },
+    "citation": {
+     "n_refs": 571,
+     "n_valid": 571,
+     "n_invalid": 0,
+     "citation_valid_rate": [
+      1.0,
+      0.9933,
+      1.0
+     ],
+     "questions_with_invalid_citation": 0,
+     "cited_chunks": 403,
+     "cited_with_clause": 394,
+     "cited_with_page": 120,
+     "clause_located_rate": [
+      0.9777,
+      0.9581,
+      0.9882
+     ],
+     "page_located_rate": [
+      0.2978,
+      0.2552,
+      0.3442
+     ]
+    }
+   }
+  }
+ ],
+ "note": "两批都取 qid 交集后离线重算（统一口径），分母一致。"
+}
