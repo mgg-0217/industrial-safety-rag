@@ -16,6 +16,7 @@
 import json
 import os
 import pathlib
+import re
 import time
 import urllib.error
 import urllib.request
@@ -42,6 +43,27 @@ def _parse_env_file(path):
     return out
 
 
+#: 凭据形态（用于兜底打码）。
+_SECRET_RE = re.compile(r"sk-[A-Za-z0-9_\-]{8,}")
+
+
+def _redact(text, key=""):
+    """把凭据从任意文本里抹掉（K-44）。
+
+    🔴 **为什么必须做**：HTTP 错误响应体经常**回显请求里的 key**
+    （"invalid api key: sk-xxx"）。而 `run_generation_eval.py` 会把
+    异常信息写进 `eval_runs/*.json` 的 ``errors`` 字段 ——
+    那就意味着**凭据落进了产物文件**，而产物是要提交的。
+
+    → 脱敏做在**生成错误信息的那一刻**（源头），不是等到落盘时再过滤。
+    """
+    if not text:
+        return text
+    if key:
+        text = text.replace(key, "<redacted-key>")
+    return _SECRET_RE.sub("<redacted-key>", text)
+
+
 def load_config():
     """返回 (base_url, api_key, model)。找不到 key 抛异常（不静默继续）。
 
@@ -53,9 +75,12 @@ def load_config():
       3. 兄弟目录 ../expense-precheck/.env（运行时回退读，不复制）
     """
     cfg = {}
-    cfg.update(_parse_env_file(ROOT / ".env"))
-    cfg.update(_parse_env_file(FALLBACK_ENV))
-    # 环境变量优先级最高
+    # 🔴 优先级顺序（K-44）：**后者覆盖前者**，所以要先读低优先级。
+    #    原来写反了 —— 兄弟项目的 .env 会**覆盖**本项目的 .env，
+    #    于是"在本项目 .env 里换一把 key"完全不起作用（看起来像 key 没生效）。
+    cfg.update(_parse_env_file(FALLBACK_ENV))   # 3. 兄弟项目（最低）
+    cfg.update(_parse_env_file(ROOT / ".env"))   # 2. 本项目
+    # 1. 环境变量（最高）
     for k in ("ANTHROPIC_BASE_URL", "ANTHROPIC_API_KEY", "ANTHROPIC_AUTH_TOKEN", "B1_MODEL"):
         if os.getenv(k):
             cfg[k] = os.getenv(k)
@@ -117,6 +142,8 @@ def call_llm(prompt, system=None, model=None, temperature=0.0,
                 detail = e.read().decode("utf-8")[:300]
             except Exception:
                 pass
+            # 🔴 错误响应体常回显 key —— 落盘前先抹掉（K-44）
+            detail = _redact(detail, key)
             last_err = f"HTTP {e.code}: {detail}"
             if e.code == 429:
                 # 速率限制：**退避要比普通错误长得多**。
@@ -128,7 +155,7 @@ def call_llm(prompt, system=None, model=None, temperature=0.0,
             if 400 <= e.code < 500:
                 break  # 请求本身有问题，不重试
         except Exception as e:  # 网络超时、连接重置等
-            last_err = f"{type(e).__name__}: {e}"
+            last_err = _redact(f"{type(e).__name__}: {e}", key)
         if attempt < retries - 1:
             time.sleep(min(2 ** attempt * retry_sleep, 30))
 
