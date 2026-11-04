@@ -49,6 +49,8 @@ eval_runs/20261103_1932_*
 eval_runs/20261104_094[23]_*
 eval_runs/20261104_0945_*
 eval_runs/20261104_0953_*
+# 调试残留：只跑了 11 条数值题就没继续的中间产物
+eval_runs/20261104_0950_generation_closed_book_main.answers.jsonl
 
 # `*_rescored_t0.7.*` 是"用新口径离线重算"的中间产物：
 # 权威对比表已经由 tools/compare_generation.py 统一重算并落盘
