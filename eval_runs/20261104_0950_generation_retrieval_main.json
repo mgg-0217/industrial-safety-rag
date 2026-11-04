@@ -1,0 +1,149 @@
+{
+ "generated_at": "2026-11-04T09:59:02",
+ "config": "retrieval",
+ "embed_backend": "L4_pure_bm25",
+ "embed_note": "无向量路（PRD 4.6 的 L4，本项目实际配置）",
+ "chunk_strategy": "fixed",
+ "n_questions": 306,
+ "n_answered": 306,
+ "n_errors": 0,
+ "n_skipped": 0,
+ "skipped": [],
+ "errors": [],
+ "seconds": 489.4,
+ "summary": {
+  "config": "retrieval",
+  "embed_backend": "L4_pure_bm25",
+  "n_answered": 306,
+  "n_errors": 0,
+  "seconds": 489.4,
+  "stale_in_context_questions": 0,
+  "per_type": {
+   "事实题": {
+    "n": 159,
+    "key_point_coverage": [
+     0.168,
+     0.1272,
+     0.2186
+    ],
+    "key_point_coverage_mean": 0.168,
+    "key_point_questions_full_hit": [
+     0.0377,
+     0.0174,
+     0.0799
+    ],
+    "version_hit_rate": [
+     0.9748,
+     0.9371,
+     0.9902
+    ]
+   },
+   "拒答题": {
+    "n": 42,
+    "refusal_false_answer_rate": [
+     0.0238,
+     0.0042,
+     0.1232
+    ],
+    "refusal_decidable_n": 40,
+    "refusal_false_answer_rate_decidable": [
+     0.025,
+     0.0044,
+     0.1288
+    ],
+    "refusal_verdicts": {
+     "pass": 39,
+     "false_answer": 1,
+     "manual": 2
+    }
+   },
+   "数值题": {
+    "n": 39,
+    "key_point_coverage": [
+     0.443,
+     0.3387,
+     0.5527
+    ],
+    "key_point_coverage_mean": 0.443,
+    "key_point_questions_full_hit": [
+     0.4872,
+     0.3386,
+     0.638
+    ],
+    "numeric_exact_match_rate": [
+     0.443,
+     0.3387,
+     0.5527
+    ],
+    "version_hit_rate": [
+     1.0,
+     0.9103,
+     1.0
+    ]
+   },
+   "版本陷阱题": {
+    "n": 41,
+    "key_point_coverage": [
+     0.1333,
+     0.0691,
+     0.2417
+    ],
+    "key_point_coverage_mean": 0.1333,
+    "key_point_questions_full_hit": [
+     0.1463,
+     0.0688,
+     0.2844
+    ],
+    "version_hit_rate": [
+     1.0,
+     0.9143,
+     1.0
+    ]
+   },
+   "跨文档推理题": {
+    "n": 25,
+    "key_point_coverage": [
+     0.1273,
+     0.063,
+     0.2402
+    ],
+    "key_point_coverage_mean": 0.1273,
+    "key_point_questions_full_hit": [
+     0.12,
+     0.0417,
+     0.2996
+    ],
+    "version_hit_rate": [
+     0.92,
+     0.7503,
+     0.9778
+    ]
+   }
+  },
+  "citation": {
+   "n_refs": 1153,
+   "n_valid": 1153,
+   "n_invalid": 0,
+   "citation_valid_rate": [
+    1.0,
+    0.9967,
+    1.0
+   ],
+   "questions_with_invalid_citation": 0,
+   "cited_chunks": 653,
+   "cited_with_clause": 0,
+   "cited_with_page": 276,
+   "clause_located_rate": [
+    0.0,
+    0.0,
+    0.0058
+   ],
+   "page_located_rate": [
+    0.4227,
+    0.3853,
+    0.4609
+   ]
+  },
+  "n_skipped": 0
+ }
+}

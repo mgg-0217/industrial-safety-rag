@@ -1,0 +1,328 @@
+{
+ "generated_at": "2026-11-04T10:39:05",
+ "config": "full_doc",
+ "system_prompt": "SYSTEM_NO_CITE（全文基线，无编号）",
+ "embed_backend": "L4_pure_bm25",
+ "embed_note": "无向量路（PRD 4.6 的 L4，本项目实际配置）",
+ "chunk_strategy": "fixed",
+ "n_questions": 306,
+ "n_answered": 264,
+ "n_errors": 0,
+ "n_skipped": 42,
+ "skipped": [
+  [
+   "t_acc54074bd05",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_360fb1c2b7b0",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_658339d15b11",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_8c0e28830901",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_38f5a50b6430",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_799285c2781b",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_ad84904abee0",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_124aca9eb925",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_b18e3c56fb2d",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_24f78ca91088",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_74c3cfde698a",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_ac7c61ca3c03",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_4e33e7680716",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_a2cc0793a7fb",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_ce5aab6519c1",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_0d198a87322b",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_dce43470eb63",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_a3b9f3050e6f",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_c859a43cdccf",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_4ee014020a48",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_d6b30b284f07",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_277659a3843e",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_c673b6c18a16",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_90a3f12f3cb2",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_5c76b485f296",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_89c212fddb8f",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_ae3bcb46f83f",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_b9b4221534b6",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_15e970bc151a",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_2370f6a46992",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_5ed8b21e22ab",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_d13e2704b59f",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_63214c76a310",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_b3929d08585e",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_ca81adf6d8c9",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_12b2508530c7",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_53f91fcfcc21",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_436d5a7b8b6f",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_655b8c3e47ed",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_e327fe77b76a",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_1913c8c42502",
+   "无单一所属文档（B1b 不适用）"
+  ],
+  [
+   "t_51227dadc8b6",
+   "无单一所属文档（B1b 不适用）"
+  ]
+ ],
+ "errors": [],
+ "seconds": 375.6,
+ "summary": {
+  "config": "full_doc",
+  "embed_backend": "L4_pure_bm25",
+  "n_answered": 264,
+  "n_errors": 0,
+  "seconds": 375.6,
+  "stale_in_context_questions": 0,
+  "per_type": {
+   "事实题": {
+    "n": 159,
+    "key_point_coverage": [
+     0.6133,
+     0.5524,
+     0.6708
+    ],
+    "key_point_coverage_mean": 0.6133,
+    "key_point_coverage_strict": [
+     0.2148,
+     0.1689,
+     0.2692
+    ],
+    "key_point_coverage_mean_strict": 0.2148,
+    "key_point_coverage_by_threshold": {
+     "0.6": 0.75,
+     "0.7": 0.6133,
+     "0.8": 0.5078
+    },
+    "key_point_questions_full_hit": [
+     0.4969,
+     0.4201,
+     0.5737
+    ],
+    "version_hit_rate": [
+     0.0,
+     0.0,
+     0.0236
+    ]
+   },
+   "数值题": {
+    "n": 39,
+    "key_point_coverage": [
+     0.3418,
+     0.2467,
+     0.4515
+    ],
+    "key_point_coverage_mean": 0.3418,
+    "key_point_coverage_strict": [
+     0.3165,
+     0.2245,
+     0.4255
+    ],
+    "key_point_coverage_mean_strict": 0.3165,
+    "key_point_coverage_by_threshold": {
+     "0.6": 0.3418,
+     "0.7": 0.3418,
+     "0.8": 0.3418
+    },
+    "key_point_questions_full_hit": [
+     0.3333,
+     0.2063,
+     0.4902
+    ],
+    "numeric_exact_match_rate": [
+     0.2911,
+     0.2025,
+     0.3991
+    ],
+    "version_hit_rate": [
+     0.0,
+     0.0,
+     0.0897
+    ]
+   },
+   "版本陷阱题": {
+    "n": 41,
+    "key_point_coverage": [
+     0.8167,
+     0.7008,
+     0.8944
+    ],
+    "key_point_coverage_mean": 0.8167,
+    "key_point_coverage_strict": [
+     0.2333,
+     0.1444,
+     0.3544
+    ],
+    "key_point_coverage_mean_strict": 0.2333,
+    "key_point_coverage_by_threshold": {
+     "0.6": 0.85,
+     "0.7": 0.8167,
+     "0.8": 0.7167
+    },
+    "key_point_questions_full_hit": [
+     0.7561,
+     0.6066,
+     0.8618
+    ],
+    "version_hit_rate": [
+     0.0,
+     0.0,
+     0.0857
+    ]
+   },
+   "跨文档推理题": {
+    "n": 25,
+    "key_point_coverage": [
+     0.3636,
+     0.2493,
+     0.4958
+    ],
+    "key_point_coverage_mean": 0.3636,
+    "key_point_coverage_strict": [
+     0.1636,
+     0.0886,
+     0.2826
+    ],
+    "key_point_coverage_mean_strict": 0.1636,
+    "key_point_coverage_by_threshold": {
+     "0.6": 0.4182,
+     "0.7": 0.3636,
+     "0.8": 0.3091
+    },
+    "key_point_questions_full_hit": [
+     0.2,
+     0.0886,
+     0.3913
+    ],
+    "version_hit_rate": [
+     0.0,
+     0.0,
+     0.1332
+    ]
+   }
+  },
+  "citation": {
+   "n_refs": 0,
+   "n_valid": 0,
+   "n_invalid": 0,
+   "citation_valid_rate": null,
+   "questions_with_invalid_citation": 0
+  },
+  "n_skipped": 42,
+  "system_prompt": "SYSTEM_NO_CITE（全文基线，无编号）"
+ }
+}

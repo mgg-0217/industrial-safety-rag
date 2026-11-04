@@ -1,0 +1,56 @@
+{
+ "generated_at": "2026-11-04T10:49:53",
+ "chunk_strategy": "structural",
+ "embed_backend": "L4_pure_bm25",
+ "embed_note": "无向量路（PRD 4.6 的 L4，本项目实际配置）",
+ "n_chunks": 1946,
+ "n_queries": 306,
+ "top_k": 5,
+ "alive_chunks_mean": 1928.0,
+ "stages": {
+  "filter": {
+   "n": 306,
+   "mean_ms": 2.221,
+   "median_ms": 2.157,
+   "p95_ms": 2.714,
+   "max_ms": 3.317
+  },
+  "bm25_nofilter": {
+   "n": 306,
+   "mean_ms": 1.218,
+   "median_ms": 1.176,
+   "p95_ms": 2.186,
+   "max_ms": 2.749
+  },
+  "bm25_filtered": {
+   "n": 306,
+   "mean_ms": 1.286,
+   "median_ms": 1.267,
+   "p95_ms": 2.307,
+   "max_ms": 2.739
+  },
+  "recompute_delta": {
+   "n": 306,
+   "mean_ms": 0.068,
+   "median_ms": 0.061,
+   "p95_ms": 0.276,
+   "max_ms": 0.641
+  },
+  "vector": null,
+  "rrf": {
+   "n": 306,
+   "mean_ms": 0.007,
+   "median_ms": 0.006,
+   "p95_ms": 0.009,
+   "max_ms": 0.017
+  },
+  "end2end": {
+   "n": 306,
+   "mean_ms": 3.701,
+   "median_ms": 3.633,
+   "p95_ms": 5.064,
+   "max_ms": 5.756
+  }
+ },
+ "note": "recompute_delta = 过滤后重算 BM25 的净代价（存活子集上的 IDF/avgdl 必须重算，PRD 4.4）。负值表示过滤反而更快（子集更小、posting 更少）。"
+}
