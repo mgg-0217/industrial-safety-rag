@@ -1568,6 +1568,11 @@ B2 在"现行标准"类问题上的表现，就是"不做版本治理会出多�
 | 环境 | `huggingface.co` 超时；`hf-mirror.com` 可用（200, 2.15s）；`modelscope.cn` 302 可达 | 实测 |
 | 已装 | torch 2.6.0 / numpy 2.2.3 / scikit-learn 1.6.1 / onnxruntime 1.22.1 / rapidocr-onnxruntime 1.4.4 / pdfplumber / fastapi / bs4 / lxml | `pip list` |
 | 未装 | transformers / sentence-transformers / huggingface-hub / jieba / rank-bm25 | `pip list` |
+| **六策略块均长** | **clause 106.5 / structural 168.8 / table 294.3 / semantic 483.4 / fixed 501.4**（字符）—— 🔴 **差 4.7 倍**，所以跨策略横比必须按字符预算对齐（3.3 第 7 条） | `data/chunks/chunk_stats.json` |
+| 策略 4b（整表一块，M10 新增） | **116 块 / 均长 816.5 / p95 2046**，覆盖 5 份文档（策略 4 是 374 块 / 均长 294.3） | `tools/build_chunks.py --strategies table_whole` |
+| 表格类题的内容覆盖度 | `fixed` **0.390** → `structural` **0.517**（top-5）；等 2500 字符预算下 **0.390 → 0.685** | `tools/diag_table_recall.py --char-budget` |
+| 端到端换主索引的代价 | 条款可定位率 **0.000 → 0.958**；答案质量持平（严格口径事实题 0.168 = 0.168、数值精确匹配 0.506 = 0.506）；**版本陷阱题版本命中率两组都是 1.000** | `eval_runs/20261104_1515_compare_fixed_vs_structural.json` |
+| 端到端加大 top-k 的代价 | 数值题精确匹配 0.506 → **0.557**（好），事实题严格口径 0.168 → **0.141**（差）→ **题型分化** | `eval_runs/20261104_1525_compare_three.json` |
 
 ## 附录 B · 与 PRD 生成提示词的实测差异（5 处）
 
