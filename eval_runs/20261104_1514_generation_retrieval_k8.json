@@ -1,0 +1,195 @@
+{
+ "generated_at": "2026-11-04T15:22:44",
+ "config": "retrieval",
+ "system_prompt": "SYSTEM（带 [[Cn]] 引用编号）",
+ "embed_backend": "L4_pure_bm25",
+ "embed_note": "无向量路（PRD 4.6 的 L4，本项目实际配置）",
+ "chunk_strategy": "fixed",
+ "n_questions": 306,
+ "n_answered": 306,
+ "n_errors": 0,
+ "n_skipped": 0,
+ "skipped": [],
+ "errors": [],
+ "seconds": 483.9,
+ "summary": {
+  "config": "retrieval",
+  "embed_backend": "L4_pure_bm25",
+  "n_answered": 306,
+  "n_errors": 0,
+  "seconds": 483.9,
+  "stale_in_context_questions": 0,
+  "per_type": {
+   "事实题": {
+    "n": 159,
+    "key_point_coverage": [
+     0.4023,
+     0.3441,
+     0.4634
+    ],
+    "key_point_coverage_mean": 0.4023,
+    "key_point_coverage_strict": [
+     0.1602,
+     0.1203,
+     0.2101
+    ],
+    "key_point_coverage_mean_strict": 0.1602,
+    "key_point_coverage_by_threshold": {
+     "0.6": 0.5781,
+     "0.7": 0.4023,
+     "0.8": 0.3047
+    },
+    "key_point_questions_full_hit": [
+     0.2201,
+     0.1627,
+     0.2907
+    ],
+    "version_hit_rate": [
+     0.9811,
+     0.946,
+     0.9936
+    ]
+   },
+   "拒答题": {
+    "n": 42,
+    "refusal_false_answer_rate": [
+     0.1429,
+     0.0672,
+     0.2784
+    ],
+    "refusal_decidable_n": 40,
+    "refusal_false_answer_rate_decidable": [
+     0.15,
+     0.0706,
+     0.2907
+    ],
+    "refusal_verdicts": {
+     "false_answer": 6,
+     "pass": 34,
+     "manual": 2
+    }
+   },
+   "数值题": {
+    "n": 39,
+    "key_point_coverage": [
+     0.5316,
+     0.4227,
+     0.6376
+    ],
+    "key_point_coverage_mean": 0.5316,
+    "key_point_coverage_strict": [
+     0.4304,
+     0.3269,
+     0.5403
+    ],
+    "key_point_coverage_mean_strict": 0.4304,
+    "key_point_coverage_by_threshold": {
+     "0.6": 0.557,
+     "0.7": 0.5316,
+     "0.8": 0.4684
+    },
+    "key_point_questions_full_hit": [
+     0.5641,
+     0.4098,
+     0.707
+    ],
+    "numeric_exact_match_rate": [
+     0.4937,
+     0.3863,
+     0.6016
+    ],
+    "version_hit_rate": [
+     1.0,
+     0.9103,
+     1.0
+    ]
+   },
+   "版本陷阱题": {
+    "n": 41,
+    "key_point_coverage": [
+     0.6667,
+     0.5406,
+     0.7727
+    ],
+    "key_point_coverage_mean": 0.6667,
+    "key_point_coverage_strict": [
+     0.1667,
+     0.0931,
+     0.2803
+    ],
+    "key_point_coverage_mean_strict": 0.1667,
+    "key_point_coverage_by_threshold": {
+     "0.6": 0.7167,
+     "0.7": 0.6667,
+     "0.8": 0.5667
+    },
+    "key_point_questions_full_hit": [
+     0.6341,
+     0.4812,
+     0.7641
+    ],
+    "version_hit_rate": [
+     1.0,
+     0.9143,
+     1.0
+    ]
+   },
+   "跨文档推理题": {
+    "n": 25,
+    "key_point_coverage": [
+     0.2182,
+     0.1295,
+     0.3437
+    ],
+    "key_point_coverage_mean": 0.2182,
+    "key_point_coverage_strict": [
+     0.1091,
+     0.051,
+     0.2183
+    ],
+    "key_point_coverage_mean_strict": 0.1091,
+    "key_point_coverage_by_threshold": {
+     "0.6": 0.2545,
+     "0.7": 0.2182,
+     "0.8": 0.1636
+    },
+    "key_point_questions_full_hit": [
+     0.16,
+     0.064,
+     0.3465
+    ],
+    "version_hit_rate": [
+     0.92,
+     0.7503,
+     0.9778
+    ]
+   }
+  },
+  "citation": {
+   "n_refs": 1441,
+   "n_valid": 1441,
+   "n_invalid": 0,
+   "citation_valid_rate": [
+    1.0,
+    0.9973,
+    1.0
+   ],
+   "questions_with_invalid_citation": 0,
+   "cited_chunks": 837,
+   "cited_with_clause": 0,
+   "cited_with_page": 403,
+   "clause_located_rate": [
+    0.0,
+    0.0,
+    0.0046
+   ],
+   "page_located_rate": [
+    0.4815,
+    0.4478,
+    0.5153
+   ]
+  },
+  "n_skipped": 0,
+  "system_prompt": "SYSTEM（带 [[Cn]] 引用编号）"
+ }
+}
