@@ -901,6 +901,63 @@ def strategy4_table(blocks, doc_ctx):
     return chunks
 
 
+def strategy4b_table_whole(blocks, doc_ctx):
+    """策略 4b · **表格整表一块**（PRD 风险 R8 的预案）。
+
+    ## 为什么要有这个策略
+
+    PRD 3.1 策略 4 把表格按行切（1 行表头 + K=8 行数据）。
+    实测（M10 诊断）这会**把一张表切碎**：
+    表格类题目的"内容覆盖度"（上下文里带进多少 gold 区间）只有 **0.390** ——
+    召回了 gold 块也只带进四成表内容，模型看到的是半张表。
+
+    PRD 风险 R8 早就写了预案：
+    「若表格类题目召回仍然低，考虑**整表一个 chunk** 作为策略 4b 单独评测」。
+
+    ## 与策略 4 的差别
+
+    | | 策略 4（按行切） | 策略 4b（整表） |
+    |---|---|---|
+    | 块数 | 多（一张表 N 块） | 一张表 1 块 |
+    | 表头 | 每块开头 1 次 | 整表 1 次 |
+    | 行级可解释性 | ❌ 块内第 5 行没有列名 | ✅ 列名与数据同行 |
+    | 块长 | 均长 294 字符 | **可能上千字符**（长表） |
+
+    🔴 **不是替代策略 4，是并列的对照项** ——
+    块长变大会不会拖慢检索、会不会挤掉正文，要实测。
+    """
+    chunks = []
+    for b in blocks:
+        if b.kind != "table":
+            continue
+        rows = b.rows
+        if not rows:
+            continue
+        header = b.header if b.header_like else None
+        lines = []
+        if header:
+            lines.append(_row_to_line(header))
+        lines.extend(_row_to_line(r) for r in rows)
+        text = "\n".join(lines)
+        meta = {"n_chars": len(text), "table_whole": True}
+        if b.header_like:
+            meta["table_header_sig"] = _header_signature(header)
+        ridx = b.row_line_idx or []
+        c_start, c_end = _row_span(b, ridx, 0, len(rows), bool(header))
+        chunks.append({
+            "text": text, "page_no": b.page_no, "meta": meta,
+            "clause_no": None, "section_path": [],
+            "char_start": c_start, "char_end": c_end,
+            "table": {"table_id": None, "row_start": 0,
+                      "row_end": max(len(rows) - 1, 0),
+                      "n_rows": len(rows),
+                      "n_cols": max((len(r) for r in rows), default=0),
+                      "header": header, "is_pseudo": b.is_pseudo,
+                      "caption": b.caption, "whole": True},
+        })
+    return chunks
+
+
 def _row_span(b, ridx, row_start, n_rows, has_header):
     """表格行组在 md 原文里的字符区间（行级精确）。"""
     if not ridx:
@@ -1112,6 +1169,8 @@ STRATEGIES = {
     "structural": strategy2_structural,
     "clause": strategy3_clause,
     "table": strategy4_table,
+    # 策略 4b：整表一块（PRD 风险 R8 的预案，M10 诊断后加）
+    "table_whole": strategy4b_table_whole,
     "semantic": strategy5_semantic,
 }
 
