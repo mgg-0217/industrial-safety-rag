@@ -1,0 +1,174 @@
+{
+ "generated_at": "2026-11-04T10:09:59",
+ "config": "closed_book",
+ "system_prompt": "CLOSED_BOOK_SYSTEM（闭卷，不提资料片段）",
+ "embed_backend": "L4_pure_bm25",
+ "embed_note": "无向量路（PRD 4.6 的 L4，本项目实际配置）",
+ "chunk_strategy": "fixed",
+ "n_questions": 306,
+ "n_answered": 306,
+ "n_errors": 0,
+ "n_skipped": 0,
+ "summary": {
+  "config": "closed_book",
+  "embed_backend": "L4_pure_bm25",
+  "n_answered": 306,
+  "n_errors": 0,
+  "seconds": 0.0,
+  "stale_in_context_questions": 0,
+  "per_type": {
+   "事实题": {
+    "n": 159,
+    "key_point_coverage": [
+     0.1602,
+     0.1203,
+     0.2101
+    ],
+    "key_point_coverage_mean": 0.1602,
+    "key_point_coverage_strict": [
+     0.0508,
+     0.0299,
+     0.0849
+    ],
+    "key_point_coverage_mean_strict": 0.0508,
+    "key_point_coverage_by_threshold": {
+     "0.6": 0.2695,
+     "0.7": 0.1602,
+     "0.8": 0.0977
+    },
+    "key_point_questions_full_hit": [
+     0.1006,
+     0.0629,
+     0.1572
+    ],
+    "version_hit_rate": [
+     0.0,
+     0.0,
+     0.0236
+    ]
+   },
+   "拒答题": {
+    "n": 42,
+    "refusal_false_answer_rate": [
+     0.4048,
+     0.2704,
+     0.5551
+    ],
+    "refusal_decidable_n": 42,
+    "refusal_false_answer_rate_decidable": [
+     0.4048,
+     0.2704,
+     0.5551
+    ],
+    "refusal_verdicts": {
+     "false_answer": 17,
+     "pass": 25
+    }
+   },
+   "数值题": {
+    "n": 39,
+    "key_point_coverage": [
+     0.1646,
+     0.0988,
+     0.2615
+    ],
+    "key_point_coverage_mean": 0.1646,
+    "key_point_coverage_strict": [
+     0.1392,
+     0.0796,
+     0.2324
+    ],
+    "key_point_coverage_mean_strict": 0.1392,
+    "key_point_coverage_by_threshold": {
+     "0.6": 0.1646,
+     "0.7": 0.1646,
+     "0.8": 0.1519
+    },
+    "key_point_questions_full_hit": [
+     0.1282,
+     0.056,
+     0.2671
+    ],
+    "numeric_exact_match_rate": [
+     0.1266,
+     0.0702,
+     0.2176
+    ],
+    "version_hit_rate": [
+     0.0,
+     0.0,
+     0.0897
+    ]
+   },
+   "版本陷阱题": {
+    "n": 41,
+    "key_point_coverage": [
+     0.1,
+     0.0466,
+     0.2015
+    ],
+    "key_point_coverage_mean": 0.1,
+    "key_point_coverage_strict": [
+     0.0,
+     0.0,
+     0.0602
+    ],
+    "key_point_coverage_mean_strict": 0.0,
+    "key_point_coverage_by_threshold": {
+     "0.6": 0.1833,
+     "0.7": 0.1,
+     "0.8": 0.05
+    },
+    "key_point_questions_full_hit": [
+     0.122,
+     0.0532,
+     0.2554
+    ],
+    "version_hit_rate": [
+     0.0,
+     0.0,
+     0.0857
+    ]
+   },
+   "跨文档推理题": {
+    "n": 25,
+    "key_point_coverage": [
+     0.0364,
+     0.01,
+     0.1232
+    ],
+    "key_point_coverage_mean": 0.0364,
+    "key_point_coverage_strict": [
+     0.0,
+     0.0,
+     0.0653
+    ],
+    "key_point_coverage_mean_strict": 0.0,
+    "key_point_coverage_by_threshold": {
+     "0.6": 0.0727,
+     "0.7": 0.0364,
+     "0.8": 0.0182
+    },
+    "key_point_questions_full_hit": [
+     0.04,
+     0.0071,
+     0.1954
+    ],
+    "version_hit_rate": [
+     0.0,
+     0.0,
+     0.1332
+    ]
+   }
+  },
+  "citation": {
+   "n_refs": 0,
+   "n_valid": 0,
+   "n_invalid": 0,
+   "citation_valid_rate": null,
+   "questions_with_invalid_citation": 0
+  },
+  "rescored_from": "20261104_1000_generation_closed_book_b1.answers.jsonl",
+  "soft_threshold": 0.7
+ }
+}
