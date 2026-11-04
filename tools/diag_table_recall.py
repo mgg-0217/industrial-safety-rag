@@ -112,20 +112,9 @@ def multi_route_search(routes, query, when, mode, top_k=10, alpha=0.5,
 
 
 def interval_union(intervals):
-    """区间并集的总长度。"""
-    if not intervals:
-        return 0
-    xs = sorted(intervals)
-    total = 0
-    cur_s, cur_e = xs[0]
-    for s, e in xs[1:]:
-        if s > cur_e:
-            total += cur_e - cur_s
-            cur_s, cur_e = s, e
-        else:
-            cur_e = max(cur_e, e)
-    total += cur_e - cur_s
-    return total
+    """区间并集的总长度。**已移到 src/retrieval.py**（单一来源）。"""
+    import retrieval as _RT
+    return _RT.interval_union_len(intervals)
 
 
 def main():
@@ -142,6 +131,10 @@ def main():
     ap.add_argument("--aux-weight", type=float, default=1.0,
                     help="第二路的 RRF 权重")
     ap.add_argument("--top-k", type=int, default=5)
+    ap.add_argument("--char-budget", type=int, default=0,
+                    help="按**字符预算**定 top-k（各策略块长差 3 倍，固定 top-k "
+                         "对它们不公平）：top_k = budget / 该索引的平均块长。"
+                         "例：--char-budget 2500 → fixed 取 5、structural 取 15")
     ap.add_argument("--detail", default="", help="打印某题的 top-5 明细")
     args = ap.parse_args()
 
@@ -196,6 +189,23 @@ def main():
     for i, c in enumerate(merged):
         merged_by_doc[c["doc_id"]].append(i)
 
+    # 🔴 **等字符预算**：固定 top-k 对不同块长的策略不公平 ——
+    #    fixed 均长 501、structural 均长 169，top-5 时前者装 2505 字符、
+    #    后者只装 845 字符，差 3 倍。→ 预算相同才谈得上"谁更好"。
+    def avg_len(cs):
+        lens = [len(c.get("text") or "") for c in cs]
+        return (sum(lens) / len(lens)) if lens else 0.0
+
+    if args.char_budget:
+        main_k = max(1, int(round(args.char_budget / max(1.0, avg_len(main_chunks)))))
+        aux_k = max(1, int(round(args.char_budget / max(1.0, avg_len(aux_chunks))))) \
+            if aux_chunks else main_k
+    else:
+        main_k = aux_k = args.top_k
+    print(f"主索引均长 {avg_len(main_chunks):.1f} 字符 → top-{main_k}"
+          + (f"；辅助索引均长 {avg_len(aux_chunks):.1f} 字符 → top-{aux_k}"
+             if aux_chunks else ""))
+
     rows = []
     for q in questions:
         if q.get("question_type") not in ("事实题", "数值题"):
@@ -241,7 +251,7 @@ def main():
         # --- A：主索引单路 ---
         alive = route_alive(main_chunks, when, mode)
         ret = RT.Retriever(main_chunks, embedder=None)
-        ranked_a = ret.retrieve(q["question"], top_k=args.top_k, when=when,
+        ranked_a = ret.retrieve(q["question"], top_k=main_k, when=when,
                                 mode=mode, version_filter=True,
                                 use_vector=False, alpha=0.5)
         ids_a = [main_chunks[i]["chunk_id"] for i, _ in ranked_a]
@@ -252,9 +262,9 @@ def main():
 
         # --- B：主 + 辅助 双路 RRF ---
         ranked_b = multi_route_search(routes, q["question"], when, mode,
-                                      top_k=args.top_k, alpha=0.5,
+                                      top_k=aux_k, alpha=0.5,
                                       weights=[1.0, args.aux_weight])
-        ids_b = [cid for cid, _n, _s in ranked_b][:args.top_k]
+        ids_b = [cid for cid, _n, _s in ranked_b][:aux_k]
         hit_b = bool(gold_ids & set(ids_b[:5]))
         cov_b = coverage(merged, ids_b, cs, ce)
 
@@ -265,7 +275,7 @@ def main():
             "cov_a": round(cov_a, 3), "cov_b": round(cov_b, 3),
             # 🔴 只统计 **top-k 之内**的辅助路块数（上一版统计了 top_k*3，
             #    看起来像"表格路占 7 个名额"，其实是统计口径错了）
-            "n_aux_in_top": sum(1 for _c, n, _s in ranked_b[:args.top_k]
+            "n_aux_in_top": sum(1 for _c, n, _s in ranked_b[:aux_k]
                                 if n == args.aux),
         })
 
@@ -286,7 +296,7 @@ def main():
               f"{wilson(h_b, n)}")
         print(f"  内容覆盖度 主索引单路  : {ca:.3f}")
         print(f"  内容覆盖度 主+辅助双路 : {cb:.3f}")
-        print(f"  辅助路平均占用 top-{args.top_k} 名额 : {slot:.2f} / {args.top_k}")
+        print(f"  辅助路平均占用名额 : {slot:.2f} / {aux_k}")
 
     print(f"主索引 = {args.main}（{len(main_chunks)} 块），"
           f"辅助索引 = {args.aux}（{len(aux_chunks)} 块，模式 {args.aux_mode}，"
@@ -309,6 +319,10 @@ def main():
         "main_strategy": args.main, "aux_strategy": args.aux,
         "aux_mode": args.aux_mode, "aux_weight": args.aux_weight,
         "top_k": args.top_k,
+        "char_budget": args.char_budget,
+        "main_top_k": main_k, "aux_top_k": aux_k,
+        "main_avg_chars": round(avg_len(main_chunks), 1),
+        "aux_avg_chars": round(avg_len(aux_chunks), 1) if aux_chunks else None,
         "n_rows": len(rows),
         "n_table_questions": sum(1 for r in rows if r["is_table_q"]),
         "rows": rows,
@@ -322,21 +336,12 @@ def main():
 
 
 def coverage(chunks, chunk_ids, cs, ce):
-    """top-k 里命中块的字符区间并集，覆盖 gold 区间的比例。"""
-    idset = set(chunk_ids)
-    ivs = []
-    for i, c in enumerate(chunks):
-        if c.get("chunk_id") not in idset:
-            continue
-        a, b = c.get("char_start"), c.get("char_end")
-        if a is None or b is None:
-            continue
-        s, e = max(a, cs), min(b, ce)
-        if e > s:
-            ivs.append((s, e))
-    if not ivs:
-        return 0.0
-    return interval_union(ivs) / max(1, ce - cs)
+    """转调 ``src/retrieval.py`` 的实现 —— **单一来源**。
+
+    🔴 指标实现只能有一份：诊断脚本和常规评测脚本各写一份，
+    迟早会出现"两边算出不同的数"，然后没人知道该信哪个。
+    """
+    return RT.content_coverage(chunks, chunk_ids, cs, ce)
 
 
 if __name__ == "__main__":

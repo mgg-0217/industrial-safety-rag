@@ -87,6 +87,65 @@ def version_alive(chunks, when, mode="current"):
 
 
 # ---------------------------------------------------------------------------
+# 内容覆盖度（PRD 7.3 的 `content_coverage`）
+# ---------------------------------------------------------------------------
+
+def interval_union_len(intervals):
+    """一组区间并集的总长度。"""
+    if not intervals:
+        return 0
+    xs = sorted(intervals)
+    total = 0
+    cur_s, cur_e = xs[0]
+    for s, e in xs[1:]:
+        if s > cur_e:
+            total += cur_e - cur_s
+            cur_s, cur_e = s, e
+        else:
+            cur_e = max(cur_e, e)
+    total += cur_e - cur_s
+    return total
+
+
+def content_coverage(chunks, chunk_ids, gold_start, gold_end):
+    """上下文带进了 gold 区间的多少比例（PRD 7.3）。
+
+    :param chunks: 参与检索的 chunk 列表
+    :param chunk_ids: top-k 结果的 chunk_id 集合
+    :param gold_start / gold_end: gold 区间（**原始 md 的字符偏移**）
+    :returns: ``0.0 ~ 1.0``
+
+    🔴 **为什么要有这个指标**：`Recall@k` 是**二值命中** ——
+    top-k 里有一块碰到 gold 就算命中。但对表格类题，
+    **命中一块碎片 ≠ 能答对**（模型要的是整张表）。
+    实测：表格题的 `Recall@5` 有 0.750，而 `content_coverage` 只有 **0.390** ——
+    召回到了，却只带进四成内容。
+
+    🔴 **它比 `Recall@k` 多回答了一个问题**：
+    "找没找到" vs "**带够了没有**"。
+    而且 gold 区间取自**原始 md 的偏移**（不随切分策略变）
+    → **跨策略可比**；`Recall@k` 的 gold 要按各策略的 chunk 偏移重定义，
+    跨策略比大小不成立。
+    """
+    if gold_end is None or gold_start is None or gold_end <= gold_start:
+        return 0.0
+    idset = set(chunk_ids)
+    ivs = []
+    for c in chunks:
+        if c.get("chunk_id") not in idset:
+            continue
+        a, b = c.get("char_start"), c.get("char_end")
+        if a is None or b is None:
+            continue
+        s, e = max(a, gold_start), min(b, gold_end)
+        if e > s:
+            ivs.append((s, e))
+    if not ivs:
+        return 0.0
+    return interval_union_len(ivs) / (gold_end - gold_start)
+
+
+# ---------------------------------------------------------------------------
 # 检索器
 # ---------------------------------------------------------------------------
 

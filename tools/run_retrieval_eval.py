@@ -266,7 +266,11 @@ def eval_strategy(strategy, questions, cand_by_qid, chain_by_doc, embedder,
         n_eff = 0
         n_filtered = 0
         n_absent = 0
+        # 🔴 内容覆盖度（PRD 7.3）：召回到了，但**带进了多少**内容
+        cov_sum = 0.0
+        n_cov = 0
         per_type = defaultdict(lambda: Counter())
+        per_type_cov = defaultdict(float)
         per_q = {}
         for q in questions:
             g = build_gold(q, cand_by_qid, chunks, chunks_by_doc, chain_by_doc)
@@ -298,6 +302,16 @@ def eval_strategy(strategy, questions, cand_by_qid, chain_by_doc, embedder,
             hit, rank = g.hit_and_rank(idxs)
             per_q[q["qid"]] = (bool(hit and rank and rank <= 5), bool(hit),
                                rank, q["question_type"])
+
+            # 🔴 内容覆盖度：只对**条款级 gold**有意义（要 gold 的字符区间）
+            cand = cand_by_qid.get(q.get("src_qid"))
+            if cand and cand.get("clause_char_start") is not None:
+                cov = RT.content_coverage(
+                    chunks, [chunks[i]["chunk_id"] for i in idxs],
+                    cand.get("clause_char_start"), cand.get("clause_char_end"))
+                cov_sum += cov
+                n_cov += 1
+                per_type_cov[q["question_type"]] += cov
             if hit:
                 hits10 += 1
                 per_type[q["question_type"]]["hits10"] += 1
@@ -327,6 +341,10 @@ def eval_strategy(strategy, questions, cand_by_qid, chain_by_doc, embedder,
             "recall_at_5": wilson(hits5, n_eff),
             "recall_at_10": wilson(hits10, n_eff),
             "mrr_at_10": round(rr_sum / n_eff, 4) if n_eff else 0.0,
+            # 🔴 内容覆盖度（PRD 7.3）：与 Recall@k 并列的另一个指标 ——
+            #    "找没找到" vs "带够了没有"。gold 区间取自原始 md → 跨策略可比。
+            "content_coverage": round(cov_sum / n_cov, 4) if n_cov else None,
+            "n_content_coverage": n_cov,
             "numeric_recall_at_5": wilson(per_type["数值题"]["hits5"],
                                           per_type["数值题"]["n"]),
             "stale_version_false_recall_rate": wilson(stale, n_eff),
@@ -352,6 +370,9 @@ def eval_strategy(strategy, questions, cand_by_qid, chain_by_doc, embedder,
                     "gold_absent": v["gold_absent"],
                     "recall_at_5": wilson(v["hits5"], v["n"]),
                     "recall_at_10": wilson(v["hits10"], v["n"]),
+                    # 🔴 分题型的内容覆盖度（表格类题会明显低于整体）
+                    "content_coverage": (round(per_type_cov[k] / v["n"], 4)
+                                         if v["n"] else None),
                 }
                 for k, v in sorted(per_type.items())
             },
@@ -462,6 +483,7 @@ def main():
                   f"[{m['recall_at_5'][1]:.3f},{m['recall_at_5'][2]:.3f}]  "
                   f"R@10 {m['recall_at_10'][0]:.3f}  MRR@10 {m['mrr_at_10']:.3f}  "
                   f"数值R@5 {m['numeric_recall_at_5'][0]:.3f}  "
+                  f"🔴覆盖度 {m['content_coverage']}  "
                   f"stale {m['stale_version_false_recall_rate'][0]:.3f}  "
                   f"n={m['n_effective']}(abs {m['n_gold_absent']}/filt "
                   f"{m['n_gold_filtered']})  chunks={m['n_chunks']}  "
