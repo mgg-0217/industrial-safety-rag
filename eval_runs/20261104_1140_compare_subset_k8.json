@@ -1,0 +1,299 @@
+{
+ "generated_at": "2026-11-04T15:03:02",
+ "soft_threshold": 0.7,
+ "n_common": 81,
+ "common_qids": [
+  "t_07947ebc3693",
+  "t_0806e3d9b51d",
+  "t_0bf823a045ab",
+  "t_0eb0a2474c9f",
+  "t_0f35a174f26c",
+  "t_12c2cb4ff16d",
+  "t_18d22c383e9a",
+  "t_1cdd6ae0c967",
+  "t_1d466bcc0ee7",
+  "t_1e4e1e8ec554",
+  "t_1e61e1b4beb6",
+  "t_1f7c8f3ac9fa",
+  "t_23887b8f3321",
+  "t_239886bcbccd",
+  "t_261e74c75ba7",
+  "t_289c987f0821",
+  "t_2bc832d630a1",
+  "t_30a2197e828d",
+  "t_34a1b266c55a",
+  "t_38928237a04d",
+  "t_3a1b631fb7f8",
+  "t_3a816499e5f8",
+  "t_3c18d0758af8",
+  "t_3cca4617fdee",
+  "t_434dfa7c06c8",
+  "t_45d5c21011ff",
+  "t_4f94748baf1c",
+  "t_537a26d7594e",
+  "t_54bc2ae47651",
+  "t_5503e9c19124",
+  "t_553b9cb54808",
+  "t_55cbc2c6d3a4",
+  "t_56217232c8ee",
+  "t_6031e77bccdb",
+  "t_6142af3ef518",
+  "t_6657d5f47529",
+  "t_66fd990884e1",
+  "t_68d42c143147",
+  "t_739eed6328c0",
+  "t_7716cebe0b00",
+  "t_7c7c630527e2",
+  "t_8022668e309a",
+  "t_813d76149d93",
+  "t_81a016e5d876",
+  "t_81a2c3613ba4",
+  "t_875899393bc2",
+  "t_87dac2691148",
+  "t_88e16fd92bd2",
+  "t_8a21ecb85687",
+  "t_8ae914dcd02b",
+  "t_932ba6df735c",
+  "t_9519f8f385fa",
+  "t_9c9e58ce877c",
+  "t_9d02f35ea061",
+  "t_9d308853aeb6",
+  "t_a2fc6d8c56f8",
+  "t_a6698da12563",
+  "t_a6ebb6c1a8f5",
+  "t_a94d0892b862",
+  "t_aa2464a35196",
+  "t_ab1a99cccb45",
+  "t_add634d92059",
+  "t_ae7a60983d36",
+  "t_ae7a719ba15b",
+  "t_afa9f17eb7b9",
+  "t_b8324d95eed9",
+  "t_c1a5c2a4fa94",
+  "t_c49f59550317",
+  "t_d4f3473baf01",
+  "t_dada0a3065f9",
+  "t_dcabdf4f73a4",
+  "t_df6336030ba8",
+  "t_e1c4d5afe55d",
+  "t_e857c172ee98",
+  "t_ec37abf72885",
+  "t_f088ec8bbee5",
+  "t_f3aaf50fd967",
+  "t_f759df0e67c3",
+  "t_f77604e6c723",
+  "t_fa3942399dfc",
+  "t_fb5df72a9344"
+ ],
+ "n_only_a": 225,
+ "n_only_b": 0,
+ "batches": [
+  {
+   "label": "fixed+top5",
+   "source": "eval_runs/20261104_0950_generation_retrieval_main.answers.jsonl",
+   "summary": {
+    "config": "retrieval",
+    "embed_backend": "L4_pure_bm25",
+    "n_answered": 81,
+    "n_errors": 0,
+    "seconds": 0.0,
+    "stale_in_context_questions": 0,
+    "per_type": {
+     "事实题": {
+      "n": 42,
+      "key_point_coverage": [
+       0.4722,
+       0.3613,
+       0.586
+      ],
+      "key_point_coverage_mean": 0.4722,
+      "key_point_coverage_strict": [
+       0.2083,
+       0.1305,
+       0.3157
+      ],
+      "key_point_coverage_mean_strict": 0.2083,
+      "key_point_coverage_by_threshold": {
+       "0.6": 0.5833,
+       "0.7": 0.4722,
+       "0.8": 0.3611
+      },
+      "key_point_questions_full_hit": [
+       0.2381,
+       0.1348,
+       0.3853
+      ],
+      "version_hit_rate": [
+       0.9524,
+       0.8421,
+       0.9868
+      ]
+     },
+     "数值题": {
+      "n": 39,
+      "key_point_coverage": [
+       0.5443,
+       0.435,
+       0.6495
+      ],
+      "key_point_coverage_mean": 0.5443,
+      "key_point_coverage_strict": [
+       0.443,
+       0.3387,
+       0.5527
+      ],
+      "key_point_coverage_mean_strict": 0.443,
+      "key_point_coverage_by_threshold": {
+       "0.6": 0.5696,
+       "0.7": 0.5443,
+       "0.8": 0.481
+      },
+      "key_point_questions_full_hit": [
+       0.5897,
+       0.4342,
+       0.7292
+      ],
+      "numeric_exact_match_rate": [
+       0.5063,
+       0.3984,
+       0.6137
+      ],
+      "version_hit_rate": [
+       1.0,
+       0.9103,
+       1.0
+      ]
+     }
+    },
+    "citation": {
+     "n_refs": 238,
+     "n_valid": 238,
+     "n_invalid": 0,
+     "citation_valid_rate": [
+      1.0,
+      0.9841,
+      1.0
+     ],
+     "questions_with_invalid_citation": 0,
+     "cited_chunks": 160,
+     "cited_with_clause": 0,
+     "cited_with_page": 92,
+     "clause_located_rate": [
+      0.0,
+      0.0,
+      0.0234
+     ],
+     "page_located_rate": [
+      0.575,
+      0.4975,
+      0.649
+     ]
+    }
+   }
+  },
+  {
+   "label": "structural+top8",
+   "source": "eval_runs/20261104_1124_generation_retrieval_k8.answers.jsonl",
+   "summary": {
+    "config": "retrieval",
+    "embed_backend": "L4_pure_bm25",
+    "n_answered": 81,
+    "n_errors": 0,
+    "seconds": 0.0,
+    "stale_in_context_questions": 0,
+    "per_type": {
+     "事实题": {
+      "n": 42,
+      "key_point_coverage": [
+       0.4306,
+       0.3226,
+       0.5456
+      ],
+      "key_point_coverage_mean": 0.4306,
+      "key_point_coverage_strict": [
+       0.2083,
+       0.1305,
+       0.3157
+      ],
+      "key_point_coverage_mean_strict": 0.2083,
+      "key_point_coverage_by_threshold": {
+       "0.6": 0.5139,
+       "0.7": 0.4306,
+       "0.8": 0.3611
+      },
+      "key_point_questions_full_hit": [
+       0.2619,
+       0.153,
+       0.4107
+      ],
+      "version_hit_rate": [
+       1.0,
+       0.9162,
+       1.0
+      ]
+     },
+     "数值题": {
+      "n": 39,
+      "key_point_coverage": [
+       0.5696,
+       0.4597,
+       0.6731
+      ],
+      "key_point_coverage_mean": 0.5696,
+      "key_point_coverage_strict": [
+       0.5063,
+       0.3984,
+       0.6137
+      ],
+      "key_point_coverage_mean_strict": 0.5063,
+      "key_point_coverage_by_threshold": {
+       "0.6": 0.5949,
+       "0.7": 0.5696,
+       "0.8": 0.5443
+      },
+      "key_point_questions_full_hit": [
+       0.6154,
+       0.459,
+       0.7511
+      ],
+      "numeric_exact_match_rate": [
+       0.557,
+       0.4473,
+       0.6613
+      ],
+      "version_hit_rate": [
+       1.0,
+       0.9103,
+       1.0
+      ]
+     }
+    },
+    "citation": {
+     "n_refs": 226,
+     "n_valid": 226,
+     "n_invalid": 0,
+     "citation_valid_rate": [
+      1.0,
+      0.9833,
+      1.0
+     ],
+     "questions_with_invalid_citation": 0,
+     "cited_chunks": 155,
+     "cited_with_clause": 150,
+     "cited_with_page": 49,
+     "clause_located_rate": [
+      0.9677,
+      0.9267,
+      0.9861
+     ],
+     "page_located_rate": [
+      0.3161,
+      0.2481,
+      0.393
+     ]
+    }
+   }
+  }
+ ],
+ "note": "两批都取 qid 交集后离线重算（统一口径），分母一致。"
+}
