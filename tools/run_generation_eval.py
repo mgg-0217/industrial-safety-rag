@@ -264,6 +264,9 @@ def main():
     ap.add_argument("--system", default="system",
                     help="系统提示词：system（默认）/ system_v2（适用性标注版，"
                          "针对 26.7%% 的归因污染）")
+    ap.add_argument("--attribution-fallback", action="store_true",
+                    help="启用**代码级归因兜底**：模型没自己标注适用性时，"
+                         "代码在答案末尾强制追加归因声明（2026-11-05）")
     args = ap.parse_args()
 
     if args.rescore:
@@ -297,7 +300,8 @@ def main():
         raise SystemExit(f"未知的系统提示词：{args.system}（可选：{list(AN.SYSTEMS)}）")
     answerer = AN.Answerer(chunks, embedder=embedder, manifest=manifest,
                             top_k=args.top_k, use_vector=args.use_vector,
-                            system=sys_prompt)
+                            system=sys_prompt,
+                            attribution_fallback=args.attribution_fallback)
 
     import llm_client
 
@@ -328,7 +332,8 @@ def main():
                     r = answerer.answer(q["question"], when=q.get("query_time"),
                                          mode=q.get("time_mode", "current"),
                                          version_filter=True, top_k=args.top_k,
-                                         call=do_llm)
+                                         call=do_llm,
+                                         subject=q.get("equipment_id"))
                 elif cfg == "closed_book":
                     r = AN.answer_no_retrieval(q["question"], corpus_text="",
                                                call=do_llm)
@@ -358,6 +363,10 @@ def main():
                 "time_mode": q.get("time_mode"), "query_time": q.get("query_time"),
                 "answer": (r.get("answer_text") or "")[:2000],
                 "rendered": (r.get("rendered") or "")[:4000],
+                # 🔴 代码级归因兜底（2026-11-05）：记录是否追加了。
+                #    ⚠️ **判分用的是 `answer`（模型原始正文，不含追加）** ——
+                #    所以"模型自己做到的"与"代码兜底补上的"是分开的。
+                "attribution_fallback": r.get("attribution_fallback"),
                 "ctx_chunk_ids": [c["chunk_id"] for c in r.get("ctx_chunks", [])],
                 "ctx_docs": r.get("ctx_docs", []),
                 "cite_stats": r.get("cite_stats", {}),
@@ -400,6 +409,7 @@ def main():
             "config": cfg,
             "system_prompt": sys_kind,
             "system_prompt_name": args.system,
+            "attribution_fallback_enabled": args.attribution_fallback,
             "embed_backend": backend,
             "embed_note": msg,
             "chunk_strategy": args.strategy,
@@ -527,6 +537,16 @@ def summarize(records, cfg, backend, dt, errors, args):
             t["refusal_false_answer_rate_decidable"] = SC.wilson(
                 n_false, n_pass + n_false) if (n_pass + n_false) else None
             t["refusal_verdicts"] = dict(verdicts)
+            # 🔴 **最终输出的归因保障率**（2026-11-05）：
+            #    模型自己标注了边界，**或**代码兜底追加了声明
+            #    → 用户看到的答案里带适用性说明。
+            #    这与"误答率"是两个维度：兜底能保证"输出安全"，
+            #    但不能证明"模型学会了"。
+            n_fb = sum(1 for r in rs if r.get("attribution_fallback"))
+            n_bd = sum(1 for r in rs if r.get("refusal_verdict") == "bounded")
+            t["attribution_guarantee_rate"] = SC.wilson(n_fb + n_bd, len(rs))
+            t["n_code_fallback"] = n_fb
+            t["n_model_boundary"] = n_bd
             # 🔴 宽松口径（K-53）：只看"有没有明确表态说没有"
             lv = Counter(r.get("refusal_verdict_lenient") for r in rs)
             n_lfalse = lv.get("false_answer", 0)

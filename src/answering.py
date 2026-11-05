@@ -29,7 +29,121 @@ sys.path.insert(0, str(ROOT / "src"))
 
 import citation as CIT      # noqa: E402
 import retrieval as RT      # noqa: E402
+import scoring as SC        # noqa: E402
 import version_card as VC   # noqa: E402
+
+
+# ---------------------------------------------------------------------------
+# 🔴 代码级归因兜底（2026-11-05）
+# ---------------------------------------------------------------------------
+#
+# 背景：M2 第二轮实测发现，"归因污染"（模型说了未找到，却仍把通用条款写成
+# 主体专属规定）是拒答场景的主要失败模式。`SYSTEM_V2` 提示词把它治到 14%，
+# 但**残留的那部分靠提示词治不了** —— 模型会先做
+# 「T-9042 属于装置区检维修作业」这种**未经资料支持的分类推断**，再套用制度。
+#
+# 🔴 **代码能做的判断，模型就不该扛**：
+# 「本次召回的 chunk 里，有没有任何一块**正文提到**这个主体？」
+#
+# * 提到了 → 那就是**关于该主体**的内容（真实场景）；
+# * 没提到 → 那这些 chunk 全是**通用条款**（假主体场景）。
+#
+# 这个判据**不需要 LLM、也不需要正则猜**，是纯代码事实。
+# → 代码据此在答案末尾**强制追加**归因声明，
+#    无论模型写的是什么，用户都不会把通用规定误当成该主体的专门规定。
+#
+# ⚠️ **只在模型没自己说清楚时才追加**（避免重复）：
+#   模型已经标注了适用性边界（`SC.has_boundary_declaration`）
+#   或已经明说"资料里没有该主体的规定"（`SC.has_subject_absence_statement`）
+#   → 都不追加。
+#
+# ⚠️ **本兜底只对"主体明确"的场景有效**（拒答题）。
+#   事实题/数值题没有单一主体概念，主体判定不成立 → 不启用。
+
+ATTRIBUTION_FALLBACK = (
+    "⚠️ **归因说明（系统自动追加）**：本次检索到的资料中"
+    "**未出现「{subject}」**，因此以上引用均为**通用规定**，"
+    "**不构成对「{subject}」的专门规定**。"
+)
+
+#: 🔴 **污染句的不予采信声明**（2026-11-05 兜底升级）。
+#:
+#: 只追加一句声明是**不够的** —— 实测（150 条旧 system 批次）：
+#: 追加声明只把严格误答率从 0.287 压到 0.273（**只降 2 条**），
+#: 因为模型正文里那句「结论：<主体> 应……」**原样还在**，
+#: 末尾补一句"这些是通用规定"是**自相矛盾**的。
+#:
+#: → 兜底必须**动正文**：把污染句**划掉**并明示"不予采信"。
+POLLUTION_NOTICE = (
+    "🔴 **不予采信**：答案中有 {n} 句把通用条款表述为「{subject}」的"
+    "专门规定，这些句子已被划去，**请以划线部分之外的内容为准**。"
+)
+
+
+def chunks_mention_subject(chunks, subject):
+    """召回的 chunk 里有没有任何一块**正文提到**该主体。
+
+    🔴 查的是**原文轨** `text`（不是归一化轨）—— 与展示给模型的内容一致。
+
+    :returns: ``True`` / ``False`` / ``None``（主体为空，无法判定）
+    """
+    if not subject:
+        return None
+    for c in chunks or ():
+        if subject in (c.get("text") or ""):
+            return True
+    return False
+
+
+def mark_pollution(text, pollution):
+    """把污染句**就地划掉**（删除线）。
+
+    🔴 **必须用占位符两段式替换**：直接 `replace(s, "~~s~~")` 会在
+    同一句话出现两次时产生 `~~~~s~~~~`（嵌套删除线）。
+
+    :param pollution: ``find_pollution_sentences`` 的返回值
+    :returns: 标记后的文本（原文没被改动的地方逐字保留）
+    """
+    out = text or ""
+    marks = []
+    for i, item in enumerate(pollution or ()):
+        s = (item[0] if isinstance(item, (tuple, list)) else item).strip()
+        if not s or s not in out:
+            continue
+        ph = f"\x00POLL{i}\x00"
+        out = out.replace(s, ph)
+        marks.append((ph, s))
+    for ph, s in marks:
+        out = out.replace(ph, SC.MARK_POLLUTION_OPEN + s + SC.MARK_POLLUTION_CLOSE)
+    return out
+
+
+def attribution_fallback(answer_text, chunks, subject):
+    """代码级归因兜底：**两件事**，各自独立触发。
+
+    1. **污染句划除**（无条件）：只要答案里有"把通用条款当成主体规定"
+       的句子，就把它划掉并标注不予采信。
+       → 这一步**不依赖**模型有没有说清楚，因为污染句本身就是错的。
+    2. **归因声明追加**（有条件）：召回的 chunk 里根本没出现这个主体，
+       且模型自己既没做边界声明、也没说"资料里没有该主体的规定"
+       → 在末尾补一句系统声明。
+
+    🔴 为什么第 2 步要"模型没说清楚才补"：避免与模型自己的话重复。
+
+    :returns: ``(需要追加声明?, 追加的文本, 污染句列表)``
+    """
+    if not subject:
+        return False, "", []
+    pollution = SC.find_pollution_sentences(answer_text, subject)
+    mentioned = chunks_mention_subject(chunks, subject)
+    if mentioned is not False:
+        # 有块提到该主体 → 引用是关于它的内容，不追加声明
+        return False, "", pollution
+    if SC.has_boundary_declaration(answer_text, subject)[0]:
+        return False, "", pollution
+    if SC.has_subject_absence_statement(answer_text, subject)[0]:
+        return False, "", pollution
+    return True, ATTRIBUTION_FALLBACK.format(subject=subject), pollution
 
 
 # ---------------------------------------------------------------------------
@@ -194,7 +308,8 @@ class Answerer:
     """
 
     def __init__(self, chunks, embedder=None, manifest=None, top_k=5,
-                 alpha=0.5, use_vector=False, system=None):
+                 alpha=0.5, use_vector=False, system=None,
+                 attribution_fallback=False):
         self.chunks = list(chunks)
         self.embedder = embedder
         self.use_vector = use_vector
@@ -203,6 +318,10 @@ class Answerer:
         self.alpha = alpha
         #: 系统提示词（`None` = 默认的 `SYSTEM`；`SYSTEM_V2` = 适用性标注版）
         self.system = system or SYSTEM
+        #: 🔴 是否启用**代码级归因兜底**（2026-11-05）。
+        #: 生产配置应为 ``True``；评测时要能关掉它，
+        #: 才能区分"模型自己做到的"与"代码兜底补上的"。
+        self.attribution_fallback = attribution_fallback
         self.retriever = RT.Retriever(self.chunks, embedder=embedder, alpha=alpha)
 
     # -- 检索 ---------------------------------------------------------------
@@ -224,12 +343,17 @@ class Answerer:
     # -- 生成 ---------------------------------------------------------------
 
     def answer(self, question, when=None, mode="current", version_filter=True,
-               top_k=None, call=None, extra_context=""):
+               top_k=None, call=None, extra_context="", subject=None):
         """完整跑一遍：检索 → 上下文 → 生成 → 装配。
 
         :param call: ``call_llm(prompt, system=...)``，便于测试注入假模型
+        :param subject: **提问主体**（如假位号" T-9041"、假装置"加氢反应器"）。
+            🔴 只在**主体明确**的场景传（拒答题）——
+            代码级归因兜底靠它判断"召回的 chunk 里有没有提到这个主体"。
+            事实题/数值题没有单一主体 → 传 ``None``，兜底不启用。
         :returns: 字典，含 ``answer_text``（模型原始正文）、``rendered``（最终答案）、
-            ``ctx_chunks``、``cite_stats``、``version_cards``
+            ``ctx_chunks``、``cite_stats``、``version_cards``、
+            ``attribution_fallback``（代码追加的归因声明，没有则 ``None``）
         """
         if call is None:
             import llm_client
@@ -243,8 +367,24 @@ class Answerer:
         prompt = build_prompt(question, ctx_block)
         raw = call(prompt, system=self.system)
 
-        rendered, stats = CIT.render(raw, ctx, manifest=self.manifest, when=when,
-                                     mode=mode)
+        fb_text = None
+        pollution = []
+        raw_for_render = raw
+        if self.attribution_fallback and subject:
+            need, fb, pollution = attribution_fallback(raw, ctx, subject)
+            if need:
+                fb_text = fb
+            if pollution:
+                raw_for_render = mark_pollution(raw, pollution)
+
+        rendered, stats = CIT.render(raw_for_render, ctx, manifest=self.manifest,
+                                     when=when, mode=mode)
+        # 🔴 代码级归因兜底（2026-11-05）：模型没自己说清楚时，代码强制追加
+        if fb_text:
+            rendered = rendered + "\n\n" + fb_text
+        if pollution:
+            rendered = rendered + "\n\n" + POLLUTION_NOTICE.format(
+                n=len(pollution), subject=subject)
         cards = VC.build_cards(ctx, manifest=self.manifest, when=when, mode=mode)
         card_block = VC.render_cards(cards)
         final = rendered + ("\n\n" + card_block if card_block else "")
@@ -256,6 +396,8 @@ class Answerer:
                                 for c in ctx}),
             "cite_stats": stats,
             "version_cards": cards,
+            "attribution_fallback": fb_text,
+            "pollution_sentences": [p[0] for p in pollution],
         }
 
 

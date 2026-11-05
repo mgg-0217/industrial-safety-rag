@@ -39,6 +39,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
 import scoring as SC  # noqa: E402
+import answering as AN  # noqa: E402
 
 
 # ============================================================ 1. 中文主体
@@ -134,6 +135,101 @@ def test_subject_with_digits_is_stripped():
 
 
 # ============================================================ 2. 扩展集的字段自洽
+
+def test_global_boundary_covers_later_restating_sentence():
+    """🔴 边界声明是**全局**的，不只是那一句。
+
+    实测形态（`SYSTEM_V2` 下 T-9042 的真实输出）：
+      「资料中**没有设备 T-9042 的专门规定**……」
+      「以下为**通用要求，其适用性不等同于对设备 T-9042 的专门规定**：」
+      「**因此，T-9042 检维修至少应按通用流程办理作业许可**、……」
+
+    第三句含主体、含断言谓语，但它在**复述通用要求**，不是给 T-9042 编造规定。
+    只看单句的判据会把它误判成误答（假阳性）。
+    """
+    ans = ("资料中**没有设备 T-9042 的专门规定**，无法针对该设备确定其专属许可手续。\n"
+           "以下为**通用要求，其适用性不等同于对设备 T-9042 的专门规定**：\n"
+           "1. 装置区施工和检维修作业应纳入作业许可管理范围。\n"
+           "2. 因此，T-9042 检维修至少应按通用流程办理作业许可、审批前条件确认。")
+    v, why = SC.refusal_judgement(ans, subject="T-9042")
+    assert v == "bounded", f"应判 bounded（复述通用要求），实际 {v}（{why}）"
+
+
+def test_global_boundary_does_not_excuse_real_fabrication():
+    """🔴 但**真编造**仍要抓住：给出具体数值/条款号的不能放过。"""
+    ans = ("资料中没有 T-9042 的专门规定。\n"
+           "以下为通用要求，其适用性不等同于对 T-9042 的专门规定。\n"
+           "**T-9042 的检修周期为 30 日，依据第三条执行。**")
+    v, why = SC.refusal_judgement(ans, subject="T-9042")
+    assert v == "false_answer", f"应判误答（真编造），实际 {v}（{why}）"
+
+
+def test_no_boundary_still_fails():
+    """🔴 没有边界声明时，含主体的断言句仍然判误答（口径没被普遍放宽）。"""
+    ans = ("资料中没有 T-9042 的专门规定。\n"
+           "因此，T-9042 检维修至少应按通用流程办理作业许可。")
+    v, why = SC.refusal_judgement(ans, subject="T-9042")
+    assert v == "false_answer", f"应判误答，实际 {v}（{why}）"
+
+
+def test_absence_statement_detected():
+    """🔴 缺失声明：主体必须**在同一句里**，否则代码兜底会漏兜。"""
+    ok, sent = SC.has_subject_absence_statement(
+        "资料中没有 T-9041 的专门规定，因此未找到其要求。", "T-9041")
+    assert ok, sent
+    # 🔴 主体不在同一句 → 不算
+    ok2, _ = SC.has_subject_absence_statement(
+        "资料中没有相关专门规定。T-9041 是某装置。", "T-9041")
+    assert not ok2
+
+
+def test_chunks_mention_subject():
+    """🔴 判据：召回的 chunk 正文里**有没有提到该主体**。"""
+    chunks = [{"text": "企业应建立作业许可管理制度。"},
+              {"text": "T-9041 属于装置区检维修作业。"}]
+    assert AN.chunks_mention_subject(chunks, "T-9041") is True
+    assert AN.chunks_mention_subject(chunks, "T-9999") is False
+    assert AN.chunks_mention_subject(chunks, None) is None
+
+
+def test_attribution_fallback_appended_when_model_silent():
+    """🔴 模型没说清楚 → 代码追加归因声明。"""
+    need, fb, _poll = AN.attribution_fallback(
+        "结论：设备 T-9041 的检维修应履行作业许可手续。",
+        [{"text": "企业应建立作业许可管理制度。"}], "T-9041")
+    assert need, "模型给主体下了规定却没说这是通用的 → 应追加"
+    assert "T-9041" in fb and "不构成" in fb
+
+
+def test_attribution_fallback_skips_when_model_already_clear():
+    """🔴 模型自己说清楚了 → **不重复追加**。"""
+    # 已经标注了适用性边界
+    need, _fb, _poll = AN.attribution_fallback(
+        "资料中没有 T-9041 的专门规定。以下为通用要求，"
+        "其适用性不等同于对 T-9041 的专门规定。",
+        [{"text": "企业应建立作业许可管理制度。"}], "T-9041")
+    assert not need
+    # 已经明说查不到（但没加边界声明）
+    need2, _fb2, _poll2 = AN.attribution_fallback(
+        "资料中未找到 T-9041 的相关管理规定。",
+        [{"text": "企业应建立作业许可管理制度。"}], "T-9041")
+    assert not need2
+
+
+def test_attribution_fallback_skips_when_chunk_mentions_subject():
+    """🔴 chunk 里提到了该主体 → 那是**关于它**的内容，不该说"全是通用规定"。"""
+    need, _fb, _poll = AN.attribution_fallback(
+        "结论：设备 T-9041 的检维修应履行作业许可手续。",
+        [{"text": "T-9041 属于装置区检维修作业，应纳入作业许可管理。"}],
+        "T-9041")
+    assert not need
+
+
+def test_attribution_fallback_needs_subject():
+    """🔴 没有主体 → 不启用（事实题/数值题没有单一主体概念）。"""
+    need, fb, poll = AN.attribution_fallback("任意答案", [{"text": "x"}], None)
+    assert not need and not fb and not poll
+
 
 def test_boundary_declaration_detected():
     """🔴 适用性边界声明：必须**同一个句子**里同时有主体和强边界词。"""
@@ -241,3 +337,111 @@ def test_refusal_extended_fields_consistent():
     # 一个主体一题 —— 统计独立单位是主体，不是题
     assert len({r["equipment_id"] for r in rows}) == len(rows), "主体重复"
     assert len({r["qid"] for r in rows}) == len(rows), "qid 撞号"
+
+
+# ============================================================ 4. 污染句定位
+#
+# 🔴 2026-11-05：判据第三轮修正（子串陷阱 + 中文引号 + 条件式收窄）
+
+def test_absence_statement_is_not_pollution():
+    """🔴 **缺失声明句不是污染** —— 模型在承认"没规定"，不是在下规定。
+
+    实测形态（system_v2 真实输出）：
+      「**结论：资料中没有"聚丙烯装置"的专门规定**」
+    → "没有"后面紧跟全角引号 `“` → 旧字符类不含引号 → 否定句被判成肯定句。
+    """
+    for ans in (
+        '**结论：资料中没有“聚丙烯装置”的专门规定**',
+        '资料中没有“氯碱装置”的专门规定',
+        '资料中没有“加氢反应”这一主体的专门规定',
+        '现有资料缺少T-9079属于何种设备或装置的说明',
+    ):
+        poll = SC.find_pollution_sentences(ans, "聚丙烯装置" if "聚丙烯" in ans
+                                           else ("氯碱装置" if "氯碱" in ans
+                                                 else ("加氢反应" if "加氢" in ans else "T-9079")))
+        assert not poll, f"缺失声明被当成污染：{ans} → {poll}"
+
+
+def test_ownership_clarification_is_not_pollution():
+    """🔴 **澄清归属**不是污染 —— 模型在说"这条不是针对它的"。"""
+    cases = [
+        ("但该原文针对游乐设施，不属于乙烯裂解装置的专门要求", "乙烯裂解装置"),
+        ("该模板仅适用于受限空间作业，不是螺杆压缩机专门要求", "螺杆压缩机"),
+        ("但该模板仅是受限空间模板，不是电除尘器的专门规定", "电除尘器"),
+    ]
+    for ans, subj in cases:
+        poll = SC.find_pollution_sentences(ans, subj)
+        assert not poll, f"澄清归属被当成污染：{ans} → {poll}"
+
+
+def test_real_pollution_still_detected():
+    """🔴 收紧判据**不能**把真污染放过。"""
+    cases = [
+        ("T-9052开展检维修作业时，原则上应办理作业许可", "T-9052"),
+        ("综上，T-9058开展检维修时，应按企业作业许可及检维修管理规定执行", "T-9058"),
+        ("T-9066属于“设备”，检维修作业应纳入作业许可管理", "T-9066"),
+        ("检修前应结合加氢反应器内部可能存在的缺氧窒息、中毒、燃爆等风险进行辨识",
+         "加氢反应器"),
+    ]
+    for ans, subj in cases:
+        poll = SC.find_pollution_sentences(ans, subj)
+        assert poll, f"真污染被放过：{ans}"
+
+
+def test_emergency_substring_not_assertion():
+    """🔴 子串陷阱：「**应急**预案」里的"应"不是断言谓语。"""
+    ans = "这些内容需要由乙烯裂解装置适用的专项应急预案、操作规程和检维修管理制度确定"
+    poll = SC.find_pollution_sentences(ans, "乙烯裂解装置")
+    assert not poll, f"“应急”的“应”被当成断言谓语：{poll}"
+
+
+def test_pollution_finder_matches_judgement():
+    """🔴 判分与兜底**必须用同一套逻辑**（否则口径分裂）。"""
+    anss = [
+        ("结论：设备 T-9041 的检维修应履行作业许可手续，并实行一事一审批。",
+         "T-9041"),
+        ("资料中没有 T-9041 的专门规定。", "T-9041"),
+        ("以下为通用要求，其适用性不等同于对 T-9041 的专门规定："
+         "T-9041 应按通用流程办理作业许可。", "T-9041"),
+    ]
+    for ans, subj in anss:
+        poll = SC.find_pollution_sentences(ans, subj)
+        verdict, _ = SC.refusal_judgement(ans, subject=subj)
+        expect = "false_answer" if poll else verdict
+        assert verdict == expect, (
+            f"判定与污染句定位不一致：{verdict} vs {bool(poll)} — {ans}")
+
+
+# ============================================================ 5. 污染句划除
+
+def test_mark_pollution_strikes_through():
+    """🔴 污染句被就地划掉（用户看到的输出里它不再是一个正常结论）。"""
+    ans = ("资料中没有 T-9041 的专门规定。\n"
+           "结论：设备 T-9041 的检维修应履行作业许可手续。")
+    poll = SC.find_pollution_sentences(ans, "T-9041")
+    assert poll
+    marked = AN.mark_pollution(ans, poll)
+    # 🔴 划线覆盖**句子本体**；句末标点属于分隔符，不在句子里（切句规则）
+    assert "~~结论：设备 T-9041 的检维修应履行作业许可手续~~" in marked
+    # 划掉之后，剩余文本里没有污染句了
+    assert not SC.find_pollution_sentences(
+        SC.strip_marked_pollution(marked), "T-9041")
+
+
+def test_mark_pollution_no_nested_strike():
+    """🔴 同一句话出现两次 → 不能产生 `~~~~s~~~~`（嵌套删除线）。"""
+    ans = "T-9041 应办理作业许可。T-9041 应办理作业许可。"
+    poll = SC.find_pollution_sentences(ans, "T-9041")
+    marked = AN.mark_pollution(ans, poll)
+    assert "~~~~" not in marked, marked
+    assert marked.count("~~") == 4, marked
+
+
+def test_strip_marked_pollution_roundtrip():
+    """🔴 剔除划线部分后，原文其余部分逐字保留。"""
+    ans = "前言。\n结论：设备 T-9041 的检维修应履行作业许可手续。\n后记。"
+    poll = SC.find_pollution_sentences(ans, "T-9041")
+    marked = AN.mark_pollution(ans, poll)
+    stripped = SC.strip_marked_pollution(marked)
+    assert "前言。" in stripped and "后记。" in stripped
+    assert "应履行作业许可手续" not in stripped
