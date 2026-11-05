@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-04T10:03:59",
+ "generated_at": "2026-11-05T11:38:24",
  "config": "retrieval",
  "system_prompt": null,
  "embed_backend": "L4_pure_bm25",
@@ -64,6 +64,15 @@
      "pass": 39,
      "false_answer": 1,
      "manual": 2
+    },
+    "refusal_false_answer_rate_lenient": [
+     0.0238,
+     0.0042,
+     0.1232
+    ],
+    "refusal_verdicts_lenient": {
+     "pass": 41,
+     "false_answer": 1
     }
    },
    "数值题": {

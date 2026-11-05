@@ -376,6 +376,51 @@ def _strip_subject(text, subject):
     return (text or "").replace(subject, " ")
 
 
+#: 🔴 **适用性边界声明**（2026-11-05，随 `SYSTEM_V2` 提示词引入）。
+#:
+#: M2 拒答扩容实测（150 条 4 机制）发现主要失败模式是**归因污染**：
+#! 模型说了"未找到"，却仍用「结论：<主体> 应/须/需要…」把通用条款归给主体。
+#! 严格口径一律判误答（26.7%）。
+#:
+#: `SYSTEM_V2` 要求模型在给通用要求时**显式标注适用性边界**，
+#: 于是出现了第三种形态 —— **既表态了、又做了归因隔离**：
+#!
+#: > 「资料中**没有 T-9041 的专门规定**……
+#: >   以下为**通用要求，其适用性不等同于对 T-9041 的专门规定**：……」
+
+#: **强**边界词：明确否定了"通用条款归属该主体"这件事。
+_BOUNDARY_STRONG = [
+    "不等同于", "不针对", "并非针对", "不是针对", "不构成", "不能替代",
+    "不特指", "不能视为", "并非关于", "不构成对", "不能作为该",
+]
+
+#: **弱**边界词：只说明"这是通用条款"，单独出现**不足以**证明做了归因隔离
+#: （模型可能只是在列举时顺口一说）。
+_BOUNDARY_WEAK = [
+    "通用要求", "通用规定", "一般性规定", "通用管理要求", "通用技术要求",
+]
+
+
+def has_boundary_declaration(answer, subject=None):
+    """答案里有没有**针对该主体**的显式适用性边界声明。
+
+    🔴 判据必须是「**同一个句子里**同时有主体和强边界词」：
+    只在别处出现"通用要求"不算 —— 模型可以在结尾随便加一句，
+    正文照样写「结论：<主体> 应……」。
+
+    :returns: ``(bool, 命中的句子)``
+    """
+    ans = answer or ""
+    if not subject:
+        return False, ""
+    for s in _sentences(ans):
+        if subject not in s:
+            continue
+        if any(m in s for m in _BOUNDARY_STRONG):
+            return True, s.strip()[:120]
+    return False, ""
+
+
 def refusal_judgement(answer, subject=None, question=None, mode="strict"):
     """按 PRD 7.1 的判定表判定拒答题。
 
@@ -449,6 +494,18 @@ def refusal_judgement(answer, subject=None, question=None, mode="strict"):
     #       缺 ② → "我不知道…请提供 T-9001 的规程" 被判误答；
     #       缺 ③ → "需要以下信息：- T-9004 的设备名称" 被判误答。
     if subject:
+        # 🔴 **适用性边界声明**（2026-11-05，随 SYSTEM_V2 引入）
+        #
+        #    判定的对象是"**有没有真的给这个主体下规定**"。
+        #    边界声明句本身（"以下为通用要求，其适用性不等同于对 T-9041 的专门规定"）
+        #    **含主体、含断言谓语**，但它恰恰是在说"这些要求**不是**给这个主体的"——
+        #    旧判分把它当成"给主体下规定"，是**判分缺陷**（与 K-39 同款：
+        #    否定词族覆盖不全，"不等同于"没被认出来）。
+        #
+        #    → 边界声明句从"断言规定"的候选里**排除**；
+        #    → 若答案里**还有别的**断言句，那是真归因污染 → 误答；
+        #    → 若没有，则判 `bounded`（做了归因隔离，单列，不算误答）。
+        bounded, bsent = has_boundary_declaration(ans, subject)
         for s in _sentences(ans):
             if subject not in s:
                 continue
@@ -456,8 +513,13 @@ def refusal_judgement(answer, subject=None, question=None, mode="strict"):
                 continue
             if not _ASSERT_RE.search(s):
                 continue
+            # 🔴 边界声明句不算"给主体下规定"
+            if any(m in s for m in _BOUNDARY_STRONG):
+                continue
             return ("false_answer",
                     f"主体 {subject} 被断言规定：{s.strip()[:60]}")
+        if bounded:
+            return ("bounded", f"已显式声明适用性边界：{bsent}")
     # 2. 未表态 → 误答（PRD：未表态同样算误答）
     if not stated:
         extra = []

@@ -1,0 +1,150 @@
+{
+ "generated_at": "2026-11-05T11:28:04",
+ "config": "retrieval",
+ "system_prompt": "system_v2（带 [[Cn]] 引用编号）",
+ "system_prompt_name": "system_v2",
+ "embed_backend": "L4_pure_bm25",
+ "embed_note": "无向量路（PRD 4.6 的 L4，本项目实际配置）",
+ "chunk_strategy": "fixed",
+ "n_questions": 150,
+ "n_answered": 150,
+ "n_errors": 0,
+ "n_skipped": 0,
+ "skipped": [],
+ "errors": [],
+ "seconds": 292.7,
+ "summary": {
+  "config": "retrieval",
+  "embed_backend": "L4_pure_bm25",
+  "n_answered": 150,
+  "n_errors": 0,
+  "seconds": 292.7,
+  "stale_in_context_questions": 0,
+  "per_type": {
+   "拒答题": {
+    "n": 150,
+    "refusal_false_answer_rate": [
+     0.16,
+     0.1099,
+     0.227
+    ],
+    "refusal_decidable_n": 28,
+    "refusal_false_answer_rate_decidable": [
+     0.8571,
+     0.6851,
+     0.943
+    ],
+    "refusal_verdicts": {
+     "bounded": 122,
+     "false_answer": 24,
+     "pass": 4
+    },
+    "refusal_false_answer_rate_lenient": [
+     0.0267,
+     0.0104,
+     0.0666
+    ],
+    "refusal_verdicts_lenient": {
+     "pass": 146,
+     "false_answer": 4
+    },
+    "refusal_by_mechanism": {
+     "fake_equipment": {
+      "label": "假装置/设备",
+      "n": 50,
+      "n_false_answer": 12,
+      "n_manual": 0,
+      "n_pass": 0,
+      "refusal_false_answer_rate": [
+       0.24,
+       0.143,
+       0.3741
+      ],
+      "refusal_false_answer_rate_decidable": [
+       1.0,
+       0.7575,
+       1.0
+      ]
+     },
+     "fake_id": {
+      "label": "假位号",
+      "n": 40,
+      "n_false_answer": 5,
+      "n_manual": 0,
+      "n_pass": 0,
+      "refusal_false_answer_rate": [
+       0.125,
+       0.0546,
+       0.2611
+      ],
+      "refusal_false_answer_rate_decidable": [
+       1.0,
+       0.5655,
+       1.0
+      ]
+     },
+     "fake_medium": {
+      "label": "假介质/物料",
+      "n": 30,
+      "n_false_answer": 0,
+      "n_manual": 0,
+      "n_pass": 4,
+      "refusal_false_answer_rate": [
+       0.0,
+       0.0,
+       0.1135
+      ],
+      "refusal_false_answer_rate_decidable": [
+       0.0,
+       0.0,
+       0.4899
+      ]
+     },
+     "fake_process": {
+      "label": "假工序/作业",
+      "n": 30,
+      "n_false_answer": 7,
+      "n_manual": 0,
+      "n_pass": 0,
+      "refusal_false_answer_rate": [
+       0.2333,
+       0.1179,
+       0.4093
+      ],
+      "refusal_false_answer_rate_decidable": [
+       1.0,
+       0.6457,
+       1.0
+      ]
+     }
+    }
+   }
+  },
+  "citation": {
+   "n_refs": 1210,
+   "n_valid": 1210,
+   "n_invalid": 0,
+   "citation_valid_rate": [
+    1.0,
+    0.9968,
+    1.0
+   ],
+   "questions_with_invalid_citation": 0,
+   "cited_chunks": 551,
+   "cited_with_clause": 0,
+   "cited_with_page": 432,
+   "clause_located_rate": [
+    0.0,
+    0.0,
+    0.0069
+   ],
+   "page_located_rate": [
+    0.784,
+    0.7478,
+    0.8164
+   ]
+  },
+  "n_skipped": 0,
+  "system_prompt": "system_v2（带 [[Cn]] 引用编号）"
+ }
+}

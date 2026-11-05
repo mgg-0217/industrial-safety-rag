@@ -135,6 +135,58 @@ def test_subject_with_digits_is_stripped():
 
 # ============================================================ 2. 扩展集的字段自洽
 
+def test_boundary_declaration_detected():
+    """🔴 适用性边界声明：必须**同一个句子**里同时有主体和强边界词。"""
+    ok, sent = SC.has_boundary_declaration(
+        "以下为通用要求，其适用性不等同于对 T-9041 的专门规定：", "T-9041")
+    assert ok, sent
+    # 🔴 主体不在同一句 → 不算（模型在别处随口加一句不算数）
+    ok2, _ = SC.has_boundary_declaration(
+        "以下为通用要求。资料中没有 T-9041 的专门规定。", "T-9041")
+    assert not ok2
+    # 只有弱边界词 → 不算
+    ok3, _ = SC.has_boundary_declaration(
+        "以下为通用要求，适用于 T-9041。", "T-9041")
+    assert not ok3
+
+
+def test_bounded_is_not_false_answer():
+    """🔴 `bounded`：表态了 + 显式做了归因隔离 → 不算"给不存在的装置编造规定"。"""
+    ans = ("资料中**没有 T-9041 的专门规定**，因此未找到其具体要求。\n"
+           "以下为**通用要求，其适用性不等同于对 T-9041 的专门规定**：\n"
+           "1. 企业应建立设备预防性维护管理程序。")
+    v, why = SC.refusal_judgement(ans, subject="T-9041")
+    assert v == "bounded", f"应判 bounded，实际 {v}（{why}）"
+
+
+def test_boundary_does_not_excuse_real_fabrication():
+    """🔴 边界声明**不能豁免**真正的归因污染。
+
+    模型如果一边标注边界、一边仍用「结论：<主体> 应……」给主体下规定，
+    那还是误答 —— 边界声明只是把声明放在了错误的位置。
+    """
+    ans = ("资料中没有 T-9041 的专门规定。\n"
+           "**结论：设备 T-9041 的检维修应履行作业许可手续**，并实行一事一审批。\n"
+           "（以上通用要求，其适用性不等同于对 T-9041 的专门规定）")
+    v, why = SC.refusal_judgement(ans, subject="T-9041")
+    assert v == "false_answer", f"应判误答，实际 {v}（{why}）"
+
+
+def test_bounded_does_not_change_legacy_verdicts():
+    """🔴 兼容性：旧的答案（没有边界声明）判定**必须完全不变**。
+
+    这是两批可比的前提 —— 新增判定态不能让历史批次的数字漂移。
+    """
+    # 旧口径的典型误答：没有边界声明
+    v, _ = SC.refusal_judgement(
+        "T-9001 的检修周期为 30 天，依据第三条。", subject="T-9001")
+    assert v == "false_answer"
+    # 旧口径的典型通过
+    v2, _ = SC.refusal_judgement(
+        "未找到 T-9001 的相关规定，语料中没有该设备。", subject="T-9001")
+    assert v2 == "pass"
+
+
 def test_lenient_mode_only_asks_stated():
     """🔴 宽松口径：只看"有没有明确表态说没有"。
 

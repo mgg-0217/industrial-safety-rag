@@ -131,12 +131,17 @@ def analyze(path):
         | 模式 | 严格 | 宽松 | 含义 |
         |---|---|---|---|
         | `1_完全没意识到` | 误答 | **误答** | 压根没意识到语料里没这个主体 → 直接把通用条款当它的规定 |
-        | `2_表态但归因污染` | 误答 | 通过 | 说了"未找到/资料未提供"，**但仍把通用条款断言给主体** |
+        | `2_归因污染` | 误答 | 通过 | 说了"未找到/资料未提供"，**但仍把通用条款断言给主体** |
+        | `2b_归因隔离` | **bounded** | 通过 | 说了"未找到"，**并且显式标注**"通用要求不等同于该主体的专门规定" |
         | `3_完全正确` | 通过 | 通过 | 明确"上述是通用要求，未找到该主体的专属规定" |
         | `4_人工复核` | 人工复核 | — | 混合形态，单列 |
 
-        只看宽松口径，模式 2 和 3 会被混成"通过"；
+        只看宽松口径，模式 2 / 2b / 3 会被混成"通过"；
         只看严格口径，模式 1 和 2 会被混成"误答"。
+
+        🔴 `2b`（bounded）是 `SYSTEM_V2` 提示词带来的**新形态**：
+        模型既表态了、又做了归因隔离 → 它**不该**被算成"给不存在的装置编造规定"，
+        但也不该和"完全正确"混为一谈（它仍然列了一堆通用条款）。
         """
         lv = r.get("refusal_verdict_lenient")
         if lv is None:
@@ -149,8 +154,10 @@ def analyze(path):
             return "4_人工复核"
         if lv == "false_answer":
             return "1_完全没意识到"
+        if sv == "bounded":
+            return "2b_归因隔离"
         if sv == "false_answer":
-            return "2_表态但归因污染"
+            return "2_归因污染"
         return "3_完全正确"
 
     # -- 主体归组（统计独立单位）------------------------------------------
@@ -172,7 +179,8 @@ def analyze(path):
     # 🔴 三分类行为模式（两个口径交叉）
     modes = Counter(behaviour_mode(r) for r in refusals)
     mode_stats = {}
-    for mk in ("1_完全没意识到", "2_表态但归因污染", "3_完全正确", "4_人工复核"):
+    for mk in ("1_完全没意识到", "2_归因污染", "2b_归因隔离",
+               "3_完全正确", "4_人工复核"):
         c = modes.get(mk, 0)
         if c:
             mode_stats[mk] = {"n": c, "rate": round(c / n, 4),
@@ -193,6 +201,14 @@ def analyze(path):
         "naive_wilson_lenient": SC.wilson(
             sum(1 for r in refusals if is_false_lenient(r)), n),
         "n_manual": sum(1 for r in refusals if is_manual(r)),
+        # 🔴 bounded（`SYSTEM_V2` 提示词下的新形态：表态了 + 显式做了归因隔离）
+        #    既不是误答、也不是"完全正确"（它仍然列了通用条款）→ 单列。
+        "n_bounded": sum(1 for r in refusals
+                          if r.get("refusal_verdict") == "bounded"),
+        # 把 bounded 并入"已妥善处理"后的误答率（便于与不含该形态的批次对比）
+        "naive_wilson_bounded_as_pass": SC.wilson(
+            n_false, n - sum(1 for r in refusals
+                             if r.get("refusal_verdict") == "bounded") - n_manual),
         # 🔴 三分类行为模式
         "behaviour_modes": mode_stats,
         "cluster_bootstrap": {

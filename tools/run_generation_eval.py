@@ -261,6 +261,9 @@ def main():
                          "按当前口径重算判分并重新汇总（不调 API）")
     ap.add_argument("--threshold", type=float, default=0.7,
                     help="软匹配的二元组覆盖率阈值（默认 0.7）")
+    ap.add_argument("--system", default="system",
+                    help="系统提示词：system（默认）/ system_v2（适用性标注版，"
+                         "针对 26.7%% 的归因污染）")
     args = ap.parse_args()
 
     if args.rescore:
@@ -289,8 +292,12 @@ def main():
     else:
         backend, msg = "L4_pure_bm25", "无向量路（PRD 4.6 的 L4，本项目实际配置）"
         print(f"[embed] {backend}（{msg}）")
+    sys_prompt = AN.SYSTEMS.get(args.system)
+    if sys_prompt is None:
+        raise SystemExit(f"未知的系统提示词：{args.system}（可选：{list(AN.SYSTEMS)}）")
     answerer = AN.Answerer(chunks, embedder=embedder, manifest=manifest,
-                            top_k=args.top_k, use_vector=args.use_vector)
+                            top_k=args.top_k, use_vector=args.use_vector,
+                            system=sys_prompt)
 
     import llm_client
 
@@ -304,7 +311,7 @@ def main():
         # 基线用的是自己的提示词，不是主配置的；不记下来，
         # 别人复现时会以为三组用的是同一个 prompt，差距就无法解释。
         if cfg == "retrieval":
-            sys_kind = "SYSTEM（带 [[Cn]] 引用编号）"
+            sys_kind = f"{args.system}（带 [[Cn]] 引用编号）"
         elif cfg == "closed_book":
             sys_kind = "CLOSED_BOOK_SYSTEM（闭卷，不提资料片段）"
         else:
@@ -392,6 +399,7 @@ def main():
             "generated_at": datetime.now().isoformat(timespec="seconds"),
             "config": cfg,
             "system_prompt": sys_kind,
+            "system_prompt_name": args.system,
             "embed_backend": backend,
             "embed_note": msg,
             "chunk_strategy": args.strategy,

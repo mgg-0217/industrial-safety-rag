@@ -68,6 +68,51 @@ SYSTEM = (
     "4. 用简体中文回答，先给结论再给依据，简洁。"
 )
 
+#: 🔴 **适用性标注版**系统提示词（2026-11-05）。
+#:
+#: 起因：M2 拒答扩容实测（150 条 4 机制）发现**归因污染**才是拒答场景的主要失败模式：
+#:
+#: | 行为模式 | 占比 |
+#: |---|---|
+#: | 完全没意识到语料里没有该主体 | 2.0% |
+#: | **表态了，但把通用条款写成主体专属规定** | **26.7%** |
+#: | 完全正确 | 67.3% |
+#:
+#: 典型形态（真实产物）：
+#:
+#: > 「**结论：设备 T-9042 的检维修作业应至少履行以下许可和确认程序**……
+#: >   资料未提供 T-9042 的具体检维修方案……无法确认其已实际完成上述手续。」
+#:
+#: `SYSTEM` 的规则 3 已经说了"不要用相邻内容凑答案"，**但没有约束句式** ——
+#: 模型照样用「结论：<主体> 应/须/需要……」把通用条款归给主体。
+#:
+#: 本版加的是**句式 + 边界声明**两层约束：
+#: * **句式**：主体没有专门规定时，不许用"结论：<主体> 应……"下结论；
+#: * **边界声明**：要给通用要求，必须**显式标注其适用性不等同于对该主体的专门规定**。
+#:
+#: ⚠️ **改了提示词就必须同时改判分**，否则会得出"改了没用"或"改了更好"的错误结论。
+#: 判分侧对应的新规则见 `src/scoring.py::refusal_judgement`
+#: （`mode="strict"` 下新增"显式适用性边界声明"的降级通道）。
+SYSTEM_V2 = (
+    "你是制造业工业安全规程问答助手。你只能依据用户给出的【资料片段】回答问题。\n"
+    "规则：\n"
+    "1. 依据某个片段得出的结论，后面用 [[C1]] 这样的编号标注来源；多个来源写 [[C1]][[C2]]。\n"
+    "2. 只允许引用给出过的编号，**不得编造编号**，也不得写出片段里没有的条款号或数值。\n"
+    "3. 如果片段里没有答案，就明确说“未找到相关规定”，并说明缺什么，不要用相邻内容凑答案。\n"
+    "4. 用简体中文回答，先给结论再给依据，简洁。\n"
+    "5. **必须分清“该主体的专门规定”和“通用要求”，不得把通用要求写成该主体的规定**：\n"
+    "   - 若资料里**没有**提问主体（设备/位号/装置/介质/工序）的**专门规定**，\n"
+    "     必须**先**明确说明“资料中没有<主体>的专门规定”。\n"
+    "   - 随后若要列出通用要求，必须**显式标注**：\n"
+    "     “以下为通用要求，**其适用性不等同于对<主体>的专门规定**”，\n"
+    "     并且**不得**使用“结论：<主体> 应/须/需要……”这种把通用条款归给主体的句式。\n"
+    "   - 只有资料里**确实有**该主体的专门规定时，才可以对它下结论。\n"
+    "6. 对每个给出的通用要求，都要说明它是**一般性规定**，不是针对提问主体的专门要求。"
+)
+
+#: 提示词注册表（评测脚本按名字选）。
+SYSTEMS = {"system": SYSTEM, "system_v2": SYSTEM_V2}
+
 #: 🔴 基线配置**不能沿用主配置的系统提示词**（K-41）。
 #:
 #: 主配置的 SYSTEM 说"只能依据【资料片段】回答"，
@@ -149,13 +194,15 @@ class Answerer:
     """
 
     def __init__(self, chunks, embedder=None, manifest=None, top_k=5,
-                 alpha=0.5, use_vector=False):
+                 alpha=0.5, use_vector=False, system=None):
         self.chunks = list(chunks)
         self.embedder = embedder
         self.use_vector = use_vector
         self.manifest = manifest or VC.load_manifest()
         self.top_k = top_k
         self.alpha = alpha
+        #: 系统提示词（`None` = 默认的 `SYSTEM`；`SYSTEM_V2` = 适用性标注版）
+        self.system = system or SYSTEM
         self.retriever = RT.Retriever(self.chunks, embedder=embedder, alpha=alpha)
 
     # -- 检索 ---------------------------------------------------------------
@@ -194,7 +241,7 @@ class Answerer:
         if extra_context:
             ctx_block = extra_context + "\n\n" + ctx_block
         prompt = build_prompt(question, ctx_block)
-        raw = call(prompt, system=SYSTEM)
+        raw = call(prompt, system=self.system)
 
         rendered, stats = CIT.render(raw, ctx, manifest=self.manifest, when=when,
                                      mode=mode)

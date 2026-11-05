@@ -1,0 +1,1861 @@
+{
+ "旧system_fixed": {
+  "file": "20261105_0929_generation_retrieval_refuse_v2_fixed.answers.jsonl",
+  "n_questions": 150,
+  "n_subjects": 150,
+  "subjects_per_question": 1.0,
+  "verdicts": {
+   "pass": 101,
+   "false_answer": 43,
+   "manual": 6
+  },
+  "n_false_answer": 43,
+  "n_decidable": 144,
+  "naive_wilson": [
+   0.2867,
+   0.2203,
+   0.3637
+  ],
+  "naive_wilson_width": 0.1434,
+  "n_false_answer_lenient": 3,
+  "naive_wilson_lenient": [
+   0.02,
+   0.0068,
+   0.0571
+  ],
+  "n_manual": 6,
+  "n_bounded": 0,
+  "naive_wilson_bounded_as_pass": [
+   0.2986,
+   0.2299,
+   0.3778
+  ],
+  "behaviour_modes": {
+   "1_完全没意识到": {
+    "n": 3,
+    "rate": 0.02,
+    "wilson": [
+     0.02,
+     0.0068,
+     0.0571
+    ]
+   },
+   "2_归因污染": {
+    "n": 40,
+    "rate": 0.2667,
+    "wilson": [
+     0.2667,
+     0.2024,
+     0.3426
+    ]
+   },
+   "3_完全正确": {
+    "n": 101,
+    "rate": 0.6733,
+    "wilson": [
+     0.6733,
+     0.5948,
+     0.7432
+    ]
+   },
+   "4_人工复核": {
+    "n": 6,
+    "rate": 0.04,
+    "wilson": [
+     0.04,
+     0.0185,
+     0.0845
+    ]
+   }
+  },
+  "cluster_bootstrap": {
+   "point": 0.2867,
+   "lo": 0.22,
+   "hi": 0.3667,
+   "width": 0.1467,
+   "n_boot": 2000,
+   "seed": 20261105
+  },
+  "naive_over_cluster_width_ratio": 0.98,
+  "by_mechanism": {
+   "fake_equipment": {
+    "label": "假装置/设备",
+    "n": 50,
+    "n_subjects": 50,
+    "n_false_answer": 22,
+    "rate": 0.44,
+    "rate_lenient": 0.06,
+    "wilson": [
+     0.44,
+     0.3116,
+     0.5769
+    ],
+    "wilson_lenient": [
+     0.06,
+     0.0206,
+     0.1622
+    ],
+    "cluster_bootstrap": {
+     "point": 0.44,
+     "lo": 0.3,
+     "hi": 0.58,
+     "width": 0.28
+    },
+    "verdicts": {
+     "manual": 1,
+     "pass": 27,
+     "false_answer": 22
+    }
+   },
+   "fake_id": {
+    "label": "假位号",
+    "n": 40,
+    "n_subjects": 40,
+    "n_false_answer": 13,
+    "rate": 0.325,
+    "rate_lenient": 0.0,
+    "wilson": [
+     0.325,
+     0.2008,
+     0.4798
+    ],
+    "wilson_lenient": [
+     0.0,
+     0.0,
+     0.0876
+    ],
+    "cluster_bootstrap": {
+     "point": 0.325,
+     "lo": 0.175,
+     "hi": 0.475,
+     "width": 0.3
+    },
+    "verdicts": {
+     "pass": 27,
+     "false_answer": 13
+    }
+   },
+   "fake_medium": {
+    "label": "假介质/物料",
+    "n": 30,
+    "n_subjects": 30,
+    "n_false_answer": 4,
+    "rate": 0.1333,
+    "rate_lenient": 0.0,
+    "wilson": [
+     0.1333,
+     0.0531,
+     0.2968
+    ],
+    "wilson_lenient": [
+     0.0,
+     0.0,
+     0.1135
+    ],
+    "cluster_bootstrap": {
+     "point": 0.1333,
+     "lo": 0.0333,
+     "hi": 0.2667,
+     "width": 0.2333
+    },
+    "verdicts": {
+     "pass": 21,
+     "manual": 5,
+     "false_answer": 4
+    }
+   },
+   "fake_process": {
+    "label": "假工序/作业",
+    "n": 30,
+    "n_subjects": 30,
+    "n_false_answer": 4,
+    "rate": 0.1333,
+    "rate_lenient": 0.0,
+    "wilson": [
+     0.1333,
+     0.0531,
+     0.2968
+    ],
+    "wilson_lenient": [
+     0.0,
+     0.0,
+     0.1135
+    ],
+    "cluster_bootstrap": {
+     "point": 0.1333,
+     "lo": 0.0333,
+     "hi": 0.2667,
+     "width": 0.2333
+    },
+    "verdicts": {
+     "pass": 26,
+     "false_answer": 4
+    }
+   }
+  },
+  "by_question_template": {
+   "{s}的检修隔离与安全停机要求有哪些？": {
+    "n": 9,
+    "n_subjects": 9,
+    "n_false_answer": 2,
+    "rate": 0.2222,
+    "wilson": [
+     0.2222,
+     0.0632,
+     0.5474
+    ]
+   },
+   "{s}的检维修作业许可、动火与受限空间管理有哪些规定？": {
+    "n": 9,
+    "n_subjects": 9,
+    "n_false_answer": 4,
+    "rate": 0.4444,
+    "wilson": [
+     0.4444,
+     0.1888,
+     0.7334
+    ]
+   },
+   "{s}的设备维护保养项目与周期应如何确定？": {
+    "n": 8,
+    "n_subjects": 8,
+    "n_false_answer": 7,
+    "rate": 0.875,
+    "wilson": [
+     0.875,
+     0.5291,
+     0.9776
+    ]
+   },
+   "{s}发生故障时的应急处置与抢修要求是什么？": {
+    "n": 8,
+    "n_subjects": 8,
+    "n_false_answer": 3,
+    "rate": 0.375,
+    "wilson": [
+     0.375,
+     0.1368,
+     0.6943
+    ]
+   },
+   "{s}的作业人员资质、特种设备检验与作业审批有哪些要求？": {
+    "n": 8,
+    "n_subjects": 8,
+    "n_false_answer": 4,
+    "rate": 0.5,
+    "wilson": [
+     0.5,
+     0.2152,
+     0.7848
+    ]
+   },
+   "{s}的检维修风险辨识、作业票办理与完工验收有哪些规定？": {
+    "n": 8,
+    "n_subjects": 8,
+    "n_false_answer": 2,
+    "rate": 0.25,
+    "wilson": [
+     0.25,
+     0.0715,
+     0.5907
+    ]
+   },
+   "{s}的预防性维护项目、检修周期及作业前准备有哪些要求？": {
+    "n": 7,
+    "n_subjects": 7,
+    "n_false_answer": 1,
+    "rate": 0.1429,
+    "wilson": [
+     0.1429,
+     0.0257,
+     0.5131
+    ]
+   },
+   "设备 {s} 的检维修作业应履行哪些许可手续和确认程序？": {
+    "n": 7,
+    "n_subjects": 7,
+    "n_false_answer": 7,
+    "rate": 1.0,
+    "wilson": [
+     1.0,
+     0.6457,
+     1.0
+    ]
+   },
+   "{s}的备件更换与检修记录应如何管理和保存？": {
+    "n": 7,
+    "n_subjects": 7,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.3543
+    ]
+   },
+   "{s}的日常维护与定期检修分别有哪些规定？": {
+    "n": 7,
+    "n_subjects": 7,
+    "n_false_answer": 3,
+    "rate": 0.4286,
+    "wilson": [
+     0.4286,
+     0.1582,
+     0.7495
+    ]
+   },
+   "{s}的设备完好性检查与故障诊断要求是什么？": {
+    "n": 6,
+    "n_subjects": 6,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.3903
+    ]
+   },
+   "{s}开展检维修作业时，隔离、置换和作业许可有哪些要求？": {
+    "n": 6,
+    "n_subjects": 6,
+    "n_false_answer": 2,
+    "rate": 0.3333,
+    "wilson": [
+     0.3333,
+     0.0968,
+     0.7
+    ]
+   },
+   "{s}的储存、装卸和搬运作业有哪些安全要求？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.4345
+    ]
+   },
+   "{s}的泄漏应急处置与人员防护要求是什么？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.4345
+    ]
+   },
+   "{s}的作业岗位职业危害因素与防护措施有哪些规定？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.4345
+    ]
+   },
+   "{s}的装卸计量、罐区管理或出入库有哪些具体要求？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 2,
+    "rate": 0.4,
+    "wilson": [
+     0.4,
+     0.1176,
+     0.7693
+    ]
+   },
+   "{s}的使用、领用和废弃处置应遵守哪些规定？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.4345
+    ]
+   },
+   "{s}相关的动火、受限空间和检维修作业有哪些特别要求？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 2,
+    "rate": 0.4,
+    "wilson": [
+     0.4,
+     0.1176,
+     0.7693
+    ]
+   },
+   "{s}作业的安全操作规程和作业票有哪些要求？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.4345
+    ]
+   },
+   "{s}过程中的人员防护、监测与异常处置要求是什么？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 1,
+    "rate": 0.2,
+    "wilson": [
+     0.2,
+     0.0362,
+     0.6245
+    ]
+   },
+   "{s}的作业许可、风险辨识与现场监护有哪些规定？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 2,
+    "rate": 0.4,
+    "wilson": [
+     0.4,
+     0.1176,
+     0.7693
+    ]
+   },
+   "{s}设备或设施的检维修与停工检修有哪些具体要求？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.4345
+    ]
+   },
+   "{s}的应急处置、个体防护装备配备有哪些要求？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 1,
+    "rate": 0.2,
+    "wilson": [
+     0.2,
+     0.0362,
+     0.6245
+    ]
+   },
+   "{s}相关作业的记录、验收与隐患排查有哪些规定？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.4345
+    ]
+   }
+  },
+  "mechanism_spread": {
+   "best": "fake_equipment",
+   "best_rate": 0.44,
+   "worst": "fake_medium",
+   "worst_rate": 0.1333,
+   "spread": 0.3067
+  }
+ },
+ "旧system_structural": {
+  "file": "20261105_0933_generation_retrieval_refuse_v2_structural.answers.jsonl",
+  "n_questions": 150,
+  "n_subjects": 150,
+  "subjects_per_question": 1.0,
+  "verdicts": {
+   "pass": 106,
+   "false_answer": 44
+  },
+  "n_false_answer": 44,
+  "n_decidable": 150,
+  "naive_wilson": [
+   0.2933,
+   0.2264,
+   0.3706
+  ],
+  "naive_wilson_width": 0.1442,
+  "n_false_answer_lenient": 6,
+  "naive_wilson_lenient": [
+   0.04,
+   0.0185,
+   0.0845
+  ],
+  "n_manual": 0,
+  "n_bounded": 0,
+  "naive_wilson_bounded_as_pass": [
+   0.2933,
+   0.2264,
+   0.3706
+  ],
+  "behaviour_modes": {
+   "1_完全没意识到": {
+    "n": 6,
+    "rate": 0.04,
+    "wilson": [
+     0.04,
+     0.0185,
+     0.0845
+    ]
+   },
+   "2_归因污染": {
+    "n": 38,
+    "rate": 0.2533,
+    "wilson": [
+     0.2533,
+     0.1905,
+     0.3285
+    ]
+   },
+   "3_完全正确": {
+    "n": 106,
+    "rate": 0.7067,
+    "wilson": [
+     0.7067,
+     0.6294,
+     0.7736
+    ]
+   }
+  },
+  "cluster_bootstrap": {
+   "point": 0.2933,
+   "lo": 0.2267,
+   "hi": 0.3667,
+   "width": 0.14,
+   "n_boot": 2000,
+   "seed": 20261105
+  },
+  "naive_over_cluster_width_ratio": 1.03,
+  "by_mechanism": {
+   "fake_equipment": {
+    "label": "假装置/设备",
+    "n": 50,
+    "n_subjects": 50,
+    "n_false_answer": 16,
+    "rate": 0.32,
+    "rate_lenient": 0.04,
+    "wilson": [
+     0.32,
+     0.2076,
+     0.4581
+    ],
+    "wilson_lenient": [
+     0.04,
+     0.011,
+     0.1346
+    ],
+    "cluster_bootstrap": {
+     "point": 0.32,
+     "lo": 0.2,
+     "hi": 0.44,
+     "width": 0.24
+    },
+    "verdicts": {
+     "false_answer": 16,
+     "pass": 34
+    }
+   },
+   "fake_id": {
+    "label": "假位号",
+    "n": 40,
+    "n_subjects": 40,
+    "n_false_answer": 12,
+    "rate": 0.3,
+    "rate_lenient": 0.025,
+    "wilson": [
+     0.3,
+     0.1807,
+     0.4543
+    ],
+    "wilson_lenient": [
+     0.025,
+     0.0044,
+     0.1288
+    ],
+    "cluster_bootstrap": {
+     "point": 0.3,
+     "lo": 0.175,
+     "hi": 0.45,
+     "width": 0.275
+    },
+    "verdicts": {
+     "pass": 28,
+     "false_answer": 12
+    }
+   },
+   "fake_medium": {
+    "label": "假介质/物料",
+    "n": 30,
+    "n_subjects": 30,
+    "n_false_answer": 7,
+    "rate": 0.2333,
+    "rate_lenient": 0.0,
+    "wilson": [
+     0.2333,
+     0.1179,
+     0.4093
+    ],
+    "wilson_lenient": [
+     0.0,
+     0.0,
+     0.1135
+    ],
+    "cluster_bootstrap": {
+     "point": 0.2333,
+     "lo": 0.1,
+     "hi": 0.4,
+     "width": 0.3
+    },
+    "verdicts": {
+     "pass": 23,
+     "false_answer": 7
+    }
+   },
+   "fake_process": {
+    "label": "假工序/作业",
+    "n": 30,
+    "n_subjects": 30,
+    "n_false_answer": 9,
+    "rate": 0.3,
+    "rate_lenient": 0.1,
+    "wilson": [
+     0.3,
+     0.1666,
+     0.4788
+    ],
+    "wilson_lenient": [
+     0.1,
+     0.0346,
+     0.2562
+    ],
+    "cluster_bootstrap": {
+     "point": 0.3,
+     "lo": 0.1667,
+     "hi": 0.4667,
+     "width": 0.3
+    },
+    "verdicts": {
+     "pass": 21,
+     "false_answer": 9
+    }
+   }
+  },
+  "by_question_template": {
+   "{s}的检修隔离与安全停机要求有哪些？": {
+    "n": 9,
+    "n_subjects": 9,
+    "n_false_answer": 3,
+    "rate": 0.3333,
+    "wilson": [
+     0.3333,
+     0.1206,
+     0.6458
+    ]
+   },
+   "{s}的检维修作业许可、动火与受限空间管理有哪些规定？": {
+    "n": 9,
+    "n_subjects": 9,
+    "n_false_answer": 6,
+    "rate": 0.6667,
+    "wilson": [
+     0.6667,
+     0.3542,
+     0.8794
+    ]
+   },
+   "{s}的设备维护保养项目与周期应如何确定？": {
+    "n": 8,
+    "n_subjects": 8,
+    "n_false_answer": 4,
+    "rate": 0.5,
+    "wilson": [
+     0.5,
+     0.2152,
+     0.7848
+    ]
+   },
+   "{s}发生故障时的应急处置与抢修要求是什么？": {
+    "n": 8,
+    "n_subjects": 8,
+    "n_false_answer": 2,
+    "rate": 0.25,
+    "wilson": [
+     0.25,
+     0.0715,
+     0.5907
+    ]
+   },
+   "{s}的作业人员资质、特种设备检验与作业审批有哪些要求？": {
+    "n": 8,
+    "n_subjects": 8,
+    "n_false_answer": 1,
+    "rate": 0.125,
+    "wilson": [
+     0.125,
+     0.0224,
+     0.4709
+    ]
+   },
+   "{s}的检维修风险辨识、作业票办理与完工验收有哪些规定？": {
+    "n": 8,
+    "n_subjects": 8,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.3244
+    ]
+   },
+   "{s}的预防性维护项目、检修周期及作业前准备有哪些要求？": {
+    "n": 7,
+    "n_subjects": 7,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.3543
+    ]
+   },
+   "设备 {s} 的检维修作业应履行哪些许可手续和确认程序？": {
+    "n": 7,
+    "n_subjects": 7,
+    "n_false_answer": 6,
+    "rate": 0.8571,
+    "wilson": [
+     0.8571,
+     0.4869,
+     0.9743
+    ]
+   },
+   "{s}的备件更换与检修记录应如何管理和保存？": {
+    "n": 7,
+    "n_subjects": 7,
+    "n_false_answer": 1,
+    "rate": 0.1429,
+    "wilson": [
+     0.1429,
+     0.0257,
+     0.5131
+    ]
+   },
+   "{s}的日常维护与定期检修分别有哪些规定？": {
+    "n": 7,
+    "n_subjects": 7,
+    "n_false_answer": 1,
+    "rate": 0.1429,
+    "wilson": [
+     0.1429,
+     0.0257,
+     0.5131
+    ]
+   },
+   "{s}的设备完好性检查与故障诊断要求是什么？": {
+    "n": 6,
+    "n_subjects": 6,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.3903
+    ]
+   },
+   "{s}开展检维修作业时，隔离、置换和作业许可有哪些要求？": {
+    "n": 6,
+    "n_subjects": 6,
+    "n_false_answer": 4,
+    "rate": 0.6667,
+    "wilson": [
+     0.6667,
+     0.3,
+     0.9032
+    ]
+   },
+   "{s}的储存、装卸和搬运作业有哪些安全要求？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 1,
+    "rate": 0.2,
+    "wilson": [
+     0.2,
+     0.0362,
+     0.6245
+    ]
+   },
+   "{s}的泄漏应急处置与人员防护要求是什么？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.4345
+    ]
+   },
+   "{s}的作业岗位职业危害因素与防护措施有哪些规定？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 1,
+    "rate": 0.2,
+    "wilson": [
+     0.2,
+     0.0362,
+     0.6245
+    ]
+   },
+   "{s}的装卸计量、罐区管理或出入库有哪些具体要求？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 2,
+    "rate": 0.4,
+    "wilson": [
+     0.4,
+     0.1176,
+     0.7693
+    ]
+   },
+   "{s}的使用、领用和废弃处置应遵守哪些规定？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 2,
+    "rate": 0.4,
+    "wilson": [
+     0.4,
+     0.1176,
+     0.7693
+    ]
+   },
+   "{s}相关的动火、受限空间和检维修作业有哪些特别要求？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 1,
+    "rate": 0.2,
+    "wilson": [
+     0.2,
+     0.0362,
+     0.6245
+    ]
+   },
+   "{s}作业的安全操作规程和作业票有哪些要求？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 1,
+    "rate": 0.2,
+    "wilson": [
+     0.2,
+     0.0362,
+     0.6245
+    ]
+   },
+   "{s}过程中的人员防护、监测与异常处置要求是什么？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.4345
+    ]
+   },
+   "{s}的作业许可、风险辨识与现场监护有哪些规定？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 2,
+    "rate": 0.4,
+    "wilson": [
+     0.4,
+     0.1176,
+     0.7693
+    ]
+   },
+   "{s}设备或设施的检维修与停工检修有哪些具体要求？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 2,
+    "rate": 0.4,
+    "wilson": [
+     0.4,
+     0.1176,
+     0.7693
+    ]
+   },
+   "{s}的应急处置、个体防护装备配备有哪些要求？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 3,
+    "rate": 0.6,
+    "wilson": [
+     0.6,
+     0.2307,
+     0.8824
+    ]
+   },
+   "{s}相关作业的记录、验收与隐患排查有哪些规定？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 1,
+    "rate": 0.2,
+    "wilson": [
+     0.2,
+     0.0362,
+     0.6245
+    ]
+   }
+  },
+  "mechanism_spread": {
+   "best": "fake_equipment",
+   "best_rate": 0.32,
+   "worst": "fake_medium",
+   "worst_rate": 0.2333,
+   "spread": 0.0867
+  }
+ },
+ "新v2_fixed": {
+  "file": "20261105_1123_generation_retrieval_refuse_v2sys2_fixed.answers.jsonl",
+  "n_questions": 150,
+  "n_subjects": 150,
+  "subjects_per_question": 1.0,
+  "verdicts": {
+   "bounded": 122,
+   "false_answer": 24,
+   "pass": 4
+  },
+  "n_false_answer": 24,
+  "n_decidable": 28,
+  "naive_wilson": [
+   0.16,
+   0.1099,
+   0.227
+  ],
+  "naive_wilson_width": 0.1171,
+  "n_false_answer_lenient": 4,
+  "naive_wilson_lenient": [
+   0.0267,
+   0.0104,
+   0.0666
+  ],
+  "n_manual": 0,
+  "n_bounded": 122,
+  "naive_wilson_bounded_as_pass": [
+   0.8571,
+   0.6851,
+   0.943
+  ],
+  "behaviour_modes": {
+   "1_完全没意识到": {
+    "n": 4,
+    "rate": 0.0267,
+    "wilson": [
+     0.0267,
+     0.0104,
+     0.0666
+    ]
+   },
+   "2_归因污染": {
+    "n": 21,
+    "rate": 0.14,
+    "wilson": [
+     0.14,
+     0.0934,
+     0.2046
+    ]
+   },
+   "2b_归因隔离": {
+    "n": 121,
+    "rate": 0.8067,
+    "wilson": [
+     0.8067,
+     0.7361,
+     0.8619
+    ]
+   },
+   "3_完全正确": {
+    "n": 4,
+    "rate": 0.0267,
+    "wilson": [
+     0.0267,
+     0.0104,
+     0.0666
+    ]
+   }
+  },
+  "cluster_bootstrap": {
+   "point": 0.16,
+   "lo": 0.1067,
+   "hi": 0.22,
+   "width": 0.1133,
+   "n_boot": 2000,
+   "seed": 20261105
+  },
+  "naive_over_cluster_width_ratio": 1.03,
+  "by_mechanism": {
+   "fake_equipment": {
+    "label": "假装置/设备",
+    "n": 50,
+    "n_subjects": 50,
+    "n_false_answer": 12,
+    "rate": 0.24,
+    "rate_lenient": 0.02,
+    "wilson": [
+     0.24,
+     0.143,
+     0.3741
+    ],
+    "wilson_lenient": [
+     0.02,
+     0.0035,
+     0.105
+    ],
+    "cluster_bootstrap": {
+     "point": 0.24,
+     "lo": 0.12,
+     "hi": 0.36,
+     "width": 0.24
+    },
+    "verdicts": {
+     "bounded": 38,
+     "false_answer": 12
+    }
+   },
+   "fake_id": {
+    "label": "假位号",
+    "n": 40,
+    "n_subjects": 40,
+    "n_false_answer": 5,
+    "rate": 0.125,
+    "rate_lenient": 0.025,
+    "wilson": [
+     0.125,
+     0.0546,
+     0.2611
+    ],
+    "wilson_lenient": [
+     0.025,
+     0.0044,
+     0.1288
+    ],
+    "cluster_bootstrap": {
+     "point": 0.125,
+     "lo": 0.025,
+     "hi": 0.225,
+     "width": 0.2
+    },
+    "verdicts": {
+     "bounded": 35,
+     "false_answer": 5
+    }
+   },
+   "fake_medium": {
+    "label": "假介质/物料",
+    "n": 30,
+    "n_subjects": 30,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "rate_lenient": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.1135
+    ],
+    "wilson_lenient": [
+     0.0,
+     0.0,
+     0.1135
+    ],
+    "cluster_bootstrap": {
+     "point": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "width": 0.0
+    },
+    "verdicts": {
+     "bounded": 26,
+     "pass": 4
+    }
+   },
+   "fake_process": {
+    "label": "假工序/作业",
+    "n": 30,
+    "n_subjects": 30,
+    "n_false_answer": 7,
+    "rate": 0.2333,
+    "rate_lenient": 0.0667,
+    "wilson": [
+     0.2333,
+     0.1179,
+     0.4093
+    ],
+    "wilson_lenient": [
+     0.0667,
+     0.0185,
+     0.2132
+    ],
+    "cluster_bootstrap": {
+     "point": 0.2333,
+     "lo": 0.1,
+     "hi": 0.4,
+     "width": 0.3
+    },
+    "verdicts": {
+     "bounded": 23,
+     "false_answer": 7
+    }
+   }
+  },
+  "by_question_template": {
+   "{s}的检修隔离与安全停机要求有哪些？": {
+    "n": 9,
+    "n_subjects": 9,
+    "n_false_answer": 3,
+    "rate": 0.3333,
+    "wilson": [
+     0.3333,
+     0.1206,
+     0.6458
+    ]
+   },
+   "{s}的检维修作业许可、动火与受限空间管理有哪些规定？": {
+    "n": 9,
+    "n_subjects": 9,
+    "n_false_answer": 2,
+    "rate": 0.2222,
+    "wilson": [
+     0.2222,
+     0.0632,
+     0.5474
+    ]
+   },
+   "{s}的设备维护保养项目与周期应如何确定？": {
+    "n": 8,
+    "n_subjects": 8,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.3244
+    ]
+   },
+   "{s}发生故障时的应急处置与抢修要求是什么？": {
+    "n": 8,
+    "n_subjects": 8,
+    "n_false_answer": 1,
+    "rate": 0.125,
+    "wilson": [
+     0.125,
+     0.0224,
+     0.4709
+    ]
+   },
+   "{s}的作业人员资质、特种设备检验与作业审批有哪些要求？": {
+    "n": 8,
+    "n_subjects": 8,
+    "n_false_answer": 1,
+    "rate": 0.125,
+    "wilson": [
+     0.125,
+     0.0224,
+     0.4709
+    ]
+   },
+   "{s}的检维修风险辨识、作业票办理与完工验收有哪些规定？": {
+    "n": 8,
+    "n_subjects": 8,
+    "n_false_answer": 5,
+    "rate": 0.625,
+    "wilson": [
+     0.625,
+     0.3057,
+     0.8632
+    ]
+   },
+   "{s}的预防性维护项目、检修周期及作业前准备有哪些要求？": {
+    "n": 7,
+    "n_subjects": 7,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.3543
+    ]
+   },
+   "设备 {s} 的检维修作业应履行哪些许可手续和确认程序？": {
+    "n": 7,
+    "n_subjects": 7,
+    "n_false_answer": 1,
+    "rate": 0.1429,
+    "wilson": [
+     0.1429,
+     0.0257,
+     0.5131
+    ]
+   },
+   "{s}的备件更换与检修记录应如何管理和保存？": {
+    "n": 7,
+    "n_subjects": 7,
+    "n_false_answer": 2,
+    "rate": 0.2857,
+    "wilson": [
+     0.2857,
+     0.0822,
+     0.6411
+    ]
+   },
+   "{s}的日常维护与定期检修分别有哪些规定？": {
+    "n": 7,
+    "n_subjects": 7,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.3543
+    ]
+   },
+   "{s}的设备完好性检查与故障诊断要求是什么？": {
+    "n": 6,
+    "n_subjects": 6,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.3903
+    ]
+   },
+   "{s}开展检维修作业时，隔离、置换和作业许可有哪些要求？": {
+    "n": 6,
+    "n_subjects": 6,
+    "n_false_answer": 2,
+    "rate": 0.3333,
+    "wilson": [
+     0.3333,
+     0.0968,
+     0.7
+    ]
+   },
+   "{s}的储存、装卸和搬运作业有哪些安全要求？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.4345
+    ]
+   },
+   "{s}的泄漏应急处置与人员防护要求是什么？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.4345
+    ]
+   },
+   "{s}的作业岗位职业危害因素与防护措施有哪些规定？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.4345
+    ]
+   },
+   "{s}的装卸计量、罐区管理或出入库有哪些具体要求？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.4345
+    ]
+   },
+   "{s}的使用、领用和废弃处置应遵守哪些规定？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.4345
+    ]
+   },
+   "{s}相关的动火、受限空间和检维修作业有哪些特别要求？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.4345
+    ]
+   },
+   "{s}作业的安全操作规程和作业票有哪些要求？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.4345
+    ]
+   },
+   "{s}过程中的人员防护、监测与异常处置要求是什么？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 1,
+    "rate": 0.2,
+    "wilson": [
+     0.2,
+     0.0362,
+     0.6245
+    ]
+   },
+   "{s}的作业许可、风险辨识与现场监护有哪些规定？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 4,
+    "rate": 0.8,
+    "wilson": [
+     0.8,
+     0.3755,
+     0.9638
+    ]
+   },
+   "{s}设备或设施的检维修与停工检修有哪些具体要求？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.4345
+    ]
+   },
+   "{s}的应急处置、个体防护装备配备有哪些要求？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 1,
+    "rate": 0.2,
+    "wilson": [
+     0.2,
+     0.0362,
+     0.6245
+    ]
+   },
+   "{s}相关作业的记录、验收与隐患排查有哪些规定？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 1,
+    "rate": 0.2,
+    "wilson": [
+     0.2,
+     0.0362,
+     0.6245
+    ]
+   }
+  },
+  "mechanism_spread": {
+   "best": "fake_equipment",
+   "best_rate": 0.24,
+   "worst": "fake_medium",
+   "worst_rate": 0.0,
+   "spread": 0.24
+  }
+ },
+ "新v2_structural": {
+  "file": "20261105_1128_generation_retrieval_refuse_v2sys2_structural.answers.jsonl",
+  "n_questions": 150,
+  "n_subjects": 150,
+  "subjects_per_question": 1.0,
+  "verdicts": {
+   "bounded": 117,
+   "pass": 9,
+   "false_answer": 24
+  },
+  "n_false_answer": 24,
+  "n_decidable": 33,
+  "naive_wilson": [
+   0.16,
+   0.1099,
+   0.227
+  ],
+  "naive_wilson_width": 0.1171,
+  "n_false_answer_lenient": 2,
+  "naive_wilson_lenient": [
+   0.0133,
+   0.0037,
+   0.0473
+  ],
+  "n_manual": 0,
+  "n_bounded": 117,
+  "naive_wilson_bounded_as_pass": [
+   0.7273,
+   0.5578,
+   0.8493
+  ],
+  "behaviour_modes": {
+   "1_完全没意识到": {
+    "n": 2,
+    "rate": 0.0133,
+    "wilson": [
+     0.0133,
+     0.0037,
+     0.0473
+    ]
+   },
+   "2_归因污染": {
+    "n": 24,
+    "rate": 0.16,
+    "wilson": [
+     0.16,
+     0.1099,
+     0.227
+    ]
+   },
+   "2b_归因隔离": {
+    "n": 115,
+    "rate": 0.7667,
+    "wilson": [
+     0.7667,
+     0.6928,
+     0.8272
+    ]
+   },
+   "3_完全正确": {
+    "n": 9,
+    "rate": 0.06,
+    "wilson": [
+     0.06,
+     0.0319,
+     0.1101
+    ]
+   }
+  },
+  "cluster_bootstrap": {
+   "point": 0.16,
+   "lo": 0.1,
+   "hi": 0.2267,
+   "width": 0.1267,
+   "n_boot": 2000,
+   "seed": 20261105
+  },
+  "naive_over_cluster_width_ratio": 0.92,
+  "by_mechanism": {
+   "fake_equipment": {
+    "label": "假装置/设备",
+    "n": 50,
+    "n_subjects": 50,
+    "n_false_answer": 9,
+    "rate": 0.18,
+    "rate_lenient": 0.02,
+    "wilson": [
+     0.18,
+     0.0977,
+     0.308
+    ],
+    "wilson_lenient": [
+     0.02,
+     0.0035,
+     0.105
+    ],
+    "cluster_bootstrap": {
+     "point": 0.18,
+     "lo": 0.08,
+     "hi": 0.3,
+     "width": 0.22
+    },
+    "verdicts": {
+     "bounded": 40,
+     "pass": 1,
+     "false_answer": 9
+    }
+   },
+   "fake_id": {
+    "label": "假位号",
+    "n": 40,
+    "n_subjects": 40,
+    "n_false_answer": 5,
+    "rate": 0.125,
+    "rate_lenient": 0.0,
+    "wilson": [
+     0.125,
+     0.0546,
+     0.2611
+    ],
+    "wilson_lenient": [
+     0.0,
+     0.0,
+     0.0876
+    ],
+    "cluster_bootstrap": {
+     "point": 0.125,
+     "lo": 0.025,
+     "hi": 0.25,
+     "width": 0.225
+    },
+    "verdicts": {
+     "bounded": 32,
+     "pass": 3,
+     "false_answer": 5
+    }
+   },
+   "fake_medium": {
+    "label": "假介质/物料",
+    "n": 30,
+    "n_subjects": 30,
+    "n_false_answer": 6,
+    "rate": 0.2,
+    "rate_lenient": 0.0,
+    "wilson": [
+     0.2,
+     0.095,
+     0.3731
+    ],
+    "wilson_lenient": [
+     0.0,
+     0.0,
+     0.1135
+    ],
+    "cluster_bootstrap": {
+     "point": 0.2,
+     "lo": 0.0667,
+     "hi": 0.3667,
+     "width": 0.3
+    },
+    "verdicts": {
+     "bounded": 19,
+     "false_answer": 6,
+     "pass": 5
+    }
+   },
+   "fake_process": {
+    "label": "假工序/作业",
+    "n": 30,
+    "n_subjects": 30,
+    "n_false_answer": 4,
+    "rate": 0.1333,
+    "rate_lenient": 0.0333,
+    "wilson": [
+     0.1333,
+     0.0531,
+     0.2968
+    ],
+    "wilson_lenient": [
+     0.0333,
+     0.0059,
+     0.1667
+    ],
+    "cluster_bootstrap": {
+     "point": 0.1333,
+     "lo": 0.0333,
+     "hi": 0.2667,
+     "width": 0.2333
+    },
+    "verdicts": {
+     "bounded": 26,
+     "false_answer": 4
+    }
+   }
+  },
+  "by_question_template": {
+   "{s}的检修隔离与安全停机要求有哪些？": {
+    "n": 9,
+    "n_subjects": 9,
+    "n_false_answer": 2,
+    "rate": 0.2222,
+    "wilson": [
+     0.2222,
+     0.0632,
+     0.5474
+    ]
+   },
+   "{s}的检维修作业许可、动火与受限空间管理有哪些规定？": {
+    "n": 9,
+    "n_subjects": 9,
+    "n_false_answer": 1,
+    "rate": 0.1111,
+    "wilson": [
+     0.1111,
+     0.0199,
+     0.435
+    ]
+   },
+   "{s}的设备维护保养项目与周期应如何确定？": {
+    "n": 8,
+    "n_subjects": 8,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.3244
+    ]
+   },
+   "{s}发生故障时的应急处置与抢修要求是什么？": {
+    "n": 8,
+    "n_subjects": 8,
+    "n_false_answer": 1,
+    "rate": 0.125,
+    "wilson": [
+     0.125,
+     0.0224,
+     0.4709
+    ]
+   },
+   "{s}的作业人员资质、特种设备检验与作业审批有哪些要求？": {
+    "n": 8,
+    "n_subjects": 8,
+    "n_false_answer": 3,
+    "rate": 0.375,
+    "wilson": [
+     0.375,
+     0.1368,
+     0.6943
+    ]
+   },
+   "{s}的检维修风险辨识、作业票办理与完工验收有哪些规定？": {
+    "n": 8,
+    "n_subjects": 8,
+    "n_false_answer": 2,
+    "rate": 0.25,
+    "wilson": [
+     0.25,
+     0.0715,
+     0.5907
+    ]
+   },
+   "{s}的预防性维护项目、检修周期及作业前准备有哪些要求？": {
+    "n": 7,
+    "n_subjects": 7,
+    "n_false_answer": 1,
+    "rate": 0.1429,
+    "wilson": [
+     0.1429,
+     0.0257,
+     0.5131
+    ]
+   },
+   "设备 {s} 的检维修作业应履行哪些许可手续和确认程序？": {
+    "n": 7,
+    "n_subjects": 7,
+    "n_false_answer": 3,
+    "rate": 0.4286,
+    "wilson": [
+     0.4286,
+     0.1582,
+     0.7495
+    ]
+   },
+   "{s}的备件更换与检修记录应如何管理和保存？": {
+    "n": 7,
+    "n_subjects": 7,
+    "n_false_answer": 1,
+    "rate": 0.1429,
+    "wilson": [
+     0.1429,
+     0.0257,
+     0.5131
+    ]
+   },
+   "{s}的日常维护与定期检修分别有哪些规定？": {
+    "n": 7,
+    "n_subjects": 7,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.3543
+    ]
+   },
+   "{s}的设备完好性检查与故障诊断要求是什么？": {
+    "n": 6,
+    "n_subjects": 6,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.3903
+    ]
+   },
+   "{s}开展检维修作业时，隔离、置换和作业许可有哪些要求？": {
+    "n": 6,
+    "n_subjects": 6,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.3903
+    ]
+   },
+   "{s}的储存、装卸和搬运作业有哪些安全要求？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.4345
+    ]
+   },
+   "{s}的泄漏应急处置与人员防护要求是什么？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 2,
+    "rate": 0.4,
+    "wilson": [
+     0.4,
+     0.1176,
+     0.7693
+    ]
+   },
+   "{s}的作业岗位职业危害因素与防护措施有哪些规定？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 2,
+    "rate": 0.4,
+    "wilson": [
+     0.4,
+     0.1176,
+     0.7693
+    ]
+   },
+   "{s}的装卸计量、罐区管理或出入库有哪些具体要求？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 2,
+    "rate": 0.4,
+    "wilson": [
+     0.4,
+     0.1176,
+     0.7693
+    ]
+   },
+   "{s}的使用、领用和废弃处置应遵守哪些规定？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.4345
+    ]
+   },
+   "{s}相关的动火、受限空间和检维修作业有哪些特别要求？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.4345
+    ]
+   },
+   "{s}作业的安全操作规程和作业票有哪些要求？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 1,
+    "rate": 0.2,
+    "wilson": [
+     0.2,
+     0.0362,
+     0.6245
+    ]
+   },
+   "{s}过程中的人员防护、监测与异常处置要求是什么？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.4345
+    ]
+   },
+   "{s}的作业许可、风险辨识与现场监护有哪些规定？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 1,
+    "rate": 0.2,
+    "wilson": [
+     0.2,
+     0.0362,
+     0.6245
+    ]
+   },
+   "{s}设备或设施的检维修与停工检修有哪些具体要求？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.4345
+    ]
+   },
+   "{s}的应急处置、个体防护装备配备有哪些要求？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 1,
+    "rate": 0.2,
+    "wilson": [
+     0.2,
+     0.0362,
+     0.6245
+    ]
+   },
+   "{s}相关作业的记录、验收与隐患排查有哪些规定？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 1,
+    "rate": 0.2,
+    "wilson": [
+     0.2,
+     0.0362,
+     0.6245
+    ]
+   }
+  },
+  "mechanism_spread": {
+   "best": "fake_medium",
+   "best_rate": 0.2,
+   "worst": "fake_id",
+   "worst_rate": 0.125,
+   "spread": 0.075
+  }
+ }
+}
