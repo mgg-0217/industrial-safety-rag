@@ -1,0 +1,2081 @@
+{
+ "note": "多机制拒答题主体池。每个主体都在**原文侧（normalize 后压缩分隔符）**与**归一化侧**两个口径上验证过「不存在于语料」。nearest_real = 与语料真实标签字符 bigram 最相近的一个，用于人工判断题目是否「同域但不存在」。",
+ "corpus": {
+  "n_docs": 26,
+  "total_chars": 338737,
+  "match_rule": "squash(去掉 - 与 _) 后精确子串匹配；原文侧先 normalize"
+ },
+ "real_equipment_tags": [
+  "19-V-4215",
+  "1910-PV-42151",
+  "MP-41009-200-S1B-H1",
+  "T-4200",
+  "T-4300",
+  "加油机",
+  "卸油管",
+  "厂内机动车辆",
+  "压力容器",
+  "压力管道",
+  "有机热载体锅炉",
+  "油气回收装置",
+  "油罐车",
+  "游乐设施",
+  "电梯",
+  "起重机",
+  "起重机械",
+  "轨道球阀",
+  "锅炉"
+ ],
+ "real_hazard_tags": [
+  "中毒窒息",
+  "作业许可",
+  "动火作业",
+  "厂内机动车辆",
+  "压力容器",
+  "压力容器泄漏",
+  "压力容器爆裂",
+  "压力管道",
+  "受限空间作业",
+  "变更管理",
+  "外包管理",
+  "带压拆卸",
+  "应急准备",
+  "承包商管理",
+  "检维修",
+  "泄漏",
+  "火灾",
+  "燃爆",
+  "爆炸",
+  "特种设备事故",
+  "电梯",
+  "缺氧",
+  "联锁失效",
+  "设备完好性",
+  "起重机械",
+  "起重机械倾覆",
+  "超压",
+  "跑冒油",
+  "通风",
+  "锅炉",
+  "锅炉爆炸",
+  "隐患排查",
+  "雷暴",
+  "静电"
+ ],
+ "mechanisms": {
+  "fake_id": "仿真实位号形状的假位号（与 M2 已有池同构，扩到 80 个）",
+  "fake_equipment": "语料里没有的装置/设备类别",
+  "fake_medium": "语料里没有的介质/物料",
+  "fake_process": "语料里没有的工序/作业"
+ },
+ "fake_id": [
+  {
+   "subject": "T-9001",
+   "match_key": "T9001",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.25
+  },
+  {
+   "subject": "T-9002",
+   "match_key": "T9002",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.25
+  },
+  {
+   "subject": "T-9003",
+   "match_key": "T9003",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.25
+  },
+  {
+   "subject": "T-9004",
+   "match_key": "T9004",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.25
+  },
+  {
+   "subject": "T-9005",
+   "match_key": "T9005",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.25
+  },
+  {
+   "subject": "T-9006",
+   "match_key": "T9006",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.25
+  },
+  {
+   "subject": "T-9007",
+   "match_key": "T9007",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.25
+  },
+  {
+   "subject": "T-9008",
+   "match_key": "T9008",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.25
+  },
+  {
+   "subject": "T-9009",
+   "match_key": "T9009",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.25
+  },
+  {
+   "subject": "T-9010",
+   "match_key": "T9010",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9011",
+   "match_key": "T9011",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9012",
+   "match_key": "T9012",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9013",
+   "match_key": "T9013",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9014",
+   "match_key": "T9014",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9015",
+   "match_key": "T9015",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9016",
+   "match_key": "T9016",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9017",
+   "match_key": "T9017",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9018",
+   "match_key": "T9018",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9019",
+   "match_key": "T9019",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9020",
+   "match_key": "T9020",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.25
+  },
+  {
+   "subject": "T-9021",
+   "match_key": "T9021",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9022",
+   "match_key": "T9022",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9023",
+   "match_key": "T9023",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9024",
+   "match_key": "T9024",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9025",
+   "match_key": "T9025",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9026",
+   "match_key": "T9026",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9027",
+   "match_key": "T9027",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9028",
+   "match_key": "T9028",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9029",
+   "match_key": "T9029",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9030",
+   "match_key": "T9030",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4300",
+   "domain_score": 0.25
+  },
+  {
+   "subject": "T-9031",
+   "match_key": "T9031",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9032",
+   "match_key": "T9032",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9033",
+   "match_key": "T9033",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9034",
+   "match_key": "T9034",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9035",
+   "match_key": "T9035",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9036",
+   "match_key": "T9036",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9037",
+   "match_key": "T9037",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9038",
+   "match_key": "T9038",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9039",
+   "match_key": "T9039",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9040",
+   "match_key": "T9040",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9041",
+   "match_key": "T9041",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9042",
+   "match_key": "T9042",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.25
+  },
+  {
+   "subject": "T-9043",
+   "match_key": "T9043",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4300",
+   "domain_score": 0.25
+  },
+  {
+   "subject": "T-9044",
+   "match_key": "T9044",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9045",
+   "match_key": "T9045",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9046",
+   "match_key": "T9046",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9047",
+   "match_key": "T9047",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9048",
+   "match_key": "T9048",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9049",
+   "match_key": "T9049",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9050",
+   "match_key": "T9050",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9051",
+   "match_key": "T9051",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9052",
+   "match_key": "T9052",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9053",
+   "match_key": "T9053",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9054",
+   "match_key": "T9054",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9055",
+   "match_key": "T9055",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9056",
+   "match_key": "T9056",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9057",
+   "match_key": "T9057",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9058",
+   "match_key": "T9058",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9059",
+   "match_key": "T9059",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9060",
+   "match_key": "T9060",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9061",
+   "match_key": "T9061",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9062",
+   "match_key": "T9062",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9063",
+   "match_key": "T9063",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9064",
+   "match_key": "T9064",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9065",
+   "match_key": "T9065",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9066",
+   "match_key": "T9066",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9067",
+   "match_key": "T9067",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9068",
+   "match_key": "T9068",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9069",
+   "match_key": "T9069",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9070",
+   "match_key": "T9070",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9071",
+   "match_key": "T9071",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9072",
+   "match_key": "T9072",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9073",
+   "match_key": "T9073",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9074",
+   "match_key": "T9074",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9075",
+   "match_key": "T9075",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9076",
+   "match_key": "T9076",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9077",
+   "match_key": "T9077",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9078",
+   "match_key": "T9078",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9079",
+   "match_key": "T9079",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  },
+  {
+   "subject": "T-9080",
+   "match_key": "T9080",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "T-4200",
+   "domain_score": 0.111
+  }
+ ],
+ "fake_equipment": [
+  {
+   "subject": "加氢反应器",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "反应器，正",
+   "near_miss_score": 0.333
+  },
+  {
+   "subject": "催化裂化装置",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "油气回收装置",
+   "domain_score": 0.111,
+   "near_miss": "和气化装置向",
+   "near_miss_score": 0.25
+  },
+  {
+   "subject": "加氢精制装置",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "油气回收装置",
+   "domain_score": 0.111,
+   "near_miss": "装   \n置",
+   "near_miss_score": 0.2
+  },
+  {
+   "subject": "延迟焦化装置",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "油气回收装置",
+   "domain_score": 0.111,
+   "near_miss": "和气化装置向",
+   "near_miss_score": 0.25
+  },
+  {
+   "subject": "常压蒸馏塔",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "的蒸馏塔、",
+   "near_miss_score": 0.333
+  },
+  {
+   "subject": "催化重整装置",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "油气回收装置",
+   "domain_score": 0.111,
+   "near_miss": "装   \n置",
+   "near_miss_score": 0.2
+  },
+  {
+   "subject": "烷基化装置",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "油气回收装置",
+   "domain_score": 0.125,
+   "near_miss": "化装置向外",
+   "near_miss_score": 0.333
+  },
+  {
+   "subject": "溶剂脱沥青装置",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "油气回收装置",
+   "domain_score": 0.1,
+   "near_miss": "装置3楼的溶剂",
+   "near_miss_score": 0.2
+  },
+  {
+   "subject": "糠醛精馏装置",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "油气回收装置",
+   "domain_score": 0.111,
+   "near_miss": "压蒸馏装置的",
+   "near_miss_score": 0.25
+  },
+  {
+   "subject": "乙烯裂解装置",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "油气回收装置",
+   "domain_score": 0.111,
+   "near_miss": "装   \n置",
+   "near_miss_score": 0.2
+  },
+  {
+   "subject": "聚乙烯装置",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "油气回收装置",
+   "domain_score": 0.125,
+   "near_miss": "装置。  ",
+   "near_miss_score": 0.2
+  },
+  {
+   "subject": "聚丙烯装置",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "油气回收装置",
+   "domain_score": 0.125,
+   "near_miss": "装置。  ",
+   "near_miss_score": 0.2
+  },
+  {
+   "subject": "聚苯乙烯装置",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "油气回收装置",
+   "domain_score": 0.111,
+   "near_miss": "装   \n置",
+   "near_miss_score": 0.2
+  },
+  {
+   "subject": "聚氯乙烯装置",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "油气回收装置",
+   "domain_score": 0.111,
+   "near_miss": "  \n氯乙烯",
+   "near_miss_score": 0.4
+  },
+  {
+   "subject": "合成橡胶装置",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "油气回收装置",
+   "domain_score": 0.111,
+   "near_miss": "装   \n置",
+   "near_miss_score": 0.2
+  },
+  {
+   "subject": "硫酸装置",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "油气回收装置",
+   "domain_score": 0.143,
+   "near_miss": "  装置",
+   "near_miss_score": 0.333
+  },
+  {
+   "subject": "硝酸装置",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "油气回收装置",
+   "domain_score": 0.143,
+   "near_miss": "  装置",
+   "near_miss_score": 0.333
+  },
+  {
+   "subject": "氯碱装置",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "油气回收装置",
+   "domain_score": 0.143,
+   "near_miss": "  装置",
+   "near_miss_score": 0.333
+  },
+  {
+   "subject": "乙炔装置",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "油气回收装置",
+   "domain_score": 0.143,
+   "near_miss": "  装置",
+   "near_miss_score": 0.333
+  },
+  {
+   "subject": "合成氨装置",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "油气回收装置",
+   "domain_score": 0.125,
+   "near_miss": " 《合成氨",
+   "near_miss_score": 0.4
+  },
+  {
+   "subject": "磷酸装置",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "油气回收装置",
+   "domain_score": 0.143,
+   "near_miss": "  装置",
+   "near_miss_score": 0.333
+  },
+  {
+   "subject": "纯碱装置",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "油气回收装置",
+   "domain_score": 0.143,
+   "near_miss": "  装置",
+   "near_miss_score": 0.333
+  },
+  {
+   "subject": "硝酸铵装置",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "油气回收装置",
+   "domain_score": 0.125,
+   "near_miss": "硝酸铵 \n",
+   "near_miss_score": 0.5
+  },
+  {
+   "subject": "碳酸氢铵装置",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "油气回收装置",
+   "domain_score": 0.111,
+   "near_miss": "装   \n置",
+   "near_miss_score": 0.2
+  },
+  {
+   "subject": "聚合反应釜",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": " 反应釜 ",
+   "near_miss_score": 0.5
+  },
+  {
+   "subject": "缩聚反应釜",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": " 反应釜 ",
+   "near_miss_score": 0.5
+  },
+  {
+   "subject": "离子交换装置",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "油气回收装置",
+   "domain_score": 0.111,
+   "near_miss": "装   \n置",
+   "near_miss_score": 0.2
+  },
+  {
+   "subject": "吸附分离装置",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "油气回收装置",
+   "domain_score": 0.111,
+   "near_miss": " 要撤离装置",
+   "near_miss_score": 0.286
+  },
+  {
+   "subject": "垃圾焚烧炉",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "余热锅炉",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "锅炉",
+   "domain_score": 0.333,
+   "near_miss": "\n锅炉\n",
+   "near_miss_score": 0.333
+  },
+  {
+   "subject": "汽轮机",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "主变压器",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "变压力 ",
+   "near_miss_score": 0.25
+  },
+  {
+   "subject": "空气压缩机",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": " 压缩机 ",
+   "near_miss_score": 0.5
+  },
+  {
+   "subject": "氨制冷机",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "氟制冷机",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "螺杆压缩机",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": " 压缩机 ",
+   "near_miss_score": 0.5
+  },
+  {
+   "subject": "再热器",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "热器等",
+   "near_miss_score": 0.333
+  },
+  {
+   "subject": "给水泵",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": " 给水",
+   "near_miss_score": 0.5
+  },
+  {
+   "subject": "脱硝塔",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "除尘器",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "布袋除尘器",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "电除尘器",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "转炉",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "电炉",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "阳极炉",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "电解槽",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "电解故",
+   "near_miss_score": 0.333
+  },
+  {
+   "subject": "沸腾炉",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "回转窑",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "竖炉",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "焙烧炉",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "煅烧炉",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "碳化炉",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "玻璃熔窑",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "\n用玻璃",
+   "near_miss_score": 0.25
+  },
+  {
+   "subject": "水泥回转窑",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "水泥等覆盖",
+   "near_miss_score": 0.143
+  },
+  {
+   "subject": "捏合机",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "密炼机",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "挤出机",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "注塑机",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "吹塑机",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "纺丝机",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "织布机",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "发布机",
+   "near_miss_score": 0.333
+  },
+  {
+   "subject": "印染机",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "造纸机",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "抄纸机",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "压延机",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "涂布机",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "发布机",
+   "near_miss_score": 0.333
+  },
+  {
+   "subject": "输煤皮带",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": " \n皮带",
+   "near_miss_score": 0.333
+  },
+  {
+   "subject": "输油泵",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "区输油",
+   "near_miss_score": 0.333
+  },
+  {
+   "subject": "油品码头",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "油品的 ",
+   "near_miss_score": 0.25
+  },
+  {
+   "subject": "散装水泥筒仓",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "石灰、干水泥",
+   "near_miss_score": 0.111
+  }
+ ],
+ "fake_medium": [
+  {
+   "subject": "液氩",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "液氮",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "液溴",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "液钠",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "液钾",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "氢氟酸",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "三氯乙酸",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": " \n氯乙",
+   "near_miss_score": 0.333
+  },
+  {
+   "subject": "溴素",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "氯磺酸",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "发烟硫酸",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "2.硫酸",
+   "near_miss_score": 0.2
+  },
+  {
+   "subject": "王水",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "乙醇",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "丙醇",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "异丙醇",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "乙二醇",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "丙二醇",
+   "near_miss_score": 0.333
+  },
+  {
+   "subject": "醋酸",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "苯酚",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "糠醛",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "蒽醌",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "硝基苯",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "溴乙烷",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "乙烷不",
+   "near_miss_score": 0.333
+  },
+  {
+   "subject": "氯丙烯",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": " 丙烯",
+   "near_miss_score": 0.5
+  },
+  {
+   "subject": "甲基丙烯酸甲酯",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "6条 \n丙烯、",
+   "near_miss_score": 0.111
+  },
+  {
+   "subject": "乙苯",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "异构烷烃",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "氰化钠",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "\n氰化",
+   "near_miss_score": 0.5
+  },
+  {
+   "subject": "硝酸钾",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": " 硝酸",
+   "near_miss_score": 0.5
+  },
+  {
+   "subject": "硫酸锌",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": ".硫酸",
+   "near_miss_score": 0.333
+  },
+  {
+   "subject": "磷酸二氢钾",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "尿素",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "二甲基汞",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "6\n二甲",
+   "near_miss_score": 0.25
+  },
+  {
+   "subject": "氯化汞",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "\n氯化",
+   "near_miss_score": 0.5
+  },
+  {
+   "subject": "甲基汞",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "氟利昂",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "液碱",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "溴甲烷",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "甲烷 ",
+   "near_miss_score": 0.5
+  }
+ ],
+ "fake_process": [
+  {
+   "subject": "催化剂钝化",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": " 催化剂 ",
+   "near_miss_score": 0.5
+  },
+  {
+   "subject": "氢气还原",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "硫化氢气",
+   "near_miss_score": 0.2
+  },
+  {
+   "subject": "加氢反应",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "\n\n反应",
+   "near_miss_score": 0.333
+  },
+  {
+   "subject": "催化裂化",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "\n催化剂",
+   "near_miss_score": 0.25
+  },
+  {
+   "subject": "催化重整",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "\n催化剂",
+   "near_miss_score": 0.25
+  },
+  {
+   "subject": "催化加氢",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "\n催化剂",
+   "near_miss_score": 0.25
+  },
+  {
+   "subject": "变压吸附",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "变压力 ",
+   "near_miss_score": 0.25
+  },
+  {
+   "subject": "催化剂还原再生",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": " 催化剂再生 ",
+   "near_miss_score": 0.429
+  },
+  {
+   "subject": "干法脱硫",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "脱硫塔内",
+   "near_miss_score": 0.2
+  },
+  {
+   "subject": "湿法脱硫",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "脱硫塔内",
+   "near_miss_score": 0.2
+  },
+  {
+   "subject": "氨法脱硫",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "脱硫塔内",
+   "near_miss_score": 0.2
+  },
+  {
+   "subject": "SCR脱硝",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": " SCL\n",
+   "near_miss_score": 0.2
+  },
+  {
+   "subject": "SNCR脱硝",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "N\nC. 8",
+   "near_miss_score": 0.143
+  },
+  {
+   "subject": "烟气脱硝",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "品 烟气",
+   "near_miss_score": 0.25
+  },
+  {
+   "subject": "溶剂脱硫",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "脱硫塔内",
+   "near_miss_score": 0.2
+  },
+  {
+   "subject": "MDEA脱硫",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "UIDEAN",
+   "near_miss_score": 0.25
+  },
+  {
+   "subject": "碱洗",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "酸洗",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "溶剂萃取",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "机溶剂；",
+   "near_miss_score": 0.2
+  },
+  {
+   "subject": "闪蒸脱挥",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "至闪蒸塔",
+   "near_miss_score": 0.2
+  },
+  {
+   "subject": "结晶分离",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "水 分离",
+   "near_miss_score": 0.25
+  },
+  {
+   "subject": "离心分离",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": " \n离心",
+   "near_miss_score": 0.333
+  },
+  {
+   "subject": "膜分离",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "\n分离",
+   "near_miss_score": 0.5
+  },
+  {
+   "subject": "电渗析",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "离子交换再生",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "化剂再生\n5",
+   "near_miss_score": 0.125
+  },
+  {
+   "subject": "吸附剂置换",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "剂置换设备",
+   "near_miss_score": 0.333
+  },
+  {
+   "subject": "聚合反应",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "\n\n反应",
+   "near_miss_score": 0.333
+  },
+  {
+   "subject": "缩聚反应",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "\n\n反应",
+   "near_miss_score": 0.333
+  },
+  {
+   "subject": "固相缩聚",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "聚合后处理",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "后处理\n做",
+   "near_miss_score": 0.4
+  },
+  {
+   "subject": "熔融纺丝",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "歧化反应",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "气化反应",
+   "near_miss_score": 0.5
+  },
+  {
+   "subject": "磺化反应",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "气化反应",
+   "near_miss_score": 0.5
+  },
+  {
+   "subject": "氯化反应",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "气化反应",
+   "near_miss_score": 0.5
+  },
+  {
+   "subject": "重整反应",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "\n\n反应",
+   "near_miss_score": 0.333
+  },
+  {
+   "subject": "烷基化反应",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "光气化反应",
+   "near_miss_score": 0.333
+  },
+  {
+   "subject": "异构化反应",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "光气化反应",
+   "near_miss_score": 0.333
+  },
+  {
+   "subject": "热裂化",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "减粘裂化",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "催化裂化再生",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": " 催化剂再生",
+   "near_miss_score": 0.286
+  },
+  {
+   "subject": "湿法冶金浸出",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "",
+   "near_miss_score": 0.0
+  },
+  {
+   "subject": "萃取分离",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "水 分离",
+   "near_miss_score": 0.25
+  },
+  {
+   "subject": "堆肥发酵",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "\n发酵的",
+   "near_miss_score": 0.25
+  },
+  {
+   "subject": "垃圾填埋气收集",
+   "raw_hit": false,
+   "norm_hit": false,
+   "nearest_real": "",
+   "domain_score": 0.0,
+   "near_miss": "情况 | 收集",
+   "near_miss_score": 0.111
+  }
+ ],
+ "n_by_mechanism": {
+  "fake_id": 80,
+  "fake_equipment": 70,
+  "fake_medium": 36,
+  "fake_process": 44
+ },
+ "n_rejected": {
+  "fake_id": 0,
+  "fake_equipment": 10,
+  "fake_medium": 9,
+  "fake_process": 3
+ }
+}

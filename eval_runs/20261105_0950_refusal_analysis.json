@@ -1,0 +1,1162 @@
+{
+ "主集42条": {
+  "file": "20261104_0950_generation_retrieval_main.answers.jsonl",
+  "n_questions": 42,
+  "n_subjects": 42,
+  "subjects_per_question": 1.0,
+  "verdicts": {
+   "pass": 39,
+   "false_answer": 1,
+   "manual": 2
+  },
+  "n_false_answer": 1,
+  "n_decidable": 40,
+  "naive_wilson": [
+   0.0238,
+   0.0042,
+   0.1232
+  ],
+  "naive_wilson_width": 0.119,
+  "n_false_answer_lenient": 1,
+  "naive_wilson_lenient": [
+   0.0238,
+   0.0042,
+   0.1232
+  ],
+  "n_manual": 2,
+  "behaviour_modes": {
+   "1_完全没意识到": {
+    "n": 1,
+    "rate": 0.0238,
+    "wilson": [
+     0.0238,
+     0.0042,
+     0.1232
+    ]
+   },
+   "3_完全正确": {
+    "n": 39,
+    "rate": 0.9286,
+    "wilson": [
+     0.9286,
+     0.8099,
+     0.9754
+    ]
+   },
+   "4_人工复核": {
+    "n": 2,
+    "rate": 0.0476,
+    "wilson": [
+     0.0476,
+     0.0132,
+     0.1579
+    ]
+   }
+  },
+  "cluster_bootstrap": {
+   "point": 0.0238,
+   "lo": 0.0,
+   "hi": 0.0714,
+   "width": 0.0714,
+   "n_boot": 2000,
+   "seed": 20261105
+  },
+  "naive_over_cluster_width_ratio": 1.67,
+  "by_mechanism": {
+   "unspecified": {
+    "label": "unspecified",
+    "n": 42,
+    "n_subjects": 42,
+    "n_false_answer": 1,
+    "rate": 0.0238,
+    "rate_lenient": 0.0238,
+    "wilson": [
+     0.0238,
+     0.0042,
+     0.1232
+    ],
+    "wilson_lenient": [
+     0.0238,
+     0.0042,
+     0.1232
+    ],
+    "cluster_bootstrap": {
+     "point": 0.0238,
+     "lo": 0.0,
+     "hi": 0.0714,
+     "width": 0.0714
+    },
+    "verdicts": {
+     "pass": 39,
+     "false_answer": 1,
+     "manual": 2
+    }
+   }
+  },
+  "by_question_template": {
+   "{s}设{s}备{s} {s}T{s}-{s}9{s}0{s}0{s}1{s} {s}的{s}检{s}修{s}周{s}期{s}、{s}作{s}业{s}前{s}准{s}备{s}和{s}检{s}维{s}修{s}许{s}可{s}有{s}哪{s}些{s}要{s}求{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}0{s}2{s} {s}的{s}预{s}防{s}性{s}维{s}护{s}项{s}目{s}、{s}检{s}修{s}周{s}期{s}及{s}作{s}业{s}前{s}准{s}备{s}是{s}什{s}么{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}设{s}备{s} {s}T{s}-{s}9{s}0{s}0{s}3{s} {s}的{s}检{s}维{s}修{s}作{s}业{s}要{s}求{s}有{s}哪{s}些{s}，{s}包{s}括{s}维{s}护{s}周{s}期{s}和{s}作{s}业{s}许{s}可{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 1,
+    "rate": 1.0,
+    "wilson": [
+     1.0,
+     0.2065,
+     1.0
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}0{s}4{s} {s}的{s}维{s}修{s}保{s}养{s}周{s}期{s}、{s}检{s}修{s}项{s}目{s}及{s}作{s}业{s}前{s}准{s}备{s}有{s}哪{s}些{s}规{s}定{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}设{s}备{s} {s}T{s}-{s}9{s}0{s}0{s}5{s} {s}的{s}检{s}维{s}修{s}作{s}业{s}需{s}要{s}满{s}足{s}哪{s}些{s}周{s}期{s}、{s}准{s}备{s}和{s}许{s}可{s}要{s}求{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}0{s}6{s} {s}的{s}维{s}护{s}周{s}期{s}和{s}检{s}维{s}修{s}作{s}业{s}前{s}准{s}备{s}事{s}项{s}有{s}哪{s}些{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}设{s}备{s} {s}T{s}-{s}9{s}0{s}0{s}7{s} {s}的{s}检{s}修{s}项{s}目{s}、{s}作{s}业{s}周{s}期{s}及{s}作{s}业{s}许{s}可{s}要{s}求{s}是{s}什{s}么{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}0{s}8{s} {s}的{s}预{s}防{s}性{s}维{s}修{s}和{s}检{s}维{s}修{s}作{s}业{s}有{s}哪{s}些{s}具{s}体{s}要{s}求{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}设{s}备{s} {s}T{s}-{s}9{s}0{s}0{s}9{s} {s}的{s}检{s}修{s}周{s}期{s}、{s}作{s}业{s}前{s}检{s}查{s}及{s}维{s}护{s}要{s}求{s}有{s}哪{s}些{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}1{s}0{s} {s}的{s}维{s}修{s}周{s}期{s}、{s}检{s}维{s}修{s}准{s}备{s}和{s}作{s}业{s}许{s}可{s}要{s}求{s}是{s}什{s}么{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}设{s}备{s} {s}T{s}-{s}9{s}0{s}1{s}1{s} {s}的{s}定{s}期{s}维{s}护{s}项{s}目{s}及{s}检{s}维{s}修{s}作{s}业{s}要{s}求{s}有{s}哪{s}些{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}1{s}2{s} {s}的{s}检{s}修{s}周{s}期{s}、{s}作{s}业{s}前{s}准{s}备{s}和{s}检{s}维{s}修{s}许{s}可{s}有{s}哪{s}些{s}要{s}求{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}0{s}1{s}的{s}检{s}修{s}周{s}期{s}和{s}作{s}业{s}前{s}准{s}备{s}有{s}哪{s}些{s}要{s}求{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}0{s}2{s}的{s}维{s}护{s}要{s}求{s}及{s}检{s}维{s}修{s}作{s}业{s}条{s}件{s}是{s}什{s}么{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}0{s}3{s}需{s}要{s}检{s}查{s}哪{s}些{s}部{s}件{s}，{s}检{s}修{s}周{s}期{s}如{s}何{s}规{s}定{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}0{s}4{s}的{s}检{s}维{s}修{s}作{s}业{s}应{s}履{s}行{s}哪{s}些{s}许{s}可{s}手{s}续{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}0{s}5{s}的{s}预{s}防{s}性{s}维{s}护{s}要{s}求{s}有{s}哪{s}些{s}，{s}作{s}业{s}前{s}需{s}要{s}准{s}备{s}什{s}么{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}0{s}6{s}的{s}检{s}修{s}周{s}期{s}、{s}作{s}业{s}范{s}围{s}和{s}注{s}意{s}事{s}项{s}是{s}什{s}么{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}0{s}7{s}在{s}检{s}维{s}修{s}前{s}后{s}需{s}要{s}完{s}成{s}哪{s}些{s}检{s}查{s}和{s}维{s}护{s}工{s}作{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}0{s}8{s}的{s}日{s}常{s}维{s}护{s}与{s}定{s}期{s}检{s}修{s}分{s}别{s}有{s}哪{s}些{s}要{s}求{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}0{s}9{s}的{s}检{s}维{s}修{s}作{s}业{s}需{s}要{s}具{s}备{s}哪{s}些{s}许{s}可{s}和{s}作{s}业{s}前{s}条{s}件{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}1{s}0{s}的{s}检{s}修{s}周{s}期{s}及{s}检{s}修{s}前{s}的{s}隔{s}离{s}、{s}确{s}认{s}要{s}求{s}是{s}什{s}么{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}1{s}1{s}的{s}维{s}护{s}保{s}养{s}项{s}目{s}、{s}周{s}期{s}和{s}作{s}业{s}准{s}备{s}有{s}哪{s}些{s}规{s}定{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}1{s}2{s}检{s}维{s}修{s}时{s}应{s}执{s}行{s}哪{s}些{s}安{s}全{s}措{s}施{s}和{s}确{s}认{s}程{s}序{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}1{s}3{s}的{s}定{s}期{s}检{s}修{s}内{s}容{s}及{s}作{s}业{s}前{s}准{s}备{s}要{s}求{s}是{s}什{s}么{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}1{s}4{s}的{s}维{s}修{s}周{s}期{s}、{s}检{s}修{s}项{s}目{s}及{s}作{s}业{s}注{s}意{s}事{s}项{s}有{s}哪{s}些{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}1{s}5{s}开{s}展{s}检{s}维{s}修{s}作{s}业{s}需{s}要{s}办{s}理{s}哪{s}些{s}许{s}可{s}手{s}续{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}1{s}6{s}的{s}维{s}护{s}周{s}期{s}和{s}检{s}维{s}修{s}前{s}的{s}准{s}备{s}工{s}作{s}有{s}哪{s}些{s}要{s}求{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}1{s}7{s}的{s}检{s}修{s}任{s}务{s}应{s}包{s}括{s}哪{s}些{s}项{s}目{s}，{s}作{s}业{s}前{s}后{s}如{s}何{s}检{s}查{s}确{s}认{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}1{s}8{s}的{s}预{s}防{s}性{s}维{s}护{s}和{s}定{s}期{s}检{s}修{s}要{s}求{s}分{s}别{s}是{s}什{s}么{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}1{s}9{s}检{s}维{s}修{s}作{s}业{s}的{s}许{s}可{s}条{s}件{s}、{s}隔{s}离{s}要{s}求{s}和{s}注{s}意{s}事{s}项{s}有{s}哪{s}些{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}2{s}0{s}的{s}检{s}修{s}周{s}期{s}及{s}作{s}业{s}前{s}需{s}要{s}落{s}实{s}的{s}安{s}全{s}措{s}施{s}是{s}什{s}么{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}2{s}1{s}的{s}维{s}护{s}项{s}目{s}、{s}检{s}修{s}周{s}期{s}和{s}记{s}录{s}要{s}求{s}有{s}哪{s}些{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}2{s}2{s}进{s}行{s}检{s}维{s}修{s}前{s}需{s}要{s}完{s}成{s}哪{s}些{s}准{s}备{s}和{s}确{s}认{s}工{s}作{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}2{s}3{s}的{s}检{s}维{s}修{s}范{s}围{s}、{s}作{s}业{s}周{s}期{s}及{s}风{s}险{s}控{s}制{s}要{s}求{s}是{s}什{s}么{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}2{s}4{s}的{s}定{s}期{s}维{s}护{s}内{s}容{s}及{s}检{s}修{s}作{s}业{s}许{s}可{s}要{s}求{s}有{s}哪{s}些{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}2{s}5{s}检{s}维{s}修{s}时{s}应{s}遵{s}守{s}哪{s}些{s}作{s}业{s}规{s}程{s}和{s}完{s}工{s}检{s}查{s}要{s}求{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}2{s}6{s}的{s}维{s}护{s}保{s}养{s}周{s}期{s}、{s}作{s}业{s}项{s}目{s}及{s}准{s}备{s}工{s}作{s}是{s}什{s}么{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}2{s}7{s}的{s}检{s}修{s}周{s}期{s}和{s}检{s}维{s}修{s}作{s}业{s}前{s}的{s}安{s}全{s}确{s}认{s}要{s}求{s}有{s}哪{s}些{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}2{s}8{s}开{s}展{s}定{s}期{s}检{s}修{s}时{s}应{s}检{s}查{s}哪{s}些{s}部{s}位{s}并{s}办{s}理{s}哪{s}些{s}许{s}可{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}2{s}9{s}的{s}检{s}维{s}修{s}作{s}业{s}条{s}件{s}、{s}周{s}期{s}及{s}完{s}工{s}验{s}收{s}要{s}求{s}是{s}什{s}么{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   },
+   "{s}T{s}-{s}9{s}0{s}3{s}0{s}的{s}维{s}修{s}保{s}养{s}要{s}求{s}和{s}作{s}业{s}前{s}准{s}备{s}事{s}项{s}有{s}哪{s}些{s}？{s}": {
+    "n": 1,
+    "n_subjects": 1,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.7935
+    ]
+   }
+  }
+ },
+ "对照组160条": {
+  "file": "20261105_0937_generation_retrieval_refuse_ctrl_fixed.answers.jsonl",
+  "n_questions": 160,
+  "n_subjects": 40,
+  "subjects_per_question": 4.0,
+  "verdicts": {
+   "pass": 109,
+   "false_answer": 51
+  },
+  "n_false_answer": 51,
+  "n_decidable": 160,
+  "naive_wilson": [
+   0.3187,
+   0.2515,
+   0.3945
+  ],
+  "naive_wilson_width": 0.143,
+  "n_false_answer_lenient": 2,
+  "naive_wilson_lenient": [
+   0.0125,
+   0.0034,
+   0.0444
+  ],
+  "n_manual": 0,
+  "behaviour_modes": {
+   "1_完全没意识到": {
+    "n": 2,
+    "rate": 0.0125,
+    "wilson": [
+     0.0125,
+     0.0034,
+     0.0444
+    ]
+   },
+   "2_表态但归因污染": {
+    "n": 49,
+    "rate": 0.3063,
+    "wilson": [
+     0.3063,
+     0.2401,
+     0.3815
+    ]
+   },
+   "3_完全正确": {
+    "n": 109,
+    "rate": 0.6813,
+    "wilson": [
+     0.6813,
+     0.6055,
+     0.7485
+    ]
+   }
+  },
+  "cluster_bootstrap": {
+   "point": 0.3187,
+   "lo": 0.2812,
+   "hi": 0.3625,
+   "width": 0.0812,
+   "n_boot": 2000,
+   "seed": 20261105
+  },
+  "naive_over_cluster_width_ratio": 1.76,
+  "by_mechanism": {
+   "fake_id": {
+    "label": "假位号",
+    "n": 160,
+    "n_subjects": 40,
+    "n_false_answer": 51,
+    "rate": 0.3187,
+    "rate_lenient": 0.0125,
+    "wilson": [
+     0.3187,
+     0.2515,
+     0.3945
+    ],
+    "wilson_lenient": [
+     0.0125,
+     0.0034,
+     0.0444
+    ],
+    "cluster_bootstrap": {
+     "point": 0.3187,
+     "lo": 0.2812,
+     "hi": 0.3625,
+     "width": 0.0812
+    },
+    "verdicts": {
+     "pass": 109,
+     "false_answer": 51
+    }
+   }
+  },
+  "by_question_template": {
+   "{s}的预防性维护项目、检修周期及作业前准备有哪些要求？": {
+    "n": 40,
+    "n_subjects": 40,
+    "n_false_answer": 6,
+    "rate": 0.15,
+    "wilson": [
+     0.15,
+     0.0706,
+     0.2907
+    ]
+   },
+   "设备 {s} 的检维修作业应履行哪些许可手续和确认程序？": {
+    "n": 40,
+    "n_subjects": 40,
+    "n_false_answer": 39,
+    "rate": 0.975,
+    "wilson": [
+     0.975,
+     0.8712,
+     0.9956
+    ]
+   },
+   "{s}的备件更换与检修记录应如何管理和保存？": {
+    "n": 40,
+    "n_subjects": 40,
+    "n_false_answer": 3,
+    "rate": 0.075,
+    "wilson": [
+     0.075,
+     0.0258,
+     0.1986
+    ]
+   },
+   "{s}的日常维护与定期检修分别有哪些规定？": {
+    "n": 40,
+    "n_subjects": 40,
+    "n_false_answer": 3,
+    "rate": 0.075,
+    "wilson": [
+     0.075,
+     0.0258,
+     0.1986
+    ]
+   }
+  }
+ },
+ "扩展集150条": {
+  "file": "20261105_0929_generation_retrieval_refuse_v2_fixed.answers.jsonl",
+  "n_questions": 150,
+  "n_subjects": 150,
+  "subjects_per_question": 1.0,
+  "verdicts": {
+   "pass": 101,
+   "false_answer": 43,
+   "manual": 6
+  },
+  "n_false_answer": 43,
+  "n_decidable": 144,
+  "naive_wilson": [
+   0.2867,
+   0.2203,
+   0.3637
+  ],
+  "naive_wilson_width": 0.1434,
+  "n_false_answer_lenient": 3,
+  "naive_wilson_lenient": [
+   0.02,
+   0.0068,
+   0.0571
+  ],
+  "n_manual": 6,
+  "behaviour_modes": {
+   "1_完全没意识到": {
+    "n": 3,
+    "rate": 0.02,
+    "wilson": [
+     0.02,
+     0.0068,
+     0.0571
+    ]
+   },
+   "2_表态但归因污染": {
+    "n": 40,
+    "rate": 0.2667,
+    "wilson": [
+     0.2667,
+     0.2024,
+     0.3426
+    ]
+   },
+   "3_完全正确": {
+    "n": 101,
+    "rate": 0.6733,
+    "wilson": [
+     0.6733,
+     0.5948,
+     0.7432
+    ]
+   },
+   "4_人工复核": {
+    "n": 6,
+    "rate": 0.04,
+    "wilson": [
+     0.04,
+     0.0185,
+     0.0845
+    ]
+   }
+  },
+  "cluster_bootstrap": {
+   "point": 0.2867,
+   "lo": 0.22,
+   "hi": 0.3667,
+   "width": 0.1467,
+   "n_boot": 2000,
+   "seed": 20261105
+  },
+  "naive_over_cluster_width_ratio": 0.98,
+  "by_mechanism": {
+   "fake_equipment": {
+    "label": "假装置/设备",
+    "n": 50,
+    "n_subjects": 50,
+    "n_false_answer": 22,
+    "rate": 0.44,
+    "rate_lenient": 0.06,
+    "wilson": [
+     0.44,
+     0.3116,
+     0.5769
+    ],
+    "wilson_lenient": [
+     0.06,
+     0.0206,
+     0.1622
+    ],
+    "cluster_bootstrap": {
+     "point": 0.44,
+     "lo": 0.3,
+     "hi": 0.58,
+     "width": 0.28
+    },
+    "verdicts": {
+     "manual": 1,
+     "pass": 27,
+     "false_answer": 22
+    }
+   },
+   "fake_id": {
+    "label": "假位号",
+    "n": 40,
+    "n_subjects": 40,
+    "n_false_answer": 13,
+    "rate": 0.325,
+    "rate_lenient": 0.0,
+    "wilson": [
+     0.325,
+     0.2008,
+     0.4798
+    ],
+    "wilson_lenient": [
+     0.0,
+     0.0,
+     0.0876
+    ],
+    "cluster_bootstrap": {
+     "point": 0.325,
+     "lo": 0.175,
+     "hi": 0.475,
+     "width": 0.3
+    },
+    "verdicts": {
+     "pass": 27,
+     "false_answer": 13
+    }
+   },
+   "fake_medium": {
+    "label": "假介质/物料",
+    "n": 30,
+    "n_subjects": 30,
+    "n_false_answer": 4,
+    "rate": 0.1333,
+    "rate_lenient": 0.0,
+    "wilson": [
+     0.1333,
+     0.0531,
+     0.2968
+    ],
+    "wilson_lenient": [
+     0.0,
+     0.0,
+     0.1135
+    ],
+    "cluster_bootstrap": {
+     "point": 0.1333,
+     "lo": 0.0333,
+     "hi": 0.2667,
+     "width": 0.2333
+    },
+    "verdicts": {
+     "pass": 21,
+     "manual": 5,
+     "false_answer": 4
+    }
+   },
+   "fake_process": {
+    "label": "假工序/作业",
+    "n": 30,
+    "n_subjects": 30,
+    "n_false_answer": 4,
+    "rate": 0.1333,
+    "rate_lenient": 0.0,
+    "wilson": [
+     0.1333,
+     0.0531,
+     0.2968
+    ],
+    "wilson_lenient": [
+     0.0,
+     0.0,
+     0.1135
+    ],
+    "cluster_bootstrap": {
+     "point": 0.1333,
+     "lo": 0.0333,
+     "hi": 0.2667,
+     "width": 0.2333
+    },
+    "verdicts": {
+     "pass": 26,
+     "false_answer": 4
+    }
+   }
+  },
+  "by_question_template": {
+   "{s}的检修隔离与安全停机要求有哪些？": {
+    "n": 9,
+    "n_subjects": 9,
+    "n_false_answer": 2,
+    "rate": 0.2222,
+    "wilson": [
+     0.2222,
+     0.0632,
+     0.5474
+    ]
+   },
+   "{s}的检维修作业许可、动火与受限空间管理有哪些规定？": {
+    "n": 9,
+    "n_subjects": 9,
+    "n_false_answer": 4,
+    "rate": 0.4444,
+    "wilson": [
+     0.4444,
+     0.1888,
+     0.7334
+    ]
+   },
+   "{s}的设备维护保养项目与周期应如何确定？": {
+    "n": 8,
+    "n_subjects": 8,
+    "n_false_answer": 7,
+    "rate": 0.875,
+    "wilson": [
+     0.875,
+     0.5291,
+     0.9776
+    ]
+   },
+   "{s}发生故障时的应急处置与抢修要求是什么？": {
+    "n": 8,
+    "n_subjects": 8,
+    "n_false_answer": 3,
+    "rate": 0.375,
+    "wilson": [
+     0.375,
+     0.1368,
+     0.6943
+    ]
+   },
+   "{s}的作业人员资质、特种设备检验与作业审批有哪些要求？": {
+    "n": 8,
+    "n_subjects": 8,
+    "n_false_answer": 4,
+    "rate": 0.5,
+    "wilson": [
+     0.5,
+     0.2152,
+     0.7848
+    ]
+   },
+   "{s}的检维修风险辨识、作业票办理与完工验收有哪些规定？": {
+    "n": 8,
+    "n_subjects": 8,
+    "n_false_answer": 2,
+    "rate": 0.25,
+    "wilson": [
+     0.25,
+     0.0715,
+     0.5907
+    ]
+   },
+   "{s}的预防性维护项目、检修周期及作业前准备有哪些要求？": {
+    "n": 7,
+    "n_subjects": 7,
+    "n_false_answer": 1,
+    "rate": 0.1429,
+    "wilson": [
+     0.1429,
+     0.0257,
+     0.5131
+    ]
+   },
+   "设备 {s} 的检维修作业应履行哪些许可手续和确认程序？": {
+    "n": 7,
+    "n_subjects": 7,
+    "n_false_answer": 7,
+    "rate": 1.0,
+    "wilson": [
+     1.0,
+     0.6457,
+     1.0
+    ]
+   },
+   "{s}的备件更换与检修记录应如何管理和保存？": {
+    "n": 7,
+    "n_subjects": 7,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.3543
+    ]
+   },
+   "{s}的日常维护与定期检修分别有哪些规定？": {
+    "n": 7,
+    "n_subjects": 7,
+    "n_false_answer": 3,
+    "rate": 0.4286,
+    "wilson": [
+     0.4286,
+     0.1582,
+     0.7495
+    ]
+   },
+   "{s}的设备完好性检查与故障诊断要求是什么？": {
+    "n": 6,
+    "n_subjects": 6,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.3903
+    ]
+   },
+   "{s}开展检维修作业时，隔离、置换和作业许可有哪些要求？": {
+    "n": 6,
+    "n_subjects": 6,
+    "n_false_answer": 2,
+    "rate": 0.3333,
+    "wilson": [
+     0.3333,
+     0.0968,
+     0.7
+    ]
+   },
+   "{s}的储存、装卸和搬运作业有哪些安全要求？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.4345
+    ]
+   },
+   "{s}的泄漏应急处置与人员防护要求是什么？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.4345
+    ]
+   },
+   "{s}的作业岗位职业危害因素与防护措施有哪些规定？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.4345
+    ]
+   },
+   "{s}的装卸计量、罐区管理或出入库有哪些具体要求？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 2,
+    "rate": 0.4,
+    "wilson": [
+     0.4,
+     0.1176,
+     0.7693
+    ]
+   },
+   "{s}的使用、领用和废弃处置应遵守哪些规定？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.4345
+    ]
+   },
+   "{s}相关的动火、受限空间和检维修作业有哪些特别要求？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 2,
+    "rate": 0.4,
+    "wilson": [
+     0.4,
+     0.1176,
+     0.7693
+    ]
+   },
+   "{s}作业的安全操作规程和作业票有哪些要求？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.4345
+    ]
+   },
+   "{s}过程中的人员防护、监测与异常处置要求是什么？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 1,
+    "rate": 0.2,
+    "wilson": [
+     0.2,
+     0.0362,
+     0.6245
+    ]
+   },
+   "{s}的作业许可、风险辨识与现场监护有哪些规定？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 2,
+    "rate": 0.4,
+    "wilson": [
+     0.4,
+     0.1176,
+     0.7693
+    ]
+   },
+   "{s}设备或设施的检维修与停工检修有哪些具体要求？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.4345
+    ]
+   },
+   "{s}的应急处置、个体防护装备配备有哪些要求？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 1,
+    "rate": 0.2,
+    "wilson": [
+     0.2,
+     0.0362,
+     0.6245
+    ]
+   },
+   "{s}相关作业的记录、验收与隐患排查有哪些规定？": {
+    "n": 5,
+    "n_subjects": 5,
+    "n_false_answer": 0,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0,
+     0.4345
+    ]
+   }
+  },
+  "mechanism_spread": {
+   "best": "fake_equipment",
+   "best_rate": 0.44,
+   "worst": "fake_medium",
+   "worst_rate": 0.1333,
+   "spread": 0.3067
+  }
+ }
+}

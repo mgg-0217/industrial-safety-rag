@@ -376,7 +376,7 @@ def _strip_subject(text, subject):
     return (text or "").replace(subject, " ")
 
 
-def refusal_judgement(answer, subject=None, question=None):
+def refusal_judgement(answer, subject=None, question=None, mode="strict"):
     """按 PRD 7.1 的判定表判定拒答题。
 
     🔴 **判定的对象是"有没有给主体下规定"，不是"有没有提到主体"**：
@@ -389,6 +389,29 @@ def refusal_judgement(answer, subject=None, question=None):
     | 拒答表态 + 别处给出条款号/数值且**带明确限定** | **通过** |
     | 拒答表态 + 别处给出条款号/数值且**不带限定** | **人工复核** |
 
+    ## 两个口径（🔴 必须都报，否则数字会被口径绑架）
+
+    实测（M2 拒答扩容，150 条）发现模型的主流失败模式是
+    **"把通用条款套到主体上"**，典型形态：
+
+    > 「加氢反应器的**具体检修隔离步骤和安全停机条件**，现有资料中未找到
+    > 直接规定，不能据此编造。现有可确认的相关要求是：……
+    > 检修前应结合**加氢反应器**内部可能存在的缺氧窒息、中毒、燃爆等风险
+    > 进行辨识……
+
+    这条回答**已经明确表态"未找到"**（在安全场景里是负责任的），
+    但因为其中一句把通用条款写成了主体的规定，严格口径判成**误答**。
+
+    两个口径回答的是**两个不同的问题**：
+
+    | 口径 | 问的问题 | `mode` |
+    |---|---|---|
+    | **严格** | 模型有没有**给不存在的装置编造规定**？ | `strict`（默认） |
+    | **宽松** | 模型有没有**明确说"资料里没有"**？ | `lenient` |
+
+    只报一个，就会把"模型能力不足"和"口径过严"混成一个数字。
+
+    :param mode: ``strict``（默认）/ ``lenient``
     :returns: ``(判定, 理由)``，判定 ∈ ``{"pass", "false_answer", "manual"}``
     """
     ans = answer or ""
@@ -403,6 +426,19 @@ def refusal_judgement(answer, subject=None, question=None):
     ans_wo_subject = _strip_subject(ans, subject)
     has_clause = bool(_CLAUSE_RE.search(ans_wo_subject))
     has_number = bool(_NUMBER_RE.search(ans_wo_subject))
+
+    # 🔴 宽松口径：只看"有没有表态说没有"，不追究是否附带通用条款。
+    #    必须在"主体被断言规定"分支**之前**返回 —— 那正是宽松口径不追究的部分。
+    if mode == "lenient":
+        if stated:
+            return ("pass", "宽松口径：已表态未找到（不追究是否附带通用条款）")
+        extra = []
+        if has_clause:
+            extra.append("给出具体条款号")
+        if has_number:
+            extra.append("给出具体数值")
+        return ("false_answer",
+                "宽松口径：未表态拒答" + ("且" + "、".join(extra) if extra else ""))
 
     # 1. 主体被肯定句规定 → 误答
     #    🔴 判定的是"这句在**给主体下规定**吗"，不是"这句**提到主体**吗"（K-44）。

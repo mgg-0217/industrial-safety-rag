@@ -1,0 +1,97 @@
+{
+ "generated_at": "2026-11-05T09:41:06",
+ "config": "retrieval",
+ "system_prompt": "SYSTEM（带 [[Cn]] 引用编号）",
+ "embed_backend": "L4_pure_bm25",
+ "embed_note": "无向量路（PRD 4.6 的 L4，本项目实际配置）",
+ "chunk_strategy": "fixed",
+ "n_questions": 160,
+ "n_answered": 160,
+ "n_errors": 0,
+ "n_skipped": 0,
+ "skipped": [],
+ "errors": [],
+ "seconds": 214.0,
+ "summary": {
+  "config": "retrieval",
+  "embed_backend": "L4_pure_bm25",
+  "n_answered": 160,
+  "n_errors": 0,
+  "seconds": 214.0,
+  "stale_in_context_questions": 0,
+  "per_type": {
+   "拒答题": {
+    "n": 160,
+    "refusal_false_answer_rate": [
+     0.3187,
+     0.2515,
+     0.3945
+    ],
+    "refusal_decidable_n": 160,
+    "refusal_false_answer_rate_decidable": [
+     0.3187,
+     0.2515,
+     0.3945
+    ],
+    "refusal_verdicts": {
+     "pass": 109,
+     "false_answer": 51
+    },
+    "refusal_false_answer_rate_lenient": [
+     0.0125,
+     0.0034,
+     0.0444
+    ],
+    "refusal_verdicts_lenient": {
+     "pass": 158,
+     "false_answer": 2
+    },
+    "refusal_by_mechanism": {
+     "fake_id": {
+      "label": "假位号",
+      "n": 160,
+      "n_false_answer": 51,
+      "n_manual": 0,
+      "n_pass": 109,
+      "refusal_false_answer_rate": [
+       0.3187,
+       0.2515,
+       0.3945
+      ],
+      "refusal_false_answer_rate_decidable": [
+       0.3187,
+       0.2515,
+       0.3945
+      ]
+     }
+    }
+   }
+  },
+  "citation": {
+   "n_refs": 1114,
+   "n_valid": 1114,
+   "n_invalid": 0,
+   "citation_valid_rate": [
+    1.0,
+    0.9966,
+    1.0
+   ],
+   "questions_with_invalid_citation": 0,
+   "cited_chunks": 619,
+   "cited_with_clause": 0,
+   "cited_with_page": 508,
+   "clause_located_rate": [
+    0.0,
+    0.0,
+    0.0062
+   ],
+   "page_located_rate": [
+    0.8207,
+    0.7885,
+    0.8489
+   ]
+  },
+  "n_skipped": 0,
+  "system_prompt": "SYSTEM（带 [[Cn]] 引用编号）"
+ }
+}

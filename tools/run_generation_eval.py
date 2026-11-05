@@ -96,9 +96,23 @@ def score_question(q, result, ctx_docs):
     s = {}
 
     if qt == "拒答题":
-        v, why = SC.refusal_judgement(ans, question=q.get("question"))
+        # 🔴 **主体从数据集传，不靠正则从题干猜**（K-49）：
+        #    `extract_subject` 的 `_TAG_RE` 只认位号形态（`T-9001`），
+        #    中文主体（"加氢反应器""液氩"）匹配不到 → subject=None →
+        #    "主体被断言规定"这条检测**静默失效**。
+        #    题集里 `equipment_id` 字段就是主体，直接用。
+        v, why = SC.refusal_judgement(ans, subject=q.get("equipment_id"),
+                                      question=q.get("question"))
         s["refusal_verdict"] = v
         s["refusal_reason"] = why
+        # 🔴 宽松口径（K-51）：只看"有没有明确说资料里没有"，
+        #    不追究是否把通用条款套到了主体上。两个口径都要报 ——
+        #    只报一个会把"模型不会拒答"和"口径过严"混成一个数字。
+        vl, whyl = SC.refusal_judgement(ans, subject=q.get("equipment_id"),
+                                        question=q.get("question"),
+                                        mode="lenient")
+        s["refusal_verdict_lenient"] = vl
+        s["refusal_reason_lenient"] = whyl
         s["kp_hit"] = s["kp_total"] = None
         s["num_hit"] = s["num_total"] = None
     else:
@@ -238,6 +252,10 @@ def main():
                     help="检索走混合路（默认关：M5 实测向量路是负贡献，"
                          "本项目实际配置是 PRD 4.6 的 L4 纯 BM25）")
     ap.add_argument("--tag", default="")
+    ap.add_argument("--questions-file", default="test_set.jsonl",
+                    help="题集文件名（相对 data/eval/）。"
+                         "拒答扩展集用 refusal_extended.jsonl，"
+                         "主集 test_set.jsonl 不动，两者分母分开统计")
     ap.add_argument("--rescore", default="",
                     help="离线重算模式：给一份已落盘的 *_answers.jsonl，"
                          "按当前口径重算判分并重新汇总（不调 API）")
@@ -254,7 +272,7 @@ def main():
     configs = [c.strip() for c in args.configs.split(",") if c.strip()]
 
     questions = [json.loads(l) for l in
-                 open(EVAL_DIR / "test_set.jsonl", encoding="utf-8") if l.strip()]
+                 open(EVAL_DIR / args.questions_file, encoding="utf-8") if l.strip()]
     if args.only_type:
         questions = [q for q in questions if q.get("question_type") == args.only_type]
     if args.limit:
@@ -327,6 +345,9 @@ def main():
             rec = {
                 "qid": q["qid"], "question_type": q.get("question_type"),
                 "question": q.get("question"),
+                "equipment_id": q.get("equipment_id"),
+                "refusal_mechanism": q.get("refusal_mechanism"),
+                "refusal_mechanism_label": q.get("refusal_mechanism_label"),
                 "time_mode": q.get("time_mode"), "query_time": q.get("query_time"),
                 "answer": (r.get("answer_text") or "")[:2000],
                 "rendered": (r.get("rendered") or "")[:4000],
@@ -403,6 +424,25 @@ def rescore(records, threshold=0.7):
     指标就永远不敢改 —— 于是错的指标会被一直用下去。
     """
     for r in records:
+        # 🔴 **拒答判定也要重算**（K-50）：rescore 原来只重算 key_point / 数值，
+        #    拒答题的 `refusal_verdict` 是**批次当时的旧口径**，
+        #    于是"统一口径对比"对拒答这一项根本不成立 —— 两批数字不可比。
+        #    主体优先用数据集字段（K-49），旧批次没有该字段时退回正则提取
+        #    （对位号主体等价）。
+        if r.get("question_type") == "拒答题":
+            subj = r.get("equipment_id")
+            if not subj:
+                subj = SC.extract_subject(r.get("question") or "")
+            v, why = SC.refusal_judgement(r.get("answer") or "", subject=subj,
+                                          question=r.get("question"))
+            r["refusal_verdict"] = v
+            r["refusal_reason"] = why
+            vl, whyl = SC.refusal_judgement(r.get("answer") or "", subject=subj,
+                                            question=r.get("question"),
+                                            mode="lenient")
+            r["refusal_verdict_lenient"] = vl
+            r["refusal_reason_lenient"] = whyl
+
         det = r.get("kp_detail") or []
         if not det:
             continue
@@ -479,6 +519,39 @@ def summarize(records, cfg, backend, dt, errors, args):
             t["refusal_false_answer_rate_decidable"] = SC.wilson(
                 n_false, n_pass + n_false) if (n_pass + n_false) else None
             t["refusal_verdicts"] = dict(verdicts)
+            # 🔴 宽松口径（K-51）：只看"有没有明确表态说没有"
+            lv = Counter(r.get("refusal_verdict_lenient") for r in rs)
+            n_lfalse = lv.get("false_answer", 0)
+            n_lpass = lv.get("pass", 0)
+            t["refusal_false_answer_rate_lenient"] = SC.wilson(n_lfalse, len(rs))
+            t["refusal_verdicts_lenient"] = dict(lv)
+            # 🔴 **按机制分层**（多机制拒答扩容的产物）。
+            #    总体误答率会把"容易的假位号"和"困难的假装置"混在一起，
+            #    掩盖掉机制之间的巨大差异 —— 只报总体数字等于没扩容。
+            if any(r.get("refusal_mechanism") for r in rs):
+                by_mech = defaultdict(list)
+                for r in rs:
+                    by_mech[r.get("refusal_mechanism") or "unspecified"].append(r)
+                mech_stats = {}
+                for mk, mrs in sorted(by_mech.items()):
+                    mv = Counter(x.get("refusal_verdict") for x in mrs)
+                    m_false = mv.get("false_answer", 0)
+                    m_manual = mv.get("manual", 0)
+                    m_pass = mv.get("pass", 0)
+                    label = next((x.get("refusal_mechanism_label")
+                                  for x in mrs if x.get("refusal_mechanism_label")),
+                                 mk)
+                    mech_stats[mk] = {
+                        "label": label,
+                        "n": len(mrs),
+                        "n_false_answer": m_false,
+                        "n_manual": m_manual,
+                        "n_pass": m_pass,
+                        "refusal_false_answer_rate": SC.wilson(m_false, len(mrs)),
+                        "refusal_false_answer_rate_decidable": SC.wilson(
+                            m_false, m_pass + m_false) if (m_pass + m_false) else None,
+                    }
+                t["refusal_by_mechanism"] = mech_stats
         else:
             kp_hit = sum(r.get("kp_hit") or 0 for r in rs)
             kp_tot = sum(r.get("kp_total") or 0 for r in rs)
