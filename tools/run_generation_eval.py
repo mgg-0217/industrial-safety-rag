@@ -96,7 +96,7 @@ def score_question(q, result, ctx_docs):
     s = {}
 
     if qt == "拒答题":
-        # 🔴 **主体从数据集传，不靠正则从题干猜**（K-49）：
+        # 🔴 **主体从数据集传，不靠正则从题干猜**（K-51）：
         #    `extract_subject` 的 `_TAG_RE` 只认位号形态（`T-9001`），
         #    中文主体（"加氢反应器""液氩"）匹配不到 → subject=None →
         #    "主体被断言规定"这条检测**静默失效**。
@@ -105,7 +105,7 @@ def score_question(q, result, ctx_docs):
                                       question=q.get("question"))
         s["refusal_verdict"] = v
         s["refusal_reason"] = why
-        # 🔴 宽松口径（K-51）：只看"有没有明确说资料里没有"，
+        # 🔴 宽松口径（K-53）：只看"有没有明确说资料里没有"，
         #    不追究是否把通用条款套到了主体上。两个口径都要报 ——
         #    只报一个会把"模型不会拒答"和"口径过严"混成一个数字。
         vl, whyl = SC.refusal_judgement(ans, subject=q.get("equipment_id"),
@@ -424,10 +424,10 @@ def rescore(records, threshold=0.7):
     指标就永远不敢改 —— 于是错的指标会被一直用下去。
     """
     for r in records:
-        # 🔴 **拒答判定也要重算**（K-50）：rescore 原来只重算 key_point / 数值，
+        # 🔴 **拒答判定也要重算**（K-52）：rescore 原来只重算 key_point / 数值，
         #    拒答题的 `refusal_verdict` 是**批次当时的旧口径**，
         #    于是"统一口径对比"对拒答这一项根本不成立 —— 两批数字不可比。
-        #    主体优先用数据集字段（K-49），旧批次没有该字段时退回正则提取
+        #    主体优先用数据集字段（K-51），旧批次没有该字段时退回正则提取
         #    （对位号主体等价）。
         if r.get("question_type") == "拒答题":
             subj = r.get("equipment_id")
@@ -519,7 +519,7 @@ def summarize(records, cfg, backend, dt, errors, args):
             t["refusal_false_answer_rate_decidable"] = SC.wilson(
                 n_false, n_pass + n_false) if (n_pass + n_false) else None
             t["refusal_verdicts"] = dict(verdicts)
-            # 🔴 宽松口径（K-51）：只看"有没有明确表态说没有"
+            # 🔴 宽松口径（K-53）：只看"有没有明确表态说没有"
             lv = Counter(r.get("refusal_verdict_lenient") for r in rs)
             n_lfalse = lv.get("false_answer", 0)
             n_lpass = lv.get("pass", 0)
