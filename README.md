@@ -418,7 +418,15 @@ python -m pytest tools/test_version_card.py -v          # 23 条生成层单测
    表格题内容覆盖度 0.390 → 0.517，条款可定位率 0.000 → 0.968。
    详见 `docs/附录表召回诊断.md`。
 5. **补 L1 句向量**（需用户装包）后重跑，落 `embed_backend=L1` 的对比数字
-6. **补语料**：Word(.docx) 内部手册、厂商参数表、同主题多版文档
+6. **额度恢复后跑待办流水线**（2026-11-05 额度耗尽，见 `docs/题集自动核对.md` §4）：
+   ```bash
+   python tools/run_pending.py --list     # 看清单
+   python tools/run_pending.py             # 按序跑完（每阶段可中断续跑）
+   ```
+   含 6 个阶段：LLM 重提炼 key_point → 溯源重定位 → 重跑质检 →
+   `system_v3` 全量拒答（150）→ `system_v3` 副作用检查（事实题 159）→ 主集重跑（306）。
+   ⚠️ 主集必须重跑：**题集的 key_point 已修**，事实题指标的分母变了。
+7. **补语料**：Word(.docx) 内部手册、厂商参数表、同主题多版文档
 
 > 完整规格见 `docs/PRD.md` 第 9 节里程碑表
 > （M0、M1、M3、M4、M5、**M6、M7、M8、M9 已完成**；
