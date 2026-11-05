@@ -118,41 +118,52 @@ def main():
                    use_vector=args.use_vector)
 
     t_filter, t_bm_no, t_bm_fi, t_vec, t_rrf, t_e2e = ([] for _ in range(6))
+    t_filter_cold = []
     n_alive, n_all = [], []
 
     for q in queries:
+        # 🔴 三个口径分清楚（2026-11-04 优化版本过滤后）：
+        #   cold —— **每次都重算**（不共享缓存）：最坏情况
+        #   warm —— 命中 Retriever 的跨查询缓存（同一 when/mode 时存活集固定）
+        #   filter —— 本轮优化后的**按文档缓存**（单次调用内只判 26 个文档）
         t0 = time.perf_counter()
-        alive, _unknown = RT.version_alive(chunks, "2026-11-02", "current")
+        alive_cold, _u = RT.version_alive(chunks, "2026-11-02", "current",
+                                          cache={})
         t1 = time.perf_counter()
-        t_filter.append(t1 - t0)
+        t_filter_cold.append(t1 - t0)
+
+        alive, _unknown = RT.version_alive(chunks, "2026-11-02", "current",
+                                            cache=r._ver_cache)
+        t2 = time.perf_counter()
+        t_filter.append(t2 - t1)
         n_alive.append(len(alive))
         n_all.append(len(chunks))
 
         bm.search(q, alive=None, top_k=args.top_k)
-        t2 = time.perf_counter()
-        t_bm_no.append(t2 - t1)
+        t3 = time.perf_counter()
+        t_bm_no.append(t3 - t2)
 
         bm.search(q, alive=alive, top_k=args.top_k)
-        t3 = time.perf_counter()
-        t_bm_fi.append(t3 - t2)
+        t4 = time.perf_counter()
+        t_bm_fi.append(t4 - t3)
 
         if args.use_vector and embedder is not None:
             r.vector_search(q, alive=alive, top_k=args.top_k)
-            t4 = time.perf_counter()
-            t_vec.append(t4 - t3)
+            t5 = time.perf_counter()
+            t_vec.append(t5 - t4)
         else:
-            t4 = t3
+            t5 = t4
             t_vec.append(0.0)
 
         # RRF 只吃排名，单独计时
         routes = [[(0, 1.0), (1, 0.9)], [(2, 1.0), (3, 0.8)]]
         BM.rrf_fuse(routes, k=r.rrf_k, top_k=args.top_k)
-        t5 = time.perf_counter()
-        t_rrf.append(t5 - t4)
+        t6 = time.perf_counter()
+        t_rrf.append(t6 - t5)
 
         r.retrieve(q, top_k=args.top_k, when="2026-11-02", mode="current",
                    use_vector=args.use_vector)
-        t_e2e.append(time.perf_counter() - t5)
+        t_e2e.append(time.perf_counter() - t6)
 
     delta = [f - n for f, n in zip(t_bm_fi, t_bm_no)]
     payload = {
@@ -166,6 +177,7 @@ def main():
         "alive_chunks_mean": round(sum(n_alive) / len(n_alive), 1),
         "stages": {
             "filter": summarize(t_filter),
+            "filter_cold": summarize(t_filter_cold),
             "bm25_nofilter": summarize(t_bm_no),
             "bm25_filtered": summarize(t_bm_fi),
             "recompute_delta": summarize(delta),
@@ -176,6 +188,9 @@ def main():
         "note": (
             "recompute_delta = 过滤后重算 BM25 的净代价（存活子集上的 IDF/avgdl "
             "必须重算，PRD 4.4）。负值表示过滤反而更快（子集更小、posting 更少）。"
+            "｜filter = 命中 Retriever 跨查询缓存（同一 when/mode 的存活集固定，"
+            "库里的版本关系不随查询变）；"
+            "filter_cold = 每次都重算（按文档缓存：26 份文档判 26 次，不是逐块判）。"
         ),
     }
     ts = datetime.now().strftime("%Y%m%d_%H%M")

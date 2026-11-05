@@ -40,12 +40,14 @@ import versioning as V  # noqa: E402
 # 版本过滤
 # ---------------------------------------------------------------------------
 
-def version_alive(chunks, when, mode="current"):
+def version_alive(chunks, when, mode="current", cache=None):
     """按版本区间算出**存活**的 chunk 下标。
 
     :param chunks: chunk 列表（每个带 ``doc_snapshot``）
     :param when: 判定时刻 ``YYYY-MM-DD``（PRD 5.1：显式传入，不读系统时间）
     :param mode: ``current`` / ``as_of`` / ``cross_version``（PRD 5.2 的口径）
+    :param cache: 可选的判定缓存（``{(when, mode): (alive, unknown)}``）。
+        传同一个 dict 就能跨查询复用 —— 见下方"按文档缓存"的说明。
 
     :returns: ``(alive_indices, unknown_indices)``
         - ``alive_indices``：可以进候选集的 chunk 下标
@@ -66,15 +68,46 @@ def version_alive(chunks, when, mode="current"):
 
     → `cross_version` 口径**不做版本过滤**，
     由**版本卡**负责标注哪一版是现行、哪一版是历史（PRD 5.4）。
+
+    ### 🔴 按文档缓存（2026-11-04 优化，延迟基准逼出来的）
+
+    延迟实测发现：**版本过滤比排序还贵** —— `clause` 策略（3075 块）下
+    `version_alive` 占端到端检索延迟的 **66%**（3.737ms / 5.673ms），
+    因为它是**逐 chunk** 判定版本区间。
+
+    但库里只有 **26 份文档**，而**同一文档的所有 chunk 共享完全相同的
+    `doc_snapshot`**（已实测：26/26 文档、0 处不一致）
+    → **判定结果必然相同**，逐块判是纯浪费。
+
+    → 改成**按 doc_id 缓存判定结果**：判定次数从 O(块数) 降到 O(文档数)。
+    再给 `cache` 传一个跨查询复用的 dict，连"展开下标"这一步也能省掉。
     """
+    if cache is not None:
+        key = (when, mode)
+        hit = cache.get(key)
+        if hit is not None:
+            return hit
+
     alive = []
     unknown = []
     if mode == "cross_version":
         # 两版都要在场 → 不做版本过滤
-        return list(range(len(chunks))), unknown
+        res = (list(range(len(chunks))), unknown)
+        if cache is not None:
+            cache[(when, mode)] = res
+        return res
+
+    # 🔴 按 doc_id 缓存**判定结果**（三态），而不是按 chunk 判
+    verdict = {}
     for i, c in enumerate(chunks):
         doc = c.get("doc_snapshot") or {}
-        st = V.is_effective(doc, when)
+        did = doc.get("doc_id") or c.get("doc_id")
+        if did is not None and did in verdict:
+            st = verdict[did]
+        else:
+            st = V.is_effective(doc, when)
+            if did is not None:
+                verdict[did] = st
         if st is True:
             alive.append(i)
         elif st is None:
@@ -83,7 +116,10 @@ def version_alive(chunks, when, mode="current"):
                 # PRD 2.6.1：current 口径纳入，版本卡标注"生效日未标注"
                 alive.append(i)
             # as_of 口径：无法判定 → 排除
-    return alive, unknown
+    res = (alive, unknown)
+    if cache is not None:
+        cache[(when, mode)] = res
+    return res
 
 
 # ---------------------------------------------------------------------------
@@ -171,6 +207,10 @@ class Retriever:
         if embedder is not None:
             self.emb = embedder.encode(
                 [c.get("norm_text") or c.get("text") or "" for c in self.chunks])
+        # 🔴 版本过滤的判定缓存（2026-11-04 优化）：
+        #    同一 (when, mode) 下存活集是**固定的** → 第二次查询直接复用。
+        #    库里的版本关系不随查询变，所以这个缓存**不会过期**。
+        self._ver_cache = {}
 
     # -- 向量路 -------------------------------------------------------------
 
@@ -215,7 +255,8 @@ class Retriever:
         alpha = self.alpha if alpha is None else alpha
         alive = None
         if version_filter and when:
-            alive, _unknown = version_alive(self.chunks, when, mode)
+            alive, _unknown = version_alive(self.chunks, when, mode,
+                                            cache=self._ver_cache)
             if not alive:
                 return []
         # 每路多取一些，RRF 融合后再截断（超量取候选，PRD 2.8 的闸需要）

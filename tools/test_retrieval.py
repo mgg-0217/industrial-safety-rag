@@ -346,6 +346,58 @@ def test_retriever_stats():
     assert s["rrf_k"] == BM.RRF_K
 
 
+# ============================================================ 7. 版本过滤的按文档缓存
+
+# 🔴 这一组测的是 2026-11-04 的优化：版本过滤从 **O(块数)** 降到 **O(文档数)**。
+#    延迟实测发现 `clause` 策略下 `version_alive` 占端到端检索延迟的 66%
+#    —— 比排序本身还贵。根因是它**逐块**判版本区间，
+#    而库里只有 26 份文档、同一文档的所有 chunk 共享完全相同的 `doc_snapshot`。
+#
+#    优化**不能改变判定结果** —— 所以每条断言都是"缓存路径 == 非缓存路径"。
+
+def test_version_alive_cache_matches_nocache():
+    """缓存路径与非缓存路径必须给出**完全相同**的存活集。"""
+    for when, mode in [("2026-11-02", "current"), ("2026-11-02", "as_of"),
+                        ("2023-12-31", "as_of"), ("2026-11-02", "cross_version")]:
+        a1, u1 = RT.version_alive(CHUNKS, when, mode)
+        cache = {}
+        a2, u2 = RT.version_alive(CHUNKS, when, mode, cache=cache)
+        a3, u3 = RT.version_alive(CHUNKS, when, mode, cache=cache)  # 再走一次缓存
+        assert a1 == a2 == a3, f"{when}/{mode} 的存活集在缓存前后不一致"
+        assert u1 == u2 == u3, f"{when}/{mode} 的 unknown 集在缓存前后不一致"
+
+
+def test_version_alive_cache_key_isolated():
+    """不同 (when, mode) 不能串味 —— 缓存键必须把两者都算进去。"""
+    cache = {}
+    a_cur, _ = RT.version_alive(CHUNKS, "2026-11-02", "current", cache=cache)
+    a_asof, _ = RT.version_alive(CHUNKS, "2026-11-02", "as_of", cache=cache)
+    a_old, _ = RT.version_alive(CHUNKS, "2023-12-31", "as_of", cache=cache)
+    # as_of(2026) 与 as_of(2023) 的存活集**必须不同**（有文档在这期间生效）
+    assert a_asof != a_old, "不同 as_of 时点给出了相同的存活集 → 缓存串味了"
+    # current 与 as_of(同一时刻) 在本夹具下可以不同（未标注生效日的文档）
+    assert len(a_cur) >= len(a_asof)
+
+
+def test_retriever_reuses_version_cache():
+    """`Retriever` 的跨查询缓存：同一 (when, mode) 第二次不再重算。"""
+    ret = RT.Retriever(CHUNKS, embedder=None)
+    assert len(ret._ver_cache) == 0
+    ret.retrieve("动火作业", top_k=2, when="2026-11-02", mode="current",
+                 use_vector=False)
+    assert len(ret._ver_cache) == 1, "第一次查询后应该有缓存条目"
+    cached = ret._ver_cache[("2026-11-02", "current")]
+    ret.retrieve("受限空间作业", top_k=2, when="2026-11-02", mode="current",
+                 use_vector=False)
+    # 缓存对象应当是**同一个**（没有重新算）
+    assert ret._ver_cache[("2026-11-02", "current")] is cached
+    # current 口径纳入「生效日未知」（is_effective 返回 UNKNOWN）的块（PRD 2.6.1），
+    # 只排除明确失效的 —— 所以判据是"不是 False"，不是"是 True"。
+    assert cached[0] == [i for i, c in enumerate(CHUNKS)
+                         if V.is_effective(c.get("doc_snapshot") or {},
+                                           "2026-11-02") is not False]
+
+
 if __name__ == "__main__":
     fns = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     passed = 0

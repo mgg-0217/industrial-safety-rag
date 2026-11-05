@@ -30,9 +30,11 @@ _genlog*.txt
 
 # 🔴 **被额度打断的残缺批次**不许入库：1124_generation_retrieval_k8 只跑到
 # 81/306 题（Token Plan 额度耗尽），入库会让人以为"完整批次只有 81 题"；
-# 1357 那一批是额度耗尽前就 0 题产出的空批次。
+# 1357 那一批是额度耗尽前就 0 题产出的空批次；
+# 1524_generation_retrieval_k15 只跑到 150/306（同样额度耗尽）。
 eval_runs/20261104_1124_generation_retrieval_k8.*
 eval_runs/20261104_1357_generation_retrieval_k8.*
+eval_runs/20261104_1524_generation_retrieval_k15.*
 
 # gzip 解压的一次性中间件：data/raw 里存的是**下载到的原始 gzip 字节**，
 # html_to_md.py 已内置 maybe_gunzip()，重跑抽取结果逐字一致（已验），
