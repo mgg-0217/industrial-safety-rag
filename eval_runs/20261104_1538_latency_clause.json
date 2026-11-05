@@ -1,0 +1,63 @@
+{
+ "generated_at": "2026-11-04T15:38:37",
+ "chunk_strategy": "clause",
+ "embed_backend": "L4_pure_bm25",
+ "embed_note": "无向量路（PRD 4.6 的 L4，本项目实际配置）",
+ "n_chunks": 3075,
+ "n_queries": 306,
+ "top_k": 5,
+ "alive_chunks_mean": 3031.0,
+ "stages": {
+  "filter": {
+   "n": 306,
+   "mean_ms": 0.001,
+   "median_ms": 0.001,
+   "p95_ms": 0.002,
+   "max_ms": 0.003
+  },
+  "filter_cold": {
+   "n": 306,
+   "mean_ms": 0.924,
+   "median_ms": 0.844,
+   "p95_ms": 1.504,
+   "max_ms": 1.669
+  },
+  "bm25_nofilter": {
+   "n": 306,
+   "mean_ms": 1.251,
+   "median_ms": 1.193,
+   "p95_ms": 2.338,
+   "max_ms": 2.774
+  },
+  "bm25_filtered": {
+   "n": 306,
+   "mean_ms": 1.438,
+   "median_ms": 1.368,
+   "p95_ms": 2.623,
+   "max_ms": 3.466
+  },
+  "recompute_delta": {
+   "n": 306,
+   "mean_ms": 0.187,
+   "median_ms": 0.165,
+   "p95_ms": 0.406,
+   "max_ms": 1.32
+  },
+  "vector": null,
+  "rrf": {
+   "n": 306,
+   "mean_ms": 0.006,
+   "median_ms": 0.005,
+   "p95_ms": 0.008,
+   "max_ms": 0.016
+  },
+  "end2end": {
+   "n": 306,
+   "mean_ms": 1.47,
+   "median_ms": 1.405,
+   "p95_ms": 2.684,
+   "max_ms": 3.137
+  }
+ },
+ "note": "recompute_delta = 过滤后重算 BM25 的净代价（存活子集上的 IDF/avgdl 必须重算，PRD 4.4）。负值表示过滤反而更快（子集更小、posting 更少）。｜filter = 命中 Retriever 跨查询缓存（同一 when/mode 的存活集固定，库里的版本关系不随查询变）；filter_cold = 每次都重算（按文档缓存：26 份文档判 26 次，不是逐块判）。"
+}
