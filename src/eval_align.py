@@ -161,6 +161,23 @@ def best_span(kp, text):
     return best
 
 
+#: 🔴 **证据标记**（2026-11-05 实测修正）。
+#:
+#: `doc_evidence()` 给 LLM 的证据文本每份文档前面加一行 `【<doc_id>】`，
+#: 用来告诉模型"这段来自哪份文档"—— 这个设计是对的。
+#:
+#: 但它会**泄漏进 key_point**：
+#:   1. 模型模仿证据格式，把 `【yulin_donghuo_xianshi】` 写进了 key_point；
+#:   2. 对齐算法再忠实地把它对到证据的标记行上
+#:      → key_point 变成 **`【yulin_do`** 这种碎片（实测跨文档题 15/25 条中招）。
+#:
+#: → 对齐时必须把标记从**两边**都剥掉：
+#:    * `kp` 的**开头**（模型模仿来的标记，常常没有闭合的 `】`）；
+#:    * `text` 里**独占一行**的标记（`doc_evidence` 生成的形态）。
+_EVIDENCE_MARKER_LINE = re.compile(r"(?m)^[ \t]*【[^】\n]{1,80}】[ \t]*$")
+_EVIDENCE_MARKER_HEAD = re.compile(r"^[ \t]*【[^】\n]{0,80}")
+
+
 def align_key_point(kp, text, min_len=4):
     """把 kp 对齐到原文片段。
 
@@ -175,11 +192,17 @@ def align_key_point(kp, text, min_len=4):
     这才是 PRD 要的「可复核」。
 
     只有公共片段为空（真幻觉，如 "50 %"）才剔除。
+
+    🔴 **证据标记必须先剥掉**（见 :data:`_EVIDENCE_MARKER_LINE` 的说明）：
+    否则模型模仿来的 `【yulin_do` 会被对齐成 `【yulin_do` 这种碎片，
+    在原文里根本不存在 → key_point_coverage 的分母全是垃圾。
     """
     kp_clean = LABEL_PREFIX.sub("", str(kp)).strip()
+    kp_clean = _EVIDENCE_MARKER_HEAD.sub("", kp_clean).strip()
     kp_f = flat(kp_clean)
     if not kp_f:
         return None, ""
+    text = _EVIDENCE_MARKER_LINE.sub("", text or "")
     span = best_span(kp_f, text)
     if span and len(flat(span)) >= min_len:
         return span, span
