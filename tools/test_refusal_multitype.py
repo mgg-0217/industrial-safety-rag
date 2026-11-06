@@ -194,7 +194,7 @@ def test_chunks_mention_subject():
 
 def test_attribution_fallback_appended_when_model_silent():
     """🔴 模型没说清楚 → 代码追加归因声明。"""
-    need, fb, _poll = AN.attribution_fallback(
+    need, fb, _poll, _claims = AN.attribution_fallback(
         "结论：设备 T-9041 的检维修应履行作业许可手续。",
         [{"text": "企业应建立作业许可管理制度。"}], "T-9041")
     assert need, "模型给主体下了规定却没说这是通用的 → 应追加"
@@ -204,13 +204,13 @@ def test_attribution_fallback_appended_when_model_silent():
 def test_attribution_fallback_skips_when_model_already_clear():
     """🔴 模型自己说清楚了 → **不重复追加**。"""
     # 已经标注了适用性边界
-    need, _fb, _poll = AN.attribution_fallback(
+    need, _fb, _poll, _claims = AN.attribution_fallback(
         "资料中没有 T-9041 的专门规定。以下为通用要求，"
         "其适用性不等同于对 T-9041 的专门规定。",
         [{"text": "企业应建立作业许可管理制度。"}], "T-9041")
     assert not need
     # 已经明说查不到（但没加边界声明）
-    need2, _fb2, _poll2 = AN.attribution_fallback(
+    need2, _fb2, _poll2, _claims2 = AN.attribution_fallback(
         "资料中未找到 T-9041 的相关管理规定。",
         [{"text": "企业应建立作业许可管理制度。"}], "T-9041")
     assert not need2
@@ -218,7 +218,7 @@ def test_attribution_fallback_skips_when_model_already_clear():
 
 def test_attribution_fallback_skips_when_chunk_mentions_subject():
     """🔴 chunk 里提到了该主体 → 那是**关于它**的内容，不该说"全是通用规定"。"""
-    need, _fb, _poll = AN.attribution_fallback(
+    need, _fb, _poll, _claims = AN.attribution_fallback(
         "结论：设备 T-9041 的检维修应履行作业许可手续。",
         [{"text": "T-9041 属于装置区检维修作业，应纳入作业许可管理。"}],
         "T-9041")
@@ -227,8 +227,8 @@ def test_attribution_fallback_skips_when_chunk_mentions_subject():
 
 def test_attribution_fallback_needs_subject():
     """🔴 没有主体 → 不启用（事实题/数值题没有单一主体概念）。"""
-    need, fb, poll = AN.attribution_fallback("任意答案", [{"text": "x"}], None)
-    assert not need and not fb and not poll
+    need, fb, poll, claims = AN.attribution_fallback("任意答案", [{"text": "x"}], None)
+    assert not need and not fb and not poll and not claims
 
 
 def test_boundary_declaration_detected():
@@ -445,3 +445,65 @@ def test_strip_marked_pollution_roundtrip():
     stripped = SC.strip_marked_pollution(marked)
     assert "前言。" in stripped and "后记。" in stripped
     assert "应履行作业许可手续" not in stripped
+
+
+# ---------------------------------------------------------------------------
+# 🔴 「假称语料里有规定」—— 与污染句是**两类不同的错**（2026-11-06）
+# ---------------------------------------------------------------------------
+
+def test_corpus_claim_detected():
+    """🔴 断言语料里有该主体的规定 → 定位到那句。"""
+    ans = ("资料中未找到合成氨装置的专门规定。"
+           "但资料中有合成氨装置检维修作业许可的明确规定。")
+    hits = SC.find_corpus_claim_sentences(ans, "合成氨装置")
+    assert len(hits) == 1
+    assert "明确规定" in hits[0][0]
+
+
+def test_corpus_claim_absent_statement_is_not_claim():
+    """🔴「资料中没有 X 的专门规定」是**承认没有**，不是假称。"""
+    ans = "资料中没有合成氨装置的专门规定，无法据此给出答案。"
+    assert SC.find_corpus_claim_sentences(ans, "合成氨装置") == []
+
+
+def test_corpus_claim_requires_subject():
+    """🔴 主体不在句子里 → 不算该主体的假称。"""
+    ans = "资料中有合成氨装置检维修作业许可的明确规定。"
+    assert SC.find_corpus_claim_sentences(ans, "T-9041") == []
+
+
+def test_corpus_claim_needs_source_and_assertion():
+    """🔴 只有来源指称没有断言谓语 → 不算（如"资料片段显示企业应建立责任制"）。"""
+    ans = "所给资料片段显示企业应建立健全安全生产责任制。"
+    assert SC.find_corpus_claim_sentences(ans, "企业") == []
+
+
+def test_fallback_strikes_corpus_claim():
+    """🔴 代码级兜底要**划掉**假称句（与污染句同一机制）。"""
+    ans = ("资料中未找到合成氨装置的专门规定。"
+           "但资料中有合成氨装置检维修作业许可的明确规定。")
+    need, fb, poll, claims = AN.attribution_fallback(
+        ans, [{"text": "企业应建立作业许可管理制度。"}], "合成氨装置")
+    assert claims, "应识别出假称句"
+    marked = AN.mark_pollution(ans, poll + claims)
+    assert "~~" in marked
+    assert "明确规定" in marked
+
+
+def test_corpus_claim_boundary_declaration_is_not_claim():
+    """🔴 边界声明是**正确的归因隔离**，不能被判成假称（实测 7/8 是这种假阳性）。"""
+    ans = "现有资料仅能说明检维修及一般作业许可的通用要求，其适用性不等同于合成氨装置的专门规定"
+    assert SC.find_corpus_claim_sentences(ans, "合成氨装置") == []
+
+
+def test_corpus_claim_subset_of_pollution_on_real_case():
+    """🔴 实测：唯一那条假称句**同时也是污染句** → 不是独立的失败模式。"""
+    ans = "资料中有合成氨装置**检维修作业许可**的明确规定"
+    assert SC.find_corpus_claim_sentences(ans, "合成氨装置")
+    assert SC.find_pollution_sentences(ans, "合成氨装置")
+
+
+def test_corpus_claim_xianyou_substring_trap():
+    """🔴 K-58 同款：「现**有**资料」里的"有"不是断言谓语。"""
+    ans = "现有资料仅涉及以下通用要求，与合成氨装置无关。"
+    assert SC.find_corpus_claim_sentences(ans, "合成氨装置") == []

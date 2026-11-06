@@ -79,6 +79,17 @@ POLLUTION_NOTICE = (
     "专门规定，这些句子已被划去，**请以划线部分之外的内容为准**。"
 )
 
+#: 🔴 **「假称语料里有规定」的划除提示**（2026-11-06）。
+#:
+#: 与 :data:`POLLUTION_NOTICE` **分开** —— 两类错的性质不同：
+#: 污染句是"把通用条款说成主体规定"，假称句是"**语料里到底有什么**这个事实判断错了"。
+#: 混成一句话会让用户不知道该信哪部分。
+CORPUS_CLAIM_NOTICE = (
+    "🔴 **不予采信**：答案中有 {n} 句断言资料里存在「{subject}」的专门规定，"
+    "但资料中**没有**该主体的专门规定，这些句子已被划去，"
+    "**请以划线部分之外的内容为准**。"
+)
+
 
 def chunks_mention_subject(chunks, subject):
     """召回的 chunk 里有没有任何一块**正文提到**该主体。
@@ -119,31 +130,36 @@ def mark_pollution(text, pollution):
 
 
 def attribution_fallback(answer_text, chunks, subject):
-    """代码级归因兜底：**两件事**，各自独立触发。
+    """代码级归因兜底：**三件事**，各自独立触发。
 
     1. **污染句划除**（无条件）：只要答案里有"把通用条款当成主体规定"
        的句子，就把它划掉并标注不予采信。
        → 这一步**不依赖**模型有没有说清楚，因为污染句本身就是错的。
-    2. **归因声明追加**（有条件）：召回的 chunk 里根本没出现这个主体，
+    2. **假称句划除**（无条件）：答案里有"资料中存在该主体的专门规定"
+       这种**对语料内容的事实性错误断言**时，同样划掉。
+       → 这是**代码能判**的一类错（代码知道语料里有没有），
+       提示词管不了（规则管的是"怎么表述"）。
+    3. **归因声明追加**（有条件）：召回的 chunk 里根本没出现这个主体，
        且模型自己既没做边界声明、也没说"资料里没有该主体的规定"
        → 在末尾补一句系统声明。
 
-    🔴 为什么第 2 步要"模型没说清楚才补"：避免与模型自己的话重复。
+    🔴 为什么第 3 步要"模型没说清楚才补"：避免与模型自己的话重复。
 
-    :returns: ``(需要追加声明?, 追加的文本, 污染句列表)``
+    :returns: ``(需要追加声明?, 追加的文本, 污染句列表, 假称句列表)``
     """
     if not subject:
-        return False, "", []
+        return False, "", [], []
     pollution = SC.find_pollution_sentences(answer_text, subject)
+    claims = SC.find_corpus_claim_sentences(answer_text, subject)
     mentioned = chunks_mention_subject(chunks, subject)
     if mentioned is not False:
         # 有块提到该主体 → 引用是关于它的内容，不追加声明
-        return False, "", pollution
+        return False, "", pollution, claims
     if SC.has_boundary_declaration(answer_text, subject)[0]:
-        return False, "", pollution
+        return False, "", pollution, claims
     if SC.has_subject_absence_statement(answer_text, subject)[0]:
-        return False, "", pollution
-    return True, ATTRIBUTION_FALLBACK.format(subject=subject), pollution
+        return False, "", pollution, claims
+    return True, ATTRIBUTION_FALLBACK.format(subject=subject), pollution, claims
 
 
 # ---------------------------------------------------------------------------
@@ -419,13 +435,14 @@ class Answerer:
 
         fb_text = None
         pollution = []
+        claims = []
         raw_for_render = raw
         if self.attribution_fallback and subject:
-            need, fb, pollution = attribution_fallback(raw, ctx, subject)
+            need, fb, pollution, claims = attribution_fallback(raw, ctx, subject)
             if need:
                 fb_text = fb
-            if pollution:
-                raw_for_render = mark_pollution(raw, pollution)
+            if pollution or claims:
+                raw_for_render = mark_pollution(raw, pollution + claims)
 
         rendered, stats = CIT.render(raw_for_render, ctx, manifest=self.manifest,
                                      when=when, mode=mode)
@@ -435,6 +452,9 @@ class Answerer:
         if pollution:
             rendered = rendered + "\n\n" + POLLUTION_NOTICE.format(
                 n=len(pollution), subject=subject)
+        if claims:
+            rendered = rendered + "\n\n" + CORPUS_CLAIM_NOTICE.format(
+                n=len(claims), subject=subject)
         cards = VC.build_cards(ctx, manifest=self.manifest, when=when, mode=mode)
         card_block = VC.render_cards(cards)
         final = rendered + ("\n\n" + card_block if card_block else "")
@@ -448,6 +468,7 @@ class Answerer:
             "version_cards": cards,
             "attribution_fallback": fb_text,
             "pollution_sentences": [p[0] for p in pollution],
+            "corpus_claim_sentences": [p[0] for p in claims],
         }
 
 

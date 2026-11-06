@@ -127,19 +127,21 @@ def test_cross_doc_repeats_ignores_long_lines():
 # ---------------------------------------------------- 4.「假称有规定」检测
 
 def test_corpus_claim_detects_claim():
+    """🔴 断言语料里有该主体的规定 → 定位到那句。"""
+    import scoring as SC
     ans = "资料中有合成氨装置检维修作业许可的明确规定。"
-    hits = [m.group(0) for p in CLAIM.CLAIM_PATTERNS for m in p.finditer(ans)]
+    hits = SC.find_corpus_claim_sentences(ans, "合成氨装置")
     assert hits, "应识别出『假称资料里有规定』"
 
 
 def test_corpus_claim_ignores_absent_statement():
+    """🔴「资料中没有 X 的专门规定」是**承认没有**，不是假称。"""
+    import scoring as SC
     ans = "现有资料中未找到合成氨装置检维修作业许可的明确规定，无法据此给出答案。"
-    hits = [m.group(0) for p in CLAIM.CLAIM_PATTERNS for m in p.finditer(ans)]
-    has_absent = any(p.search(ans) for p in CLAIM.ABSENT_PATTERNS)
-    # 有"未找到"表态 → 不算纯假称
-    assert has_absent
+    assert SC.find_corpus_claim_sentences(ans, "合成氨装置") == []
 
 
 def test_corpus_claim_absent_patterns_cover_variants():
+    import scoring as SC
     for s in ["未找到相关规定", "资料中未提供具体数值", "没有检索到相关条款"]:
-        assert any(p.search(s) for p in CLAIM.ABSENT_PATTERNS), s
+        assert SC._NEG_PATTERN.search(s) or SC._ABSENCE_RE.search(s), s
