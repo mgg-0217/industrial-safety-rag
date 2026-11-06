@@ -1,0 +1,12 @@
+{
+ "batch": "eval_runs/20261106_0925_generation_retrieval_拒答题_pending_v3refuse.answers.jsonl",
+ "n": 150,
+ "n_claim": 8,
+ "n_claim_without_absent": 0,
+ "by_mechanism": {
+  "fake_id": 1,
+  "fake_equipment": 4,
+  "fake_medium": 2,
+  "fake_process": 1
+ }
+}

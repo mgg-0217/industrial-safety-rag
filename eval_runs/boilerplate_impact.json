@@ -1,0 +1,194 @@
+{
+ "per_doc": {
+  "AQ_T3034_2022_huagong_anquan": {
+   "chars": 76874,
+   "boiler_chars": 900,
+   "ratio": 0.0117,
+   "boiler_lines": 57,
+   "total_lines": 2953
+  },
+  "case_gaoming_leak": {
+   "chars": 3933,
+   "boiler_chars": 634,
+   "ratio": 0.1612,
+   "boiler_lines": 120,
+   "total_lines": 297
+  },
+  "case_quanzhou_1220": {
+   "chars": 12771,
+   "boiler_chars": 15,
+   "ratio": 0.0012,
+   "boiler_lines": 1,
+   "total_lines": 133
+  },
+  "case_quanzhou_rectify_2026": {
+   "chars": 5891,
+   "boiler_chars": 15,
+   "ratio": 0.0025,
+   "boiler_lines": 1,
+   "total_lines": 100
+  },
+  "case_sinopec_maoming_68": {
+   "chars": 1546,
+   "boiler_chars": 15,
+   "ratio": 0.0097,
+   "boiler_lines": 1,
+   "total_lines": 16
+  },
+  "gaoqing_yuxian_kongjian": {
+   "chars": 3355,
+   "boiler_chars": 176,
+   "ratio": 0.0525,
+   "boiler_lines": 18,
+   "total_lines": 177
+  },
+  "guide_anhui_xianshi": {
+   "chars": 548,
+   "boiler_chars": 71,
+   "ratio": 0.1296,
+   "boiler_lines": 8,
+   "total_lines": 34
+  },
+  "guide_huaian_xianshi": {
+   "chars": 300,
+   "boiler_chars": 15,
+   "ratio": 0.05,
+   "boiler_lines": 1,
+   "total_lines": 10
+  },
+  "guide_jiaxian_guanli_zhidu": {
+   "chars": 6597,
+   "boiler_chars": 182,
+   "ratio": 0.0276,
+   "boiler_lines": 26,
+   "total_lines": 238
+  },
+  "guide_kaiping_xianshi": {
+   "chars": 731,
+   "boiler_chars": 25,
+   "ratio": 0.0342,
+   "boiler_lines": 4,
+   "total_lines": 65
+  },
+  "guide_kepuchina_fanghu": {
+   "chars": 1454,
+   "boiler_chars": 44,
+   "ratio": 0.0303,
+   "boiler_lines": 7,
+   "total_lines": 84
+  },
+  "guide_liubei_shouce": {
+   "chars": 2061,
+   "boiler_chars": 332,
+   "ratio": 0.1611,
+   "boiler_lines": 54,
+   "total_lines": 216
+  },
+  "guide_nanchang_fengxian": {
+   "chars": 745,
+   "boiler_chars": 125,
+   "ratio": 0.1678,
+   "boiler_lines": 17,
+   "total_lines": 57
+  },
+  "guide_shijiazhuang_xianshi": {
+   "chars": 1515,
+   "boiler_chars": 15,
+   "ratio": 0.0099,
+   "boiler_lines": 1,
+   "total_lines": 46
+  },
+  "guide_shijiu_shoujiu": {
+   "chars": 3532,
+   "boiler_chars": 455,
+   "ratio": 0.1288,
+   "boiler_lines": 76,
+   "total_lines": 158
+  },
+  "guide_wuhan_jiayouzhan": {
+   "chars": 3237,
+   "boiler_chars": 766,
+   "ratio": 0.2366,
+   "boiler_lines": 150,
+   "total_lines": 311
+  },
+  "kaiping_zuoyepiao": {
+   "chars": 3714,
+   "boiler_chars": 83,
+   "ratio": 0.0223,
+   "boiler_lines": 13,
+   "total_lines": 114
+  },
+  "mem_2019_78_zhimengdaoze": {
+   "chars": 115437,
+   "boiler_chars": 2751,
+   "ratio": 0.0238,
+   "boiler_lines": 363,
+   "total_lines": 4465
+  },
+  "mem_xianshi_shouce": {
+   "chars": 42363,
+   "boiler_chars": 969,
+   "ratio": 0.0229,
+   "boiler_lines": 101,
+   "total_lines": 1687
+  },
+  "plan_haiyang_tzb": {
+   "chars": 823,
+   "boiler_chars": 25,
+   "ratio": 0.0304,
+   "boiler_lines": 6,
+   "total_lines": 60
+  },
+  "plan_jiaocheng_tzb": {
+   "chars": 4375,
+   "boiler_chars": 40,
+   "ratio": 0.0091,
+   "boiler_lines": 5,
+   "total_lines": 76
+  },
+  "plan_tianjin_dierying": {
+   "chars": 3612,
+   "boiler_chars": 15,
+   "ratio": 0.0042,
+   "boiler_lines": 1,
+   "total_lines": 59
+  },
+  "plan_tieling_qinghe_tzb": {
+   "chars": 27360,
+   "boiler_chars": 76,
+   "ratio": 0.0028,
+   "boiler_lines": 35,
+   "total_lines": 915
+  },
+  "plan_yiyuan_tzb": {
+   "chars": 2105,
+   "boiler_chars": 36,
+   "ratio": 0.0171,
+   "boiler_lines": 7,
+   "total_lines": 54
+  },
+  "yulin_2023_old": {
+   "chars": 2737,
+   "boiler_chars": 310,
+   "ratio": 0.1133,
+   "boiler_lines": 51,
+   "total_lines": 168
+  },
+  "yulin_donghuo_xianshi": {
+   "chars": 2082,
+   "boiler_chars": 50,
+   "ratio": 0.024,
+   "boiler_lines": 4,
+   "total_lines": 36
+  }
+ },
+ "impact": {
+  "chunks_retrieved": 1530,
+  "doc_id_coverage": 1.0,
+  "mean_boiler_ratio": 0.0199,
+  "chunks_over_50pct_boiler": 0,
+  "over_50pct_by_doc": {}
+ },
+ "top_k": 5
+}

@@ -1,0 +1,87 @@
+{
+ "a": "eval_runs/20261105_1123_generation_retrieval_refuse_v2sys2_fixed.answers.jsonl",
+ "b": "eval_runs/20261106_0925_generation_retrieval_拒答题_pending_v3refuse.answers.jsonl",
+ "n_paired": 150,
+ "verdicts_a": {
+  "bounded": 140,
+  "pass": 4,
+  "false_answer": 6
+ },
+ "verdicts_b": {
+  "bounded": 142,
+  "pass": 5,
+  "false_answer": 3
+ },
+ "lenient_a": {
+  "pass": 146,
+  "false_answer": 4
+ },
+ "lenient_b": {
+  "pass": 150
+ },
+ "false_rate_a": 0.04,
+ "false_rate_b": 0.02,
+ "ci_a": [
+  0.0185,
+  0.0845
+ ],
+ "ci_b": [
+  0.0068,
+  0.0571
+ ],
+ "table": {
+  "A误B对": 6,
+  "A对B误": 3,
+  "都误": 0,
+  "都对": 141
+ },
+ "mcnemar_p": 0.5078,
+ "flipped": [
+  {
+   "qid": "r_1f54b0122d60",
+   "a": "false_answer",
+   "b": "bounded"
+  },
+  {
+   "qid": "r_2e41e543a0ff",
+   "a": "bounded",
+   "b": "false_answer"
+  },
+  {
+   "qid": "r_3e327e411e8f",
+   "a": "false_answer",
+   "b": "bounded"
+  },
+  {
+   "qid": "r_6a8559cbc719",
+   "a": "false_answer",
+   "b": "bounded"
+  },
+  {
+   "qid": "r_77f9a31f9a3e",
+   "a": "false_answer",
+   "b": "bounded"
+  },
+  {
+   "qid": "r_a3e674567870",
+   "a": "false_answer",
+   "b": "bounded"
+  },
+  {
+   "qid": "r_d819d11bea93",
+   "a": "bounded",
+   "b": "false_answer"
+  },
+  {
+   "qid": "r_d8f9cfd3232b",
+   "a": "false_answer",
+   "b": "bounded"
+  },
+  {
+   "qid": "r_e935db5ce95c",
+   "a": "bounded",
+   "b": "false_answer"
+  }
+ ],
+ "both_false": []
+}

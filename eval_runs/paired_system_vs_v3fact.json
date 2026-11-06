@@ -1,0 +1,66 @@
+{
+ "a": "eval_runs/20261106_0933_generation_retrieval_pending_main.answers.jsonl",
+ "b": "eval_runs/20261106_0930_generation_retrieval_事实题_pending_v3fact.answers.jsonl",
+ "label_a": "system(原始)",
+ "label_b": "system_v3",
+ "n_paired": 159,
+ "per_type": {
+  "事实题": {
+   "answer_len": {
+    "n": 159,
+    "a": 249.8805,
+    "b": 301.3522,
+    "diff": -51.4717,
+    "ci": [
+     -65.1321,
+     -38.0692
+    ],
+    "significant": true
+   },
+   "cited_n": {
+    "n": 159,
+    "a": 2.0755,
+    "b": 2.1572,
+    "diff": -0.0818,
+    "ci": [
+     -0.2642,
+     0.1132
+    ],
+    "significant": false
+   },
+   "kp_cov_soft": {
+    "n": 159,
+    "a": 0.6316,
+    "b": 0.6955,
+    "diff": -0.0639,
+    "ci": [
+     -0.1216,
+     -0.0052
+    ],
+    "significant": true
+   },
+   "kp_cov_strict": {
+    "n": 159,
+    "a": 0.0388,
+    "b": 0.0875,
+    "diff": -0.0487,
+    "ci": [
+     -0.0901,
+     -0.011
+    ],
+    "significant": true
+   },
+   "kp_full_hit": {
+    "n": 159,
+    "a": 0.5283,
+    "b": 0.6038,
+    "diff": -0.0755,
+    "ci": [
+     -0.1447,
+     -0.0063
+    ],
+    "significant": true
+   }
+  }
+ }
+}
