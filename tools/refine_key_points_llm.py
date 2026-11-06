@@ -75,6 +75,17 @@ def load_chunks(path=CHUNKS):
     return out
 
 
+def _nz(s: str) -> str:
+    """归一化：去空白 + 零宽字符。"""
+    return re.sub(r"[\s　﻿]+", "", s or "")
+
+
+#: doc_id → 文档全文（归一化后），用于「kp 逐字可达于出处文档」的校验。
+DOC_TEXTS = {}
+for _p in (ROOT / "data" / "md").glob("*.md"):
+    DOC_TEXTS[_p.stem] = _p.read_text(encoding="utf-8", errors="replace")
+
+
 def build_retriever(chunks):
     """用项目自己的 BM25 做检索（不给答案，只给证据）。
 
@@ -107,12 +118,28 @@ def main():
     ap.add_argument("--only-type", default="事实题")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--out", default="")
+    ap.add_argument("--restrict-to-doc", action="store_true",
+                    help="🔴 检索**只在题目的出处文档内**做（下一轮的根因修法）。"
+                         "默认关闭：关闭时 27 条 kp 会串到别的文档去"
+                         "（多为应急预案之间的通用套话），"
+                         "导致质检判据「kp 可达于出处文档」判不过。")
     args = ap.parse_args()
 
     chunks = load_chunks()
     if not chunks:
         raise SystemExit("chunk 库为空")
     retr = build_retriever(chunks)
+
+    # 🔴 **按文档分组的检索器**（`--restrict-to-doc` 用）。
+    #    每份文档建一个 BM25 索引，题目的证据只从它的出处文档里取。
+    doc_retr = {}
+    if args.restrict_to_doc:
+        by_doc = {}
+        for c in chunks:
+            by_doc.setdefault(c.get("doc_id") or "", []).append(c)
+        for d, cs in by_doc.items():
+            doc_retr[d] = build_retriever(cs)
+        print(f"按文档建索引：{len(doc_retr)} 份")
 
     rows = [json.loads(l) for l in TEST_SET.open(encoding="utf-8") if l.strip()]
     targets = [r for r in rows if r.get("question_type") == args.only_type]
@@ -124,15 +151,24 @@ def main():
 
     def work(r):
         q = r.get("question") or ""
+        # 🔴 检索器选择：限定在出处文档内 / 全库
+        r_tr = retr
+        pool = chunks
+        if args.restrict_to_doc:
+            d = r.get("expect_doc_id") or r.get("doc_id") or ""
+            r_tr = doc_retr.get(d)
+            pool = [c for c in chunks if (c.get("doc_id") or "") == d]
+            if r_tr is None:
+                return r, None, f"出处文档无块：{d}"
         try:
-            hits = retr.retrieve(q, top_k=args.top_k, version_filter=False,
+            hits = r_tr.retrieve(q, top_k=args.top_k, version_filter=False,
                                  use_vector=False)
         except Exception as e:      # 检索失败 → 不改这题
             return r, None, f"检索失败：{e}"
         evid = []
         for idx, _score in hits:
-            if 0 <= idx < len(chunks):
-                evid.append((chunks[idx].get("text") or "")[:1200])
+            if 0 <= idx < len(pool):
+                evid.append((pool[idx].get("text") or "")[:1200])
         if not evid:
             return r, None, "检索无结果"
         evidence = "\n\n---\n\n".join(evid)
@@ -155,6 +191,16 @@ def main():
                 # 允许首尾空白差异
                 if any(k in e for e in evid):
                     ok.append(k)
+        # 🔴 **第二道校验**（`--restrict-to-doc` 下的硬保证）：
+        #    kp 必须逐字出现在**出处文档正文**里，
+        #    否则它就是"串到别的文档的通用套话"（实测 27 条）。
+        if args.restrict_to_doc:
+            d = r.get("expect_doc_id") or r.get("doc_id") or ""
+            full = DOC_TEXTS.get(d, "")
+            ok2 = [k for k in ok if _nz(k) and _nz(k) in _nz(full)]
+            if not ok2:
+                return r, None, "没有逐字出现在出处文档里的 kp"
+            ok = ok2
         if not ok:
             return r, None, "没有通过字面校验的 kp"
         return r, ok, None
