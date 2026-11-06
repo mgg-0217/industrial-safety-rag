@@ -1,0 +1,6697 @@
+{
+ "batch": "20261104_0950_generation_retrieval_main.answers.jsonl",
+ "summary": {
+  "事实题": {
+   "n": 159,
+   "kp_cov_all_hits": 190,
+   "kp_cov_all_strict_hits": 18,
+   "kp_cov_all_tot": 280,
+   "kp_cov_all_fullhit_soft": 93,
+   "kp_cov_all_fullhit_strict": 5,
+   "kp_cov_src_hits": 169,
+   "kp_cov_src_strict_hits": 15,
+   "kp_cov_src_tot": 232,
+   "kp_cov_src_fullhit_soft": 89,
+   "kp_cov_src_fullhit_strict": 5,
+   "n_kp_total": 280,
+   "n_kp_in_src": 232,
+   "n_kp_cross": 48,
+   "src_in_ctx": 155,
+   "src_cited": 140,
+   "kp_cov_cross_hits": 21,
+   "kp_cov_cross_strict_hits": 3,
+   "kp_cov_cross_tot": 48,
+   "kp_cov_cross_fullhit_soft": 14,
+   "kp_cov_cross_fullhit_strict": 1,
+   "cov_all_soft": 0.6786,
+   "cov_all_strict": 0.0643,
+   "cov_all_fullhit": 0.5849,
+   "cov_src_soft": 0.7284,
+   "cov_src_strict": 0.0647,
+   "cov_src_fullhit": 0.5597,
+   "cov_cross_soft": 0.4375,
+   "cov_cross_strict": 0.0625,
+   "cov_cross_fullhit": 0.0881,
+   "src_cited_rate": 0.8805
+  },
+  "拒答题": {
+   "n": 42,
+   "kp_cov_all_hits": 0,
+   "kp_cov_all_strict_hits": 0,
+   "kp_cov_all_tot": 84,
+   "kp_cov_all_fullhit_soft": 0,
+   "kp_cov_all_fullhit_strict": 0,
+   "kp_cov_cross_hits": 0,
+   "kp_cov_cross_strict_hits": 0,
+   "kp_cov_cross_tot": 84,
+   "kp_cov_cross_fullhit_soft": 0,
+   "kp_cov_cross_fullhit_strict": 0,
+   "n_kp_total": 84,
+   "n_kp_in_src": 0,
+   "n_kp_cross": 84,
+   "src_in_ctx": 0,
+   "src_cited": 0,
+   "cov_all_soft": 0.0,
+   "cov_all_strict": 0.0,
+   "cov_all_fullhit": 0.0,
+   "cov_src_soft": null,
+   "cov_src_strict": null,
+   "cov_src_fullhit": 0.0,
+   "cov_cross_soft": 0.0,
+   "cov_cross_strict": 0.0,
+   "cov_cross_fullhit": 0.0,
+   "src_cited_rate": 0.0
+  },
+  "数值题": {
+   "n": 39,
+   "kp_cov_all_hits": 43,
+   "kp_cov_all_strict_hits": 35,
+   "kp_cov_all_tot": 79,
+   "kp_cov_all_fullhit_soft": 23,
+   "kp_cov_all_fullhit_strict": 19,
+   "kp_cov_src_hits": 41,
+   "kp_cov_src_strict_hits": 35,
+   "kp_cov_src_tot": 77,
+   "kp_cov_src_fullhit_soft": 22,
+   "kp_cov_src_fullhit_strict": 19,
+   "n_kp_total": 79,
+   "n_kp_in_src": 77,
+   "n_kp_cross": 2,
+   "src_in_ctx": 39,
+   "src_cited": 38,
+   "kp_cov_cross_hits": 2,
+   "kp_cov_cross_strict_hits": 0,
+   "kp_cov_cross_tot": 2,
+   "kp_cov_cross_fullhit_soft": 1,
+   "kp_cov_cross_fullhit_strict": 0,
+   "cov_all_soft": 0.5443,
+   "cov_all_strict": 0.443,
+   "cov_all_fullhit": 0.5897,
+   "cov_src_soft": 0.5325,
+   "cov_src_strict": 0.4545,
+   "cov_src_fullhit": 0.5641,
+   "cov_cross_soft": 1.0,
+   "cov_cross_strict": 0.0,
+   "cov_cross_fullhit": 0.0256,
+   "src_cited_rate": 0.9744
+  },
+  "版本陷阱题": {
+   "n": 41,
+   "kp_cov_all_hits": 40,
+   "kp_cov_all_strict_hits": 8,
+   "kp_cov_all_tot": 59,
+   "kp_cov_all_fullhit_soft": 26,
+   "kp_cov_all_fullhit_strict": 6,
+   "kp_cov_src_hits": 24,
+   "kp_cov_src_strict_hits": 6,
+   "kp_cov_src_tot": 39,
+   "kp_cov_src_fullhit_soft": 20,
+   "kp_cov_src_fullhit_strict": 4,
+   "kp_cov_cross_hits": 16,
+   "kp_cov_cross_strict_hits": 2,
+   "kp_cov_cross_tot": 20,
+   "kp_cov_cross_fullhit_soft": 16,
+   "kp_cov_cross_fullhit_strict": 2,
+   "n_kp_total": 59,
+   "n_kp_in_src": 39,
+   "n_kp_cross": 20,
+   "src_in_ctx": 41,
+   "src_cited": 40,
+   "cov_all_soft": 0.678,
+   "cov_all_strict": 0.1356,
+   "cov_all_fullhit": 0.6341,
+   "cov_src_soft": 0.6154,
+   "cov_src_strict": 0.1538,
+   "cov_src_fullhit": 0.4878,
+   "cov_cross_soft": 0.8,
+   "cov_cross_strict": 0.1,
+   "cov_cross_fullhit": 0.3902,
+   "src_cited_rate": 0.9756
+  },
+  "跨文档推理题": {
+   "n": 25,
+   "kp_cov_all_hits": 14,
+   "kp_cov_all_strict_hits": 7,
+   "kp_cov_all_tot": 40,
+   "kp_cov_all_fullhit_soft": 6,
+   "kp_cov_all_fullhit_strict": 3,
+   "kp_cov_src_hits": 10,
+   "kp_cov_src_strict_hits": 4,
+   "kp_cov_src_tot": 30,
+   "kp_cov_src_fullhit_soft": 5,
+   "kp_cov_src_fullhit_strict": 2,
+   "n_kp_total": 40,
+   "n_kp_in_src": 30,
+   "n_kp_cross": 10,
+   "src_in_ctx": 23,
+   "src_cited": 22,
+   "kp_cov_cross_hits": 4,
+   "kp_cov_cross_strict_hits": 3,
+   "kp_cov_cross_tot": 10,
+   "kp_cov_cross_fullhit_soft": 3,
+   "kp_cov_cross_fullhit_strict": 3,
+   "cov_all_soft": 0.35,
+   "cov_all_strict": 0.175,
+   "cov_all_fullhit": 0.24,
+   "cov_src_soft": 0.3333,
+   "cov_src_strict": 0.1333,
+   "cov_src_fullhit": 0.2,
+   "cov_cross_soft": 0.4,
+   "cov_cross_strict": 0.3,
+   "cov_cross_fullhit": 0.12,
+   "src_cited_rate": 0.88
+  }
+ },
+ "rows": [
+  {
+   "qid": "t_07947ebc3693",
+   "type": "数值题",
+   "src_doc": "mem_xianshi_shouce",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": [
+    0,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_ab1a99cccb45",
+   "type": "数值题",
+   "src_doc": "guide_jiaxian_guanli_zhidu",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    1,
+    1
+   ],
+   "cov_src": [
+    1,
+    1,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_8ae914dcd02b",
+   "type": "数值题",
+   "src_doc": "mem_xianshi_shouce",
+   "kp_total": 4,
+   "kp_in_src": 4,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    4
+   ],
+   "cov_src": [
+    0,
+    0,
+    4
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_54bc2ae47651",
+   "type": "数值题",
+   "src_doc": "mem_xianshi_shouce",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    1,
+    1
+   ],
+   "cov_src": [
+    1,
+    1,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_56217232c8ee",
+   "type": "数值题",
+   "src_doc": "kaiping_zuoyepiao",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    2,
+    2
+   ],
+   "cov_src": [
+    2,
+    2,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_f77604e6c723",
+   "type": "数值题",
+   "src_doc": "plan_tianjin_dierying",
+   "kp_total": 3,
+   "kp_in_src": 3,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    3
+   ],
+   "cov_src": [
+    0,
+    0,
+    3
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_7716cebe0b00",
+   "type": "数值题",
+   "src_doc": "plan_tianjin_dierying",
+   "kp_total": 3,
+   "kp_in_src": 3,
+   "kp_cross": 0,
+   "cov_all": [
+    3,
+    3,
+    3
+   ],
+   "cov_src": [
+    3,
+    3,
+    3
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_afa9f17eb7b9",
+   "type": "数值题",
+   "src_doc": "mem_2019_78_zhimengdaoze",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_8a21ecb85687",
+   "type": "数值题",
+   "src_doc": "mem_xianshi_shouce",
+   "kp_total": 4,
+   "kp_in_src": 4,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    1,
+    4
+   ],
+   "cov_src": [
+    2,
+    1,
+    4
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_87dac2691148",
+   "type": "数值题",
+   "src_doc": "mem_2019_78_zhimengdaoze",
+   "kp_total": 4,
+   "kp_in_src": 4,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    4
+   ],
+   "cov_src": [
+    0,
+    0,
+    4
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_3cca4617fdee",
+   "type": "数值题",
+   "src_doc": "mem_xianshi_shouce",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    2,
+    2
+   ],
+   "cov_src": [
+    2,
+    2,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_23887b8f3321",
+   "type": "数值题",
+   "src_doc": "plan_tieling_qinghe_tzb",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_30a2197e828d",
+   "type": "数值题",
+   "src_doc": "mem_xianshi_shouce",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    1,
+    1
+   ],
+   "cov_src": [
+    1,
+    1,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_88e16fd92bd2",
+   "type": "数值题",
+   "src_doc": "mem_xianshi_shouce",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    1,
+    1
+   ],
+   "cov_src": [
+    1,
+    1,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_261e74c75ba7",
+   "type": "数值题",
+   "src_doc": "case_quanzhou_1220",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": [
+    0,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": false
+  },
+  {
+   "qid": "t_add634d92059",
+   "type": "数值题",
+   "src_doc": "mem_xianshi_shouce",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    1,
+    1
+   ],
+   "cov_src": [
+    1,
+    1,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_8022668e309a",
+   "type": "数值题",
+   "src_doc": "mem_xianshi_shouce",
+   "kp_total": 4,
+   "kp_in_src": 4,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    1,
+    4
+   ],
+   "cov_src": [
+    1,
+    1,
+    4
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_0bf823a045ab",
+   "type": "数值题",
+   "src_doc": "mem_xianshi_shouce",
+   "kp_total": 3,
+   "kp_in_src": 3,
+   "kp_cross": 0,
+   "cov_all": [
+    3,
+    3,
+    3
+   ],
+   "cov_src": [
+    3,
+    3,
+    3
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_81a2c3613ba4",
+   "type": "数值题",
+   "src_doc": "mem_xianshi_shouce",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    1,
+    1
+   ],
+   "cov_src": [
+    1,
+    1,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_875899393bc2",
+   "type": "数值题",
+   "src_doc": "mem_xianshi_shouce",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    1,
+    1
+   ],
+   "cov_src": [
+    1,
+    1,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_434dfa7c06c8",
+   "type": "数值题",
+   "src_doc": "case_quanzhou_1220",
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    2,
+    0,
+    2
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_ae7a719ba15b",
+   "type": "数值题",
+   "src_doc": "mem_xianshi_shouce",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    1,
+    2
+   ],
+   "cov_src": [
+    1,
+    1,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_6657d5f47529",
+   "type": "数值题",
+   "src_doc": "mem_2019_78_zhimengdaoze",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_3a816499e5f8",
+   "type": "数值题",
+   "src_doc": "mem_xianshi_shouce",
+   "kp_total": 4,
+   "kp_in_src": 4,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    2,
+    4
+   ],
+   "cov_src": [
+    2,
+    2,
+    4
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_6142af3ef518",
+   "type": "数值题",
+   "src_doc": "mem_xianshi_shouce",
+   "kp_total": 4,
+   "kp_in_src": 4,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    1,
+    4
+   ],
+   "cov_src": [
+    1,
+    1,
+    4
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_e1c4d5afe55d",
+   "type": "数值题",
+   "src_doc": "mem_2019_78_zhimengdaoze",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    1,
+    1
+   ],
+   "cov_src": [
+    1,
+    1,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_932ba6df735c",
+   "type": "数值题",
+   "src_doc": "mem_2019_78_zhimengdaoze",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    2,
+    2
+   ],
+   "cov_src": [
+    2,
+    2,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_0f35a174f26c",
+   "type": "数值题",
+   "src_doc": "plan_tianjin_dierying",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    2,
+    2
+   ],
+   "cov_src": [
+    2,
+    2,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_81a016e5d876",
+   "type": "数值题",
+   "src_doc": "mem_2019_78_zhimengdaoze",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    1,
+    1
+   ],
+   "cov_src": [
+    1,
+    1,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_ae7a60983d36",
+   "type": "数值题",
+   "src_doc": "mem_xianshi_shouce",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    1,
+    1
+   ],
+   "cov_src": [
+    1,
+    1,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_3c18d0758af8",
+   "type": "数值题",
+   "src_doc": "mem_2019_78_zhimengdaoze",
+   "kp_total": 3,
+   "kp_in_src": 3,
+   "kp_cross": 0,
+   "cov_all": [
+    3,
+    1,
+    3
+   ],
+   "cov_src": [
+    3,
+    1,
+    3
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_c49f59550317",
+   "type": "数值题",
+   "src_doc": "mem_2019_78_zhimengdaoze",
+   "kp_total": 4,
+   "kp_in_src": 4,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    4
+   ],
+   "cov_src": [
+    1,
+    0,
+    4
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_38928237a04d",
+   "type": "数值题",
+   "src_doc": "mem_xianshi_shouce",
+   "kp_total": 4,
+   "kp_in_src": 4,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    1,
+    4
+   ],
+   "cov_src": [
+    1,
+    1,
+    4
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_5503e9c19124",
+   "type": "数值题",
+   "src_doc": "mem_2019_78_zhimengdaoze",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_a6ebb6c1a8f5",
+   "type": "数值题",
+   "src_doc": "mem_2019_78_zhimengdaoze",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    1,
+    1
+   ],
+   "cov_src": [
+    1,
+    1,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_e857c172ee98",
+   "type": "数值题",
+   "src_doc": "mem_2019_78_zhimengdaoze",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    1,
+    1
+   ],
+   "cov_src": [
+    1,
+    1,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_a2fc6d8c56f8",
+   "type": "数值题",
+   "src_doc": "mem_2019_78_zhimengdaoze",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    1,
+    1
+   ],
+   "cov_src": [
+    1,
+    1,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_68d42c143147",
+   "type": "事实题",
+   "src_doc": "case_quanzhou_1220",
+   "kp_total": 3,
+   "kp_in_src": 3,
+   "kp_cross": 0,
+   "cov_all": [
+    3,
+    0,
+    3
+   ],
+   "cov_src": [
+    3,
+    0,
+    3
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_f759df0e67c3",
+   "type": "事实题",
+   "src_doc": "case_quanzhou_rectify_2026",
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_ec37abf72885",
+   "type": "事实题",
+   "src_doc": "mem_xianshi_shouce",
+   "kp_total": 3,
+   "kp_in_src": 3,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    0,
+    3
+   ],
+   "cov_src": [
+    2,
+    0,
+    3
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_c1a5c2a4fa94",
+   "type": "事实题",
+   "src_doc": "guide_kepuchina_fanghu",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    2
+   ],
+   "cov_src": [
+    1,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_d4f3473baf01",
+   "type": "数值题",
+   "src_doc": "mem_2019_78_zhimengdaoze",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_239886bcbccd",
+   "type": "数值题",
+   "src_doc": "mem_2019_78_zhimengdaoze",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_0eb0a2474c9f",
+   "type": "事实题",
+   "src_doc": "plan_tianjin_dierying",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    2
+   ],
+   "cov_src": [
+    1,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_7c7c630527e2",
+   "type": "事实题",
+   "src_doc": "plan_jiaocheng_tzb",
+   "kp_total": 1,
+   "kp_in_src": 0,
+   "kp_cross": 1,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": false
+  },
+  {
+   "qid": "t_813d76149d93",
+   "type": "事实题",
+   "src_doc": "plan_yiyuan_tzb",
+   "kp_total": 3,
+   "kp_in_src": 3,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    3
+   ],
+   "cov_src": [
+    1,
+    0,
+    3
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_a94d0892b862",
+   "type": "事实题",
+   "src_doc": "plan_haiyang_tzb",
+   "kp_total": 3,
+   "kp_in_src": 3,
+   "kp_cross": 0,
+   "cov_all": [
+    3,
+    0,
+    3
+   ],
+   "cov_src": [
+    3,
+    0,
+    3
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_9d02f35ea061",
+   "type": "事实题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_aa2464a35196",
+   "type": "事实题",
+   "src_doc": "gaoqing_yuxian_kongjian",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_b8324d95eed9",
+   "type": "事实题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_66fd990884e1",
+   "type": "事实题",
+   "src_doc": "plan_jiaocheng_tzb",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_2bc832d630a1",
+   "type": "事实题",
+   "src_doc": "case_quanzhou_rectify_2026",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    1,
+    2
+   ],
+   "cov_src": [
+    2,
+    1,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_4f94748baf1c",
+   "type": "事实题",
+   "src_doc": "guide_jiaxian_guanli_zhidu",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_9d308853aeb6",
+   "type": "事实题",
+   "src_doc": "guide_kepuchina_fanghu",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": [
+    2,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_289c987f0821",
+   "type": "事实题",
+   "src_doc": "gaoqing_yuxian_kongjian",
+   "kp_total": 4,
+   "kp_in_src": 2,
+   "kp_cross": 2,
+   "cov_all": [
+    4,
+    1,
+    4
+   ],
+   "cov_src": [
+    2,
+    0,
+    2
+   ],
+   "cov_cross": [
+    2,
+    1,
+    2
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_1cdd6ae0c967",
+   "type": "事实题",
+   "src_doc": "plan_haiyang_tzb",
+   "kp_total": 1,
+   "kp_in_src": 0,
+   "kp_cross": 1,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    1
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_fb5df72a9344",
+   "type": "事实题",
+   "src_doc": "plan_tianjin_dierying",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_1e61e1b4beb6",
+   "type": "事实题",
+   "src_doc": "plan_tieling_qinghe_tzb",
+   "kp_total": 3,
+   "kp_in_src": 3,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    0,
+    3
+   ],
+   "cov_src": [
+    2,
+    0,
+    3
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_9519f8f385fa",
+   "type": "事实题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_1f7c8f3ac9fa",
+   "type": "事实题",
+   "src_doc": "plan_yiyuan_tzb",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_34a1b266c55a",
+   "type": "事实题",
+   "src_doc": "gaoqing_yuxian_kongjian",
+   "kp_total": 3,
+   "kp_in_src": 3,
+   "kp_cross": 0,
+   "cov_all": [
+    3,
+    1,
+    3
+   ],
+   "cov_src": [
+    3,
+    1,
+    3
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_739eed6328c0",
+   "type": "事实题",
+   "src_doc": "guide_kepuchina_fanghu",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    2
+   ],
+   "cov_src": [
+    1,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_18d22c383e9a",
+   "type": "事实题",
+   "src_doc": "case_quanzhou_rectify_2026",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": [
+    2,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_df6336030ba8",
+   "type": "事实题",
+   "src_doc": "mem_xianshi_shouce",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_55cbc2c6d3a4",
+   "type": "事实题",
+   "src_doc": "plan_haiyang_tzb",
+   "kp_total": 1,
+   "kp_in_src": 0,
+   "kp_cross": 1,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    1
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_12c2cb4ff16d",
+   "type": "事实题",
+   "src_doc": "plan_tieling_qinghe_tzb",
+   "kp_total": 3,
+   "kp_in_src": 3,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    3
+   ],
+   "cov_src": [
+    1,
+    0,
+    3
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_6031e77bccdb",
+   "type": "事实题",
+   "src_doc": "plan_yiyuan_tzb",
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_a6698da12563",
+   "type": "事实题",
+   "src_doc": "plan_jiaocheng_tzb",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_1e4e1e8ec554",
+   "type": "事实题",
+   "src_doc": "guide_jiaxian_guanli_zhidu",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": [
+    2,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_3a1b631fb7f8",
+   "type": "事实题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 2,
+   "kp_in_src": 1,
+   "kp_cross": 1,
+   "cov_all": [
+    2,
+    1,
+    2
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": [
+    1,
+    1,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_1d466bcc0ee7",
+   "type": "事实题",
+   "src_doc": "gaoqing_yuxian_kongjian",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_9c9e58ce877c",
+   "type": "事实题",
+   "src_doc": "guide_jiaxian_guanli_zhidu",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": false
+  },
+  {
+   "qid": "t_45d5c21011ff",
+   "type": "事实题",
+   "src_doc": "case_quanzhou_rectify_2026",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_fa3942399dfc",
+   "type": "事实题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": [
+    2,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_f3aaf50fd967",
+   "type": "事实题",
+   "src_doc": "mem_2019_78_zhimengdaoze",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    1,
+    2
+   ],
+   "cov_src": [
+    2,
+    1,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_dcabdf4f73a4",
+   "type": "事实题",
+   "src_doc": "mem_xianshi_shouce",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_0806e3d9b51d",
+   "type": "事实题",
+   "src_doc": "plan_jiaocheng_tzb",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_537a26d7594e",
+   "type": "事实题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": [
+    2,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_553b9cb54808",
+   "type": "事实题",
+   "src_doc": "plan_tianjin_dierying",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    2,
+    2
+   ],
+   "cov_src": [
+    2,
+    2,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_dada0a3065f9",
+   "type": "事实题",
+   "src_doc": "plan_tieling_qinghe_tzb",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    2
+   ],
+   "cov_src": [
+    1,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_f088ec8bbee5",
+   "type": "事实题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 3,
+   "kp_in_src": 1,
+   "kp_cross": 2,
+   "cov_all": [
+    3,
+    0,
+    3
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": [
+    2,
+    0,
+    2
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_1456749be828",
+   "type": "事实题",
+   "src_doc": "plan_yiyuan_tzb",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_9080fbe9f45d",
+   "type": "事实题",
+   "src_doc": "case_quanzhou_1220",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_2e3f36e974e7",
+   "type": "事实题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 2,
+   "kp_in_src": 1,
+   "kp_cross": 1,
+   "cov_all": [
+    1,
+    0,
+    2
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": [
+    0,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_76f243ab76c9",
+   "type": "事实题",
+   "src_doc": "guide_kepuchina_fanghu",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": [
+    2,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_fb6a6dc7bdde",
+   "type": "事实题",
+   "src_doc": "gaoqing_yuxian_kongjian",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_179bb36bdb2d",
+   "type": "事实题",
+   "src_doc": "guide_jiaxian_guanli_zhidu",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    1,
+    2
+   ],
+   "cov_src": [
+    2,
+    1,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_160935b84cb2",
+   "type": "事实题",
+   "src_doc": "case_quanzhou_rectify_2026",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_33f5ce726429",
+   "type": "事实题",
+   "src_doc": "guide_kepuchina_fanghu",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_cdb69d1d871b",
+   "type": "事实题",
+   "src_doc": "plan_tieling_qinghe_tzb",
+   "kp_total": 3,
+   "kp_in_src": 3,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    0,
+    3
+   ],
+   "cov_src": [
+    2,
+    0,
+    3
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_4aa1d89fbc8a",
+   "type": "事实题",
+   "src_doc": "mem_2019_78_zhimengdaoze",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_d22176be3581",
+   "type": "事实题",
+   "src_doc": "mem_xianshi_shouce",
+   "kp_total": 1,
+   "kp_in_src": 0,
+   "kp_cross": 1,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    1,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": false
+  },
+  {
+   "qid": "t_a02f0be66b98",
+   "type": "事实题",
+   "src_doc": "plan_jiaocheng_tzb",
+   "kp_total": 3,
+   "kp_in_src": 0,
+   "kp_cross": 3,
+   "cov_all": [
+    0,
+    0,
+    3
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    3
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_0d5ab7ac3a58",
+   "type": "事实题",
+   "src_doc": "plan_tianjin_dierying",
+   "kp_total": 3,
+   "kp_in_src": 1,
+   "kp_cross": 2,
+   "cov_all": [
+    3,
+    0,
+    3
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": [
+    2,
+    0,
+    2
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_0562e6915298",
+   "type": "事实题",
+   "src_doc": "plan_yiyuan_tzb",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_747e4c6e4895",
+   "type": "事实题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    1,
+    2
+   ],
+   "cov_src": [
+    2,
+    1,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_2ae0727779fb",
+   "type": "事实题",
+   "src_doc": "case_quanzhou_1220",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    2
+   ],
+   "cov_src": [
+    1,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_9f3a5b2662f0",
+   "type": "事实题",
+   "src_doc": "case_quanzhou_rectify_2026",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": false
+  },
+  {
+   "qid": "t_969a94454431",
+   "type": "事实题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": [
+    2,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_05f72ae1a44f",
+   "type": "事实题",
+   "src_doc": "case_quanzhou_1220",
+   "kp_total": 3,
+   "kp_in_src": 2,
+   "kp_cross": 1,
+   "cov_all": [
+    2,
+    0,
+    3
+   ],
+   "cov_src": [
+    1,
+    0,
+    2
+   ],
+   "cov_cross": [
+    1,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_507f58e82e07",
+   "type": "事实题",
+   "src_doc": "gaoqing_yuxian_kongjian",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    1,
+    1
+   ],
+   "cov_src": [
+    1,
+    1,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_a146d65180b0",
+   "type": "事实题",
+   "src_doc": "guide_kepuchina_fanghu",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_c36951008f48",
+   "type": "事实题",
+   "src_doc": "mem_2019_78_zhimengdaoze",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_c213a7260b00",
+   "type": "事实题",
+   "src_doc": "guide_jiaxian_guanli_zhidu",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": [
+    2,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_dd36cbe24a3d",
+   "type": "事实题",
+   "src_doc": "plan_tieling_qinghe_tzb",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": [
+    0,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_63ef4230ca40",
+   "type": "事实题",
+   "src_doc": "plan_yiyuan_tzb",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": [
+    0,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_fd7ebdb968af",
+   "type": "事实题",
+   "src_doc": "plan_jiaocheng_tzb",
+   "kp_total": 1,
+   "kp_in_src": 0,
+   "kp_cross": 1,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    1,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_8bf9dae6422f",
+   "type": "事实题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": [
+    2,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_bd25fff8136a",
+   "type": "事实题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_12ebd2394865",
+   "type": "事实题",
+   "src_doc": "case_quanzhou_1220",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": [
+    0,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_e452d4e039db",
+   "type": "事实题",
+   "src_doc": "gaoqing_yuxian_kongjian",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_693082c8d097",
+   "type": "事实题",
+   "src_doc": "case_quanzhou_rectify_2026",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": [
+    0,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_10e4644caad3",
+   "type": "事实题",
+   "src_doc": "plan_jiaocheng_tzb",
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": true,
+   "src_cited": false
+  },
+  {
+   "qid": "t_fc5c3dddf20b",
+   "type": "事实题",
+   "src_doc": "plan_tianjin_dierying",
+   "kp_total": 3,
+   "kp_in_src": 0,
+   "kp_cross": 3,
+   "cov_all": [
+    0,
+    0,
+    3
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    3
+   ],
+   "src_in_ctx": true,
+   "src_cited": false
+  },
+  {
+   "qid": "t_7abba2b57bcf",
+   "type": "事实题",
+   "src_doc": "plan_tieling_qinghe_tzb",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_39c9d67e9466",
+   "type": "事实题",
+   "src_doc": "guide_jiaxian_guanli_zhidu",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    2,
+    2
+   ],
+   "cov_src": [
+    2,
+    2,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_14bab8def672",
+   "type": "事实题",
+   "src_doc": "plan_yiyuan_tzb",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    2
+   ],
+   "cov_src": [
+    1,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_5e6448126ada",
+   "type": "事实题",
+   "src_doc": "mem_2019_78_zhimengdaoze",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_870d6121f7ac",
+   "type": "事实题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": [
+    2,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_373162983815",
+   "type": "事实题",
+   "src_doc": "case_quanzhou_1220",
+   "kp_total": 3,
+   "kp_in_src": 3,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    3
+   ],
+   "cov_src": [
+    0,
+    0,
+    3
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_3ffb1bcf0771",
+   "type": "事实题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 2,
+   "kp_in_src": 1,
+   "kp_cross": 1,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": [
+    1,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_6f79b318a6c0",
+   "type": "事实题",
+   "src_doc": "gaoqing_yuxian_kongjian",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_1a24f3bfdf5a",
+   "type": "事实题",
+   "src_doc": "case_quanzhou_rectify_2026",
+   "kp_total": 3,
+   "kp_in_src": 3,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    0,
+    3
+   ],
+   "cov_src": [
+    2,
+    0,
+    3
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_320701a18d3f",
+   "type": "事实题",
+   "src_doc": "guide_jiaxian_guanli_zhidu",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    1,
+    2
+   ],
+   "cov_src": [
+    2,
+    1,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_db139a9df6c5",
+   "type": "事实题",
+   "src_doc": "mem_2019_78_zhimengdaoze",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_f091a751b870",
+   "type": "事实题",
+   "src_doc": "plan_jiaocheng_tzb",
+   "kp_total": 1,
+   "kp_in_src": 0,
+   "kp_cross": 1,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": false
+  },
+  {
+   "qid": "t_82fdb48b9cd8",
+   "type": "事实题",
+   "src_doc": "plan_tianjin_dierying",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_a53b37aba323",
+   "type": "事实题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": [
+    2,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_2cf9a1a1969f",
+   "type": "事实题",
+   "src_doc": "plan_yiyuan_tzb",
+   "kp_total": 3,
+   "kp_in_src": 3,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    3
+   ],
+   "cov_src": [
+    1,
+    0,
+    3
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_35b9921f715b",
+   "type": "事实题",
+   "src_doc": "plan_tieling_qinghe_tzb",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_6c452f15a91b",
+   "type": "事实题",
+   "src_doc": "case_quanzhou_1220",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_54eece711112",
+   "type": "事实题",
+   "src_doc": "case_quanzhou_rectify_2026",
+   "kp_total": 3,
+   "kp_in_src": 2,
+   "kp_cross": 1,
+   "cov_all": [
+    0,
+    0,
+    3
+   ],
+   "cov_src": [
+    0,
+    0,
+    2
+   ],
+   "cov_cross": [
+    0,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_728fdba47eb9",
+   "type": "事实题",
+   "src_doc": "gaoqing_yuxian_kongjian",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_535d02879469",
+   "type": "事实题",
+   "src_doc": "guide_jiaxian_guanli_zhidu",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": false
+  },
+  {
+   "qid": "t_c5047eefe19a",
+   "type": "事实题",
+   "src_doc": "mem_2019_78_zhimengdaoze",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_c3eb14943504",
+   "type": "事实题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_e466d54ca21b",
+   "type": "事实题",
+   "src_doc": "plan_tianjin_dierying",
+   "kp_total": 1,
+   "kp_in_src": 0,
+   "kp_cross": 1,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    1,
+    0,
+    1
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_3ca0d1ecaff3",
+   "type": "事实题",
+   "src_doc": "plan_jiaocheng_tzb",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_64062f88de51",
+   "type": "事实题",
+   "src_doc": "mem_xianshi_shouce",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": [
+    2,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_28c468a30b9c",
+   "type": "事实题",
+   "src_doc": "plan_tieling_qinghe_tzb",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    1,
+    1
+   ],
+   "cov_src": [
+    1,
+    1,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_643a879e8e27",
+   "type": "事实题",
+   "src_doc": "plan_yiyuan_tzb",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_0eb635b801fb",
+   "type": "事实题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    1,
+    1
+   ],
+   "cov_src": [
+    1,
+    1,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_ae9ea4e391ac",
+   "type": "事实题",
+   "src_doc": "case_quanzhou_1220",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": [
+    0,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_f9cef6f8186a",
+   "type": "事实题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_e7f2dc0175bb",
+   "type": "事实题",
+   "src_doc": "case_quanzhou_rectify_2026",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": [
+    2,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_ebfd536168de",
+   "type": "事实题",
+   "src_doc": "gaoqing_yuxian_kongjian",
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    1,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    1,
+    0,
+    2
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_42da9a3092e4",
+   "type": "事实题",
+   "src_doc": "guide_jiaxian_guanli_zhidu",
+   "kp_total": 3,
+   "kp_in_src": 3,
+   "kp_cross": 0,
+   "cov_all": [
+    3,
+    0,
+    3
+   ],
+   "cov_src": [
+    3,
+    0,
+    3
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_9ceb329d6b72",
+   "type": "事实题",
+   "src_doc": "mem_2019_78_zhimengdaoze",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": [
+    2,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_6b90505fe051",
+   "type": "事实题",
+   "src_doc": "plan_tianjin_dierying",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_0a3da27eea43",
+   "type": "事实题",
+   "src_doc": "plan_jiaocheng_tzb",
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": true,
+   "src_cited": false
+  },
+  {
+   "qid": "t_6630cd2eaca9",
+   "type": "事实题",
+   "src_doc": "plan_tieling_qinghe_tzb",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_6decd2cb0ba9",
+   "type": "事实题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 3,
+   "kp_in_src": 3,
+   "kp_cross": 0,
+   "cov_all": [
+    3,
+    0,
+    3
+   ],
+   "cov_src": [
+    3,
+    0,
+    3
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_d9c557b6e2b2",
+   "type": "事实题",
+   "src_doc": "plan_yiyuan_tzb",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": [
+    2,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_f203367c28c9",
+   "type": "事实题",
+   "src_doc": "case_quanzhou_rectify_2026",
+   "kp_total": 3,
+   "kp_in_src": 3,
+   "kp_cross": 0,
+   "cov_all": [
+    3,
+    0,
+    3
+   ],
+   "cov_src": [
+    3,
+    0,
+    3
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_27e5e785b393",
+   "type": "事实题",
+   "src_doc": "case_quanzhou_1220",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_aaa05c9ed7ee",
+   "type": "事实题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    2,
+    0,
+    2
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_90d655c2ab2f",
+   "type": "事实题",
+   "src_doc": "guide_jiaxian_guanli_zhidu",
+   "kp_total": 3,
+   "kp_in_src": 3,
+   "kp_cross": 0,
+   "cov_all": [
+    3,
+    0,
+    3
+   ],
+   "cov_src": [
+    3,
+    0,
+    3
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_03e474d602b1",
+   "type": "事实题",
+   "src_doc": "mem_2019_78_zhimengdaoze",
+   "kp_total": 1,
+   "kp_in_src": 0,
+   "kp_cross": 1,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    1,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_176bbbc4e11f",
+   "type": "事实题",
+   "src_doc": "mem_xianshi_shouce",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    2
+   ],
+   "cov_src": [
+    1,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_29001d8b16ef",
+   "type": "事实题",
+   "src_doc": "plan_jiaocheng_tzb",
+   "kp_total": 3,
+   "kp_in_src": 3,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    0,
+    3
+   ],
+   "cov_src": [
+    2,
+    0,
+    3
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": false
+  },
+  {
+   "qid": "t_84f00ad4ce61",
+   "type": "事实题",
+   "src_doc": "gaoqing_yuxian_kongjian",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_a944474adbae",
+   "type": "事实题",
+   "src_doc": "plan_tianjin_dierying",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_1c86e626a01f",
+   "type": "事实题",
+   "src_doc": "plan_tieling_qinghe_tzb",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": [
+    2,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": false
+  },
+  {
+   "qid": "t_7c0876fa00b6",
+   "type": "事实题",
+   "src_doc": "plan_yiyuan_tzb",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    1,
+    2
+   ],
+   "cov_src": [
+    2,
+    1,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_f647d9ce3d4b",
+   "type": "事实题",
+   "src_doc": "case_quanzhou_1220",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": [
+    2,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_3e2fea6dce37",
+   "type": "事实题",
+   "src_doc": "case_quanzhou_rectify_2026",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    1,
+    2
+   ],
+   "cov_src": [
+    2,
+    1,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_022b67e4fc57",
+   "type": "事实题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": [
+    2,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_29d79209299b",
+   "type": "事实题",
+   "src_doc": "guide_jiaxian_guanli_zhidu",
+   "kp_total": 3,
+   "kp_in_src": 3,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    0,
+    3
+   ],
+   "cov_src": [
+    2,
+    0,
+    3
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_2922c53d9cc2",
+   "type": "事实题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 3,
+   "kp_in_src": 3,
+   "kp_cross": 0,
+   "cov_all": [
+    3,
+    0,
+    3
+   ],
+   "cov_src": [
+    3,
+    0,
+    3
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_c1c6e1627f4c",
+   "type": "事实题",
+   "src_doc": "mem_xianshi_shouce",
+   "kp_total": 3,
+   "kp_in_src": 3,
+   "kp_cross": 0,
+   "cov_all": [
+    3,
+    0,
+    3
+   ],
+   "cov_src": [
+    3,
+    0,
+    3
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": false
+  },
+  {
+   "qid": "t_1218a8f244f3",
+   "type": "事实题",
+   "src_doc": "plan_jiaocheng_tzb",
+   "kp_total": 2,
+   "kp_in_src": 1,
+   "kp_cross": 1,
+   "cov_all": [
+    1,
+    0,
+    2
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": [
+    0,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_3120a326e565",
+   "type": "事实题",
+   "src_doc": "gaoqing_yuxian_kongjian",
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    2,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_7f3331424963",
+   "type": "事实题",
+   "src_doc": "mem_2019_78_zhimengdaoze",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_3dd50a5c9729",
+   "type": "事实题",
+   "src_doc": "plan_yiyuan_tzb",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_8c9062bc57eb",
+   "type": "事实题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": false
+  },
+  {
+   "qid": "t_54e86813abef",
+   "type": "事实题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 2,
+   "kp_in_src": 1,
+   "kp_cross": 1,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": [
+    1,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_c57b05950779",
+   "type": "事实题",
+   "src_doc": "case_quanzhou_1220",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_186b63d19b24",
+   "type": "事实题",
+   "src_doc": "plan_tieling_qinghe_tzb",
+   "kp_total": 1,
+   "kp_in_src": 0,
+   "kp_cross": 1,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_bd79cf017f61",
+   "type": "事实题",
+   "src_doc": "plan_tianjin_dierying",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": [
+    2,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_cede76951f2d",
+   "type": "事实题",
+   "src_doc": "case_quanzhou_rectify_2026",
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    1,
+    1,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    1,
+    1,
+    2
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_b6ac20f458c0",
+   "type": "事实题",
+   "src_doc": "guide_jiaxian_guanli_zhidu",
+   "kp_total": 3,
+   "kp_in_src": 3,
+   "kp_cross": 0,
+   "cov_all": [
+    3,
+    0,
+    3
+   ],
+   "cov_src": [
+    3,
+    0,
+    3
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": false
+  },
+  {
+   "qid": "t_38aa697936ef",
+   "type": "事实题",
+   "src_doc": "plan_jiaocheng_tzb",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": [
+    2,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_08d55729970e",
+   "type": "事实题",
+   "src_doc": "plan_tianjin_dierying",
+   "kp_total": 3,
+   "kp_in_src": 3,
+   "kp_cross": 0,
+   "cov_all": [
+    3,
+    0,
+    3
+   ],
+   "cov_src": [
+    3,
+    0,
+    3
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_94bac7e73fae",
+   "type": "事实题",
+   "src_doc": "plan_tieling_qinghe_tzb",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_5eee48174a5a",
+   "type": "事实题",
+   "src_doc": "case_quanzhou_1220",
+   "kp_total": 3,
+   "kp_in_src": 3,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    3
+   ],
+   "cov_src": [
+    1,
+    0,
+    3
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": false
+  },
+  {
+   "qid": "t_a93f3c80535a",
+   "type": "事实题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_9e8e6ac75647",
+   "type": "事实题",
+   "src_doc": "plan_yiyuan_tzb",
+   "kp_total": 1,
+   "kp_in_src": 0,
+   "kp_cross": 1,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    1,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_8b9a643821ae",
+   "type": "事实题",
+   "src_doc": "mem_2019_78_zhimengdaoze",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    2
+   ],
+   "cov_src": [
+    1,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_90a36d0e2426",
+   "type": "事实题",
+   "src_doc": "guide_jiaxian_guanli_zhidu",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_252fbfd20e61",
+   "type": "事实题",
+   "src_doc": "case_quanzhou_rectify_2026",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": [
+    2,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_af1a35938b25",
+   "type": "事实题",
+   "src_doc": "plan_jiaocheng_tzb",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": [
+    2,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_bad0a32b5f2f",
+   "type": "事实题",
+   "src_doc": "plan_tianjin_dierying",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_18e111d21d7f",
+   "type": "事实题",
+   "src_doc": "plan_tieling_qinghe_tzb",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": [
+    0,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_7bc67f5a2717",
+   "type": "事实题",
+   "src_doc": "case_quanzhou_1220",
+   "kp_total": 3,
+   "kp_in_src": 1,
+   "kp_cross": 2,
+   "cov_all": [
+    1,
+    0,
+    3
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_7e4f2ce02d4e",
+   "type": "事实题",
+   "src_doc": "plan_yiyuan_tzb",
+   "kp_total": 3,
+   "kp_in_src": 2,
+   "kp_cross": 1,
+   "cov_all": [
+    1,
+    0,
+    3
+   ],
+   "cov_src": [
+    1,
+    0,
+    2
+   ],
+   "cov_cross": [
+    0,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_90e2d7a74754",
+   "type": "事实题",
+   "src_doc": "case_quanzhou_rectify_2026",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_c0724d354452",
+   "type": "事实题",
+   "src_doc": "guide_jiaxian_guanli_zhidu",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_36dcb7787332",
+   "type": "事实题",
+   "src_doc": "mem_2019_78_zhimengdaoze",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_b023df5e782a",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 2,
+   "kp_in_src": 1,
+   "kp_cross": 1,
+   "cov_all": [
+    1,
+    0,
+    2
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": [
+    1,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_c50a187280ab",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 2,
+   "kp_in_src": 1,
+   "kp_cross": 1,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": [
+    0,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_308055e44c59",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    1,
+    1
+   ],
+   "cov_src": [
+    1,
+    1,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_68a467d17aca",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_b98aad1f2848",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 2,
+   "kp_in_src": 1,
+   "kp_cross": 1,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": [
+    1,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_b504929c0743",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_02f7d4c25cce",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_81dbe3d46c11",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 2,
+   "kp_in_src": 1,
+   "kp_cross": 1,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": [
+    1,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_801a3a4e60dc",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    1,
+    1
+   ],
+   "cov_src": [
+    1,
+    1,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_769ee5bbe1cb",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 2,
+   "kp_in_src": 1,
+   "kp_cross": 1,
+   "cov_all": [
+    1,
+    0,
+    2
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": [
+    1,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_c3aaad9159c7",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 2,
+   "kp_in_src": 1,
+   "kp_cross": 1,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": [
+    1,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_b696b241bc70",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 2,
+   "kp_in_src": 1,
+   "kp_cross": 1,
+   "cov_all": [
+    1,
+    0,
+    2
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": [
+    1,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_cb7475752dbc",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 1,
+   "kp_in_src": 0,
+   "kp_cross": 1,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_7fac39c46fa3",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 1,
+   "kp_in_src": 0,
+   "kp_cross": 1,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    1,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_9c9d95fd8032",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 1,
+   "kp_in_src": 0,
+   "kp_cross": 1,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_71f893a97276",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": [
+    2,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_3f9470c632b8",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_d698c314d524",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_02b91fab12e4",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 1,
+   "kp_in_src": 0,
+   "kp_cross": 1,
+   "cov_all": [
+    1,
+    1,
+    1
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    1,
+    1,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_841f545cffc4",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 1,
+   "kp_in_src": 0,
+   "kp_cross": 1,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    1,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_92eb0a1a3d53",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_ff24fc2f9357",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 3,
+   "kp_in_src": 3,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    3
+   ],
+   "cov_src": [
+    0,
+    0,
+    3
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": false
+  },
+  {
+   "qid": "t_0b7244437c96",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 1,
+   "kp_in_src": 0,
+   "kp_cross": 1,
+   "cov_all": [
+    1,
+    1,
+    1
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    1,
+    1,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_c1229039ec46",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 2,
+   "kp_in_src": 1,
+   "kp_cross": 1,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": [
+    0,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_fe45e44b17f6",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    1,
+    1
+   ],
+   "cov_src": [
+    1,
+    1,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_baec7f49f112",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 2,
+   "kp_in_src": 1,
+   "kp_cross": 1,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": [
+    1,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_0fcb37a5c92e",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 2,
+   "kp_in_src": 1,
+   "kp_cross": 1,
+   "cov_all": [
+    1,
+    0,
+    2
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": [
+    1,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_94f0d4903cc7",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_fbe3d1b4c2c9",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 3,
+   "kp_in_src": 2,
+   "kp_cross": 1,
+   "cov_all": [
+    3,
+    1,
+    3
+   ],
+   "cov_src": [
+    2,
+    1,
+    2
+   ],
+   "cov_cross": [
+    1,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_77f4d6626e9f",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_82b97490d280",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_ee62b2c728da",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 1,
+   "kp_in_src": 0,
+   "kp_cross": 1,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    1,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_4f73d276ddd5",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    2,
+    2
+   ],
+   "cov_src": [
+    2,
+    2,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_ec31a4ef343c",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_347d3f2bc4dd",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 1,
+   "kp_in_src": 0,
+   "kp_cross": 1,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    1,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_e46ba5e1eaf4",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    2
+   ],
+   "cov_src": [
+    1,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_abc268ba2d82",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_6c6688d175ba",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 2,
+   "kp_in_src": 1,
+   "kp_cross": 1,
+   "cov_all": [
+    1,
+    0,
+    2
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": [
+    1,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_9a64cb79fa37",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_2e4b088a009f",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_1df16bb83beb",
+   "type": "版本陷阱题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_acc54074bd05",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_360fb1c2b7b0",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_658339d15b11",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_8c0e28830901",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_38f5a50b6430",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_799285c2781b",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_ad84904abee0",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_124aca9eb925",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_b18e3c56fb2d",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_24f78ca91088",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_74c3cfde698a",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_ac7c61ca3c03",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_4e33e7680716",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_a2cc0793a7fb",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_ce5aab6519c1",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_0d198a87322b",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_dce43470eb63",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_a3b9f3050e6f",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_c859a43cdccf",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_4ee014020a48",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_d6b30b284f07",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_277659a3843e",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_c673b6c18a16",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_90a3f12f3cb2",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_5c76b485f296",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_89c212fddb8f",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_ae3bcb46f83f",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_b9b4221534b6",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_15e970bc151a",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_2370f6a46992",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_5ed8b21e22ab",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_d13e2704b59f",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_63214c76a310",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_b3929d08585e",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_ca81adf6d8c9",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_12b2508530c7",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_53f91fcfcc21",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_436d5a7b8b6f",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_655b8c3e47ed",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_e327fe77b76a",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_1913c8c42502",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_51227dadc8b6",
+   "type": "拒答题",
+   "src_doc": null,
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    2
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_1b2036562ff6",
+   "type": "跨文档推理题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    2,
+    2
+   ],
+   "cov_src": [
+    2,
+    2,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_b8db703f77da",
+   "type": "跨文档推理题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 2,
+   "kp_in_src": 1,
+   "kp_cross": 1,
+   "cov_all": [
+    2,
+    1,
+    2
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": [
+    1,
+    1,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_4db65935c83b",
+   "type": "跨文档推理题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    0,
+    2
+   ],
+   "cov_src": [
+    2,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_a28cd2b08975",
+   "type": "跨文档推理题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_522bab020c46",
+   "type": "跨文档推理题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": [
+    0,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_c2ea3de6dfa2",
+   "type": "跨文档推理题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 3,
+   "kp_in_src": 3,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    3
+   ],
+   "cov_src": [
+    0,
+    0,
+    3
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_1b2eb2c0a4a9",
+   "type": "跨文档推理题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 2,
+   "kp_in_src": 1,
+   "kp_cross": 1,
+   "cov_all": [
+    1,
+    1,
+    2
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": [
+    1,
+    1,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_9b6d5c654c86",
+   "type": "跨文档推理题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": false,
+   "src_cited": false
+  },
+  {
+   "qid": "t_d3cf1b9a4fb2",
+   "type": "跨文档推理题",
+   "src_doc": "case_quanzhou_rectify_2026",
+   "kp_total": 1,
+   "kp_in_src": 0,
+   "kp_cross": 1,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_6c323fbd0005",
+   "type": "跨文档推理题",
+   "src_doc": "case_quanzhou_1220",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": [
+    0,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_9aa3250bb22f",
+   "type": "跨文档推理题",
+   "src_doc": "case_quanzhou_rectify_2026",
+   "kp_total": 2,
+   "kp_in_src": 1,
+   "kp_cross": 1,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": [
+    0,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_941d1e9086a5",
+   "type": "跨文档推理题",
+   "src_doc": "case_quanzhou_rectify_2026",
+   "kp_total": 2,
+   "kp_in_src": 0,
+   "kp_cross": 2,
+   "cov_all": [
+    1,
+    0,
+    2
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    1,
+    0,
+    2
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_e13b00e5fa56",
+   "type": "跨文档推理题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    2,
+    2,
+    2
+   ],
+   "cov_src": [
+    2,
+    2,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_e85d743a84e5",
+   "type": "跨文档推理题",
+   "src_doc": "yulin_2023_old",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    1
+   ],
+   "cov_src": [
+    1,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_0508b9a7ffdb",
+   "type": "跨文档推理题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 1,
+   "kp_in_src": 0,
+   "kp_cross": 1,
+   "cov_all": [
+    1,
+    1,
+    1
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    1,
+    1,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_b357ed0ebb1c",
+   "type": "跨文档推理题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_89d85b082803",
+   "type": "跨文档推理题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 1,
+   "kp_in_src": 1,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_19dd6feea965",
+   "type": "跨文档推理题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": [
+    0,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_5de49b90c7ae",
+   "type": "跨文档推理题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": [
+    0,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_f301ffde7551",
+   "type": "跨文档推理题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    2
+   ],
+   "cov_src": [
+    1,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_5310767fe3d2",
+   "type": "跨文档推理题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 0,
+   "kp_in_src": 0,
+   "kp_cross": 0,
+   "cov_all": null,
+   "cov_src": null,
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_6ee522273cfc",
+   "type": "跨文档推理题",
+   "src_doc": "yulin_donghuo_xianshi",
+   "kp_total": 2,
+   "kp_in_src": 2,
+   "kp_cross": 0,
+   "cov_all": [
+    1,
+    0,
+    2
+   ],
+   "cov_src": [
+    1,
+    0,
+    2
+   ],
+   "cov_cross": null,
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_52f35c1368c7",
+   "type": "跨文档推理题",
+   "src_doc": "case_quanzhou_1220",
+   "kp_total": 2,
+   "kp_in_src": 1,
+   "kp_cross": 1,
+   "cov_all": [
+    0,
+    0,
+    2
+   ],
+   "cov_src": [
+    0,
+    0,
+    1
+   ],
+   "cov_cross": [
+    0,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": true
+  },
+  {
+   "qid": "t_4b6f960c84dc",
+   "type": "跨文档推理题",
+   "src_doc": "plan_jiaocheng_tzb",
+   "kp_total": 1,
+   "kp_in_src": 0,
+   "kp_cross": 1,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    1
+   ],
+   "src_in_ctx": true,
+   "src_cited": false
+  },
+  {
+   "qid": "t_7b46de9c38ce",
+   "type": "跨文档推理题",
+   "src_doc": "plan_tianjin_dierying",
+   "kp_total": 1,
+   "kp_in_src": 0,
+   "kp_cross": 1,
+   "cov_all": [
+    0,
+    0,
+    1
+   ],
+   "cov_src": null,
+   "cov_cross": [
+    0,
+    0,
+    1
+   ],
+   "src_in_ctx": false,
+   "src_cited": false
+  }
+ ]
+}
