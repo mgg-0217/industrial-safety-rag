@@ -72,10 +72,13 @@ def main():
                          "数字可直接对照已发布结论）；"
                          "testset=当前题集里的（用于衡量 kp 精修对同一批答案的影响）")
     ap.add_argument("--out", default="")
+    ap.add_argument("--questions", default="",
+                    help="题集路径（key_point 以它为准）。默认 data/eval/test_set.jsonl")
     args = ap.parse_args()
 
+    qpath = pathlib.Path(args.questions) if args.questions else TEST_SET
     rows = {json.loads(l)["qid"]: json.loads(l)
-            for l in TEST_SET.open(encoding="utf-8") if l.strip()}
+            for l in qpath.open(encoding="utf-8") if l.strip()}
     mds = {p.stem: nz(p.read_text(encoding="utf-8", errors="replace"))
            for p in MD_DIR.glob("*.md")}
 

@@ -1,0 +1,2794 @@
+{
+ "n": 306,
+ "counts": {
+  "auto_pass": 298,
+  "likely_bad": 8
+ },
+ "results": [
+  {
+   "qid": "t_07947ebc3693",
+   "question_type": "数值题",
+   "doc_id": "mem_xianshi_shouce",
+   "clause_no": "2.1.2 缺氧窒息",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "有限空间作业气体检测中，气体检测或监测的判定限值是多少？"
+  },
+  {
+   "qid": "t_ab1a99cccb45",
+   "question_type": "数值题",
+   "doc_id": "guide_jiaxian_guanli_zhidu",
+   "clause_no": "2.3.5发现异常，及时制止作业，并立即采取救护措施，同时报警。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "有限空间危险作业现场的氧气含量上限应规定为多少？"
+  },
+  {
+   "qid": "t_8ae914dcd02b",
+   "question_type": "数值题",
+   "doc_id": "mem_xianshi_shouce",
+   "clause_no": "4.以下属于有限空间作业的是（ ）。",
+   "verdict": "likely_bad",
+   "problems": [
+    "锚点挂错条款：key_point「1m」不在 条款 4.以下属于有限空间作业的是（ ）。，但在同一文档的其它位置",
+    "锚点挂错条款：key_point「15m」不在 条款 4.以下属于有限空间作业的是（ ）。，但在同一文档的其它位置",
+    "锚点挂错条款：key_point「8m」不在 条款 4.以下属于有限空间作业的是（ ）。，但在同一文档的其它位置",
+    "锚点不可达：数值「1 m」在该文档里找不到",
+    "锚点不可达：数值「15 m」在该文档里找不到",
+    "锚点不可达：数值「8 m」在该文档里找不到",
+    "题干量纲与锚点对不上：题干问「时间」，锚点是「长度」"
+   ],
+   "question": "紧急逃生呼吸器一般可提供多长时间左右的供气时间？"
+  },
+  {
+   "qid": "t_54bc2ae47651",
+   "question_type": "数值题",
+   "doc_id": "mem_xianshi_shouce",
+   "clause_no": "4.氩气（Ar）",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "作业环境中氩气浓度达到什么程度时，可在数分钟内导致人员窒息死亡？"
+  },
+  {
+   "qid": "t_56217232c8ee",
+   "question_type": "数值题",
+   "doc_id": "kaiping_zuoyepiao",
+   "clause_no": "19.5%~21% 釜内上、中、",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "受限空间气体分析中，氧气含量的合格范围是多少？"
+  },
+  {
+   "qid": "t_f77604e6c723",
+   "question_type": "数值题",
+   "doc_id": "plan_tianjin_dierying",
+   "clause_no": "二、术语解释",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "本预案所称起重机械涵盖哪些设备，其相应的额定起重量和提升高度限值是多少？"
+  },
+  {
+   "qid": "t_7716cebe0b00",
+   "question_type": "数值题",
+   "doc_id": "plan_tianjin_dierying",
+   "clause_no": "二、术语解释",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "根据该应急预案，压力容器及所涉气瓶的具体压力、压力与容积乘积及液体温度限值分别是多少？"
+  },
+  {
+   "qid": "t_afa9f17eb7b9",
+   "question_type": "数值题",
+   "doc_id": "mem_2019_78_zhimengdaoze",
+   "clause_no": "9  流的设备区周围应设置不低于 150mm 的围堰和导液",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "危险化学品储存场所对专用仓库和人员管理有何要求？剧毒化学品及构成重大危险源的其他危险化学品应实行何种储存和收发保管制度？"
+  },
+  {
+   "qid": "t_8a21ecb85687",
+   "question_type": "数值题",
+   "doc_id": "mem_xianshi_shouce",
+   "clause_no": "3.隔绝式紧急逃生呼吸器",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "有限空间作业安全指导手册规定，正压式空气呼吸器气瓶的工作压力最低应达到多少？"
+  },
+  {
+   "qid": "t_87dac2691148",
+   "question_type": "数值题",
+   "doc_id": "mem_2019_78_zhimengdaoze",
+   "clause_no": "8 应急与消防安全风险隐患排查表",
+   "verdict": "likely_bad",
+   "problems": [
+    "题干量纲与锚点对不上：题干问「压力」，锚点是「时间/温度/质量/长度」"
+   ],
+   "question": "丁二烯球形储罐安全阀出口管道的氮气吹扫压力限值是多少？"
+  },
+  {
+   "qid": "t_3cca4617fdee",
+   "question_type": "数值题",
+   "doc_id": "mem_xianshi_shouce",
+   "clause_no": "2.甲烷（CH4）",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "当空气中甲烷达到什么体积分数范围时，可能引发中毒症状，若不及时脱离接触可致窒息死亡？"
+  },
+  {
+   "qid": "t_23887b8f3321",
+   "question_type": "数值题",
+   "doc_id": "plan_tieling_qinghe_tzb",
+   "clause_no": "3.10.1.1、水冷壁管变形可直接从看火门、火炉门处看到，当同时伴随缺水时，则可见到变红弯曲的水冷壁管。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "卧式内燃锅炉炉胆向火侧突出变形严重时，炉胆变形量可达到多少毫米？"
+  },
+  {
+   "qid": "t_30a2197e828d",
+   "question_type": "数值题",
+   "doc_id": "mem_xianshi_shouce",
+   "clause_no": "5.磷化氢（PH3）",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "有限空间作业安全指导手册中，磷化氢浓度达到什么水平时，人体在接触相应时长后会出现中毒症状？"
+  },
+  {
+   "qid": "t_88e16fd92bd2",
+   "question_type": "数值题",
+   "doc_id": "mem_xianshi_shouce",
+   "clause_no": "3.隔绝式紧急逃生呼吸器",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "正压式空气呼吸器气瓶压力下降到什么范围时应发出蜂鸣报警声？"
+  },
+  {
+   "qid": "t_261e74c75ba7",
+   "question_type": "数值题",
+   "doc_id": "case_quanzhou_1220",
+   "clause_no": "2.管道MP—41009—200—S1B—H1",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "管道MP—41009—200—S1B—H1的安装高度范围及管道壁厚规格分别是多少？"
+  },
+  {
+   "qid": "t_add634d92059",
+   "question_type": "数值题",
+   "doc_id": "mem_xianshi_shouce",
+   "clause_no": "3.隔绝式紧急逃生呼吸器",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "隔绝式紧急逃生呼吸器报警哨开始报警时的压力及允许偏差是多少？"
+  },
+  {
+   "qid": "t_8022668e309a",
+   "question_type": "数值题",
+   "doc_id": "mem_xianshi_shouce",
+   "clause_no": "2.高处坠落",
+   "verdict": "likely_bad",
+   "problems": [
+    "锚点挂错条款：key_point「1 mg/m3」不在 条款 2.高处坠落，但在同一文档的其它位置",
+    "锚点挂错条款：key_point「10 mg/m3」不在 条款 2.高处坠落，但在同一文档的其它位置",
+    "锚点挂错条款：key_point「7 mg/m3」不在 条款 2.高处坠落，但在同一文档的其它位置",
+    "锚点挂错条款：数值「1 mg/m3」不在 条款 2.高处坠落，但在同一文档的其它位置",
+    "锚点挂错条款：数值「10 mg/m3」不在 条款 2.高处坠落，但在同一文档的其它位置",
+    "锚点挂错条款：数值「7 mg/m3」不在 条款 2.高处坠落，但在同一文档的其它位置"
+   ],
+   "question": "有限空间中硫化氢浓度超过哪个限值时不能进入作业？"
+  },
+  {
+   "qid": "t_0bf823a045ab",
+   "question_type": "数值题",
+   "doc_id": "mem_xianshi_shouce",
+   "clause_no": "3.外部环境影响产生的风险",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "针对有限空间外部环境影响风险进行气体检测时，有毒气体、氧气含量和可燃气体浓度的判定限值分别是什么？"
+  },
+  {
+   "qid": "t_81a2c3613ba4",
+   "question_type": "数值题",
+   "doc_id": "mem_xianshi_shouce",
+   "clause_no": "1.硫化氢（H2S）",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "硫化氢浓度超过多少时，可在数秒内致人闪电型死亡？"
+  },
+  {
+   "qid": "t_875899393bc2",
+   "question_type": "数值题",
+   "doc_id": "mem_xianshi_shouce",
+   "clause_no": "25.6℃），剧毒且具有爆炸性。氰化氢轻度中毒主要表现为胸闷、心悸、心率加快、头",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "氰化氢的沸点是多少？"
+  },
+  {
+   "qid": "t_434dfa7c06c8",
+   "question_type": "数值题",
+   "doc_id": "case_quanzhou_1220",
+   "clause_no": "（五）",
+   "verdict": "likely_bad",
+   "problems": [
+    "数值题缺 must_include_numbers（数值保真判据无分母）",
+    "锚点不可达：key_point「T—4200正常操作压力为35～50KPa」在 全文：case_quanzhou_1220 里找不到",
+    "锚点不可达：key_point「T—4300正常操作压力为35～50KPa」在 全文：case_quanzhou_1220 里找不到"
+   ],
+   "question": "事故发生后，环氧丙烷装置预分离塔T—4200和产品精制塔T—4300的正常操作压力范围是多少？"
+  },
+  {
+   "qid": "t_ae7a719ba15b",
+   "question_type": "数值题",
+   "doc_id": "mem_xianshi_shouce",
+   "clause_no": "2.甲烷（CH4）",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "手册中规定的甲烷爆炸极限上限是多少？"
+  },
+  {
+   "qid": "t_6657d5f47529",
+   "question_type": "数值题",
+   "doc_id": "mem_2019_78_zhimengdaoze",
+   "clause_no": "1.当单罐容积等于或大于 1000m 时，应采用固定式",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "危险化学品企业采用固定式消防设施时，单罐容积的适用限值是多少？"
+  },
+  {
+   "qid": "t_3a816499e5f8",
+   "question_type": "数值题",
+   "doc_id": "mem_xianshi_shouce",
+   "clause_no": "2.1.2 缺氧窒息",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "空气中氧气含量一般为多少，低于多少时会有缺氧危险并可能导致窒息事故发生？"
+  },
+  {
+   "qid": "t_6142af3ef518",
+   "question_type": "数值题",
+   "doc_id": "mem_xianshi_shouce",
+   "clause_no": "3.5.2 照明设备",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "在积水、结露等潮湿环境的有限空间和金属容器中作业时，照明灯具电压应不大于多少？"
+  },
+  {
+   "qid": "t_e1c4d5afe55d",
+   "question_type": "数值题",
+   "doc_id": "mem_2019_78_zhimengdaoze",
+   "clause_no": "4.全厂性支干管、干管的管段长度超过 300m 时，应",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "全厂性支干管、干管的管段长度超过多少时，应用水封井隔开？"
+  },
+  {
+   "qid": "t_932ba6df735c",
+   "question_type": "数值题",
+   "doc_id": "mem_2019_78_zhimengdaoze",
+   "clause_no": "3.2.1  开展安全风险隐患排查的频次应满足：",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《危险化学品企业安全风险隐患排查治理导则》规定，装置操作人员现场巡检的间隔限值是多少？"
+  },
+  {
+   "qid": "t_0f35a174f26c",
+   "question_type": "数值题",
+   "doc_id": "plan_tianjin_dierying",
+   "clause_no": "二、术语解释",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "该应急预案所界定的锅炉，其容积、出口水压和额定功率应满足哪些限值要求？"
+  },
+  {
+   "qid": "t_81a016e5d876",
+   "question_type": "数值题",
+   "doc_id": "mem_2019_78_zhimengdaoze",
+   "clause_no": "3.浮顶罐(含内浮顶罐)可不设避雷针、线，但应将浮",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "浮顶罐（含内浮顶罐）的浮顶与罐体采用软铜线作电气连接时，导线的数量及截面规格应符合什么要求？"
+  },
+  {
+   "qid": "t_ae7a60983d36",
+   "question_type": "数值题",
+   "doc_id": "mem_xianshi_shouce",
+   "clause_no": "5.3 救援注意事项",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "附录中有毒气体浓度判定限值表所列气体浓度，其体积分数对应的温度条件是多少？"
+  },
+  {
+   "qid": "t_3c18d0758af8",
+   "question_type": "数值题",
+   "doc_id": "mem_2019_78_zhimengdaoze",
+   "clause_no": "2.消防水幕、喷淋、蒸汽等消防设施完好，能随时投",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "可燃液体地上立式储罐在何种罐壁高度或储罐容积条件下，应设置固定式消防冷却水系统？"
+  },
+  {
+   "qid": "t_c49f59550317",
+   "question_type": "数值题",
+   "doc_id": "mem_2019_78_zhimengdaoze",
+   "clause_no": "2.在施工期间重新设计的。",
+   "verdict": "likely_bad",
+   "problems": [
+    "锚点不可达：数值「50 m」在该文档里找不到",
+    "题干量纲与锚点对不上：题干问「质量」，锚点是「浓度/长度」"
+   ],
+   "question": "硝酸铵溶液贮存罐区独立罐区和单个储罐的存量分别不得超过多少？"
+  },
+  {
+   "qid": "t_38928237a04d",
+   "question_type": "数值题",
+   "doc_id": "mem_xianshi_shouce",
+   "clause_no": "2.1.2 缺氧窒息",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "有限空间作业时，可燃性气体浓度应低于下列哪一选项规定的限值？"
+  },
+  {
+   "qid": "t_5503e9c19124",
+   "question_type": "数值题",
+   "doc_id": "mem_2019_78_zhimengdaoze",
+   "clause_no": "0.7~1.2MPa。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "该条款中，消防水泵和稳压泵分别设置备用泵时，备用泵的容量应按什么比例设置？"
+  },
+  {
+   "qid": "t_a6ebb6c1a8f5",
+   "question_type": "数值题",
+   "doc_id": "mem_2019_78_zhimengdaoze",
+   "clause_no": "（三）防雷、防静电设施",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "甲B、乙类可燃液体地上固定顶罐在何种顶板厚度条件下应设置避雷针、线，其保护范围应如何确定？"
+  },
+  {
+   "qid": "t_e857c172ee98",
+   "question_type": "数值题",
+   "doc_id": "mem_2019_78_zhimengdaoze",
+   "clause_no": "（三）防雷、防静电设施",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "工艺装置内露天布置的塔、容器等，在顶板厚度满足什么条件时可不设置避雷针、线保护？"
+  },
+  {
+   "qid": "t_a2fc6d8c56f8",
+   "question_type": "数值题",
+   "doc_id": "mem_2019_78_zhimengdaoze",
+   "clause_no": "3.化学品安全技术说明书和化学品安全标签所载明的",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "甲类物品仓库单独设置有困难时，其储量满足什么条件可与乙、丙类物品仓库共用一栋建筑物？"
+  },
+  {
+   "qid": "t_68d42c143147",
+   "question_type": "事实题",
+   "doc_id": "case_quanzhou_1220",
+   "clause_no": "（四）事故发生单位安全生产管理情况",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "中化学天辰（泉州）新材料有限公司环氧丙烷装置（一期）在试生产前开展了哪些生产准备工作，并如何履行试生产方案审查、条件确认及报告程序？"
+  },
+  {
+   "qid": "t_f759df0e67c3",
+   "question_type": "事实题",
+   "doc_id": "case_quanzhou_rectify_2026",
+   "clause_no": "1.杨*伟，农工党员，泉港石化工业园区管委会环保安监科科员。",
+   "verdict": "likely_bad",
+   "problems": [
+    "锚点挂错条款：key_point「（三）党纪、政纪处分落实情况责任追究部分\n1.杨」不在 条款 1.杨*伟，农工党员，泉港石化工业园区管委会环保安监科科员。，但在同一文档的其它位置"
+   ],
+   "question": "该报告对杨*伟作出的处理建议是什么，后续处理落实情况如何？"
+  },
+  {
+   "qid": "t_ec37abf72885",
+   "question_type": "事实题",
+   "doc_id": "mem_xianshi_shouce",
+   "clause_no": "4.异常情况紧急撤离有限空间",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "在有限空间作业过程中，出现哪些情况时，作业人员应立即紧急撤离？"
+  },
+  {
+   "qid": "t_c1a5c2a4fa94",
+   "question_type": "事实题",
+   "doc_id": "guide_kepuchina_fanghu",
+   "clause_no": "（四）生产经营单位应建立有限空间作业审批制度、作业人员健康检查制度、有限空间安全设施监管制度；同时应对从事有限空间作业人员进行培训教育。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "生产经营单位在从事有限空间危险作业前，应当对作业人员进行哪些方面的教育和培训？"
+  },
+  {
+   "qid": "t_d4f3473baf01",
+   "question_type": "数值题",
+   "doc_id": "mem_2019_78_zhimengdaoze",
+   "clause_no": "2.5MPa。  3136-2003）第6条",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "采取防止液化烃泄漏的注水措施时，注水压力应达到什么限值？"
+  },
+  {
+   "qid": "t_239886bcbccd",
+   "question_type": "数值题",
+   "doc_id": "mem_2019_78_zhimengdaoze",
+   "clause_no": "2.在施工期间重新设计的。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "依据该导则，对甲、乙类液体储罐与居民区、公共福利设施、村庄的防火间距提出专门要求时，单罐容积应达到的门槛是多少？"
+  },
+  {
+   "qid": "t_0eb0a2474c9f",
+   "question_type": "事实题",
+   "doc_id": "plan_tianjin_dierying",
+   "clause_no": "六、预警机制",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "对在用特种设备的日常维护保养、定期自行检查频次及记录要求是如何规定的？"
+  },
+  {
+   "qid": "t_7c7c630527e2",
+   "question_type": "事实题",
+   "doc_id": "plan_jiaocheng_tzb",
+   "clause_no": "1.3.3特种设备事故属于安全生产事故，同时还应遵循有关安全生产事故的应急管理规定。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《蕉城区市场监督管理局特种设备事故应急预案》规定，特种设备事故除适用应急预案外，还应遵循哪类事故的应急管理规定？"
+  },
+  {
+   "qid": "t_813d76149d93",
+   "question_type": "事实题",
+   "doc_id": "plan_yiyuan_tzb",
+   "clause_no": "1、按学校应急救援预案的规定，迅速采取有效措施，积极组织抢救，防止事故蔓延扩大。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "学校发生特种设备事故后，应采取哪些措施组织抢救并控制事故扩大？"
+  },
+  {
+   "qid": "t_a94d0892b862",
+   "question_type": "事实题",
+   "doc_id": "plan_haiyang_tzb",
+   "clause_no": "六、特种设备安全事故的分项应急救援措施",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《海阳市市场监督管理局特种设备安全事故应急救援预案》针对哪些特种设备安全事故规定了分项应急救援措施？"
+  },
+  {
+   "qid": "t_9d02f35ea061",
+   "question_type": "事实题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": "第三条 企业主要负责人是动火和受限空间作业安全管理的第一责任人，要按照《危险化学品企业特殊作业安全规范》（GB30871-2022）修订完善本企业动火和受限空间等特殊作业安全管理制度。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "在《榆林市危险化学品企业动火和受限空间作业安全管理制度》中，企业主要负责人对动火和受限空间作业安全管理承担什么责任，并应依据哪项标准修订完善相关安全管理制度？"
+  },
+  {
+   "qid": "t_aa2464a35196",
+   "question_type": "事实题",
+   "doc_id": "gaoqing_yuxian_kongjian",
+   "clause_no": "一、总体要求",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《高青县应急管理局关于开展有限空间作业专项检查的通知》对各镇办、相关部门和各企业防范有限空间作业事故提出了哪些总体要求？"
+  },
+  {
+   "qid": "t_b8324d95eed9",
+   "question_type": "事实题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": "第十六条  鼓励企业员工和其他人员按照《榆林市重大事故隐患举报奖励办法》，对本企业动火和受限空间等特殊作业环节的违法违规行为进行举报，举报奖励金额按照相关规定执行。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "企业应如何鼓励员工和其他人员举报本企业动火和受限空间等特殊作业环节的违法违规行为，举报奖励如何执行？"
+  },
+  {
+   "qid": "t_66fd990884e1",
+   "question_type": "事实题",
+   "doc_id": "plan_jiaocheng_tzb",
+   "clause_no": "7.1事故调查",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "特种设备一般事故发生后，由谁负责组织调查？"
+  },
+  {
+   "qid": "t_2bc832d630a1",
+   "question_type": "事实题",
+   "doc_id": "case_quanzhou_rectify_2026",
+   "clause_no": "2.泉港区市场监督管理局",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "针对福建泉州中化学天辰（泉州）新材料有限公司“12·20”事故整改和防范措施落实情况，泉港区市场监督管理局受到的处理建议是什么，规定了何时完成书面检查？"
+  },
+  {
+   "qid": "t_4f94748baf1c",
+   "question_type": "事实题",
+   "doc_id": "guide_jiaxian_guanli_zhidu",
+   "clause_no": "1.1 目的",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《有限空间作业安全生产管理制度》制定本制度的目的是什么？"
+  },
+  {
+   "qid": "t_9d308853aeb6",
+   "question_type": "事实题",
+   "doc_id": "guide_kepuchina_fanghu",
+   "clause_no": "（三）进入自然通风换气效果不良的有限空间，应采用机械通风，通风换气次数每小时不能少于3次。对不能采用通风换气措施或受作业环境限制不易充分通风换气的场所，作业人员必须配备并使用空气呼吸器或软管面具等隔离式呼吸保护器具。严禁使用过滤式面具。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "进入自然通风换气效果不良的有限空间时，应采用何种通风方式及频率要求？若无法充分通风换气，作业人员应配备和使用哪些呼吸保护器具？"
+  },
+  {
+   "qid": "t_289c987f0821",
+   "question_type": "事实题",
+   "doc_id": "gaoqing_yuxian_kongjian",
+   "clause_no": "四、整治重点",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《高青县应急管理局关于开展有限空间作业专项检查的通知》对各镇（街道）、园区、执法科室及危化品企业提出了哪些工作要求？"
+  },
+  {
+   "qid": "t_1cdd6ae0c967",
+   "question_type": "事实题",
+   "doc_id": "plan_haiyang_tzb",
+   "clause_no": "三、特种设备安全事故应急救援指挥系统",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "海阳市市场监督管理局特种设备安全事故应急救援预案规定，事故应急救援指挥系统由哪些小组组成？"
+  },
+  {
+   "qid": "t_fb5df72a9344",
+   "question_type": "事实题",
+   "doc_id": "plan_tianjin_dierying",
+   "clause_no": "1.对镇辖区按照规定配备应急消防、安全防范等设备、 器材要加强管理和维护，确保器材配置合理有效。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "对镇辖区内应急消防、安全防范等设备、器材应如何管理和维护，以达到什么要求？"
+  },
+  {
+   "qid": "t_1e61e1b4beb6",
+   "question_type": "事实题",
+   "doc_id": "plan_tieling_qinghe_tzb",
+   "clause_no": "3.4、紧急安全疏散",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "现场区特种设备突发安全事件发生应急处置时，由哪个机构承担指挥工作？其职责是什么？"
+  },
+  {
+   "qid": "t_9519f8f385fa",
+   "question_type": "事实题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": "第十八条 本制度自2023年10月6日起施行，有效期5年。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《榆林市危险化学品企业动火和受限空间作业安全管理制度》自何时起施行，有效期为多久？"
+  },
+  {
+   "qid": "t_1f7c8f3ac9fa",
+   "question_type": "事实题",
+   "doc_id": "plan_yiyuan_tzb",
+   "clause_no": "1、按学校应急救援预案的规定，迅速采取有效措施，积极组织抢救，防止事故蔓延扩大。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《沂源县荆山学校特种设备安全应急预案》规定，应急救援工作结束后，事故现场指挥部应组织相关部门开展哪些后续工作？"
+  },
+  {
+   "qid": "t_34a1b266c55a",
+   "question_type": "事实题",
+   "doc_id": "gaoqing_yuxian_kongjian",
+   "clause_no": "2.受限空间作业安全专项整治问题调度台账（模板）",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "附件中的受限空间作业安全专项整治问题清单模板包含哪些登记项目？"
+  },
+  {
+   "qid": "t_739eed6328c0",
+   "question_type": "事实题",
+   "doc_id": "guide_kepuchina_fanghu",
+   "clause_no": "（二）对任何可能造成职业危害、人员伤亡的有限空间场所作业都应做到先通风再检测后进入的原则。通风后检测确认有限空间内有害物质浓度，作业前30分钟，应再次对有限空间有害物质浓度采样，分析合格后方可进入有限空间。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "对可能造成职业危害或人员伤亡的有限空间场所作业，进入前应遵循什么程序，并如何确认符合进入条件？"
+  },
+  {
+   "qid": "t_18d22c383e9a",
+   "question_type": "事实题",
+   "doc_id": "case_quanzhou_rectify_2026",
+   "clause_no": "（三）关于加强化工和危化品安全监管工作落实情况",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "泉港区在加强化工建设工程质量监督管理方面采取了哪些组织和督导措施？"
+  },
+  {
+   "qid": "t_df6336030ba8",
+   "question_type": "事实题",
+   "doc_id": "mem_xianshi_shouce",
+   "clause_no": "4.物体打击",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《有限空间作业安全指导手册》指出，有限空间内物体掉落或外部及上方物体掉入有限空间可能造成哪些危害？"
+  },
+  {
+   "qid": "t_55cbc2c6d3a4",
+   "question_type": "事实题",
+   "doc_id": "plan_haiyang_tzb",
+   "clause_no": "二、特种设备安全事故应急救援预案的对象",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "海阳市市场监督管理局特种设备安全事故应急救援预案适用于哪些特种设备？"
+  },
+  {
+   "qid": "t_12c2cb4ff16d",
+   "question_type": "事实题",
+   "doc_id": "plan_tieling_qinghe_tzb",
+   "clause_no": "3、现场处置",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "特种设备突发安全事件发生后，应急处置工作领导小组如何组织实施现场处置？"
+  },
+  {
+   "qid": "t_6031e77bccdb",
+   "question_type": "事实题",
+   "doc_id": "plan_yiyuan_tzb",
+   "clause_no": "三、工作原则",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《沂源县荆山学校特种设备安全应急预案》规定了哪项工作原则，其具体要求是什么？"
+  },
+  {
+   "qid": "t_a6698da12563",
+   "question_type": "事实题",
+   "doc_id": "plan_jiaocheng_tzb",
+   "clause_no": "5.1.3蕉城区特种设备事故应急处理领导小组办公室",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《蕉城区市场监督管理局特种设备事故应急预案》规定，领导小组下设的办公室负责什么事务，并设在哪里？"
+  },
+  {
+   "qid": "t_1e4e1e8ec554",
+   "question_type": "事实题",
+   "doc_id": "guide_jiaxian_guanli_zhidu",
+   "clause_no": "1、作业事项：填写熏蒸杀虫作业等。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《有限空间作业安全生产管理制度》对作业事项和作业内容分别是如何规定的？"
+  },
+  {
+   "qid": "t_3a1b631fb7f8",
+   "question_type": "事实题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": "第十条 危险化学品罐区动火、进入受限空间作业全部进行升级管理。节假日、敏感时期等特殊时段，原则上不安排一级和特级动火作业，如确需动火作业，应当提级管理。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《榆林市危险化学品企业动火和受限空间作业安全管理制度》规定，危险化学品罐区动火和进入受限空间作业应实行何种管理？在节假日、敏感时期等特殊时段，如确需进行高级别动火作业，应如何管理？"
+  },
+  {
+   "qid": "t_1d466bcc0ee7",
+   "question_type": "事实题",
+   "doc_id": "gaoqing_yuxian_kongjian",
+   "clause_no": "四、整治重点",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《高青县应急管理局关于开展有限空间作业专项检查的通知》对各镇办、园区和局各执法科室在整治重点方面提出了哪些工作要求？"
+  },
+  {
+   "qid": "t_9c9e58ce877c",
+   "question_type": "事实题",
+   "doc_id": "guide_jiaxian_guanli_zhidu",
+   "clause_no": "3、作业人员：指直接进入有限空间作业的人员姓名，有几人就填写几人，进去几人，出来几人，要相互一致。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "有限空间作业中，作业人员应如何填写，进入和离开人数应满足什么要求？"
+  },
+  {
+   "qid": "t_45d5c21011ff",
+   "question_type": "事实题",
+   "doc_id": "case_quanzhou_rectify_2026",
+   "clause_no": "2.中国天辰工程有限公司",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "中国天辰工程有限公司在本报告中受到何种行政处罚，罚款是否已全额缴纳？"
+  },
+  {
+   "qid": "t_fa3942399dfc",
+   "question_type": "事实题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": "第四条  企业要配齐动火、受限空间作业所需连续监测、全程监控的设备。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "危险化学品企业进行动火和受限空间作业时，对作业可视化管理及重要环节视频记录保存有哪些要求？"
+  },
+  {
+   "qid": "t_f3aaf50fd967",
+   "question_type": "事实题",
+   "doc_id": "mem_2019_78_zhimengdaoze",
+   "clause_no": "4  （GB 30077-2013）第9.3条",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "企业修订应急预案时，如果涉及组织指挥体系与职责等内容的变更，应如何办理备案并开展培训和演练？"
+  },
+  {
+   "qid": "t_dcabdf4f73a4",
+   "question_type": "事实题",
+   "doc_id": "mem_xianshi_shouce",
+   "clause_no": "6.清除置换",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "有限空间内盛装或残留的物料对作业存在危害时，作业前应如何处理这些物料？"
+  },
+  {
+   "qid": "t_0806e3d9b51d",
+   "question_type": "事实题",
+   "doc_id": "plan_jiaocheng_tzb",
+   "clause_no": "1.3.2本预案是处理本行政区域内发生的特种设备事故应急的组织和工作程序的规定。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《蕉城区市场监督管理局特种设备事故应急预案》对本行政区域内发生的特种设备事故应急的组织和工作程序作出了什么规定？"
+  },
+  {
+   "qid": "t_537a26d7594e",
+   "question_type": "事实题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": "第五条  在涉及毒性气体的管道、设备上进行盲板抽堵作业",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "在涉及毒性气体的管道、设备上进行盲板抽堵作业时，对气体检测仪器有什么要求？首次对受限空间作业区进行可燃有毒气体分析时，应采用哪些分析方法，并对分析仪器作何要求？"
+  },
+  {
+   "qid": "t_553b9cb54808",
+   "question_type": "事实题",
+   "doc_id": "plan_tianjin_dierying",
+   "clause_no": "二、术语解释",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "本预案所列特种设备包括哪些类别，其归口使用部门是谁？"
+  },
+  {
+   "qid": "t_dada0a3065f9",
+   "question_type": "事实题",
+   "doc_id": "plan_tieling_qinghe_tzb",
+   "clause_no": "3、现场处置",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "现场区特种设备突发安全事件应急处置工作领导小组在现场处置中承担哪些职责？"
+  },
+  {
+   "qid": "t_f088ec8bbee5",
+   "question_type": "事实题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": "第十三条 市县和园区应急管理部门要根据平台填报的信息，对企业动火和受限空间作业进行抽查检查，并建立检查台账。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "市县和园区应急管理部门应如何开展并处理企业动火和受限空间作业的抽查、检查？"
+  },
+  {
+   "qid": "t_1456749be828",
+   "question_type": "事实题",
+   "doc_id": "plan_yiyuan_tzb",
+   "clause_no": "3、建立特种设备重大事故应急救援指挥的组织机构管理网络及专业抢险救援队伍、联系方式；",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《沂源县荆山学校特种设备安全应急预案》对特种设备重大事故应急救援指挥的组织机构管理网络及专业抢险救援队伍建设提出了什么要求？"
+  },
+  {
+   "qid": "t_9080fbe9f45d",
+   "question_type": "事实题",
+   "doc_id": "case_quanzhou_1220",
+   "clause_no": "4.生态环境部门响应",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "事故发生后，生态环境部门如何响应并开展环境应急处置与监测？"
+  },
+  {
+   "qid": "t_2e3f36e974e7",
+   "question_type": "事实题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": "第十二条  企业应提前一天通过榆林市动火和受限空间作业管理平台填写动火、受限空间作业信息，不得出现填写内容与实际作业不符或瞒报、未报现象。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "危险化学品企业开展动火和受限空间作业时，应如何履行作业信息填报及紧急情况下的报备程序？"
+  },
+  {
+   "qid": "t_76f243ab76c9",
+   "question_type": "事实题",
+   "doc_id": "guide_kepuchina_fanghu",
+   "clause_no": "（四）生产经营单位应建立有限空间作业审批制度、作业人员健康检查制度、有限空间安全设施监管制度；同时应对从事有限空间作业人员进行培训教育。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "生产经营单位对有限空间作业人员应履行哪些制度建立和培训教育要求？"
+  },
+  {
+   "qid": "t_fb6a6dc7bdde",
+   "question_type": "事实题",
+   "doc_id": "gaoqing_yuxian_kongjian",
+   "clause_no": "三、整治范围",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "本通知规定的受限空间作业安全专项整治对象和检查重点是什么？"
+  },
+  {
+   "qid": "t_179bb36bdb2d",
+   "question_type": "事实题",
+   "doc_id": "guide_jiaxian_guanli_zhidu",
+   "clause_no": "2.3.3作业期间不得擅自离开，全过程掌握作业者作业期间情况，保证在有限空间外持续监护;",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "有限空间作业期间，作业者是否可以擅自离开？监护人员应如何掌握作业情况？"
+  },
+  {
+   "qid": "t_160935b84cb2",
+   "question_type": "事实题",
+   "doc_id": "case_quanzhou_rectify_2026",
+   "clause_no": "1.中化学天辰（泉州）新材料有限公司",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "泉州市应急管理局对中化学天辰（泉州）新材料有限公司作出了何种行政处罚，罚款是否已全额缴纳？"
+  },
+  {
+   "qid": "t_33f5ce726429",
+   "question_type": "事实题",
+   "doc_id": "guide_kepuchina_fanghu",
+   "clause_no": "（五）有限空间作业人员应具备对工作认真负责的态度，身体无妨碍从事相应工种作业的疾病和生理缺陷，并符合相应工种作业需要的资格。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "有限空间作业人员在态度、身体条件和作业资格方面应符合哪些要求？"
+  },
+  {
+   "qid": "t_cdb69d1d871b",
+   "question_type": "事实题",
+   "doc_id": "plan_tieling_qinghe_tzb",
+   "clause_no": "2.2应急组织机构的职责",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《铁岭市清河区市场监督管理局特种设备突发安全事件应急预案》规定，现场区特种设备突发安全事件应急处置工作领导小组承担哪些职责？"
+  },
+  {
+   "qid": "t_4aa1d89fbc8a",
+   "question_type": "事实题",
+   "doc_id": "mem_2019_78_zhimengdaoze",
+   "clause_no": "4.火炬气的分液、排凝应符合要求；",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "危险化学品企业火炬气的分液和排凝应满足什么要求？"
+  },
+  {
+   "qid": "t_d22176be3581",
+   "question_type": "事实题",
+   "doc_id": "mem_xianshi_shouce",
+   "clause_no": "3.作业监护",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "有限空间作业时，对监护人员的设置、监护地点、监护时长及离岗行为有何要求？"
+  },
+  {
+   "qid": "t_a02f0be66b98",
+   "question_type": "事实题",
+   "doc_id": "plan_jiaocheng_tzb",
+   "clause_no": "6.3预警与紧急通知",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《蕉城区市场监督管理局特种设备事故应急预案》规定了哪些事故预警等级及其发布主体、发布方式与确认要求？"
+  },
+  {
+   "qid": "t_0d5ab7ac3a58",
+   "question_type": "事实题",
+   "doc_id": "plan_tianjin_dierying",
+   "clause_no": "6.各部门对在用特种设备进行自检和日常维护保养时发 现异常情况的，应当报特种设备管理部门进行及时处理。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "东二营镇特种设备应急预案对职工发现安全隐患或事故后的处置与报告有何要求？"
+  },
+  {
+   "qid": "t_0562e6915298",
+   "question_type": "事实题",
+   "doc_id": "plan_yiyuan_tzb",
+   "clause_no": "7、建立应急抢险救援定期组织本学校的重大事故应急处理知识学习、技能的培训和应急演习；",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《沂源县荆山学校特种设备安全应急预案》规定，各学校对特种设备进行维护保养、自行检查和定期检验后，在设备出现故障或异常情况并重新使用前应如何处理？"
+  },
+  {
+   "qid": "t_747e4c6e4895",
+   "question_type": "事实题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": "第十六条 鼓励企业员工和其他人员按照《榆林市重大事故隐患举报奖励办法》，对本企业动火和受限空间等特殊作业环节的违法违规行为进行举报，举报奖励金额按照相关规定执行。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "企业员工和其他人员对本企业动火和受限空间等特殊作业环节的违法违规行为进行举报，应适用哪个举报奖励办法，奖励金额如何确定？"
+  },
+  {
+   "qid": "t_2ae0727779fb",
+   "question_type": "事实题",
+   "doc_id": "case_quanzhou_1220",
+   "clause_no": "（二）有关监管部门",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "事故调查报告中指出，泉港区应急管理局在对中化学天辰（泉州）新材料有限公司开展试生产安全监管时，存在哪些履职不到位问题？"
+  },
+  {
+   "qid": "t_9f3a5b2662f0",
+   "question_type": "事实题",
+   "doc_id": "case_quanzhou_rectify_2026",
+   "clause_no": "五、评估结论意见",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "评估组对福建泉州中化学天辰（泉州）新材料有限公司“12·20”事故责任追究、防范和整改措施建议的落实情况作何结论？"
+  },
+  {
+   "qid": "t_969a94454431",
+   "question_type": "事实题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": "第九条  兰炭（金属镁）企业动火和受限空间作业全部实施“一票制”管控。企业内设的分厂或相关车间在作业前将需办理的票证和现场管控措施等资料提交安全管理机构，由安全管理机构现场核实签字后提请企业分管安全的副总经理和分管生产的副总经理审批后方可实施。特级动火作业必须由企业主要负责人审批后方可实施。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "兰炭（金属镁）企业实施动火和受限空间作业时，票证办理、现场核实及审批分别由哪些主体负责，其中特级动火作业应履行何种审批程序？"
+  },
+  {
+   "qid": "t_05f72ae1a44f",
+   "question_type": "事实题",
+   "doc_id": "case_quanzhou_1220",
+   "clause_no": "（一）强化安全主体责任落实。中化学天辰（泉州）新材料有限公司要深刻吸取事故教训，保持高度警觉，做好举一反三，全面排查问题隐患并做好整改闭环，进一步加强试生产期间安全准备工作。要建立健全试生产组织机构，明晰项目建设单位、总承包商、设计单位、监理单位、施工单位等相关方的安全管理范围与职责。要严格核查设备及管道试压、吹扫、气密、单机试车、仪表调校、联动试车等生产准备完成情况，要建立健全并严格落实安全责任制、规章制度、操作规程，要加强参与试车人员的培训，全面掌握实操技能，完善异常工况管理与处置措施。要做好安全风险防控，扎实开展“三查四定”，严格开车前安全审查。在开车投料工作时，要聘请有经验的团队予以现场指导，确保试车安全。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "针对试生产阶段，公司应从哪些方面强化安全主体责任落实并做好开车前安全审查？"
+  },
+  {
+   "qid": "t_507f58e82e07",
+   "question_type": "事实题",
+   "doc_id": "gaoqing_yuxian_kongjian",
+   "clause_no": "（三）安全教育培训到位。企业必须对受限空间作业现场",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "企业对受限空间作业相关人员开展专项安全培训教育和考核后，符合什么条件方可上岗？"
+  },
+  {
+   "qid": "t_a146d65180b0",
+   "question_type": "事实题",
+   "doc_id": "guide_kepuchina_fanghu",
+   "clause_no": "（八）有限空间作业人员应遵守有限空间作业安全操作规程，正确使用有限空间作业安全设施与个体防护用具；应与监护人员进行有效的安全、报警、撤离等双向信息交流；作业人员意识到身体出现危险异常症状时，应及时向监护者报告或自行撤离有限空间。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "有限空间作业人员在作业过程中，应如何遵守安全操作规程并与监护人员保持信息交流？出现危险异常症状时又应如何处置？"
+  },
+  {
+   "qid": "t_c36951008f48",
+   "question_type": "事实题",
+   "doc_id": "mem_2019_78_zhimengdaoze",
+   "clause_no": "5.摘除联锁保护系统应有防范措施及整改方案。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《危险化学品企业安全风险隐患排查治理导则》对摘除联锁保护系统提出了什么要求？"
+  },
+  {
+   "qid": "t_c213a7260b00",
+   "question_type": "事实题",
+   "doc_id": "guide_jiaxian_guanli_zhidu",
+   "clause_no": "2.3.5发现异常，及时制止作业，并立即采取救护措施，同时报警。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "进入有限空间危险作业场所作业前，对作业环境应按什么顺序进行安全确认？各项检测未准确完成前能否进入？"
+  },
+  {
+   "qid": "t_dd36cbe24a3d",
+   "question_type": "事实题",
+   "doc_id": "plan_tieling_qinghe_tzb",
+   "clause_no": "3.3.1(1)首先检查确定泄漏的准确位置；",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "在特种设备突发安全事件应急预案中，泄漏发生后，抢险人员在实施堵漏前应做好哪些个人防护和处置准备？"
+  },
+  {
+   "qid": "t_63ef4230ca40",
+   "question_type": "事实题",
+   "doc_id": "plan_yiyuan_tzb",
+   "clause_no": "4、明确相应的设备操作人员、维修人员、部门主管、分管领导、安全生产第一责任人在处置重大事故时的职责及联系电话。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "学校对重大事故应急处理知识、技能培训和应急演习应如何组织？"
+  },
+  {
+   "qid": "t_fd7ebdb968af",
+   "question_type": "事实题",
+   "doc_id": "plan_jiaocheng_tzb",
+   "clause_no": "四、特种设备事故分类",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "特种设备事故依据哪些因素分级，分为哪几个等级？"
+  },
+  {
+   "qid": "t_8bf9dae6422f",
+   "question_type": "事实题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": "第四条 企业要配齐动火、受限空间作业所需连续监测、全程监控设备。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "在特级动火和受限空间作业中，企业应如何配备和佩戴气体检测仪，并实现哪些现场与远程监测要求？"
+  },
+  {
+   "qid": "t_bd25fff8136a",
+   "question_type": "事实题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": "第十三条  市县和园区应急管理部门要根据作业管理平台填报的信息，对企业动火和受限空间作业进行抽查检查，并建立检查台账。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "市县和园区应急管理部门应如何依据作业管理平台填报信息，对企业动火和受限空间作业开展监督检查并记录相关情况？"
+  },
+  {
+   "qid": "t_12ebd2394865",
+   "question_type": "事实题",
+   "doc_id": "case_quanzhou_1220",
+   "clause_no": "2.消防部门响应",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "事故发生后，消防救援力量是如何响应并开展现场处置的？"
+  },
+  {
+   "qid": "t_e452d4e039db",
+   "question_type": "事实题",
+   "doc_id": "gaoqing_yuxian_kongjian",
+   "clause_no": "（一）安全责任到位。存在受限空间作业的企业必须建立",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "存在受限空间作业的企业，在安全生产责任制方面应如何规定相关人员的安全生产职责？"
+  },
+  {
+   "qid": "t_693082c8d097",
+   "question_type": "事实题",
+   "doc_id": "case_quanzhou_rectify_2026",
+   "clause_no": "（一）关于强化安全主体责任落实情况",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "中化学天辰（泉州）新材料有限公司在试生产方案修订及组织机构建设方面采取了哪些措施？"
+  },
+  {
+   "qid": "t_10e4644caad3",
+   "question_type": "事实题",
+   "doc_id": "plan_jiaocheng_tzb",
+   "clause_no": "1.3.2本预案是处理本行政区域内发生的特种设备事故应急的组织和工作程序的规定。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《蕉城区市场监督管理局特种设备事故应急预案》对制定预案的出发点、方针和工作原则作了哪些规定？"
+  },
+  {
+   "qid": "t_fc5c3dddf20b",
+   "question_type": "事实题",
+   "doc_id": "plan_tianjin_dierying",
+   "clause_no": "四、工作原则",
+   "verdict": "likely_bad",
+   "problems": [
+    "锚点不可达：key_point「本预案的制定是从事故预防的角度、事故发生后损失控」在该文档里找不到"
+   ],
+   "question": "《东二营镇特种设备应急预案》对特种设备安全事故应急救援工作规定了哪些指导理念、方针和工作原则？"
+  },
+  {
+   "qid": "t_7abba2b57bcf",
+   "question_type": "事实题",
+   "doc_id": "plan_tieling_qinghe_tzb",
+   "clause_no": "3、现场处置",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "区特种设备突发安全事件应急处置工作领导小组调集消防队伍和企业抢险力量后，应如何确定处置措施并组织实施？"
+  },
+  {
+   "qid": "t_39c9d67e9466",
+   "question_type": "事实题",
+   "doc_id": "guide_jiaxian_guanli_zhidu",
+   "clause_no": "7. 附件",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《有限空间作业安全生产管理制度》的附件部分列出了哪两个附件？"
+  },
+  {
+   "qid": "t_14bab8def672",
+   "question_type": "事实题",
+   "doc_id": "plan_yiyuan_tzb",
+   "clause_no": "4、明确相应的设备操作人员、维修人员、部门主管、分管领导、安全生产第一责任人在处置重大事故时的职责及联系电话。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "学校对重大危险源和大型游乐设施应建立哪些安全管理与应急演练措施？"
+  },
+  {
+   "qid": "t_5e6448126ada",
+   "question_type": "事实题",
+   "doc_id": "mem_2019_78_zhimengdaoze",
+   "clause_no": "（四）现场安全",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "现场安全中，电缆本身的防火安全应满足什么要求？"
+  },
+  {
+   "qid": "t_870d6121f7ac",
+   "question_type": "事实题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": "第一条  为进一步加强危险化学品企业动火和受限空间作业过程安全风险管控，有效防范和遏制危险化学品安全事故发生，依据《中华人民共和国安全生产法》《危险化学品企业特殊作业安全规范》（GB30871-2022）等法律法规，特制定本制度。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《榆林市危险化学品企业动火和受限空间作业安全管理制度》第一条的制定目的是什么，依据了哪些法律法规和标准？"
+  },
+  {
+   "qid": "t_373162983815",
+   "question_type": "事实题",
+   "doc_id": "case_quanzhou_1220",
+   "clause_no": "2.消防部门响应",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "事发企业在发现环氧丙烷装置现场起火后采取了哪些先期处置措施？"
+  },
+  {
+   "qid": "t_3ffb1bcf0771",
+   "question_type": "事实题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": "第十三条 市县和园区应急管理部门要根据平台填报的信息，对企业动火和受限空间作业进行抽查检查，并建立检查台账。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "市县和园区应急管理部门对企业动火和受限空间作业应采取何种监督检查措施？"
+  },
+  {
+   "qid": "t_6f79b318a6c0",
+   "question_type": "事实题",
+   "doc_id": "gaoqing_yuxian_kongjian",
+   "clause_no": "（二）安全管理制度和操作规程建立到位。企业应建立完",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "企业对受限空间作业应建立哪些安全管理制度和操作规程？"
+  },
+  {
+   "qid": "t_1a24f3bfdf5a",
+   "question_type": "事实题",
+   "doc_id": "case_quanzhou_rectify_2026",
+   "clause_no": "（三）关于加强化工和危化品安全监管工作落实情况",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "该报告记载了哪些安全警示教育培训活动及其参加对象？"
+  },
+  {
+   "qid": "t_320701a18d3f",
+   "question_type": "事实题",
+   "doc_id": "guide_jiaxian_guanli_zhidu",
+   "clause_no": "6.10.2事故灾难调查报告、经验教训总结及改进建议",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《有限空间作业安全生产管理制度》的附件《有限空间作业审批表》中，主要安全措施应包括哪些应急器材和措施？"
+  },
+  {
+   "qid": "t_db139a9df6c5",
+   "question_type": "事实题",
+   "doc_id": "mem_2019_78_zhimengdaoze",
+   "clause_no": "2.危险化工工艺装置的自动化控制和紧急停车系统应知》（安监总管三〔2009〕116号）",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "往复式压缩机各段出口以及电动往复泵、齿轮泵、螺杆泵等容积式泵的出口，在何种情况下应设置安全阀？"
+  },
+  {
+   "qid": "t_f091a751b870",
+   "question_type": "事实题",
+   "doc_id": "plan_jiaocheng_tzb",
+   "clause_no": "1.2编制依据",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《蕉城区市场监督管理局特种设备事故应急预案》的编制依据包括哪些法律法规？"
+  },
+  {
+   "qid": "t_82fdb48b9cd8",
+   "question_type": "事实题",
+   "doc_id": "plan_tianjin_dierying",
+   "clause_no": "六、预警机制",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "压力容器运行及装卸过程中，对温压、载荷和紧固件的操作有哪些要求？"
+  },
+  {
+   "qid": "t_a53b37aba323",
+   "question_type": "事实题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": "第七条 动火和受限空间作业过程中，应实行“一点一证一监护”，并通过监控视频、移动录像等方式，实现作业过程可视化管理。所有特殊作业中的取样分析、安全交底、动火等重要环节进行视频录像，并保存1个月备查。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "危险化学品企业实施动火和受限空间作业时，对作业监护人及现场监护有何要求？"
+  },
+  {
+   "qid": "t_2cf9a1a1969f",
+   "question_type": "事实题",
+   "doc_id": "plan_yiyuan_tzb",
+   "clause_no": "五、预防与应急措施",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "锅炉、压力容器（含气瓶）、压力管道、电梯、大型起重机械、游乐设施等特种设备事故应急处置预案应包括哪些内容？"
+  },
+  {
+   "qid": "t_35b9921f715b",
+   "question_type": "事实题",
+   "doc_id": "plan_tieling_qinghe_tzb",
+   "clause_no": "3.2.4特种设备使用单位作为安全责任的主体，应按照有关法律法规的规定，结合实际，落实以下措施：",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "铁岭市清河区特种设备生产、使用单位在事故预防方面应建立健全什么制度？"
+  },
+  {
+   "qid": "t_6c452f15a91b",
+   "question_type": "事实题",
+   "doc_id": "case_quanzhou_1220",
+   "clause_no": "（一）建议行政处罚人员",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "事故调查报告认定，姜**对环氧丙烷装置超压情况未严格停止出料、未实施有效管理和处置，应承担何种责任及处理建议？"
+  },
+  {
+   "qid": "t_54eece711112",
+   "question_type": "事实题",
+   "doc_id": "case_quanzhou_rectify_2026",
+   "clause_no": "（一）关于强化安全主体责任落实情况",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "该公司在吸取“12·20”事故教训并落实整改、防范措施方面采取了哪些做法？"
+  },
+  {
+   "qid": "t_728fdba47eb9",
+   "question_type": "事实题",
+   "doc_id": "gaoqing_yuxian_kongjian",
+   "clause_no": "（四）风险辨识和风险评估到位。企业必须对本企业的受",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "企业对受限空间开展风险辨识和风险评估应符合哪些要求？"
+  },
+  {
+   "qid": "t_535d02879469",
+   "question_type": "事实题",
+   "doc_id": "guide_jiaxian_guanli_zhidu",
+   "clause_no": "2.1.2组织制定有限空间专项作业方案、安全操作规程、事故应急救援预案、安全技术措施等有限空间作业管理制度;",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《有限空间作业安全生产管理制度》对有限空间作业的安全投入及安全防护措施有何规定？"
+  },
+  {
+   "qid": "t_c5047eefe19a",
+   "question_type": "事实题",
+   "doc_id": "mem_2019_78_zhimengdaoze",
+   "clause_no": "1.硫、磷、硝酸钠、亚硝酸钠及其还原类物质；",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "该导则列出的重点监管危险化学品包括哪些酸类物质？"
+  },
+  {
+   "qid": "t_c3eb14943504",
+   "question_type": "事实题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": "第三条  企业主要负责人是动火和受限空间作业安全管理的第一责任人，要按照《危险化学品企业特殊作业安全规范》（GB30871-2022），修订完善并落实本企业动火和受限空间等特殊作业安全管理制度。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "在危险化学品企业动火和受限空间作业安全管理中，企业主要负责人应如何履行职责？"
+  },
+  {
+   "qid": "t_e466d54ca21b",
+   "question_type": "事实题",
+   "doc_id": "plan_tianjin_dierying",
+   "clause_no": "二、术语解释",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《东二营镇特种设备应急预案》中，“特种设备”具体包括哪些设备？"
+  },
+  {
+   "qid": "t_3ca0d1ecaff3",
+   "question_type": "事实题",
+   "doc_id": "plan_jiaocheng_tzb",
+   "clause_no": "二、适用范围",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "该应急预案所适用的特种设备具体包括哪些类别？"
+  },
+  {
+   "qid": "t_64062f88de51",
+   "question_type": "事实题",
+   "doc_id": "mem_xianshi_shouce",
+   "clause_no": "1.制定作业方案",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "有限空间作业前应如何开展安全风险辨识并制定作业方案，方案由谁审核和批准？"
+  },
+  {
+   "qid": "t_28c468a30b9c",
+   "question_type": "事实题",
+   "doc_id": "plan_tieling_qinghe_tzb",
+   "clause_no": "3.9.4.1、打开省煤器出口集箱上的放汽阀，排净空气。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "发生省煤器水锤时，应如何操作省煤器出口集箱上的放汽阀？"
+  },
+  {
+   "qid": "t_643a879e8e27",
+   "question_type": "事实题",
+   "doc_id": "plan_yiyuan_tzb",
+   "clause_no": "6、各使用学校和应急抢险救援单位根据本单位设备的特点和应急救援预案的规定，配备必要的设备、工具、救援物品等物资储备；",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "各使用学校和应急抢险救援单位应根据本单位设备特点及应急救援预案规定，配备哪些物资储备？"
+  },
+  {
+   "qid": "t_0eb635b801fb",
+   "question_type": "事实题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": "第五条 在涉及毒性气体的管道、设备上进行盲板抽堵作业时，应佩戴移动式气体检测仪。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "在涉及毒性气体的管道、设备上进行盲板抽堵作业时，应使用何种气体检测仪？"
+  },
+  {
+   "qid": "t_ae9ea4e391ac",
+   "question_type": "事实题",
+   "doc_id": "case_quanzhou_1220",
+   "clause_no": "2.设备设计安全风险辨识不到位",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "在福建泉州中化学天辰（泉州）新材料有限公司“12·20”一般泄漏爆炸事故中，设计单位中国天辰工程有限公司存在哪些工艺设备设计安全风险辨识及安全措施方面的问题？"
+  },
+  {
+   "qid": "t_f9cef6f8186a",
+   "question_type": "事实题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": "第八条  企业动火和受限空间作业过程中应由专人负责全程监护，监护人不在场不得实施作业，作业监护人应经企业培训合格后方可上岗作业。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "危险化学品企业实施动火和受限空间作业时，对作业监护人有何要求？"
+  },
+  {
+   "qid": "t_e7f2dc0175bb",
+   "question_type": "事实题",
+   "doc_id": "case_quanzhou_rectify_2026",
+   "clause_no": "一、评估工作组织开展情况",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "该事故整改和防范措施落实情况评估工作是如何组织开展的？"
+  },
+  {
+   "qid": "t_ebfd536168de",
+   "question_type": "事实题",
+   "doc_id": "gaoqing_yuxian_kongjian",
+   "clause_no": "（八）",
+   "verdict": "likely_bad",
+   "problems": [
+    "锚点不可达：key_point「生产经营单位组织编制本单位有限空间作业事故应急预」在 全文：gaoqing_yuxian_kongjian 里找不到",
+    "锚点不可达：key_point「检查装备。结合有限空间辨识情况，作业前，救援人员」在 全文：gaoqing_yuxian_kongjian 里找不到"
+   ],
+   "question": "企业针对受限空间作业应做好哪些应急准备？"
+  },
+  {
+   "qid": "t_42da9a3092e4",
+   "question_type": "事实题",
+   "doc_id": "guide_jiaxian_guanli_zhidu",
+   "clause_no": "6.10.2事故灾难调查报告、经验教训总结及改进建议",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "有限空间作业发生事故后，事故调查由谁牵头组织，必要时由哪个单位组织调查，并应开展哪些调查处置工作？"
+  },
+  {
+   "qid": "t_9ceb329d6b72",
+   "question_type": "事实题",
+   "doc_id": "mem_2019_78_zhimengdaoze",
+   "clause_no": "8 应急与消防安全风险隐患排查表",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "危险化学品企业应如何做好应急管理机构及人员配置、应急救援队伍建设，并执行应急预案及相关制度？"
+  },
+  {
+   "qid": "t_6b90505fe051",
+   "question_type": "事实题",
+   "doc_id": "plan_tianjin_dierying",
+   "clause_no": "1.2.1 炉管破裂泄漏不严重且能保持水位，事故不致扩 大时，可短时间降低负荷维持运行，待备用锅炉启动后再停炉。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "炉管发生破裂泄漏时，在何种条件下可以短时间降低负荷维持运行，并应在何时停炉？"
+  },
+  {
+   "qid": "t_0a3da27eea43",
+   "question_type": "事实题",
+   "doc_id": "plan_jiaocheng_tzb",
+   "clause_no": "三、特种设备危险源因素",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《蕉城区市场监督管理局特种设备事故应急预案》规定了哪些特种设备危险源因素及其可能造成的后果？"
+  },
+  {
+   "qid": "t_6630cd2eaca9",
+   "question_type": "事实题",
+   "doc_id": "plan_tieling_qinghe_tzb",
+   "clause_no": "3.5.2.1、炉管爆裂泄露不严重且能保持水位，事故不至扩大时，可以短时间降低负荷维持运行，待备用炉启动后再停炉。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "锅炉因缺水导致管壁过热而发生爆管时，应采取哪些紧急处置措施？"
+  },
+  {
+   "qid": "t_6decd2cb0ba9",
+   "question_type": "事实题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": "第十三条  市县和园区应急管理部门要根据作业管理平台填报的信息，对企业动火和受限空间作业进行抽查检查，并建立检查台账。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "市县和园区应急管理部门对危险化学品企业动火和受限空间作业应采取哪些监督检查措施，并如何处理发现的违法行为？"
+  },
+  {
+   "qid": "t_d9c557b6e2b2",
+   "question_type": "事实题",
+   "doc_id": "plan_yiyuan_tzb",
+   "clause_no": "1、领导小组要了解本单位的特种设备数量、安装位置分布情况；",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "学校领导小组需要了解本单位特种设备的哪些情况，并应针对日常运行使用中可能引发重特大事故的事项制定哪些内容？"
+  },
+  {
+   "qid": "t_f203367c28c9",
+   "question_type": "事实题",
+   "doc_id": "case_quanzhou_rectify_2026",
+   "clause_no": "（一）关于强化安全主体责任落实情况",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "中化学天辰（泉州）新材料有限公司在建立健全全员安全生产责任、规章制度和操作规程方面采取了哪些措施，人员配置是否符合相关法律法规要求？"
+  },
+  {
+   "qid": "t_27e5e785b393",
+   "question_type": "事实题",
+   "doc_id": "case_quanzhou_1220",
+   "clause_no": "（二）有关监管部门",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "泉港区市场监督管理局界山镇市场监督管理所对中化学天辰（泉州）新材料有限公司特种设备安全监管存在哪些不足？"
+  },
+  {
+   "qid": "t_aaa05c9ed7ee",
+   "question_type": "事实题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": "第十二条 企业应提前一天（特殊情况除外）通过榆林市动火和受限空间作业管理平台填写动火、受限空间作业信息，不得出现填写内容与实际作业不符，或存在瞒报、未报现象。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "危险化学品企业应如何通过榆林市动火和受限空间作业管理平台填报动火、受限空间作业信息，并应避免出现哪些问题？"
+  },
+  {
+   "qid": "t_90d655c2ab2f",
+   "question_type": "事实题",
+   "doc_id": "guide_jiaxian_guanli_zhidu",
+   "clause_no": "6.3.1.3 总公司应急救援小组的响应",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "发生有限空间作业安全生产事故后，总公司应急救援小组应采取哪些响应措施？"
+  },
+  {
+   "qid": "t_03e474d602b1",
+   "question_type": "事实题",
+   "doc_id": "mem_2019_78_zhimengdaoze",
+   "clause_no": "2.企业及各个管理部门、车间应制定切实可行的年度知》（安监总管三",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "企业及其各管理部门、车间对年度安全生产工作计划应制定什么要求？"
+  },
+  {
+   "qid": "t_176bbbc4e11f",
+   "question_type": "事实题",
+   "doc_id": "mem_xianshi_shouce",
+   "clause_no": "9.高温高湿",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "作业人员长时间处于温度过高、湿度很大的环境，可能产生哪些不适症状，甚至造成哪些严重后果？"
+  },
+  {
+   "qid": "t_29001d8b16ef",
+   "question_type": "事实题",
+   "doc_id": "plan_jiaocheng_tzb",
+   "clause_no": "6.1接警与通知",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "市场监督管理部门接到特种设备事故报告后，应履行哪些现场处置和报告程序，并经何种批准启动应急预案？"
+  },
+  {
+   "qid": "t_84f00ad4ce61",
+   "question_type": "事实题",
+   "doc_id": "gaoqing_yuxian_kongjian",
+   "clause_no": "（七）外包作业管理到位。企业将受限空间作业发包给其",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "企业将受限空间作业发包给其他单位实施时，对承包单位作业监督管理有何要求？"
+  },
+  {
+   "qid": "t_a944474adbae",
+   "question_type": "事实题",
+   "doc_id": "plan_tianjin_dierying",
+   "clause_no": "6.各部门对在用特种设备进行自检和日常维护保养时发 现异常情况的，应当报特种设备管理部门进行及时处理。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《东二营镇特种设备应急预案》规定，特种设备作业人员从事相应作业或管理工作的资格条件是什么？"
+  },
+  {
+   "qid": "t_1c86e626a01f",
+   "question_type": "事实题",
+   "doc_id": "plan_tieling_qinghe_tzb",
+   "clause_no": "3.1.1区特种设备监察机构对辖区内特种设备进行日常安全检查，定期安全监督检查和重点监控，督办特种设备重大隐患的整改。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "铁岭市清河区市场监督管理局对特种设备事故预防监测提出了哪些要求？"
+  },
+  {
+   "qid": "t_7c0876fa00b6",
+   "question_type": "事实题",
+   "doc_id": "plan_yiyuan_tzb",
+   "clause_no": "四、应急救援组织机构与职责",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "学校发生特种设备重大事故时，应成立哪些应急救援组织，由谁全面负责指挥协调突发事件处置工作？"
+  },
+  {
+   "qid": "t_f647d9ce3d4b",
+   "question_type": "事实题",
+   "doc_id": "case_quanzhou_1220",
+   "clause_no": "（二）有关监管部门",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "事故调查报告认定泉港区市场监督管理局在特种设备安全监管方面存在哪些不足？"
+  },
+  {
+   "qid": "t_3e2fea6dce37",
+   "question_type": "事实题",
+   "doc_id": "case_quanzhou_rectify_2026",
+   "clause_no": "1.泉港石化工业园区管委会环保安监科",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "针对泉港石化工业园区管委会环保安监科，评估报告提出的处理建议及实际处理落实情况分别是什么？"
+  },
+  {
+   "qid": "t_022b67e4fc57",
+   "question_type": "事实题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": "第四条  企业要配齐动火、受限空间作业所需连续监测、全程监控的设备。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《榆林市危险化学品企业动火和受限空间作业安全管理制度》规定，动火和受限空间作业时对气体检测、现场及远程监测和特殊动火影像监控分别有哪些要求？"
+  },
+  {
+   "qid": "t_29d79209299b",
+   "question_type": "事实题",
+   "doc_id": "guide_jiaxian_guanli_zhidu",
+   "clause_no": "3、作业人员：指直接进入有限空间作业的人员姓名，有几人就填写几人，进去几人，出来几人，要相互一致。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "新员工入职后从事有限空间作业岗位前需要经过哪些培训和考核要求？"
+  },
+  {
+   "qid": "t_2922c53d9cc2",
+   "question_type": "事实题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": "第七条 动火和受限空间作业过程中，应实行“一点一证一监护”，并通过监控视频、移动录像等方式，实现作业过程可视化管理。所有特殊作业中的取样分析、安全交底、动火等重要环节进行视频录像，并保存1个月备查。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "根据《榆林市危险化学品企业动火和受限空间作业安全管理制度》，危险化学品企业开展动火和受限空间作业时，应如何落实作业组织、过程可视化管理及影像资料留存要求？"
+  },
+  {
+   "qid": "t_c1c6e1627f4c",
+   "question_type": "事实题",
+   "doc_id": "mem_xianshi_shouce",
+   "clause_no": "9.再次检测",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "有限空间强制通风一段时间后，再次进行气体检测应遵循哪些要求？"
+  },
+  {
+   "qid": "t_1218a8f244f3",
+   "question_type": "事实题",
+   "doc_id": "plan_jiaocheng_tzb",
+   "clause_no": "6.1接警与通知",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "特种设备事故发生后，事故单位应采取哪些应急处置措施？"
+  },
+  {
+   "qid": "t_3120a326e565",
+   "question_type": "事实题",
+   "doc_id": "gaoqing_yuxian_kongjian",
+   "clause_no": "（六）作业过程安全管理到位。作业前要严格遵守“先通",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "有限空间作业过程中，作业人员和监护人员应分别采取哪些安全管理措施？"
+  },
+  {
+   "qid": "t_7f3331424963",
+   "question_type": "事实题",
+   "doc_id": "mem_2019_78_zhimengdaoze",
+   "clause_no": "3.措施应及时落实。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《危险化学品企业安全风险隐患排查治理导则》对安全风险隐患排查治理措施落实时限有何要求？"
+  },
+  {
+   "qid": "t_3dd50a5c9729",
+   "question_type": "事实题",
+   "doc_id": "plan_yiyuan_tzb",
+   "clause_no": "二、工作目标",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《沂源县荆山学校特种设备安全应急预案》的工作目标包括建立哪些体系，并提出哪些能力建设要求？"
+  },
+  {
+   "qid": "t_8c9062bc57eb",
+   "question_type": "事实题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": "第一条 为进一步加强危险化学品企业动火和受限空间作业过程安全风险管控，有效防范和遏制危险化学品安全事故的发生，依据《中华人民共和国安全生产法》《危险化学品企业特殊作业安全规范》（GB30871-2022）等法律法规，特制定本安全管理制度。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《榆林市危险化学品企业动火和受限空间作业安全管理制度》第一条的制定目的是什么，依据了哪些法律法规和规范？"
+  },
+  {
+   "qid": "t_54e86813abef",
+   "question_type": "事实题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": "第十条  危险化学品罐区实施动火、进入受限空间作业全部进行升级管理。节假日、敏感时期等特殊时段，原则上不安排一级和特级动火作业，如确需动火作业，应当提级管理。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "危险化学品罐区实施动火、进入受限空间作业应实行何种管理？特殊时段确需动火时应如何管理？"
+  },
+  {
+   "qid": "t_c57b05950779",
+   "question_type": "事实题",
+   "doc_id": "case_quanzhou_1220",
+   "clause_no": "1.公安部门响应",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "事故报告后，泉州市公安局泉港分局采取了哪些响应措施？"
+  },
+  {
+   "qid": "t_186b63d19b24",
+   "question_type": "事实题",
+   "doc_id": "plan_tieling_qinghe_tzb",
+   "clause_no": "3.2.10划分禁区并加强警戒和巡逻检查；",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "在容器发生泄漏后，应持续开展哪些监测与处置工作？"
+  },
+  {
+   "qid": "t_bd79cf017f61",
+   "question_type": "事实题",
+   "doc_id": "plan_tianjin_dierying",
+   "clause_no": "5、应急处理工作结束后，领导小组成员要组织相关人员进行分析总结，认真吸取教训，及时进行整改。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《东二营镇特种设备应急预案》规定，对处置安全事故中有突出贡献以及负有重要责任、玩忽职守或贻误时机的人员，分别如何处理？"
+  },
+  {
+   "qid": "t_cede76951f2d",
+   "question_type": "事实题",
+   "doc_id": "case_quanzhou_rectify_2026",
+   "clause_no": "3.徐*强，泉港区市场监督管理局界山镇市场监督管理所干部。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "针对徐*强的处理建议是什么，相关处理措施落实情况如何？"
+  },
+  {
+   "qid": "t_b6ac20f458c0",
+   "question_type": "事实题",
+   "doc_id": "guide_jiaxian_guanli_zhidu",
+   "clause_no": "6.4指挥和协调",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "有限空间作业发生事故灾难后，总公司应急救援小组、现场应急救援指挥部、事发单位负责人及库点安全组织机构分别承担哪些应急救援与先期处置职责？"
+  },
+  {
+   "qid": "t_38aa697936ef",
+   "question_type": "事实题",
+   "doc_id": "plan_jiaocheng_tzb",
+   "clause_no": "6.2指挥与控制",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《蕉城区市场监督管理局特种设备事故应急预案》规定，报道组由哪些人员组成，主要承担哪些任务？"
+  },
+  {
+   "qid": "t_08d55729970e",
+   "question_type": "事实题",
+   "doc_id": "plan_tianjin_dierying",
+   "clause_no": "6.各部门对在用特种设备进行自检和日常维护保养时发 现异常情况的，应当报特种设备管理部门进行及时处理。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《东二营镇特种设备应急预案》规定，特种设备使用单位和特种设备作业人员在安全教育培训、作业执行及发现隐患时分别应履行哪些职责？"
+  },
+  {
+   "qid": "t_94bac7e73fae",
+   "question_type": "事实题",
+   "doc_id": "plan_tieling_qinghe_tzb",
+   "clause_no": "3.3.1(4)属易容塞漏气，必须将充入的气体全部回到气柜，用氮气置换放空后交检验站换瓶阀。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "特种设备发生易容塞漏气时，应如何处置充入的气体并完成后续处理？"
+  },
+  {
+   "qid": "t_5eee48174a5a",
+   "question_type": "事实题",
+   "doc_id": "case_quanzhou_1220",
+   "clause_no": "（四）对事故责任单位的认定及处理意见",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "事故调查认定的中化学天辰（泉州）新材料有限公司在安全生产主体责任落实方面存在哪些问题？"
+  },
+  {
+   "qid": "t_a93f3c80535a",
+   "question_type": "事实题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": "第九条 兰炭企业动火和受限空间作业全部实施“一票制”管控。内设的兰炭分厂或相关车间在作业前将需办理的票证和现场管控措施等资料提交安全管理机构，由安全管理机构现场核实签字后提请公司分管安全的副总经理和分管生产的副总经理审批后方可实施。特级动火作业必须由兰炭企业主要负责人审批后方可实施。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "兰炭企业实施动火和受限空间作业时，作业票证及现场管控措施应如何审核审批，特级动火作业由谁审批？"
+  },
+  {
+   "qid": "t_9e8e6ac75647",
+   "question_type": "事实题",
+   "doc_id": "plan_yiyuan_tzb",
+   "clause_no": "一、指导思想",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《沂源县荆山学校特种设备安全应急预案》对特种设备事故紧急处置的指导思想是什么？"
+  },
+  {
+   "qid": "t_8b9a643821ae",
+   "question_type": "事实题",
+   "doc_id": "mem_2019_78_zhimengdaoze",
+   "clause_no": "2.防火堤容积应满足规范要求,并能承受所容纳油品的-2014）",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "防火堤在容积和承载性能方面应满足哪些要求？"
+  },
+  {
+   "qid": "t_90a36d0e2426",
+   "question_type": "事实题",
+   "doc_id": "guide_jiaxian_guanli_zhidu",
+   "clause_no": "3.14在密闭容器内使用二氧化碳或氦气进行焊接作业时，必须在作业过程中通风换气，确保空气符合安全要求。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "在地下进行压气作业时，对于可能泄入作业场所的缺氧空气，应采取哪些防止其进入作业场所的措施？"
+  },
+  {
+   "qid": "t_252fbfd20e61",
+   "question_type": "事实题",
+   "doc_id": "case_quanzhou_rectify_2026",
+   "clause_no": "3.泉港区应急管理局",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "评估报告对泉港区应急管理局提出的处理建议是什么？其处理落实情况如何？"
+  },
+  {
+   "qid": "t_af1a35938b25",
+   "question_type": "事实题",
+   "doc_id": "plan_jiaocheng_tzb",
+   "clause_no": "6.2指挥与控制",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《蕉城区市场监督管理局特种设备事故应急预案》规定，善后处理组由哪些单位组成，主要承担哪些任务？"
+  },
+  {
+   "qid": "t_bad0a32b5f2f",
+   "question_type": "事实题",
+   "doc_id": "plan_tianjin_dierying",
+   "clause_no": "1.2.1 炉管破裂泄漏不严重且能保持水位，事故不致扩 大时，可短时间降低负荷维持运行，待备用锅炉启动后再停炉。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "锅炉发生严重爆管且水位无法维持时，应采取哪些紧急处置措施？"
+  },
+  {
+   "qid": "t_18e111d21d7f",
+   "question_type": "事实题",
+   "doc_id": "plan_tieling_qinghe_tzb",
+   "clause_no": "3.2.1.7、缺水严重时，可嗅到焦味。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "特种设备发生严重缺水时，可通过哪种气味异常以及炉门处的什么现象来判断水冷壁管已经烧红？"
+  },
+  {
+   "qid": "t_7bc67f5a2717",
+   "question_type": "事实题",
+   "doc_id": "case_quanzhou_1220",
+   "clause_no": "3.安全监管不到位",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "事故调查认定哪些监管部门在企业安全监管及安全隐患治理监督方面存在责任落实不到位的问题？"
+  },
+  {
+   "qid": "t_7e4f2ce02d4e",
+   "question_type": "事实题",
+   "doc_id": "plan_yiyuan_tzb",
+   "clause_no": "1、按学校应急救援预案的规定，迅速采取有效措施，积极组织抢救，防止事故蔓延扩大。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "发生特种设备事故并出现有毒燃气泄漏、压力容器或压力管道泄漏、爆炸等紧急情况时，人员应如何处置，并需拨打哪些电话报告？"
+  },
+  {
+   "qid": "t_90e2d7a74754",
+   "question_type": "事实题",
+   "doc_id": "case_quanzhou_rectify_2026",
+   "clause_no": "2.李*，中化学天辰（泉州）新材料有限公司环氧丙烷分厂厂长。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "李*作为中化学天辰（泉州）新材料有限公司环氧丙烷分厂厂长，事故发生后由哪个部门实施行政处罚，处罚决定何时作出、罚款金额多少及缴纳情况如何？"
+  },
+  {
+   "qid": "t_c0724d354452",
+   "question_type": "事实题",
+   "doc_id": "guide_jiaxian_guanli_zhidu",
+   "clause_no": "3.5发现可能存在有害气体、可燃气体时，检测人员应同时使用有害气体检测仪表、可燃气体测试仪等设备进行检测。",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "发现可能存在有害气体或可燃气体时，检测人员应使用哪些设备进行检测？"
+  },
+  {
+   "qid": "t_36dcb7787332",
+   "question_type": "事实题",
+   "doc_id": "mem_2019_78_zhimengdaoze",
+   "clause_no": "1.控制方案变更应办理审批手续；",
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "《危险化学品企业安全风险隐患排查治理导则》规定，危险化学品企业变更控制方案时应履行何种管理程序？"
+  },
+  {
+   "qid": "t_b023df5e782a",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "截至2023年末，榆林市危险化学品企业动火和受限空间作业安全管理制度规定，企业使用便携式可燃有毒气体检测仪或其他类似手段分析受限空间作业区时，对仪器数量有何要求？"
+  },
+  {
+   "qid": "t_c50a187280ab",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "现行版本中，榆林市危险化学品企业动火和受限空间作业安全管理制度规定，首次对受限空间作业区进行可燃有毒气体分析时，可采用色谱分析，或者使用哪种仪器进行分析？"
+  },
+  {
+   "qid": "t_308055e44c59",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "截至2023年末，榆林市危险化学品企业动火和受限空间作业安全管理制度规定，所有动火作业时应配备能够采集全过程作业影像的设备，该设备应具有何种防爆属性？"
+  },
+  {
+   "qid": "t_68a467d17aca",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "现行版本中，榆林市危险化学品企业动火和受限空间作业安全管理制度要求，在什么级别的动火作业时配备能够采集全过程作业影像的防爆型摄录设备？"
+  },
+  {
+   "qid": "t_b98aad1f2848",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "现行版本中，榆林市危险化学品企业动火和受限空间作业安全管理制度对兰炭企业实施“一票制”管控的适用范围有何规定？"
+  },
+  {
+   "qid": "t_b504929c0743",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "截至2026年11月2日，榆林市现行危险化学品企业动火和受限空间作业安全管理制度中，特级动火作业应配备何种摄录设备？"
+  },
+  {
+   "qid": "t_02f7d4c25cce",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "2023年时，榆林市危险化学品企业动火和受限空间作业安全管理制度要求，所有动火作业时配备何种设备以实现全过程监控？"
+  },
+  {
+   "qid": "t_81dbe3d46c11",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "截至2026年11月2日，榆林市现行制度对使用便携式可燃有毒气体检测仪分析受限空间作业区有何要求？"
+  },
+  {
+   "qid": "t_801a3a4e60dc",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "2023年时，使用便携式可燃有毒气体检测仪或其他类似手段分析受限空间作业区时，榆林市制度要求检查仪器数量为多少？"
+  },
+  {
+   "qid": "t_769ee5bbe1cb",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "截至2026年11月2日，榆林市现行制度对兰炭（金属镁）企业实施“一票制”管控的适用范围是否包括金属镁企业？"
+  },
+  {
+   "qid": "t_c3aaad9159c7",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "2023年时，榆林市危险化学品企业动火和受限空间作业安全管理制度所称实施“一票制”管控的企业范围是什么？"
+  },
+  {
+   "qid": "t_b696b241bc70",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "截至2026年11月2日，榆林市现行制度要求企业何时在作业前落实岗位员工“手指口述”制度？"
+  },
+  {
+   "qid": "t_cb7475752dbc",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "2023年时，榆林市危险化学品企业动火和受限空间作业安全管理制度是否在一般作业条款中要求落实岗位员工“手指口述”制度？"
+  },
+  {
+   "qid": "t_7fac39c46fa3",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "截至2026年11月2日，榆林市现行制度规定紧急情况下确需立即进行动火和受限空间作业时，应履行何种报备程序？"
+  },
+  {
+   "qid": "t_9c9d95fd8032",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "2023年时，榆林市制度关于通过管理平台提前填报动火和受限空间作业信息的例外情形如何表述？"
+  },
+  {
+   "qid": "t_71f893a97276",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "截至2026年11月2日，榆林市现行制度由哪个单位负责解释？"
+  },
+  {
+   "qid": "t_3f9470c632b8",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "2023年时，榆林市危险化学品企业动火和受限空间作业安全管理制度规定的施行日期和有效期是什么？"
+  },
+  {
+   "qid": "t_d698c314d524",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "现行《榆林市危险化学品企业动火和受限空间作业安全管理制度》的解释机关是谁？"
+  },
+  {
+   "qid": "t_02b91fab12e4",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "现行《榆林市危险化学品企业动火和受限空间作业安全管理制度》施行时，原榆政办发〔2023〕26号文件如何处理？"
+  },
+  {
+   "qid": "t_841f545cffc4",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "现行制度规定，危险化学品企业动火和受限空间作业前，除落实岗位员工“手指口述”制度要求外，还应在哪些场所设置明显的规程和警示标志？"
+  },
+  {
+   "qid": "t_92eb0a1a3d53",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "现行制度要求，所有动火和受限空间作业应佩戴移动式气体检测仪；其中，特级动火作业还应配备什么设备？"
+  },
+  {
+   "qid": "t_ff24fc2f9357",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "现行制度对兰炭企业实施“一票制”管控时，审批主体具体包括哪些企业负责人？"
+  },
+  {
+   "qid": "t_0b7244437c96",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "现行制度关于特殊时段动火作业的管理要求是什么？"
+  },
+  {
+   "qid": "t_c1229039ec46",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "现行制度规定，企业通过榆林市动火和受限空间作业管理平台填报作业信息，应提前多久，紧急情况下又应履行什么报备程序？"
+  },
+  {
+   "qid": "t_fe45e44b17f6",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "现行制度要求市县和园区应急管理部门对哪一级动火作业的全过程视频录像逢检必查？"
+  },
+  {
+   "qid": "t_baec7f49f112",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "2023 年时有效的《榆林市危险化学品企业动火和受限空间作业安全管理制度》对固定动火区域的动火作业如何处理？"
+  },
+  {
+   "qid": "t_0fcb37a5c92e",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "2023 年时有效的制度对使用便携式可燃有毒气体检测仪分析受限空间作业区有何特别要求？"
+  },
+  {
+   "qid": "t_94f0d4903cc7",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "2023 年时有效的制度规定，所有动火作业应配备哪种设备以实现作业现场全过程、无盲区、不间断监控？"
+  },
+  {
+   "qid": "t_fbe3d1b4c2c9",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "2023 年时有效的制度对兰炭企业“一票制”管控的适用范围及特级动火审批主体是如何规定的？"
+  },
+  {
+   "qid": "t_77f4d6626e9f",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "截至2026年11月2日，榆林市危险化学品企业动火和受限空间作业安全管理制度现行规定要求，企业主要负责人应如何完善和落实本企业相关特殊作业安全管理制度？"
+  },
+  {
+   "qid": "t_82b97490d280",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "在2023年时，榆林市危险化学品企业动火和受限空间作业安全管理制度规定，企业主要负责人应如何完善本企业相关特殊作业安全管理制度？"
+  },
+  {
+   "qid": "t_ee62b2c728da",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "截至2026年11月2日，现行制度对动火、受限空间作业期间的现场连续监测和远程实时监测有何要求？"
+  },
+  {
+   "qid": "t_4f73d276ddd5",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "2023年时适用的制度规定，首次对受限空间作业区进行可燃有毒气体分析时，对便携式检测仪的使用有何要求？"
+  },
+  {
+   "qid": "t_ec31a4ef343c",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "截至2026年11月2日，现行规定对所有动火作业的影像监控设备有何要求？"
+  },
+  {
+   "qid": "t_347d3f2bc4dd",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "在2023年时，制度对特级动火、受限空间作业佩戴移动式气体检测仪是如何规定的？"
+  },
+  {
+   "qid": "t_e46ba5e1eaf4",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "截至2026年11月2日，现行制度规定，企业在动火和受限空间作业前应如何落实岗位员工“手指口述”制度？"
+  },
+  {
+   "qid": "t_abc268ba2d82",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "2023年时有效的制度对企业设置动火和受限空间作业规程及警示标志的范围有何要求？"
+  },
+  {
+   "qid": "t_6c6688d175ba",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "截至2026年11月2日，现行制度对兰炭企业中的金属镁企业实施“一票制”管控有何规定？"
+  },
+  {
+   "qid": "t_9a64cb79fa37",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "在2023年时，兰炭企业分厂或相关车间办理动火和受限空间作业票证时，其审批主体和程序为何？"
+  },
+  {
+   "qid": "t_2e4b088a009f",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "截至2026年11月2日，现行规定对企业通过榆林市动火和受限空间作业管理平台填报作业信息的时间要求是什么？"
+  },
+  {
+   "qid": "t_1df16bb83beb",
+   "question_type": "版本陷阱题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "在2023年时，企业通过榆林市动火和受限空间作业管理平台填报作业信息的时间要求是否设有例外情形？"
+  },
+  {
+   "qid": "t_acc54074bd05",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "设备 T-9001 的检修周期、作业前准备和检维修许可有哪些要求？"
+  },
+  {
+   "qid": "t_360fb1c2b7b0",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9002 的预防性维护项目、检修周期及作业前准备是什么？"
+  },
+  {
+   "qid": "t_658339d15b11",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "设备 T-9003 的检维修作业要求有哪些，包括维护周期和作业许可？"
+  },
+  {
+   "qid": "t_8c0e28830901",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9004 的维修保养周期、检修项目及作业前准备有哪些规定？"
+  },
+  {
+   "qid": "t_38f5a50b6430",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "设备 T-9005 的检维修作业需要满足哪些周期、准备和许可要求？"
+  },
+  {
+   "qid": "t_799285c2781b",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9006 的维护周期和检维修作业前准备事项有哪些？"
+  },
+  {
+   "qid": "t_ad84904abee0",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "设备 T-9007 的检修项目、作业周期及作业许可要求是什么？"
+  },
+  {
+   "qid": "t_124aca9eb925",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9008 的预防性维修和检维修作业有哪些具体要求？"
+  },
+  {
+   "qid": "t_b18e3c56fb2d",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "设备 T-9009 的检修周期、作业前检查及维护要求有哪些？"
+  },
+  {
+   "qid": "t_24f78ca91088",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9010 的维修周期、检维修准备和作业许可要求是什么？"
+  },
+  {
+   "qid": "t_74c3cfde698a",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "设备 T-9011 的定期维护项目及检维修作业要求有哪些？"
+  },
+  {
+   "qid": "t_ac7c61ca3c03",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9012 的检修周期、作业前准备和检维修许可有哪些要求？"
+  },
+  {
+   "qid": "t_4e33e7680716",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9001的检修周期和作业前准备有哪些要求？"
+  },
+  {
+   "qid": "t_a2cc0793a7fb",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9002的维护要求及检维修作业条件是什么？"
+  },
+  {
+   "qid": "t_ce5aab6519c1",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9003需要检查哪些部件，检修周期如何规定？"
+  },
+  {
+   "qid": "t_0d198a87322b",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9004的检维修作业应履行哪些许可手续？"
+  },
+  {
+   "qid": "t_dce43470eb63",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9005的预防性维护要求有哪些，作业前需要准备什么？"
+  },
+  {
+   "qid": "t_a3b9f3050e6f",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9006的检修周期、作业范围和注意事项是什么？"
+  },
+  {
+   "qid": "t_c859a43cdccf",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9007在检维修前后需要完成哪些检查和维护工作？"
+  },
+  {
+   "qid": "t_4ee014020a48",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9008的日常维护与定期检修分别有哪些要求？"
+  },
+  {
+   "qid": "t_d6b30b284f07",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9009的检维修作业需要具备哪些许可和作业前条件？"
+  },
+  {
+   "qid": "t_277659a3843e",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9010的检修周期及检修前的隔离、确认要求是什么？"
+  },
+  {
+   "qid": "t_c673b6c18a16",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9011的维护保养项目、周期和作业准备有哪些规定？"
+  },
+  {
+   "qid": "t_90a3f12f3cb2",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9012检维修时应执行哪些安全措施和确认程序？"
+  },
+  {
+   "qid": "t_5c76b485f296",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9013的定期检修内容及作业前准备要求是什么？"
+  },
+  {
+   "qid": "t_89c212fddb8f",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9014的维修周期、检修项目及作业注意事项有哪些？"
+  },
+  {
+   "qid": "t_ae3bcb46f83f",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9015开展检维修作业需要办理哪些许可手续？"
+  },
+  {
+   "qid": "t_b9b4221534b6",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9016的维护周期和检维修前的准备工作有哪些要求？"
+  },
+  {
+   "qid": "t_15e970bc151a",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9017的检修任务应包括哪些项目，作业前后如何检查确认？"
+  },
+  {
+   "qid": "t_2370f6a46992",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9018的预防性维护和定期检修要求分别是什么？"
+  },
+  {
+   "qid": "t_5ed8b21e22ab",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9019检维修作业的许可条件、隔离要求和注意事项有哪些？"
+  },
+  {
+   "qid": "t_d13e2704b59f",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9020的检修周期及作业前需要落实的安全措施是什么？"
+  },
+  {
+   "qid": "t_63214c76a310",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9021的维护项目、检修周期和记录要求有哪些？"
+  },
+  {
+   "qid": "t_b3929d08585e",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9022进行检维修前需要完成哪些准备和确认工作？"
+  },
+  {
+   "qid": "t_ca81adf6d8c9",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9023的检维修范围、作业周期及风险控制要求是什么？"
+  },
+  {
+   "qid": "t_12b2508530c7",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9024的定期维护内容及检修作业许可要求有哪些？"
+  },
+  {
+   "qid": "t_53f91fcfcc21",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9025检维修时应遵守哪些作业规程和完工检查要求？"
+  },
+  {
+   "qid": "t_436d5a7b8b6f",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9026的维护保养周期、作业项目及准备工作是什么？"
+  },
+  {
+   "qid": "t_655b8c3e47ed",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9027的检修周期和检维修作业前的安全确认要求有哪些？"
+  },
+  {
+   "qid": "t_e327fe77b76a",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9028开展定期检修时应检查哪些部位并办理哪些许可？"
+  },
+  {
+   "qid": "t_1913c8c42502",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9029的检维修作业条件、周期及完工验收要求是什么？"
+  },
+  {
+   "qid": "t_51227dadc8b6",
+   "question_type": "拒答题",
+   "doc_id": null,
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "T-9030的维修保养要求和作业前准备事项有哪些？"
+  },
+  {
+   "qid": "t_1b2036562ff6",
+   "question_type": "跨文档推理题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "两份榆林制度对首次进入受限空间前的气体分析各有何规定？较新制度相较2023年制度在仪器配置上的变化是什么？"
+  },
+  {
+   "qid": "t_b8db703f77da",
+   "question_type": "跨文档推理题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "在气体检测和影像监控配置方面，2025年榆林制度相较2023年制度有哪些要求变化？"
+  },
+  {
+   "qid": "t_4db65935c83b",
+   "question_type": "跨文档推理题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "两份榆林制度对兰炭企业动火和受限空间作业的票证审批及适用范围有何差异？"
+  },
+  {
+   "qid": "t_a28cd2b08975",
+   "question_type": "跨文档推理题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "通过榆林市管理平台填报动火和受限空间作业信息的时点要求，在两份制度中是否完全相同？"
+  },
+  {
+   "qid": "t_522bab020c46",
+   "question_type": "跨文档推理题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "两份榆林制度在作业前人员交底与现场警示方面分别设置了什么要求？"
+  },
+  {
+   "qid": "t_c2ea3de6dfa2",
+   "question_type": "跨文档推理题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "两份榆林制度关于作业过程可视化管理、影像保存和监护人要求的共同要求是什么？"
+  },
+  {
+   "qid": "t_1b2eb2c0a4a9",
+   "question_type": "跨文档推理题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "依据榆林两份制度，在节假日或敏感时期确需进行一级或特级动火作业时，应履行什么共同管理要求？"
+  },
+  {
+   "qid": "t_9b6d5c654c86",
+   "question_type": "跨文档推理题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "比较两份榆林制度关于企业主要负责人责任的表述，较新制度增加了哪一项管理动作？"
+  },
+  {
+   "qid": "t_d3cf1b9a4fb2",
+   "question_type": "跨文档推理题",
+   "doc_id": "case_quanzhou_rectify_2026",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "泉州“12·20”事故报告与整改防范措施评估报告所列事故损失是否一致？评估报告反映的行政责任追究已有哪些可核实结果？"
+  },
+  {
+   "qid": "t_6c323fbd0005",
+   "question_type": "跨文档推理题",
+   "doc_id": "case_quanzhou_1220",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "将泉州事故调查报告与整改评估报告结合后，如何确认“12·20”事故的性质及企业所处生产阶段？"
+  },
+  {
+   "qid": "t_9aa3250bb22f",
+   "question_type": "跨文档推理题",
+   "doc_id": "case_quanzhou_rectify_2026",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "泉州事故整改评估报告所采用的评估方式，能否由事故调查报告中的调查程序加以印证？"
+  },
+  {
+   "qid": "t_941d1e9086a5",
+   "question_type": "跨文档推理题",
+   "doc_id": "case_quanzhou_rectify_2026",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "依据泉州事故调查报告和整改评估报告，事故发生后由谁牵头组织调查、评估和责任追究？"
+  },
+  {
+   "qid": "t_e13b00e5fa56",
+   "question_type": "跨文档推理题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "某危险化学品企业拟在受限空间内进行作业，气体分析人员拟只使用两台便携式可燃有毒气体检测仪进行检查。依据榆林市2025年制度与2023年制度，应如何判断并处理？"
+  },
+  {
+   "qid": "t_e85d743a84e5",
+   "question_type": "跨文档推理题",
+   "doc_id": "yulin_2023_old",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "在榆林市2025年制度与2023年制度的适用期间，某企业仅因特级动火作业需要配置全过程影像采集设备。若要同时满足两个版本的要求，设备配置应如何确定？"
+  },
+  {
+   "qid": "t_0508b9a7ffdb",
+   "question_type": "跨文档推理题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "企业拟在榆林市节假日或敏感时期安排一级动火作业，并认为只要经过常规审批即可实施。结合2025年与2023年制度，应如何判断该安排？"
+  },
+  {
+   "qid": "t_b357ed0ebb1c",
+   "question_type": "跨文档推理题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "某受限空间作业监护人未经过企业培训合格，但企业认为监控视频可以替代现场监护。综合榆林市2025年与2023年制度，其理由为何不成立？"
+  },
+  {
+   "qid": "t_89d85b082803",
+   "question_type": "跨文档推理题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "在榆林市2025年与2023年制度下，危险化学品罐区的受限空间作业在作业管理上应采取何种共同措施？"
+  },
+  {
+   "qid": "t_19dd6feea965",
+   "question_type": "跨文档推理题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "某企业以仅完成安全交底为由主张可以进入受限空间。依据榆林市2025年与2023年制度，列出必须同时满足的作业条件，并指出安全交底处于何种位置。"
+  },
+  {
+   "qid": "t_5de49b90c7ae",
+   "question_type": "跨文档推理题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "比较榆林市2025年与2023年制度，关于在动火和受限空间作业前开展岗位员工“手指口述”，哪一版提出得更明确？结合两版共同要求，说明企业应达到的控制结果。"
+  },
+  {
+   "qid": "t_f301ffde7551",
+   "question_type": "跨文档推理题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "比较榆林市2025年与2023年制度中平台信息填报的时间要求，企业计划当天才在平台填写一项普通受限空间作业信息。若无紧急情况，应如何处理？"
+  },
+  {
+   "qid": "t_5310767fe3d2",
+   "question_type": "跨文档推理题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "榆林市某企业不属于兰炭企业，但拟照搬兰炭企业“一票制”审批流程中的审批层级。该做法能否直接成立？比较两版制度后应如何选择适用条款？"
+  },
+  {
+   "qid": "t_6ee522273cfc",
+   "question_type": "跨文档推理题",
+   "doc_id": "yulin_donghuo_xianshi",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "某特级动火作业在榆林市2025年制度与2023年制度下均已由兰炭企业主要负责人审批，但企业分管安全、生产副总经理尚未审批。综合两版规定，审批是否完备？"
+  },
+  {
+   "qid": "t_52f35c1368c7",
+   "question_type": "跨文档推理题",
+   "doc_id": "case_quanzhou_1220",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "事故调查认定泉州“12·20”事故由设备故障和人员操作不当造成，并认定为一般生产安全责任事故。若按一般事故口径直接经济损失分级，该事故应落入哪一等级，理由是什么？"
+  },
+  {
+   "qid": "t_4b6f960c84dc",
+   "question_type": "跨文档推理题",
+   "doc_id": "plan_jiaocheng_tzb",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "依据泉州“12·20”事故报告和特种设备事故分级规定，若将事故中的泄漏、爆炸后果与人员伤亡及经济损失共同用于分级，是否符合“较大事故”的标准？"
+  },
+  {
+   "qid": "t_7b46de9c38ce",
+   "question_type": "跨文档推理题",
+   "doc_id": "plan_tianjin_dierying",
+   "clause_no": null,
+   "verdict": "auto_pass",
+   "problems": [],
+   "question": "泉州“12·20”事故造成1人轻微伤、直接经济损失约310万元。对照天津应急预案中的锅炉爆炸应急措施，事故现场处置原则能否直接套用？应作何种判断？"
+  }
+ ]
+}
