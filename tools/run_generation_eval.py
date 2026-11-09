@@ -195,7 +195,8 @@ def rescore_main(args):
     if not src.exists():
         raise SystemExit(f"找不到 {src}")
     records = [json.loads(l) for l in open(src, encoding="utf-8") if l.strip()]
-    records = rescore(records, threshold=args.threshold)
+    records = rescore(records, threshold=args.threshold,
+                      anchors=load_test_set_anchors(args.test_set))
 
     # 从同批次的汇总 JSON 里继承元数据（配置 / 嵌入后端 / 切分策略）
     meta = {}
@@ -256,6 +257,8 @@ def main():
                     help="题集文件名（相对 data/eval/）。"
                          "拒答扩展集用 refusal_extended.jsonl，"
                          "主集 test_set.jsonl 不动，两者分母分开统计")
+    ap.add_argument("--test-set", default=str(ROOT / "data" / "eval" / "test_set.jsonl"),
+                    help="题集路径（rescore 时数值锚点以它为准）")
     ap.add_argument("--rescore", default="",
                     help="离线重算模式：给一份已落盘的 *_answers.jsonl，"
                          "按当前口径重算判分并重新汇总（不调 API）")
@@ -430,7 +433,31 @@ def main():
         print(json.dumps(summary, ensure_ascii=False, indent=1)[:2000])
 
 
-def rescore(records, threshold=0.7):
+def load_test_set_anchors(path=None):
+    """读题集里的**当前锚点**（qid → must_include_numbers）。
+
+    🔴 **2026-11-09 新增**：数值题的锚点曾经**只存在于批次内嵌的 `num_detail`** 里，
+    于是题集改了锚点（"10 m" → "10 mg/m3"）之后，
+    `rescore` 仍然按**批次当时那一版**锚点判分 → **指标与题集脱钩**。
+    → 现在以题集为准（题集是唯一事实源）。
+    """
+    p = pathlib.Path(path) if path else (ROOT / "data" / "eval" / "test_set.jsonl")
+    if not p.exists():
+        return {}
+    out = {}
+    for line in open(p, encoding="utf-8"):
+        if not line.strip():
+            continue
+        r = json.loads(line)
+        nums = r.get("must_include_numbers") or []
+        if isinstance(nums, str):
+            nums = [x for x in nums.split(";") if x.strip()]
+        if nums:
+            out[r.get("qid")] = nums
+    return out
+
+
+def rescore(records, threshold=0.7, anchors=None):
     """**离线重算**判分（K-42）。
 
     为什么需要它：判分口径改过一次（加了软匹配），
@@ -478,6 +505,12 @@ def rescore(records, threshold=0.7):
         r["kp_total"] = len(det)
         # 数值命中也要重算（K-43：单位形态归一化改了，
         # key 侧折了还不够，**答案侧也得折**）
+        # 🔴 **2026-11-09**：锚点以**题集**为准（题集是唯一事实源），
+        #    批次内嵌的 `num_detail` 只在题集里查不到时才用。
+        if anchors is not None:
+            cur = anchors.get(r.get("qid"))
+            if cur is not None:
+                r["num_detail"] = [{"number": str(x)} for x in cur]
         ndet = r.get("num_detail") or []
         if ndet:
             a_num = N.match_num_norm(r.get("answer") or "")

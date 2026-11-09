@@ -1,0 +1,207 @@
+{
+ "generated_at": "2026-11-09T10:10:57",
+ "soft_threshold": 0.7,
+ "note": "所有数字都由当前代码对各批次离线重算得到（口径统一），不是各批次 json 里原样的数字。",
+ "batches": [
+  {
+   "label": "anchorfix_新口径",
+   "source": "eval_runs/20261106_0933_generation_retrieval_pending_main.answers.jsonl",
+   "n_raw": 306,
+   "summary": {
+    "config": "retrieval",
+    "embed_backend": "L4_pure_bm25",
+    "n_answered": 306,
+    "n_errors": 0,
+    "seconds": 0.0,
+    "stale_in_context_questions": 0,
+    "per_type": {
+     "事实题": {
+      "n": 159,
+      "key_point_coverage": [
+       0.6321,
+       0.5742,
+       0.6865
+      ],
+      "key_point_coverage_mean": 0.6321,
+      "key_point_coverage_strict": [
+       0.05,
+       0.03,
+       0.0822
+      ],
+      "key_point_coverage_mean_strict": 0.05,
+      "key_point_coverage_by_threshold": {
+       "0.6": 0.7786,
+       "0.7": 0.6321,
+       "0.8": 0.4607
+      },
+      "key_point_questions_full_hit": [
+       0.5283,
+       0.451,
+       0.6043
+      ],
+      "version_hit_rate": [
+       0.9748,
+       0.9371,
+       0.9902
+      ]
+     },
+     "拒答题": {
+      "n": 42,
+      "refusal_false_answer_rate": [
+       0.1905,
+       0.0998,
+       0.333
+      ],
+      "refusal_decidable_n": 40,
+      "refusal_false_answer_rate_decidable": [
+       0.2,
+       0.105,
+       0.3476
+      ],
+      "refusal_verdicts": {
+       "pass": 32,
+       "false_answer": 8,
+       "manual": 1,
+       "bounded": 1
+      },
+      "attribution_guarantee_rate": [
+       0.0238,
+       0.0042,
+       0.1232
+      ],
+      "n_code_fallback": 0,
+      "n_model_boundary": 1,
+      "refusal_false_answer_rate_lenient": [
+       0.0238,
+       0.0042,
+       0.1232
+      ],
+      "refusal_verdicts_lenient": {
+       "pass": 41,
+       "false_answer": 1
+      }
+     },
+     "数值题": {
+      "n": 39,
+      "key_point_coverage": [
+       0.5696,
+       0.4597,
+       0.6731
+      ],
+      "key_point_coverage_mean": 0.5696,
+      "key_point_coverage_strict": [
+       0.481,
+       0.3743,
+       0.5895
+      ],
+      "key_point_coverage_mean_strict": 0.481,
+      "key_point_coverage_by_threshold": {
+       "0.6": 0.5949,
+       "0.7": 0.5696,
+       "0.8": 0.519
+      },
+      "key_point_questions_full_hit": [
+       0.5897,
+       0.4342,
+       0.7292
+      ],
+      "numeric_exact_match_rate": [
+       0.519,
+       0.4105,
+       0.6257
+      ],
+      "version_hit_rate": [
+       1.0,
+       0.9103,
+       1.0
+      ]
+     },
+     "版本陷阱题": {
+      "n": 41,
+      "key_point_coverage": [
+       0.678,
+       0.551,
+       0.7831
+      ],
+      "key_point_coverage_mean": 0.678,
+      "key_point_coverage_strict": [
+       0.1356,
+       0.0703,
+       0.2454
+      ],
+      "key_point_coverage_mean_strict": 0.1356,
+      "key_point_coverage_by_threshold": {
+       "0.6": 0.7288,
+       "0.7": 0.678,
+       "0.8": 0.5424
+      },
+      "key_point_questions_full_hit": [
+       0.6098,
+       0.4573,
+       0.7434
+      ],
+      "version_hit_rate": [
+       1.0,
+       0.9143,
+       1.0
+      ]
+     },
+     "跨文档推理题": {
+      "n": 25,
+      "key_point_coverage": [
+       0.275,
+       0.1611,
+       0.4284
+      ],
+      "key_point_coverage_mean": 0.275,
+      "key_point_coverage_strict": [
+       0.15,
+       0.0706,
+       0.2907
+      ],
+      "key_point_coverage_mean_strict": 0.15,
+      "key_point_coverage_by_threshold": {
+       "0.6": 0.375,
+       "0.7": 0.275,
+       "0.8": 0.25
+      },
+      "key_point_questions_full_hit": [
+       0.2,
+       0.0886,
+       0.3913
+      ],
+      "version_hit_rate": [
+       0.92,
+       0.7503,
+       0.9778
+      ]
+     }
+    },
+    "citation": {
+     "n_refs": 1202,
+     "n_valid": 1202,
+     "n_invalid": 0,
+     "citation_valid_rate": [
+      1.0,
+      0.9968,
+      1.0
+     ],
+     "questions_with_invalid_citation": 0,
+     "cited_chunks": 689,
+     "cited_with_clause": 0,
+     "cited_with_page": 292,
+     "clause_located_rate": [
+      0.0,
+      0.0,
+      0.0055
+     ],
+     "page_located_rate": [
+      0.4238,
+      0.3874,
+      0.461
+     ]
+    }
+   }
+  }
+ ]
+}

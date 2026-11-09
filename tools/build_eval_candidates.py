@@ -60,13 +60,18 @@ TOC_LINE_RE = re.compile(r"[.…]{4,}")
 #
 # 影响面：题集 39 条数值题里 **8 条**的锚点是这个 bug 的产物
 # （"10 m" 实为 "10 mg/m3"、"1000 m" 实为 "1000 mg/m3"、"25 mm" 实为 "25 mA"…）。
+#: 🔴 前置断言用 **ASCII 类**而不是 `\w`：
+#:    Python 的 `\w` **默认匹配 Unicode 字母** → 中文也算 `\w`
+#:    → "压力为35～50KPa" 里 "35" 前面是"为" → 负向断言失败 → **整段漏抽**。
+#:    实测：`extract_numbers("正常操作压力为35～50KPa")` → `['50 KPa']`（范围值丢了）。
+#:    改成只排除 ASCII 数字/字母/小数点即可（中文前缀是正常语境）。
 NUM_RE = re.compile(
-    r"(?<![\w.])(-?\d+(?:\.\d+)?)\s*"
+    r"(?<![0-9A-Za-z.])(-?\d+(?:\.\d+)?)\s*"
     r"(%|‰|MPa|kPa|Pa|bar|mg/m3|mg/m³|g/m3|g/m³|ug/m3|μg/m³|µg/m3|"
     r"m³|m3|m²|m2|mm|cm|m|km/h|m/s|rpm|℃|°C|Hz|kHz|MHz|"
     r"V|A|kW|W|kVA|MVA|N·m|Nm|kg|ppm|mg|L|h|分钟|小时|秒|天|次|年|月|"
     r"级|类|项|条|人|台|套|个|卷|册|米|吨|t)"
-    r"(?![A-Za-z])",
+    r"(?![A-Za-z²³])",
     re.I,
 )
 
@@ -182,11 +187,72 @@ def page_of(text: str, pos: int) -> int | None:
     return int(last[-1]) if last else int(pages[0])
 
 
+#: **面积/平方单位**（"25 mm²" / "25mm2" / "3 m²"）。
+#: 🔴 **2026-11-09**：`NUM_RE` 的单位分支里有 "mm"/"cm"/"m"，
+#:    对 "25mm²" 会抽出 **"25 mm"**（把平方丢了）→ 锚点与答案对不上
+#:    （"25 平方毫米" vs "25mm²" 判定不命中）。
+#:    修法：① `NUM_RE` 的负向断言排除上标（`(?![A-Za-z²³])`）；
+#:    ② 平方单位**单独一条**正则。
+AREA_RE = re.compile(
+    r"(?<![0-9A-Za-z.])(\d+(?:\.\d+)?)\s*(mm2|cm2|m2|mm²|cm²|m²)"
+    r"(?![A-Za-z0-9])",
+    re.I,
+)
+
+
+#: **范围值**（"35～50KPa"）—— 必须单独一条正则。
+#: 🔴 **2026-11-09**：原先 `NUM_RE` 的 `\s*` 不吃"～"→
+#:    "35～50KPa" **整条抽不出来** → 那道题的数值保真判据**没有分母**
+#:    （`must_include_numbers` 为空 → 质检直接报"数值题空锚点"）。
+#: ⚠️ 分隔符里的 "-" 只在"两边都是数字"时才是范围号；
+#:    负数（"-75%"）不会匹配（后面没有第二个数字+单位）。
+RANGE_RE = re.compile(
+    r"(?<![0-9A-Za-z.])(\d+(?:\.\d+)?)(\s*[~～〜-]\s*)(\d+(?:\.\d+)?)\s*"
+    r"(%|‰|MPa|kPa|Pa|bar|mg/m3|mg/m³|g/m3|ug/m3|"
+    r"m³|m3|m²|m2|mm|cm|m|km/h|m/s|rpm|℃|°C|Hz|kHz|MHz|"
+    r"V|A|kW|W|kVA|MVA|N·m|Nm|kg|ppm|mg|L|h|分钟|小时|秒|天|次|年|月|"
+    r"级|类|项|条|人|台|套|个|卷|册|米|吨|t)"
+    r"(?![A-Za-z²³])",
+    re.I,
+)
+
+
+#: 🔴 **单位白名单比较必须先小写化**（2026-11-09 修）：
+#: `NUM_RE` 捕获的 `unit` 是**原文的大小写**（"KPa" / "kPa" / "MPa"…），
+#: 而 `ENGINEERING_UNITS` 里写的是 "kPa" → 直接比较会**丢掉原文大写的单位**。
+#: 实测："35～50KPa" 匹配成功却被白名单过滤掉 → 范围值锚点抽不出来。
+_UNITS_LOWER = {u.lower() for u in ENGINEERING_UNITS}
+
+
 def extract_numbers(body: str) -> list[str]:
-    """抽取可作为保真锚点的工程量：带工程单位，且排除年份等伪数值。"""
+    """抽取可作为保真锚点的工程量：带工程单位，且排除年份等伪数值。
+
+    🔴 **范围值优先**（`RANGE_RE`）："35～50KPa" 会被 `NUM_RE` 拆成
+    两个孤立数字（"35" 没有单位 → 不抽），所以必须先整段匹配。
+    """
     out = []
-    for num, unit in NUM_RE.findall(body):
-        if unit not in ENGINEERING_UNITS:
+    taken = []
+    for num, unit in AREA_RE.findall(body):
+        out.append(f"{num} {unit}")
+        for m in AREA_RE.finditer(body):
+            if m.group(1) == num and m.group(2) == unit:
+                taken.append(m.span())
+                break
+    for lo, sep, hi, unit in RANGE_RE.findall(body):
+        if unit.lower() not in _UNITS_LOWER:
+            continue
+        # 🔴 保留**原文的分隔符**（"35～50KPa" → "35～50 KPa"），
+        #    否则溯源时"35~50 KPa" 在原文里**逐字不可达**。
+        out.append(f"{lo}{sep.strip()}{hi} {unit}")
+        for m in RANGE_RE.finditer(body):
+            if m.group(1) == lo and m.group(3) == hi:
+                taken.append(m.span())
+                break
+    for m in NUM_RE.finditer(body):
+        if any(a <= m.start() < b for a, b in taken):
+            continue
+        num, unit = m.group(1), m.group(2)
+        if unit.lower() not in _UNITS_LOWER:
             continue
         try:
             v = float(num)

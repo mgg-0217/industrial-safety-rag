@@ -42,7 +42,9 @@ sys.path.insert(0, str(ROOT / "tools"))
 
 import normalize as N            # noqa: E402
 import scoring as SC             # noqa: E402
-from run_generation_eval import rescore, summarize  # noqa: E402
+from run_generation_eval import (  # noqa: E402
+    load_test_set_anchors, rescore, summarize,
+)
 
 RUN_DIR = ROOT / "eval_runs"
 
@@ -97,6 +99,9 @@ def main():
     ap.add_argument("--threshold", type=float, default=0.7,
                     help="软匹配的二元组覆盖率阈值（默认 0.7）")
     ap.add_argument("--out", default="", help="对比表 json 的输出路径")
+    ap.add_argument("--test-set", default="",
+                    help="题集路径（数值锚点以它为准）。默认 data/eval/test_set.jsonl；"
+                         "要评估**候选题集**时用它，**不会改动任何文件**")
     args = ap.parse_args()
 
     labels, paths = [], []
@@ -112,7 +117,10 @@ def main():
     for label, path in zip(labels, paths):
         records, cfg = load_batch(path)
         n_raw = len(records)
-        records = rescore(records, threshold=args.threshold)
+        # 🔴 数值锚点以**题集**为准（题集是唯一事实源）——
+        #    否则题集改了锚点，指标仍按批次当时那版判 → 与题集脱钩。
+        records = rescore(records, threshold=args.threshold,
+                          anchors=load_test_set_anchors(args.test_set or None))
         summary = summarize(records, cfg, "L4_pure_bm25", 0.0, [], None)
         tables.append({
             "label": label,

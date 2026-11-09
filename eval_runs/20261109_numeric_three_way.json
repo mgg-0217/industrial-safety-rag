@@ -1,0 +1,18 @@
+{
+ "batch": "20261106_0933_generation_retrieval_pending_main.answers.jsonl",
+ "g1_old_norm_old_anchor": [
+  38,
+  79,
+  0.4810126582278481
+ ],
+ "g2_new_norm_old_anchor": [
+  37,
+  79,
+  0.46835443037974683
+ ],
+ "g3_new_norm_new_anchor": [
+  41,
+  79,
+  0.5189873417721519
+ ]
+}
