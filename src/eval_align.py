@@ -60,6 +60,41 @@ def doc_evidence(rec, root=None, max_chars=120000):
     return "\n\n".join(parts)
 
 
+def qc_source(rec, root=None):
+    """**质检**用的可达性判定源 —— 与 `alignment_source` **故意不同**。
+
+    🔴 **为什么要分成两个源**（第五轮 §2.2 实测）：
+    `alignment_source` 对事实题返回 `gold_answer`，那是 **M2 时代按 `clause_no`
+    机械切片**的产物（切点落在词中间，甚至跨两个条款）。
+    而 key_point 现在来自**检索证据**（LLM 从原文整句里提炼）——
+    两者**字段对不上** → 质检把 46 条判成「key_point 不可达」，
+    其中 **40 条是"真原文，只是不在遗留的 gold_answer 里"**，
+    属于**判据用错字段**，不是数据坏。
+
+    → 事实题的可达性判定必须查**来源文档正文**。
+
+    ⚠️ 但**对齐流程**（`fix_key_points.py` / `relink_test_set.py`）仍然用
+    `alignment_source`：它要的是"把 kp 对齐回**那个条款**"，
+    换成整篇正文会把 kp 对到别的条款的相似句上（K-16 的教训）。
+
+    返回 (源文本, 源类型)，源类型取值见 `alignment_source` 的 docstring。
+    """
+    qtype = rec.get("question_type")
+    if qtype == "拒答题":
+        return "", REFUSAL_CRITERIA
+    if qtype in ("版本陷阱题", "跨文档推理题"):
+        return doc_evidence(rec, root), "doc_md"
+    # ---- 事实题 / 数值题：来源文档正文 ----
+    # 数值题的锚点也来自原文，只是 M2 的 gold_answer 是**切片**，
+    # 锚点常常落在切片之外（实测 8 条）→ 同样属于判据问题。
+    d = rec.get("doc_id") or rec.get("expect_doc_id") or ""
+    txt = read_md(d, root) if d else ""
+    if txt:
+        return txt, "doc_md"
+    # 兜底：出处文档读不到 → 退回遗留切片（宁可宽判，不可漏判）
+    return rec.get("gold_answer") or "", "gold_answer"
+
+
 def anchor_list(rec):
     """数值题的保真锚点列表（`must_include_numbers`，可能是 ";" 分隔字符串）。"""
     anchors = rec.get("must_include_numbers") or []

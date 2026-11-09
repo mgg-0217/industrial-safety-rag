@@ -43,15 +43,24 @@ from collections import Counter, defaultdict
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
+import normalize as NM  # noqa: E402
 import scoring as SC  # noqa: E402
 
 MD_DIR = ROOT / "data" / "md"
 TEST_SET = ROOT / "data" / "eval" / "test_set.jsonl"
 
+#: 「kp 是否在出处文档里」的判定口径。
+#: 🔴 **必须与评分同源**（`src/normalize.py::match_norm`：标点折叠 + 去空白 + 小写）。
+#: 原先这里用的是"只去空白"的 `nz()` → **口径不一致**：
+#: 实测同一批 kp，"只去空白"判 41 个跨文档，"去标点"只判 **10** 个
+#: —— 31 个是**标点差异造成的假阳性**（全角/半角括号、中英文引号、破折号）。
+#: 🔴 同 K-66：**两个工具用两套口径 → 结论会自相矛盾**。
+#: ⚠️ `match_norm` **不去零宽字符**（U+FEFF），而语料里确实有 → 额外剥掉。
+_ZERO_WIDTH = re.compile(r"[﻿‌‍]")
+
 
 def nz(s) -> str:
-    """归一化：去空白 + 零宽字符（与 refine 脚本的校验口径保持一致）。"""
-    return re.sub(r"[\s　﻿]+", "", s or "")
+    return NM.match_norm(_ZERO_WIDTH.sub("", s or ""))
 
 
 def main():

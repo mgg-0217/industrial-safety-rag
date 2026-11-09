@@ -8,9 +8,17 @@
 🔴 最关键的一条是 **key_point 可达性**：
   PRD 7.3 的 `key_point_coverage` = 命中数 / 总数，
   分子靠"模型答案里有没有这个信息点"判，分母靠 key_points 列表长度。
-  如果 key_points 本身**在 gold_answer 里就找不到**，
+  如果 key_points 本身**在来源文档正文里就找不到**，
   那这个指标的分母就是假的（永远命中不了），整条评测链路作废。
   所以这条必须在跑任何指标之前查。
+
+🔴 **判据查的字段在 2026-11-06 修正过**（第五轮 §2.2）：
+  原来查 `gold_answer` —— 那是 M2 时代按 `clause_no` 机械切片的产物，
+  而 key_point 现在来自检索证据 → 字段对不上，
+  实测把 **46 条**判成不可达，其中 **40 条是"真原文，只是不在遗留切片里"**
+  （判据问题，不是数据坏）。
+  → 事实题改查**来源文档正文**（`src/eval_align.py::qc_source`）。
+  ⚠️ 对齐流程仍用 `alignment_source`（对齐要的是"那个条款"，不是整篇正文）。
 
 输出：
   data/eval/check_report.md    人读清单
@@ -92,13 +100,27 @@ def norm_for_match(text):
     return t.lower()
 
 
-def check_key_point_reachable(kp, answer):
-    """key_point 是否能在 gold_answer 里找到依据。
+#: key_point 可达性判据的版本号。
+#: **v1** = 查 `gold_answer` + 三级判据（含"字符集覆盖 >= 0.8"）
+#: **v2** = 查**来源文档正文** + 按源类型分级（长文本禁用"字符集覆盖"级）
+#: 🔴 跨判据版本的数字不能直接比（K-61）。
+REACHABILITY_JUDGE = "v2"
+
+
+def check_key_point_reachable(kp, answer, allow_char_coverage=True):
+    """key_point 是否能在源文本里找到依据。
 
     判据（从宽到严，逐级放宽）：
       1. 归一化后**完全包含**
-      2. 归一化后**子串包含**（去掉标点空格后）
+      2. 归一化后**前缀包含**（kp 的前 85%，允许 LLM 尾部多写几个字）
       3. 字符集覆盖率 >= 0.8（LLM 可能把语序调整了）
+
+    🔴 **第 3 级只能用在短源上**（v2 实测）：
+    源换成整篇文档正文后，"字符集覆盖 0.8"**几乎必然成立**
+    （高频字把覆盖率拉满）→ 实测把 **63 条真·跨文档 key_point** 判成可达
+    （假阴性：它们是应急预案之间的通用套话，根本不在出处文档里）。
+    → 长源（`doc_md`）只走第 1、2 级。
+
     返回 (是否可达, 用了哪一级)
     """
     if not answer:
@@ -112,9 +134,10 @@ def check_key_point_reachable(kp, answer):
     # 允许 kp 比原文多几个字（如 LLM 补了"的"）
     if len(k) > 6 and k[:int(len(k) * 0.85)] in a:
         return True, "prefix"
-    kp_chars = set(k)
-    if kp_chars and len(kp_chars & set(a)) / len(kp_chars) >= 0.8:
-        return True, "coverage"
+    if allow_char_coverage:
+        kp_chars = set(k)
+        if kp_chars and len(kp_chars & set(a)) / len(kp_chars) >= 0.8:
+            return True, "coverage"
     return False, "unreachable"
 
 
@@ -155,14 +178,16 @@ def check_record(r):
     #    用 gold_answer 查必然判成「不可达」——那是判据用错字段，不是数据坏。
     unreachable = []
     levels = []
-    source, mode = A.alignment_source(r)
+    source, mode = A.qc_source(r)
     if mode == A.REFUSAL_CRITERIA:
         # 拒答题的 key_point 是判分标准（「是否声明查不到」），不是原文断言，
         # 它的正确答案就是「语料里没有」，压根不指向任何原文 —— 不做字面判定。
         pass
     else:
+        # 🔴 长源（整篇文档正文）禁用「字符集覆盖」级 —— 见函数 docstring
+        allow_cc = (mode != "doc_md")
         for kp in kps:
-            ok, lvl = check_key_point_reachable(kp, source)
+            ok, lvl = check_key_point_reachable(kp, source, allow_cc)
             levels.append(lvl)
             if not ok:
                 unreachable.append(kp)
@@ -170,6 +195,11 @@ def check_record(r):
             flags["unreachable_key_points"] = unreachable
     if kps and not ans and r.get("question_type") not in ("版本陷阱题", "跨文档推理题"):
         flags["no_gold_answer"] = True
+    # 🔴 非拒答题缺 key_points → `key_point_coverage` **无分母**，该题在覆盖率指标里
+    #    会被**静默跳过**（实测 1 条跨文档推理题 `t_5310767fe3d2`）。
+    #    拒答题的 key_point 是判分标准，本来就不是覆盖率口径 → 排除。
+    if not kps and r.get("question_type") != "拒答题":
+        flags["no_key_points"] = True
     if kps and len(kps) > 4:
         flags["too_many_key_points"] = len(kps)
 
@@ -344,10 +374,11 @@ def main():
     L.append("|---|---|---|")
     desc = {
         "unreachable_key_points": ("🔴 key_point 不可达",
-            "key_point 在 gold_answer 里找不到 → key_point_coverage 的分母是假的"),
+            "key_point 在来源文档正文里找不到 → key_point_coverage 的分母是假的"),
         "leaked_number": ("题干泄漏数值", "题干出现答案锚点数值"),
         "leaked_key_point": ("题干泄漏答案原句", "题干整句抄了 key_point"),
         "no_gold_answer": ("缺 gold_answer", "非合成类题目必须有原文答案"),
+        "no_key_points": ("缺 key_points", "key_point_coverage 无分母 → 该题会被静默跳过"),
         "question_too_short": ("题干过短", f"短于 {MIN_QUESTION_LEN} 字符"),
         "ellipsis_in_question": ("题干含省略号", "疑似截断"),
         "missing_time_mode": ("缺 time_mode", "7.3 的过期版本指标依赖它"),
