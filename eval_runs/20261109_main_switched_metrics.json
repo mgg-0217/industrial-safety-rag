@@ -1,0 +1,17 @@
+{
+ "generated_at": "2026-11-09",
+ "note": "换主集（candidate2 → test_set.jsonl）后，对 20261106_0933 批次的 306 条答案按新题集口径离线重算。数值分母 = 新题集 must_include_numbers 的锚点总数（干扰项锚点已删）。",
+ "batch": "20261106_0933_generation_retrieval_pending_main.answers.jsonl",
+ "test_set": "data/eval/test_set.jsonl",
+ "metrics": {
+  "事实题_n": 160,
+  "事实题_kp_tot": 268,
+  "事实题_软": 0.6493,
+  "事实题_严": 0.0448,
+  "事实题_全命中": 0.5687,
+  "数值题_n": 38,
+  "数值_锚点总数": 67,
+  "数值_命中": 45,
+  "数值精确匹配": 0.6716
+ }
+}
