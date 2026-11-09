@@ -301,7 +301,11 @@ def check_trap_uniqueness(rec, manifest_by_id):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--test-set", default=str(TEST_SET))
+    ap.add_argument("--out-json", default="", help="机读标记输出路径（默认 data/eval/check_flags.json）")
+    ap.add_argument("--out-md", default="", help="人读清单输出路径（默认 data/eval/check_report.md）")
     args = ap.parse_args()
+    out_json = (ROOT / args.out_json) if args.out_json else REPORT_JSON
+    out_md = (ROOT / args.out_md) if args.out_md else REPORT_MD
 
     rows = load(pathlib.Path(args.test_set))
     print(f"题集：{len(rows)} 条")
@@ -361,7 +365,7 @@ def main():
     payload = [{"qid": r["qid"], "question_type": r.get("question_type"),
                 "question": r.get("question"), "flags": f}
                for r, f in zip(rows, flags_list)]
-    REPORT_JSON.write_text(json.dumps(payload, ensure_ascii=False, indent=1),
+    out_json.write_text(json.dumps(payload, ensure_ascii=False, indent=1),
                            encoding="utf-8")
 
     # ---------- 人读输出 ----------
@@ -480,7 +484,7 @@ def main():
     L.append("- 全部题 `review_status=pending`，**人工逐条核对未做，不得用于报指标**（PRD 7.2）。")
     L.append("- 人工核对重点：本报告第二节列出的题。\n")
 
-    REPORT_MD.write_text("\n".join(L), encoding="utf-8")
+    out_md.write_text("\n".join(L), encoding="utf-8")
 
     print("\n=== 问题分布 ===")
     for k, (name, _n) in desc.items():
@@ -489,8 +493,8 @@ def main():
             print(f"  {name}: {n}")
     print(f"\n无标记 {clean}/{len(rows)} 条")
     print(f"题型分布：{dict(by_type)}")
-    print(f"-> {REPORT_MD}")
-    print(f"-> {REPORT_JSON}")
+    print(f"-> {out_md}")
+    print(f"-> {out_json}")
 
 
 if __name__ == "__main__":

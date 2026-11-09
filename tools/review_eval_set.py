@@ -168,21 +168,30 @@ def check(rec, clause_idx, doc_text, manifest_by_id):
             problems.append("拒答题的主体出现在 gold_answer 里")
         return ("likely_bad" if problems else "auto_pass"), problems
 
-    # ---- 2. 溯源：锚点必须真在**该条款**里 --------------------------------
+    # ---- 2. 溯源：锚点必须真在**该条款（集合）**里 ------------------------
+    # 🔴 **2026-11-09：溯源从「单条款」升级为「条款集合」**（`clause_nos`）
+    #    实测 24 条"锚点挂错条款"的事实题里，**没有一条是"选错了条款"**，
+    #    而是答案**天然跨多个相邻条款**（`1.3.1/1.3.2/1.3.3` 这种）。
+    #    单值 `clause_no` 表达不了 → 无论改成哪个，总有 kp 挂错。
+    #    见 `tools/relink_clauses.py`。
+    cns = rec.get("clause_nos") or ([str(clause_no)] if clause_no else [])
     docs = scope_docs(rec)
     scope_parts = []
     scope_kind = ""
     clause_hit = False
     for d in docs:
-        if clause_no and d == doc_id:
-            pieces = clause_idx.get((d, str(clause_no)))
+        if cns and d == doc_id:
+            pieces = []
+            for cn in cns:
+                pieces.extend(clause_idx.get((d, str(cn)), []))
             if pieces:
                 scope_parts.append("\n".join(pieces))
                 clause_hit = True
                 continue
         scope_parts.append(doc_text.get(d, ""))
     scope = "\n".join(scope_parts)
-    scope_kind = (f"条款 {clause_no}" if clause_hit
+    scope_kind = ((f"条款 {cns[0]} 等 {len(cns)} 个" if len(cns) > 1
+                   else f"条款 {cns[0]}") if clause_hit
                   else ("全文：" + "/".join(docs) if docs else "无"))
 
     if not scope:

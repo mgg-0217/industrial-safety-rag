@@ -19,6 +19,10 @@ data/eval/*.errors.jsonl
 # M2 中间产物：调试残留、规范化前的快照、改写失败明细
 data/eval/_debug_*.txt
 data/eval/*.bak127
+# 题集的历史备份（`*.bak` 只匹配以 .bak 结尾的，这些带后缀）
+data/eval/*.bak_review
+data/eval/*.bak_relink
+data/eval/*.bak_prerelink
 data/eval/rewrite_errors.jsonl
 
 # 一致性验证的临时目录（抽原始文件重跑抽取，比对 md 是否逐字一致）
