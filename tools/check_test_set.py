@@ -45,6 +45,26 @@ MANIFEST = ROOT / "data" / "manifest.json"
 MIN_QUESTION_LEN = 20
 RE_ELLIPSIS = re.compile(r"\.{3,}|…{2,}")
 
+#: 位号 / 型号这类「字母+数字混排、长度 ≥6」的 token。用途见 `mask_ids()`。
+RE_ID_TOKEN = re.compile(r"[A-Za-z0-9][A-Za-z0-9—–－·.\-]{5,}")
+
+
+def mask_ids(text):
+    """把题干里的**位号/型号**掩码掉，再查「题干泄漏数值」。
+
+    🔴 2026-11-09 修假阳性：`t_261e74c75ba7` 的锚点「4 mm」被判成泄漏，
+    其实题干里的「4」是位号 `MP—41009—200—S1B—H1` 的一部分。
+
+    只掩码**同时含字母与数字、且长度 ≥6** 的 token ——
+    「0.1MW」这种短串不掩码（它确实是数值泄漏）。
+    """
+    def _repl(m):
+        s = m.group(0)
+        if re.search(r"[A-Za-z]", s) and re.search(r"\d", s):
+            return "#" * len(s)
+        return s
+    return RE_ID_TOKEN.sub(_repl, text)
+
 # 量词 → 该量的单位。用来查**数值题的题干问的量与锚点单位是否对得上**。
 # 实测踩过：题干问「氮气吹扫压力限值」，锚点却是 "1000 kg" / "24 小时" / "71 ℃"，
 # 限值根本不在锚点里——数值保真判定会直接判错。这类错脚本判不出来，
@@ -160,9 +180,12 @@ def check_record(r):
         anchors_raw = r.get("must_include_numbers") or []
         if isinstance(anchors_raw, str):
             anchors_raw = [a for a in anchors_raw.split(";") if a.strip()]
+        # 🔴 2026-11-09：先把题干里的**位号/型号**掩码掉，再查数字泄漏
+        #    （实测把 `MP—41009—200—S1B—H1` 里的 4 当成泄漏了锚点「4 mm」）
+        q_leak = mask_ids(q)
         for item in anchors_raw:
             for n in re.findall(r"\d+(?:\.\d+)?", str(item)):
-                if n and n in q:
+                if n and n in q_leak:
                     flags["leaked_number"] = n
                     break
         # key_point 整句泄漏（题干里直接抄了答案原句）
