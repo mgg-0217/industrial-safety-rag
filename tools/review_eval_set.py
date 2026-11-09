@@ -88,6 +88,32 @@ def contains(haystack, needle):
     return norm(needle) in norm(haystack)
 
 
+def contains_num(haystack, num):
+    """**数值锚点**的包含判定 —— 与 `src/scoring.py::numeric_hits` **完全同源**。
+
+    🔴 **为什么数值锚点要单独一套判据**（2026-11-09 实测）：
+    数值题的 `key_points` 与 `must_include_numbers` 是**同一个数的两种写法**
+    （kp 写 `75%`、nums 写 `75 %`），
+    而 `norm()` **只去空白、不动数字内部的空格** →
+    两者被判成"落在不同条款" → 明明锚点唯一，却报"锚点挂错条款"。
+
+    而 `src/normalize.py::normalize_number` 会把 `75 %` / `75%`、
+    `0.5 m` / `0.5m` 折成**同一形态**（`75%` / `0.5米`），
+    这正是评分端用的口径。
+
+    🔴 同 K-74：**判据口径必须与评分同源**，否则"同一件事"两边结论不一致。
+    """
+    if not num:
+        return False
+    try:
+        import normalize as N
+        a = N.match_num_norm(haystack or "")
+        n = N.normalize_number(str(num))
+        return bool(n) and n in a
+    except Exception:
+        return contains(haystack, num)
+
+
 def compress(text):
     """压缩掉所有分隔符（位号验证用：T-9001 → T9001）。"""
     return re.sub(r"[\s\-_/·、,，:：]", "", text or "")
@@ -198,12 +224,13 @@ def check(rec, clause_idx, doc_text, manifest_by_id):
         problems.append(f"找不到原文：doc_id={doc_id}")
         scope_kind = "无原文"
 
-    def _miss(what, label):
+    def _miss(what, label, numeric=False):
         """锚点不在 scope 时，区分"挂错条款"与"根本不存在"。"""
+        checker = contains_num if numeric else contains
         if clause_hit:
             # 只在**别的条款/全文**里有 → 挂错了
             for d in docs:
-                if contains(doc_text.get(d, ""), what):
+                if checker(doc_text.get(d, ""), what):
                     return (f"锚点挂错条款：{label}「{what[:24]}」不在 {scope_kind}，"
                             f"但在同一文档的其它位置")
             return f"锚点不可达：{label}「{what[:24]}」在该文档里找不到"
@@ -213,8 +240,9 @@ def check(rec, clause_idx, doc_text, manifest_by_id):
         if not contains(scope, kp):
             problems.append(_miss(kp, "key_point"))
     for nm in nums:
-        if not contains(scope, nm):
-            problems.append(_miss(nm, "数值"))
+        # 🔴 数值锚点用**与评分同源**的归一化判定（`75 %` == `75%` == `0.5m`）
+        if not contains_num(scope, nm):
+            problems.append(_miss(nm, "数值", numeric=True))
 
     # ---- 2. 题干 ↔ 锚点的量纲一致性 --------------------------------------
     if qtype == "数值题" and nums:

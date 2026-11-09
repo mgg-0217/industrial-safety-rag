@@ -76,12 +76,22 @@ def main():
         #   - 版本陷阱题 / 跨文档推理题的溯源是 `expect_doc_id`（文档级），
         #     不依赖 `clause_no`；
         #   - 拒答题没有原文断言。
-        if qtype != "事实题":
+        if qtype not in ("事实题", "数值题"):
             continue
         doc = r.get("doc_id")
         if not doc:
             continue
-        anchors = [k for k in (r.get("key_points") or [])]
+        # 事实题用 **key_point**（长句，逐字可达）；
+        # 数值题用 **must_include_numbers**（短数字串，**按数值归一化**判）。
+        # 🔴 两种判据都与评分同源（见 review_eval_set.contains / contains_num）。
+        if qtype == "事实题":
+            anchors = [k for k in (r.get("key_points") or [])]
+            checker = RV.contains
+        else:
+            anchors = list(r.get("must_include_numbers") or [])
+            if isinstance(anchors, str):
+                anchors = [x for x in anchors.split(";") if x.strip()]
+            checker = RV.contains_num
         if not anchors:
             continue
 
@@ -90,7 +100,7 @@ def main():
         missing = []
         for a in anchors:
             hits = [(cn, pos_of.get((doc, cn), 0)) for (d, cn) in text_of
-                    if d == doc and RV.contains(text_of[(d, cn)], a)]
+                    if d == doc and checker(text_of[(d, cn)], a)]
             if hits:
                 hits.sort(key=lambda x: x[1])
                 own.append(hits[0][0])

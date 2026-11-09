@@ -1,15 +1,15 @@
 {
  "n": 306,
  "counts": {
-  "auto_pass": 295,
-  "likely_bad": 11
+  "auto_pass": 294,
+  "likely_bad": 12
  },
  "results": [
   {
    "qid": "t_07947ebc3693",
    "question_type": "数值题",
    "doc_id": "mem_xianshi_shouce",
-   "clause_no": "4.3",
+   "clause_no": "2.1.2 缺氧窒息",
    "verdict": "auto_pass",
    "problems": [],
    "question": "有限空间作业气体检测中，气体检测或监测的判定限值是多少？"
@@ -18,7 +18,7 @@
    "qid": "t_ab1a99cccb45",
    "question_type": "数值题",
    "doc_id": "guide_jiaxian_guanli_zhidu",
-   "clause_no": "3.2确保有限空间危险作业现场的空气质量。氧气含量应在19.5%",
+   "clause_no": "2.3.5发现异常，及时制止作业，并立即采取救护措施，同时报警。",
    "verdict": "auto_pass",
    "problems": [],
    "question": "有限空间危险作业现场的氧气含量上限应规定为多少？"
@@ -27,9 +27,16 @@
    "qid": "t_8ae914dcd02b",
    "question_type": "数值题",
    "doc_id": "mem_xianshi_shouce",
-   "clause_no": "3. 紧急逃生呼吸器一般可提供（",
-   "verdict": "auto_pass",
-   "problems": [],
+   "clause_no": "4.以下属于有限空间作业的是（ ）。",
+   "verdict": "likely_bad",
+   "problems": [
+    "锚点挂错条款：key_point「1m」不在 条款 4.以下属于有限空间作业的是（ ）。，但在同一文档的其它位置",
+    "锚点挂错条款：key_point「15m」不在 条款 4.以下属于有限空间作业的是（ ）。，但在同一文档的其它位置",
+    "锚点挂错条款：key_point「8m」不在 条款 4.以下属于有限空间作业的是（ ）。，但在同一文档的其它位置",
+    "锚点不可达：数值「1 m」在该文档里找不到",
+    "锚点不可达：数值「15 m」在该文档里找不到",
+    "锚点不可达：数值「8 m」在该文档里找不到"
+   ],
    "question": "紧急逃生呼吸器一般可提供多长时间左右的供气时间？"
   },
   {
@@ -47,7 +54,7 @@
    "qid": "t_56217232c8ee",
    "question_type": "数值题",
    "doc_id": "kaiping_zuoyepiao",
-   "clause_no": "19.5%~21%",
+   "clause_no": "19.5%~21% 釜内上、中、",
    "verdict": "auto_pass",
    "problems": [],
    "question": "受限空间气体分析中，氧气含量的合格范围是多少？"
@@ -56,7 +63,7 @@
    "qid": "t_f77604e6c723",
    "question_type": "数值题",
    "doc_id": "plan_tianjin_dierying",
-   "clause_no": "4.起重机械：用于垂直升降或者垂直升降并水平移动重",
+   "clause_no": "二、术语解释",
    "verdict": "auto_pass",
    "problems": [],
    "question": "本预案所称起重机械涵盖哪些设备，其相应的额定起重量和提升高度限值是多少？"
@@ -65,7 +72,7 @@
    "qid": "t_7716cebe0b00",
    "question_type": "数值题",
    "doc_id": "plan_tianjin_dierying",
-   "clause_no": "2.压力容器：盛装气体或者液体，承载一定压力的密闭",
+   "clause_no": "二、术语解释",
    "verdict": "auto_pass",
    "problems": [],
    "question": "根据该应急预案，压力容器及所涉气瓶的具体压力、压力与容积乘积及液体温度限值分别是多少？"
@@ -74,19 +81,16 @@
    "qid": "t_afa9f17eb7b9",
    "question_type": "数值题",
    "doc_id": "mem_2019_78_zhimengdaoze",
-   "clause_no": "1.危险化学品应当储存在专用仓库，并由专人负责管",
-   "verdict": "likely_bad",
-   "problems": [
-    "锚点挂错条款：key_point「150 mm」不在 条款 1.危险化学品应当储存在专用仓库，并由专人负责管，但在同一文档的其它位置",
-    "锚点挂错条款：数值「150 mm」不在 条款 1.危险化学品应当储存在专用仓库，并由专人负责管，但在同一文档的其它位置"
-   ],
+   "clause_no": "9  流的设备区周围应设置不低于 150mm 的围堰和导液",
+   "verdict": "auto_pass",
+   "problems": [],
    "question": "危险化学品储存场所对专用仓库和人员管理有何要求？剧毒化学品及构成重大危险源的其他危险化学品应实行何种储存和收发保管制度？"
   },
   {
    "qid": "t_8a21ecb85687",
    "question_type": "数值题",
    "doc_id": "mem_xianshi_shouce",
-   "clause_no": "4.正压式空气呼吸器气瓶工作压力应至少在（",
+   "clause_no": "3.隔绝式紧急逃生呼吸器",
    "verdict": "auto_pass",
    "problems": [],
    "question": "有限空间作业安全指导手册规定，正压式空气呼吸器气瓶的工作压力最低应达到多少？"
@@ -95,26 +99,16 @@
    "qid": "t_87dac2691148",
    "question_type": "数值题",
    "doc_id": "mem_2019_78_zhimengdaoze",
-   "clause_no": "3.丁二烯球形储罐安全阀出口管道应设氮气吹扫。",
-   "verdict": "likely_bad",
-   "problems": [
-    "锚点挂错条款：key_point「0.5m」不在 条款 3.丁二烯球形储罐安全阀出口管道应设氮气吹扫。，但在同一文档的其它位置",
-    "锚点挂错条款：key_point「1000 kg」不在 条款 3.丁二烯球形储罐安全阀出口管道应设氮气吹扫。，但在同一文档的其它位置",
-    "锚点挂错条款：key_point「24 小时」不在 条款 3.丁二烯球形储罐安全阀出口管道应设氮气吹扫。，但在同一文档的其它位置",
-    "锚点挂错条款：key_point「71 ℃」不在 条款 3.丁二烯球形储罐安全阀出口管道应设氮气吹扫。，但在同一文档的其它位置",
-    "锚点挂错条款：数值「0.5 m」不在 条款 3.丁二烯球形储罐安全阀出口管道应设氮气吹扫。，但在同一文档的其它位置",
-    "锚点挂错条款：数值「1000 kg」不在 条款 3.丁二烯球形储罐安全阀出口管道应设氮气吹扫。，但在同一文档的其它位置",
-    "锚点挂错条款：数值「24 小时」不在 条款 3.丁二烯球形储罐安全阀出口管道应设氮气吹扫。，但在同一文档的其它位置",
-    "锚点挂错条款：数值「71 ℃」不在 条款 3.丁二烯球形储罐安全阀出口管道应设氮气吹扫。，但在同一文档的其它位置",
-    "锚点挂错条款：数值「85 ℃」不在 条款 3.丁二烯球形储罐安全阀出口管道应设氮气吹扫。，但在同一文档的其它位置"
-   ],
+   "clause_no": "8 应急与消防安全风险隐患排查表",
+   "verdict": "auto_pass",
+   "problems": [],
    "question": "丁二烯球形储罐安全阀出口管道的氮气吹扫压力限值是多少？"
   },
   {
    "qid": "t_3cca4617fdee",
    "question_type": "数值题",
    "doc_id": "mem_xianshi_shouce",
-   "clause_no": "2.当空气中甲烷达",
+   "clause_no": "2.甲烷（CH4）",
    "verdict": "auto_pass",
    "problems": [],
    "question": "当空气中甲烷达到什么体积分数范围时，可能引发中毒症状，若不及时脱离接触可致窒息死亡？"
@@ -123,7 +117,7 @@
    "qid": "t_23887b8f3321",
    "question_type": "数值题",
    "doc_id": "plan_tieling_qinghe_tzb",
-   "clause_no": "3.10.1.2、对卧式内燃锅炉的炉胆，可从前后观察孔见到炉胆火",
+   "clause_no": "3.10.1.1、水冷壁管变形可直接从看火门、火炉门处看到，当同时伴随缺水时，则可见到变红弯曲的水冷壁管。",
    "verdict": "auto_pass",
    "problems": [],
    "question": "卧式内燃锅炉炉胆向火侧突出变形严重时，炉胆变形量可达到多少毫米？"
@@ -133,15 +127,17 @@
    "question_type": "数值题",
    "doc_id": "mem_xianshi_shouce",
    "clause_no": "5.磷化氢（PH3）",
-   "verdict": "auto_pass",
-   "problems": [],
+   "verdict": "likely_bad",
+   "problems": [
+    "锚点不可达：数值「10 m」在该文档里找不到"
+   ],
    "question": "有限空间作业安全指导手册中，磷化氢浓度达到什么水平时，人体在接触相应时长后会出现中毒症状？"
   },
   {
    "qid": "t_88e16fd92bd2",
    "question_type": "数值题",
    "doc_id": "mem_xianshi_shouce",
-   "clause_no": "5.正压式空气呼吸器气瓶压力下降到（",
+   "clause_no": "3.隔绝式紧急逃生呼吸器",
    "verdict": "auto_pass",
    "problems": [],
    "question": "正压式空气呼吸器气瓶压力下降到什么范围时应发出蜂鸣报警声？"
@@ -150,7 +146,7 @@
    "qid": "t_261e74c75ba7",
    "question_type": "数值题",
    "doc_id": "case_quanzhou_1220",
-   "clause_no": "2.管道MP-41009-200-S1B-H1",
+   "clause_no": "2.管道MP—41009—200—S1B—H1",
    "verdict": "auto_pass",
    "problems": [],
    "question": "管道MP—41009—200—S1B—H1的安装高度范围及管道壁厚规格分别是多少？"
@@ -168,9 +164,16 @@
    "qid": "t_8022668e309a",
    "question_type": "数值题",
    "doc_id": "mem_xianshi_shouce",
-   "clause_no": "15.有限空间中硫化氢浓度超过（",
-   "verdict": "auto_pass",
-   "problems": [],
+   "clause_no": "2.高处坠落",
+   "verdict": "likely_bad",
+   "problems": [
+    "锚点挂错条款：key_point「1m」不在 条款 2.高处坠落，但在同一文档的其它位置",
+    "锚点挂错条款：key_point「10m」不在 条款 2.高处坠落，但在同一文档的其它位置",
+    "锚点挂错条款：key_point「7m」不在 条款 2.高处坠落，但在同一文档的其它位置",
+    "锚点不可达：数值「1 m」在该文档里找不到",
+    "锚点不可达：数值「10 m」在该文档里找不到",
+    "锚点不可达：数值「7 m」在该文档里找不到"
+   ],
    "question": "有限空间中硫化氢浓度超过哪个限值时不能进入作业？"
   },
   {
@@ -187,15 +190,17 @@
    "question_type": "数值题",
    "doc_id": "mem_xianshi_shouce",
    "clause_no": "1.硫化氢（H2S）",
-   "verdict": "auto_pass",
-   "problems": [],
+   "verdict": "likely_bad",
+   "problems": [
+    "锚点不可达：数值「1000 m」在该文档里找不到"
+   ],
    "question": "硫化氢浓度超过多少时，可在数秒内致人闪电型死亡？"
   },
   {
    "qid": "t_875899393bc2",
    "question_type": "数值题",
    "doc_id": "mem_xianshi_shouce",
-   "clause_no": "25.6℃），剧毒且具有爆炸性。氰化氢轻度中毒主要表现为胸闷、心悸",
+   "clause_no": "25.6℃），剧毒且具有爆炸性。氰化氢轻度中毒主要表现为胸闷、心悸、心率加快、头",
    "verdict": "auto_pass",
    "problems": [],
    "question": "氰化氢的沸点是多少？"
@@ -226,7 +231,7 @@
    "qid": "t_6657d5f47529",
    "question_type": "数值题",
    "doc_id": "mem_2019_78_zhimengdaoze",
-   "clause_no": "1.当单罐容积等于或大于",
+   "clause_no": "1.当单罐容积等于或大于 1000m 时，应采用固定式",
    "verdict": "auto_pass",
    "problems": [],
    "question": "危险化学品企业采用固定式消防设施时，单罐容积的适用限值是多少？"
@@ -235,7 +240,7 @@
    "qid": "t_3a816499e5f8",
    "question_type": "数值题",
    "doc_id": "mem_xianshi_shouce",
-   "clause_no": "2. 空气中氧气含量一般为（",
+   "clause_no": "2.1.2 缺氧窒息",
    "verdict": "auto_pass",
    "problems": [],
    "question": "空气中氧气含量一般为多少，低于多少时会有缺氧危险并可能导致窒息事故发生？"
@@ -244,7 +249,7 @@
    "qid": "t_6142af3ef518",
    "question_type": "数值题",
    "doc_id": "mem_xianshi_shouce",
-   "clause_no": "13.在积水、结露等潮湿环境的有限空间和金属容器中作业，照明灯具电",
+   "clause_no": "3.5.2 照明设备",
    "verdict": "auto_pass",
    "problems": [],
    "question": "在积水、结露等潮湿环境的有限空间和金属容器中作业时，照明灯具电压应不大于多少？"
@@ -253,19 +258,16 @@
    "qid": "t_e1c4d5afe55d",
    "question_type": "数值题",
    "doc_id": "mem_2019_78_zhimengdaoze",
-   "clause_no": "3.全厂性的支干管与干管交汇处的支干管上；",
-   "verdict": "likely_bad",
-   "problems": [
-    "锚点挂错条款：key_point「300m」不在 条款 3.全厂性的支干管与干管交汇处的支干管上；，但在同一文档的其它位置",
-    "锚点挂错条款：数值「300 m」不在 条款 3.全厂性的支干管与干管交汇处的支干管上；，但在同一文档的其它位置"
-   ],
+   "clause_no": "4.全厂性支干管、干管的管段长度超过 300m 时，应",
+   "verdict": "auto_pass",
+   "problems": [],
    "question": "全厂性支干管、干管的管段长度超过多少时，应用水封井隔开？"
   },
   {
    "qid": "t_932ba6df735c",
    "question_type": "数值题",
    "doc_id": "mem_2019_78_zhimengdaoze",
-   "clause_no": "3.2.1",
+   "clause_no": "3.2.1  开展安全风险隐患排查的频次应满足：",
    "verdict": "auto_pass",
    "problems": [],
    "question": "《危险化学品企业安全风险隐患排查治理导则》规定，装置操作人员现场巡检的间隔限值是多少？"
@@ -274,7 +276,7 @@
    "qid": "t_0f35a174f26c",
    "question_type": "数值题",
    "doc_id": "plan_tianjin_dierying",
-   "clause_no": "1.锅炉：利用各种燃料、电或者其它能源，将所盛装的",
+   "clause_no": "二、术语解释",
    "verdict": "auto_pass",
    "problems": [],
    "question": "该应急预案所界定的锅炉，其容积、出口水压和额定功率应满足哪些限值要求？"
@@ -284,15 +286,17 @@
    "question_type": "数值题",
    "doc_id": "mem_2019_78_zhimengdaoze",
    "clause_no": "3.浮顶罐(含内浮顶罐)可不设避雷针、线，但应将浮",
-   "verdict": "auto_pass",
-   "problems": [],
+   "verdict": "likely_bad",
+   "problems": [
+    "锚点不可达：数值「25 mm」在该文档里找不到"
+   ],
    "question": "浮顶罐（含内浮顶罐）的浮顶与罐体采用软铜线作电气连接时，导线的数量及截面规格应符合什么要求？"
   },
   {
    "qid": "t_ae7a60983d36",
    "question_type": "数值题",
    "doc_id": "mem_xianshi_shouce",
-   "clause_no": "5.3",
+   "clause_no": "5.3 救援注意事项",
    "verdict": "auto_pass",
    "problems": [],
    "question": "附录中有毒气体浓度判定限值表所列气体浓度，其体积分数对应的温度条件是多少？"
@@ -302,30 +306,18 @@
    "question_type": "数值题",
    "doc_id": "mem_2019_78_zhimengdaoze",
    "clause_no": "2.消防水幕、喷淋、蒸汽等消防设施完好，能随时投",
-   "verdict": "likely_bad",
-   "problems": [
-    "锚点挂错条款：key_point「10000 m3」不在 条款 2.消防水幕、喷淋、蒸汽等消防设施完好，能随时投，但在同一文档的其它位置",
-    "锚点挂错条款：key_point「2000 m3」不在 条款 2.消防水幕、喷淋、蒸汽等消防设施完好，能随时投，但在同一文档的其它位置",
-    "锚点挂错条款：数值「10000 m3」不在 条款 2.消防水幕、喷淋、蒸汽等消防设施完好，能随时投，但在同一文档的其它位置",
-    "锚点挂错条款：数值「2000 m3」不在 条款 2.消防水幕、喷淋、蒸汽等消防设施完好，能随时投，但在同一文档的其它位置"
-   ],
+   "verdict": "auto_pass",
+   "problems": [],
    "question": "可燃液体地上立式储罐在何种罐壁高度或储罐容积条件下，应设置固定式消防冷却水系统？"
   },
   {
    "qid": "t_c49f59550317",
    "question_type": "数值题",
    "doc_id": "mem_2019_78_zhimengdaoze",
-   "clause_no": "3.易燃物、可燃物；",
+   "clause_no": "2.在施工期间重新设计的。",
    "verdict": "likely_bad",
    "problems": [
-    "锚点挂错条款：key_point「-75%」不在 条款 3.易燃物、可燃物；，但在同一文档的其它位置",
-    "锚点挂错条款：key_point「100m」不在 条款 3.易燃物、可燃物；，但在同一文档的其它位置",
-    "锚点挂错条款：key_point「20%」不在 条款 3.易燃物、可燃物；，但在同一文档的其它位置",
-    "锚点挂错条款：key_point「50m」不在 条款 3.易燃物、可燃物；，但在同一文档的其它位置",
-    "锚点挂错条款：数值「-75 %」不在 条款 3.易燃物、可燃物；，但在同一文档的其它位置",
-    "锚点挂错条款：数值「100 m」不在 条款 3.易燃物、可燃物；，但在同一文档的其它位置",
-    "锚点挂错条款：数值「20 %」不在 条款 3.易燃物、可燃物；，但在同一文档的其它位置",
-    "锚点挂错条款：数值「50 m」不在 条款 3.易燃物、可燃物；，但在同一文档的其它位置"
+    "锚点不可达：数值「50 m」在该文档里找不到"
    ],
    "question": "硝酸铵溶液贮存罐区独立罐区和单个储罐的存量分别不得超过多少？"
   },
@@ -333,7 +325,7 @@
    "qid": "t_38928237a04d",
    "question_type": "数值题",
    "doc_id": "mem_xianshi_shouce",
-   "clause_no": "14.有限空间作业时，可燃性气体浓度应低于（",
+   "clause_no": "2.1.2 缺氧窒息",
    "verdict": "auto_pass",
    "problems": [],
    "question": "有限空间作业时，可燃性气体浓度应低于下列哪一选项规定的限值？"
@@ -351,7 +343,7 @@
    "qid": "t_a6ebb6c1a8f5",
    "question_type": "数值题",
    "doc_id": "mem_2019_78_zhimengdaoze",
-   "clause_no": "1.甲B、乙类可燃液体地上固定顶罐，当顶板厚度小",
+   "clause_no": "（三）防雷、防静电设施",
    "verdict": "auto_pass",
    "problems": [],
    "question": "甲B、乙类可燃液体地上固定顶罐在何种顶板厚度条件下应设置避雷针、线，其保护范围应如何确定？"
@@ -360,7 +352,7 @@
    "qid": "t_e857c172ee98",
    "question_type": "数值题",
    "doc_id": "mem_2019_78_zhimengdaoze",
-   "clause_no": "（三）",
+   "clause_no": "（三）防雷、防静电设施",
    "verdict": "auto_pass",
    "problems": [],
    "question": "工艺装置内露天布置的塔、容器等，在顶板厚度满足什么条件时可不设置避雷针、线保护？"
@@ -416,7 +408,7 @@
    "qid": "t_d4f3473baf01",
    "question_type": "数值题",
    "doc_id": "mem_2019_78_zhimengdaoze",
-   "clause_no": "2.5MPa。",
+   "clause_no": "2.5MPa。  3136-2003）第6条",
    "verdict": "auto_pass",
    "problems": [],
    "question": "采取防止液化烃泄漏的注水措施时，注水压力应达到什么限值？"
