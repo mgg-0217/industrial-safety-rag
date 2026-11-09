@@ -72,3 +72,6 @@ eval_runs/*_rescored_t0.7.answers.jsonl
 # 🔴 **中断的批次**不许入库：1000_generation_full_doc_b1 只跑到 83/306 条就停了，
 # 它的汇总 json 根本没写出来 —— 入库会让人以为"全文基线只有 83 题"。
 eval_runs/20261104_1000_generation_full_doc_b1.*
+
+# 个人资料（不上传）
+面试复习*.md
