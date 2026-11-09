@@ -34,6 +34,7 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
+import units as UNITS  # noqa: E402  量纲族判定（与锚点修复共用同一份）
 sys.path.insert(0, str(ROOT / "tools"))
 
 import versioning as V  # noqa: E402
@@ -246,22 +247,18 @@ def check(rec, clause_idx, doc_text, manifest_by_id):
 
     # ---- 2. 题干 ↔ 锚点的量纲一致性 --------------------------------------
     if qtype == "数值题" and nums:
-        q = rec.get("question") or ""
-        units_in_q = set()
-        for u in ("MPa", "kPa", "Pa", "kg", "t", "吨", "℃", "mm", "cm",
-                  "小时", "分钟", "%", "m3", "m³"):
-            if u in q:
-                units_in_q.add(u)
-        units_in_n = set()
-        for nm in nums:
-            for u in ("MPa", "kPa", "Pa", "kg", "t", "吨", "℃", "mm", "cm",
-                      "小时", "分钟", "%", "m3", "m³"):
-                if u in nm:
-                    units_in_n.add(u)
-        if units_in_q and units_in_n and not (units_in_q & units_in_n):
-            problems.append(
-                f"题干量纲与锚点对不上：题干问 {'/'.join(sorted(units_in_q))}，"
-                f"锚点是 {'/'.join(sorted(units_in_n))}")
+        # 🔴 **2026-11-09 换判据**：原先是"扫描题干里的**单位字面**"，
+        #    两种错法都出现了：
+        #    ① 误判：题干"氩气**浓度**达到什么程度时，可在**数分钟内**…" ——
+        #       问的是浓度（%），"数分钟内"只是时限条件 → 判据看到"分钟"就误报；
+        #    ② 漏判：题干问"氮气吹扫**压力**限值"，锚点含 `71 ℃`/`85 ℃` ——
+        #       题干里没有单位字面 → 判据不报（真该报）。
+        # → 改成按**量纲族**判（`src/units.py::dimension_conflict`）：
+        #    题干的量名 → 族集合；锚点的单位 → 族集合；
+        #    只有"锚点族 ∩ 题干族 = ∅"且两边都非空时才报。
+        conflict = UNITS.dimension_conflict(rec.get("question") or "", nums)
+        if conflict:
+            problems.append(f"题干量纲与锚点对不上：{conflict}")
 
     # ---- 3. 题型专项 --------------------------------------------------------
     if qtype == "版本陷阱题":

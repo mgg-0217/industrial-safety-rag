@@ -190,7 +190,13 @@ def best_span(kp, text):
         block = max(sm.get_matching_blocks(), key=lambda b: b.size)
         if block.size == 0:
             continue
-        cand = seg_f[block.a:block.a + block.size]
+        # 🔴 **2026-11-09 修一个坐标 bug**：
+        #    `block.a` 是**kp 里的**位置，`block.b` 才是**原文段里的**位置。
+        #    原代码用 `seg_f[block.a:block.a + block.size]` ——
+        #    拿 kp 的坐标去切原文段 → **切出来的根本不是公共片段**。
+        #    实测：kp「特种设备事故应急救援工作坚持…」的真实公共块只有 4 字
+        #    （"特种设备"），却被切成「范围锅炉,压力容器(含气瓶)…」34 字。
+        cand = seg_f[block.b:block.b + block.size]
         if len(cand) > len(best):
             best = cand
     return best

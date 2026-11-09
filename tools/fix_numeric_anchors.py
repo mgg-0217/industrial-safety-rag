@@ -37,6 +37,7 @@ sys.path.insert(0, str(ROOT / "tools"))
 
 import normalize as N  # noqa: E402
 import review_eval_set as RV  # noqa: E402
+import units as UNITS  # noqa: E402  量纲族（与质检工具共用同一份判定）
 from build_eval_candidates import extract_numbers  # noqa: E402
 
 TEST_SET = ROOT / "data" / "eval" / "test_set.jsonl"
@@ -68,51 +69,6 @@ def unit_compatible(old, new) -> bool:
     if not o:
         return False
     return n.startswith(o)
-
-
-#: 单位 → 量纲族（用来判断"题干问的量 ↔ 锚点答的量"是否同族）。
-_UNIT_FAMILY = {
-    "压力": ["mpa", "kpa", "pa", "bar", "兆帕", "千帕"],
-    "长度": ["m", "mm", "cm", "km", "米", "毫米", "厘米"],
-    "面积": ["m2", "m²", "mm2", "mm²", "cm2", "cm²", "平方米", "平方毫米", "平方厘米"],
-    "体积": ["m3", "m³", "立方米"],
-    "时间": ["h", "min", "分钟", "小时", "秒", "天", "s"],
-    "质量": ["kg", "t", "吨", "千克", "mg", "g"],
-    "浓度": ["%", "‰", "mg/m3", "mg/m³", "ppm"],
-    "温度": ["℃", "c", "°c"],
-    "功率": ["kw", "w", "千瓦", "kw", "kva", "mva"],
-}
-
-#: 题干关键词 → 量纲族。
-_QUESTION_FAMILY = [
-    ("压力", "压力"), ("压强", "压力"),
-    ("长度", "长度"), ("距离", "长度"), ("高度", "长度"), ("管径", "长度"),
-    ("面积", "面积"), ("截面", "面积"),
-    ("容积", "体积"), ("体积", "体积"), ("储罐容积", "体积"),
-    ("时间", "时间"), ("多久", "时间"), ("小时", "时间"), ("分钟", "时间"),
-    ("供气", "时间"), ("周期", "时间"),
-    ("重量", "质量"), ("质量", "质量"), ("存量", "质量"),
-    ("浓度", "浓度"), ("含量", "浓度"),
-    ("温度", "温度"),
-]
-
-
-def question_family(question: str):
-    """题干问的是哪个量纲族（判不出就返回 None）。"""
-    q = question or ""
-    for kw, fam in _QUESTION_FAMILY:
-        if kw in q:
-            return fam
-    return None
-
-
-def unit_family(unit: str):
-    """单位属于哪个量纲族。"""
-    u = core_unit(unit)
-    for fam, us in _UNIT_FAMILY.items():
-        if u in us:
-            return fam
-    return None
 
 
 def main():
@@ -150,17 +106,17 @@ def main():
                     if N.normalize_number(c) != N.normalize_number(n)]
             # 🔴 **单位必须兼容**（原单位是候选单位的前缀）——
             #    否则 "40 MPa" 会被配到 "40 %"（压力配成百分比）
-            same = [c for c in same if unit_compatible(n, c)]
+            same = [c for c in same if UNITS.unit_compatible(n, c)]
             if len(same) == 1:
                 cand = same[0]
                 # 🔴 **量纲族检查**：题干问"供气时间"、锚点修成 "15 MPa" →
                 #    治不了根子，还可能**制造虚假高分**（模型答压力就算命中，
                 #    但它根本没回答时间）→ 这类题该**弃题/改题干**，不是改锚点。
-                qfam = question_family(r.get("question") or "")
-                cfam = unit_family(cand)
-                if qfam and cfam and qfam != cfam:
+                qfam = (UNITS.question_families(r.get("question") or "") or None)
+                cfam = next(iter(UNITS.unit_families(cand)), None)
+                if qfam and cfam and cfam not in qfam:
                     ambiguous.append((r["qid"], n,
-                                      [f"⚠️ 量纲不符：题干问「{qfam}」，"
+                                      [f"⚠️ 量纲不符：题干问「{'/'.join(sorted(qfam))}」，"
                                        f"候选是「{cfam}」→ 建议弃题/改题干"]))
                     continue
                 mapping[n] = cand

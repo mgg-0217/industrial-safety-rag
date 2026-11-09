@@ -253,16 +253,21 @@ def _unify_range_dash(s: str) -> str:
 def fold_unit(s: str) -> str:
     """把 ASCII 单位折成中文单位（K-43）。
 
-    🔴 只在**数字之后紧跟**的单位上折 —— 否则 "T-4200" 里的 "t"、
+    🔴 只在**数字之后**的单位上折 —— 否则 "T-4200" 里的 "t"、
     "5m" 里的 "m" 会被误当成单位。
+
+    🔴 **2026-11-09 修一个顺序坑**：
+    单位与数字之间**允许有空格**（`(?<=\d)\s*`），
+    而且**必须在去空格之前折**。
+    原写法是"先 `match_norm`（去空格）再 `fold_unit`" →
+    归一后相邻的选项标签会**粘连**：
+        "A. 5.5MPa B. 15MPa" → 去空格 → "a.5.5mpab.15mpa" →
+        "15mpa" 后面紧跟 "b" → 负向断言 `(?![a-z0-9])` 失败 → **折不掉** →
+        锚点 "15 MPa"（→"15兆帕"）与答案（→"15mpa"）**对不上**。
+    → 现在先折（空格还在，"15 MPa" / "5.5±0.5MPa" 都能折），再归一。
     """
-    out = []
-    for i, ch in enumerate(s):
-        out.append(ch)
-    s = "".join(out)
-    # 先折长的
     for a, b in _UNIT_FOLD:
-        s = re.sub(r"(?<=\d)" + re.escape(a) + r"(?![a-z0-9])", b, s)
+        s = re.sub(r"(?<=\d)\s*" + re.escape(a) + r"(?![a-z0-9])", b, s)
     return s
 
 
@@ -277,11 +282,11 @@ def normalize_number(s: str) -> str:
     """
     s = normalize_digits(s or "")
     s = s.replace("℃", "C").replace("°C", "C")
-    s = re.sub(r"\s+", "", s)
     s = s.lower()
     s = _unify_superscript(s)
     s = _unify_range_dash(s)
-    s = fold_unit(s)
+    s = fold_unit(s)          # 🔴 先折单位（空格还在 → 边界可判定）
+    s = re.sub(r"\s+", "", s)
     return s
 
 
@@ -294,7 +299,12 @@ def match_num_norm(text: str) -> str:
     🔴 **2026-11-09**：也要先统一上标（``m³`` → ``m3``），
     否则锚点写 ``mg/m3``、答案写 ``mg/m³`` → 对不上。
     """
-    return fold_unit(_unify_range_dash(_unify_superscript(match_norm(text or ""))))
+    s = normalize_digits(text or "")
+    s = s.lower()
+    s = _unify_superscript(s)
+    s = _unify_range_dash(s)
+    s = fold_unit(s)          # 🔴 先折单位，再去空格（见 fold_unit 的说明）
+    return match_norm(s)
 
 
 def build_chunk_text(text: str) -> tuple[str, str]:
