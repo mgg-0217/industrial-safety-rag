@@ -81,12 +81,28 @@ def try_l1(model_name="BAAI/bge-small-zh-v1.5"):
 
     环境事实（PRD 4.6 实测）：`huggingface.co` 8 秒超时、无本地缓存；
     `hf-mirror.com` 可用。所以默认把 ``HF_ENDPOINT`` 指到 hf-mirror。
+
+    🔴 **顺序坑（2026-11-06 实测）**：
+    `huggingface_hub.constants.ENDPOINT` 是在**导入时**从环境变量算出来的，
+    所以 `HF_ENDPOINT` 必须在 **import sentence_transformers 之前**设好 ——
+    原写法（先 import 再 setdefault）设置得太晚，
+    `huggingface_hub` 早就把 endpoint 固化成了 `huggingface.co`
+    → 本机 8 秒超时 → **模型根本下不下来**。
+
+    🔴 **Xet 坑（2026-11-06 实测）**：
+    `model.safetensors` 的下载会被**重定向到 `cas-bridge.xethub.hf.co`**，
+    那个主机在本机**不可达**（`Read timed out`）→ 必须
+    `HF_HUB_DISABLE_XET=1` 强制走传统 HTTP 路径。
+    两个变量都要在 **import 之前**设好。
     """
+    # 🔴 必须**先**设环境变量，再 import（见上面的说明）
+    os.environ.setdefault("HF_ENDPOINT", "https://hf-mirror.com")
+    os.environ.setdefault("HF_HUB_DISABLE_XET", "1")
+    os.environ.setdefault("HF_HUB_DISABLE_SYMLINKS_WARNING", "1")
     try:
         import sentence_transformers  # noqa: F401
     except ImportError:
         return None, "sentence-transformers 未安装（需用户自行 pip install）"
-    os.environ.setdefault("HF_ENDPOINT", "https://hf-mirror.com")
     try:
         from sentence_transformers import SentenceTransformer
         m = SentenceTransformer(model_name)

@@ -243,7 +243,73 @@ SYSTEM_V3 剩下的 3 条误答里，`r_e935db5ce95c` 的形态看着像新的�
 
 ---
 
-## 5. 下一步（按优先级）
+## 5. L1 句向量对照：🔴 换成**真语义模型**，"混合检索提升召回"依然不成立
+
+这是 PRD 4.6 留到今天的那一级。上一轮只能测 L2（TF-IDF+SVD，**不是预训练语义模型**），
+所以"向量路是负贡献"这个结论当时**只能算"有迹象"**。
+
+现在装了 `sentence-transformers`（3.4.1）+ `transformers` 4.48.3，
+用 `BAAI/bge-small-zh-v1.5`（512 维，中文预训练句向量）跑**同会话、同代码、同数据**的三方对照：
+
+| 切分策略 | 后端 | **V（仅向量）** | **B3（混合）** | **B2′（纯 BM25+过滤）** | 向量路延迟 |
+|---|---|---|---|---|---|
+| fixed | **L1** bge-small-zh | 0.716 | 0.841 | **0.883** | 3.17s |
+| fixed | L2 TF-IDF+SVD | 0.724 | 0.803 | **0.883** | 6.87s |
+| fixed | L4 无向量 | — | 0.883 | **0.883** | 0.06s |
+| structural | **L1** bge-small-zh | **0.807** | 0.860 | **0.883** | 3.67s |
+| structural | L2 TF-IDF+SVD | 0.701 | 0.784 | **0.883** | 7.43s |
+| structural | L4 无向量 | — | 0.883 | **0.883** | 0.14s |
+
+（n=264 可评题，`fixed`/`structural` 两个切分策略，版本过滤开，`α=0.5`；
+批次 `20261106_1045`(L1) / `20261106_1047`(L2) / `20261106_1049`(L4)，
+对照表由 `tools/compare_embed_backends.py` 产出）
+
+### 🔴 三条结论
+
+**1. 混合检索是负贡献 —— 四个格子全部成立**
+`B3 − B2′`：L1/fixed **−0.042**、L1/structural **−0.023**、L2/fixed **−0.080**、
+L2/structural **−0.099**。
+→ 🔴 **换成真正的预训练中文句向量也没能救回来**。
+→ 所以 **"混合检索提升召回"这个说法不能写进简历** ——
+这条禁令现在的证据比上一轮强得多（上一轮只能拿 TF-IDF 近似去说）。
+
+**2. 语义向量的价值取决于切分粒度**
+structural 上 L1 比 L2 高 **10.6 点**（0.807 vs 0.701，CI 不重叠）；
+fixed 上反而**略低**（0.716 vs 0.724，CI 重叠）。
+→ 块越碎，BM25 的短块匹配越脆，语义向量越有用。
+→ 🔴 **"要不要向量路"不是后端问题，是切分策略的函数**。
+
+**3. 向量路慢 8–12 倍，召回还更低**
+L1 向量路 3.17–3.67s vs 纯 BM25 0.38–0.56s；
+而 R@5 是 0.716/0.807 vs 0.883。
+
+### ✅ 自查通过
+
+`B2′`（纯 BM25 + 版本过滤）在**三个后端下完全一致**（0.883 / 0.883 / 0.883）
+→ 差异确实来自**后端**，不是题集或切分变化。
+
+### 最终配置
+
+**L4（纯 BM25）+ 版本过滤 + `structural` 切分** —— 与 PRD 4.6 的预判一致，
+而且现在是用**真语义模型**验证过的（不再是 TF-IDF 近似）。
+
+### 🔴 装包/跑批踩的坑（K-71、K-72）
+
+* **pip resolver 回退**：不钉版本时 pip 一路回退到要 `pytorch-transformers` 的远古版本，
+  然后卡在 `regex` 上（"from versions: none"）→ 实测 **13–27 kB/s** 的链路下
+  这个回退要跑 **50 分钟**还失败。
+  → 修法：`pip install --no-deps` + **钉死版本**
+  （`sentence-transformers==3.4.1` / `transformers==4.48.3` /
+  `huggingface-hub==0.28.1` / `tokenizers==0.21.0` / `safetensors==0.5.2`）。
+* **`HF_ENDPOINT` 设得太晚**：`huggingface_hub.constants.ENDPOINT` 在**导入时**就固化了
+  → 原写法（先 import 再 `setdefault`）会让它去连本机不可达的 `huggingface.co`。
+* **Xet 协议不可达**：`model.safetensors` 会被重定向到 `cas-bridge.xethub.hf.co`
+  → 必须 `HF_HUB_DISABLE_XET=1`。
+  （以上两条已固化进 `src/embed.py::try_l1`。）
+
+---
+
+## 6. 下一步（按优先级）
 
 1. 🔴 **人工核对题集**（仍是第一，唯一挡住"结论可信"）：
    `data/eval/review_queue.md` 的队列要在本轮 kp 精修后**重新生成**。
@@ -257,7 +323,7 @@ SYSTEM_V3 剩下的 3 条误答里，`r_e935db5ce95c` 的形态看着像新的�
 
 ---
 
-## 6. 附录 · 本轮用到的命令
+## 7. 附录 · 本轮用到的命令
 
 ```bash
 python tools/run_pending.py                  # 六阶段流水线（额度恢复后）
@@ -270,4 +336,12 @@ python tools/diag_length_confound.py --a <主集> --b <v3事实题>   # 排除�
 python tools/diag_boilerplate_impact.py     # 导航噪声三层影响
 python tools/diag_corpus_claim.py --answers <批次>
 python tools/refine_key_points_llm.py --restrict-to-doc   # 下一轮：检索限定在出处文档内
+
+# L1 句向量对照（三方，同会话）
+python tools/run_retrieval_eval.py --levels L1 --baselines V,B2,B3,B2prime --strategies fixed,structural --tag l1
+python tools/run_retrieval_eval.py --levels L2 --baselines V,B2,B3,B2prime --strategies fixed,structural --tag l2ref
+python tools/run_retrieval_eval.py --levels L4 --baselines V,B2,B3,B2prime --strategies fixed,structural --tag l4ref2
+python tools/compare_embed_backends.py --a eval_runs/<L4前缀> --b eval_runs/<L1前缀>
 ```
+
+⚠️ **同分钟跑两个批次会互相覆盖**（时间戳只到分钟）→ 每次跑完记下批次前缀。
